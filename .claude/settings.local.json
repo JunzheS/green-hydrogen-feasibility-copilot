@@ -26,7 +26,13 @@
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" http://localhost:8501)",
       "PowerShell($f = \"d:\\\\IA\\\\工具\\\\Hydrogen_Projet_Copilot\\\\README.md\"; $lines = \\(Get-Content $f | Measure-Object -Line\\).Lines; $sizeKB = [math]::Round\\(\\(Get-Item $f\\).Length/1024,1\\); Write-Output \"README.md: ${lines} lines, ${sizeKB} KB\"; $sections = Select-String -Path $f -Pattern \"^## \" | ForEach-Object { \"  $\\($_.LineNumber\\): $\\($_.Line.Trim\\(\\)\\)\" }; Write-Output \"Sections:\"; $sections)",
       "PowerShell($v1 = \"d:\\\\IA\\\\工具\\\\Hydrogen_Projet_Copilot\\\\README.md\"; $v2 = \"d:\\\\IA\\\\工具\\\\Hydrogen_Projet_Copilot\\\\README_v2.md\"; $l1 = \\(Get-Content $v1 | Measure-Object -Line\\).Lines; $l2 = \\(Get-Content $v2 | Measure-Object -Line\\).Lines; $s1 = [math]::Round\\(\\(Get-Item $v1\\).Length/1024,1\\); $s2 = [math]::Round\\(\\(Get-Item $v2\\).Length/1024,1\\); Write-Output \"README.md: $l1 lines, $s1 KB\"; Write-Output \"README_v2.md: $l2 lines, $s2 KB\"; Write-Output \"Delta: +$\\($l2-$l1\\) lines, +$\\($s2-$s1\\) KB\"; Write-Output \"\"; Write-Output \"Sections in v2:\"; Select-String -Path $v2 -Pattern \"^## \" | ForEach-Object { Write-Output \"  $\\($_.Line.Trim\\(\\)\\)\" })",
-      "PowerShell(Select-String -Path \"d:\\\\IA\\\\工具\\\\Hydrogen_Projet_Copilot\\\\README_v3.md\" -Pattern \"PROCEED WITH CAUTION|100 MW|EUR 150M|Score: 0.81\" | ForEach-Object { Write-Output \"  Found: $\\($_.Line.Trim\\(\\)\\)\" })"
+      "PowerShell(Select-String -Path \"d:\\\\IA\\\\工具\\\\Hydrogen_Projet_Copilot\\\\README_v3.md\" -Pattern \"PROCEED WITH CAUTION|100 MW|EUR 150M|Score: 0.81\" | ForEach-Object { Write-Output \"  Found: $\\($_.Line.Trim\\(\\)\\)\" })",
+      "PowerShell(git -C \"d:/IA/??/Hydrogen_Projet_Copilot\" log --oneline)",
+      "PowerShell(gh auth login --web -h github.com)",
+      "PowerShell(git -C \"d:\\\\IA\\\\??\\\\Hydrogen_Projet_Copilot\" branch)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat\\(m12\\): executive decision intelligence layer *)",
+      "Bash(git push *)"
     ]
   }
 }

@@ -1,4 +1,4 @@
-"""Page 2 -- Executive Dashboard & Assessment Report."""
+"""Page 2 -- Executive Dashboard with Gate Justification and Executive Insights."""
 import streamlit as st
 from utils.theme import apply_theme; apply_theme()
 from components.pdf_export import generate_html_report
@@ -14,12 +14,14 @@ tech = report.get("technology_assessment", {})
 capex = report.get("capex_assessment", {})
 lcoh = report.get("lcoh_assessment", {})
 risk = report.get("risk_assessment", {})
+insights = report.get("executive_insights", [])
+gate_just = report.get("gate_justification", {})
 
 st.title("Assessment Report")
 st.caption(f"{query.get('capacity_mw','')} MW {query.get('technology','')} | {query.get('country','')} | {query.get('industry','')} | COD {query.get('target_cod','')}")
 
-# Gate banner
-gate = pm.get("gate_outcome", "-")
+# Gate Banner with Justification
+gate = gate_just.get("decision", pm.get("gate_outcome", "-"))
 conf = pm.get("overall_confidence", {})
 gate_colors = {"PROCEED": "#2E7D32", "PROCEED WITH CAUTION": "#F9A825", "DO NOT PROCEED": "#C62828", "INSUFFICIENT DATA": "#78909C"}
 gate_texts = {"PROCEED": "white", "PROCEED WITH CAUTION": "#1B5E20", "DO NOT PROCEED": "white", "INSUFFICIENT DATA": "white"}
@@ -28,7 +30,8 @@ st.markdown(f"""
 <div style="background:{gate_colors.get(gate,'#78909C')};padding:20px;border-radius:8px;color:{gate_texts.get(gate,'white')};margin-bottom:20px;">
 <p style="margin:0;font-size:0.85em;opacity:0.9;">Project Status</p>
 <h2 style="margin:2px 0 0 0;color:inherit;font-size:1.6em;">{gate}</h2>
-<p style="margin:4px 0 0 0;opacity:0.9;">Confidence: {conf.get('label','-')} ({conf.get('score',0):.2f})</p>
+<p style="margin:4px 0;opacity:0.9;">{gate_just.get('rationale','')}</p>
+<p style="margin:0;opacity:0.7;font-size:0.9em;">Confidence: {conf.get('label','-')} ({conf.get('score',0):.2f})</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -62,23 +65,25 @@ for i, (key, label) in enumerate(labels.items()):
 
 st.divider()
 
-# Key findings
-st.subheader("Key Findings")
-findings = []
-tech_name = tech.get('technology_name','')
-findings.append(f"**Technology:** {tech_name} is at TRL {tech.get('trl','')} ({tech.get('commercial_maturity','')}). "
-    f"Application suitability for {query.get('industry','')}: **{tech.get('application_suitability','').upper()}**.")
-findings.append(f"**Scale:** {query.get('capacity_mw','')} MW is {tech.get('scale_status','').replace('_',' ')} "
-    f"(max proven: {tech.get('max_proven_mw','')} MW). "
-    f"{'First-of-a-kind for application.' if tech.get('is_foak_for_application') else 'Not first-of-a-kind.'}")
-findings.append(f"**CAPEX:** EUR {capex.get('total',{}).get('central_eur_m',0):.0f}M "
-    f"(range EUR {capex.get('total',{}).get('p10_eur_m',0):.0f}M -- EUR {capex.get('total',{}).get('p90_eur_m',0):.0f}M). "
-    f"Confidence: {capex.get('weighted_confidence_label','')}.")
-findings.append(f"**LCOH:** EUR {lcoh.get('central_eur_per_kg',0):.2f}/kg "
-    f"(P10-P90: EUR {lcoh.get('p10_eur_per_kg',0):.2f}--{lcoh.get('p90_eur_per_kg',0):.2f}/kg). "
-    f"Dominant driver: **{lcoh.get('dominant_driver','').replace('_',' ')}**.")
-for f in findings:
-    st.markdown(f"-  {f}")
+# Executive Insights
+if insights:
+    st.subheader("Executive Insights")
+    for ins in insights:
+        with st.container(border=True):
+            col_i1, col_i2 = st.columns([3, 1])
+            with col_i1:
+                st.markdown(f"**{ins.get('title','')}**")
+            st.markdown(f"**Observation:** {ins.get('observation','')}")
+            st.markdown(f"**Business Impact:** {ins.get('business_impact','')}")
+            st.markdown(f"**Recommendation:** {ins.get('recommendation','')}")
+            st.caption(f"Insight ID: {ins.get('id','')} | Reasoning: {ins.get('reasoning','')[:120]}...")
+    st.divider()
+
+# Gate conditions
+if gate_just.get("conditions"):
+    st.subheader("Conditions for Advancement")
+    for i, c in enumerate(gate_just.get("conditions", []), 1):
+        st.markdown(f"{i}.  {c}")
 
 st.divider()
 
@@ -93,21 +98,10 @@ if not pm.get("critical_gaps") and not pm.get("important_gaps"):
 
 st.divider()
 
-# Conditions
-if pm.get("conditions"):
-    st.subheader("Conditions for Advancement")
-    for i, c in enumerate(pm.get("conditions", []), 1):
-        st.markdown(f"{i}.  {c}")
-
-st.divider()
-
 # Export
 col_exp, _ = st.columns([1, 3])
 with col_exp:
-    html_report = generate_html_report(
-        st.session_state.get("query", {}),
-        st.session_state["report"]
-    )
+    html_report = generate_html_report(query, report)
     st.download_button(
         label="Export PDF Report",
         data=html_report,
@@ -118,5 +112,4 @@ with col_exp:
     st.caption("Open in browser and print to PDF (Ctrl+P / Cmd+P)")
 
 st.divider()
-st.caption(f"Assessment ID: {st.session_state.get('current_assessment_id','-')} | Copilot Engine v1.0 | "
-    f"Generated {st.session_state.get('current_assessment_id','')[:14] if st.session_state.get('current_assessment_id') else '-'}")
+st.caption(f"Assessment ID: {st.session_state.get('current_assessment_id','-')} | Copilot Engine v1.0")

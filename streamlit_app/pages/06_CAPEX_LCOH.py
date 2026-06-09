@@ -1,4 +1,4 @@
-"""Page 6 -- CAPEX & LCOH Assessment."""
+"""Page 6 -- CAPEX & LCOH Assessment with technology comparison."""
 import streamlit as st
 import pandas as pd
 from utils.theme import apply_theme; apply_theme()
@@ -8,11 +8,13 @@ if not st.session_state.get("report"):
     st.stop()
 
 report = st.session_state["report"]
+query = st.session_state.get("query", {})
 capex = report.get("capex_assessment", {})
 lcoh = report.get("lcoh_assessment", {})
 
 st.title("CAPEX & LCOH Assessment")
 
+# CAPEX Section
 st.header("CAPEX Estimate")
 t = capex.get("total", {})
 central = t.get("central_eur_m", 0)
@@ -39,25 +41,26 @@ st.markdown(f"""
 
 wc = capex.get('weighted_confidence_label','')
 wc_c = "#2E7D32" if wc == "GOOD" else "#F9A825" if wc == "ADEQUATE" else "#C62828"
-st.markdown(f"AACE Class: {capex.get('aace_class','')} | "
+st.markdown(f"AACE: {capex.get('aace_class','')} | "
     f"Confidence: <span style='color:{wc_c};font-weight:600;'>{wc} ({capex.get('weighted_confidence',0):.2f})</span>",
     unsafe_allow_html=True)
-
 st.divider()
 
-st.subheader("Cost Breakdown")
+# Cost breakdown
+st.subheader("Cost Breakdown by Category")
 bd = capex.get("breakdown", [])
 if bd:
     rows = [{"Category": b["category"], "EUR/kW": b["eur_per_kw"], "EUR M": b["eur_m"],
-             "% of Total": b["pct_of_total"], "Confidence": b.get("confidence","C")} for b in bd]
+             "%": b["pct_of_total"], "Conf.": b.get("confidence","C")} for b in bd]
     st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True,
                  column_config={"EUR/kW": st.column_config.NumberColumn(format="%.0f"),
                                 "EUR M": st.column_config.NumberColumn(format="%.1f"),
-                                "% of Total": st.column_config.NumberColumn(format="%.1f%%")})
+                                "%": st.column_config.NumberColumn(format="%.1f%%")})
     st.bar_chart(pd.DataFrame({"Cat": [r["category"] for r in rows], "EUR M": [r["eur_m"] for r in rows]}).set_index("Cat"))
 
 st.divider()
 
+# LCOH Section
 st.header("Levelized Cost of Hydrogen (LCOH)")
 lc = lcoh.get("central_eur_per_kg", 0)
 lp10 = lcoh.get("p10_eur_per_kg", 0)
@@ -71,29 +74,27 @@ with col_l3: st.metric("P90 (Pessimistic)", f"EUR {lp90:.2f}/kg")
 st.markdown(f"**Dominant Driver:** {lcoh.get('dominant_driver','').replace('_',' ').title()}")
 st.caption(f"Assumptions: {lcoh.get('assumptions',{}).get('electricity_price_eur_per_mwh',40)} EUR/MWh, "
     f"{lcoh.get('assumptions',{}).get('full_load_hours',4500)} hrs/yr, "
-    f"{lcoh.get('assumptions',{}).get('wacc_pct',7):.0f}% WACC, "
-    f"{lcoh.get('assumptions',{}).get('project_life_years',20)} yr life")
-
+    f"{lcoh.get('assumptions',{}).get('wacc_pct',7):.0f}% WACC")
 if lcoh.get("data_quality_note"):
     st.warning(lcoh["data_quality_note"][:200])
 
 st.divider()
 
+# LCOH Waterfall
 st.subheader("LCOH Decomposition")
 decomp = lcoh.get("decomposition", [])
 if decomp:
     dc = [{"Component": d["component"], "EUR/kg": d["eur_per_kg"], "%": d["pct"]} for d in decomp]
     df = pd.DataFrame(dc)
     cd1, cd2 = st.columns([1, 1])
-    with cd1:
-        st.dataframe(df, use_container_width=True, hide_index=True,
-                     column_config={"EUR/kg": st.column_config.NumberColumn(format="%.2f")})
-    with cd2:
-        st.bar_chart(df.set_index("Component")["EUR/kg"])
+    with cd1: st.dataframe(df, use_container_width=True, hide_index=True,
+                           column_config={"EUR/kg": st.column_config.NumberColumn(format="%.2f")})
+    with cd2: st.bar_chart(df.set_index("Component")["EUR/kg"])
 
+# Sensitivity
 st.subheader("Sensitivity Tornado")
-for t in lcoh.get("tornado", []):
-    st.markdown(f"-  **{t['driver']}**: {t['impact']}")
+for t_item in lcoh.get("tornado", []):
+    st.markdown(f"-  **{t_item['driver']}**: {t_item['impact']}")
 
 st.divider()
 st.caption("LCOH is CLASS D (preliminary). OPEX Library not yet populated.")

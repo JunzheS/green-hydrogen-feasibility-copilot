@@ -1,4 +1,4 @@
-"""Page 3 -- Reference Projects matching results."""
+"""Page 3 -- Reference Projects with score breakdown."""
 import streamlit as st
 import pandas as pd
 from utils.theme import apply_theme; apply_theme()
@@ -10,7 +10,9 @@ if not st.session_state.get("report"):
 report = st.session_state["report"]
 query = st.session_state.get("query", {})
 matching = report.get("similar_projects", {})
-ranked = matching.get("ranked_projects", [])
+ranked = report.get("project_match_breakdown", [])
+if not ranked:
+    ranked = matching.get("ranked_projects", [])
 
 st.title("Reference Projects")
 st.caption(f"Top {len(ranked)} projects matching: {query.get('capacity_mw','')} MW {query.get('technology','')} in {query.get('country','')} for {query.get('industry','')}")
@@ -18,12 +20,20 @@ st.caption(f"Top {len(ranked)} projects matching: {query.get('capacity_mw','')} 
 if ranked:
     rows = []
     for p in ranked:
+        bd = p.get("score_breakdown", {})
         rows.append({
-            "Rank": p["rank"], "Project": p["project_name"],
-            "Country": p["country"], "MW": p["capacity_mw"],
-            "Technology": p["technology"], "Status": p["status"].replace("_", " ").title(),
-            "Offtake": p["primary_offtake"].replace("_", " ").title(),
-            "Score": f"{p['composite_score']:.2f}", "Tier": p["tier"],
+            "Rank": p.get("rank", 0),
+            "Project": p.get("project_name", ""),
+            "Country": p.get("country", ""),
+            "MW": p.get("capacity_mw", 0),
+            "Technology": p.get("technology", ""),
+            "Status": p.get("status", "").replace("_", " ").title(),
+            "Tech": bd.get("Technology", ""),
+            "Industry": bd.get("Industry", ""),
+            "Capacity": bd.get("Capacity", ""),
+            "Country Score": bd.get("Country", ""),
+            "Score": f"{p.get('composite_score',0):.2f}",
+            "Tier": p.get("tier", ""),
         })
     st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
 
@@ -32,13 +42,20 @@ st.divider()
 st.subheader("Why Each Project Was Selected")
 for p in ranked:
     with st.container(border=True):
-        col1, col2 = st.columns([4, 1])
+        score = p.get("composite_score", 0)
+        c = "#2E7D32" if score >= 0.70 else "#F9A825" if score >= 0.50 else "#C62828"
+        bd = p.get("score_breakdown", {})
+
+        col1, col2, col3 = st.columns([3, 2, 1])
         with col1:
-            st.markdown(f"**#{p['rank']} -- {p['project_name']}**")
-            st.caption(f"{p['country']} | {p['capacity_mw']} MW {p['technology']} | {p['status'].replace('_',' ').title()} | {p['primary_offtake'].replace('_',' ').title()}")
+            st.markdown(f"**#{p.get('rank')} -- {p.get('project_name')}**")
+            st.caption(f"{p.get('country','')} | {p.get('capacity_mw','')} MW {p.get('technology','')} | {p.get('status','').replace('_',' ').title()} | {p.get('offtake','').replace('_',' ').title()}")
         with col2:
-            score = p["composite_score"]
-            c = "#2E7D32" if score >= 0.70 else "#F9A825" if score >= 0.50 else "#C62828"
-            st.markdown(f"<p style='font-size:1.8em;font-weight:700;color:{c};text-align:center;'>{score:.2f}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;font-size:0.85em;'>{p['tier']}</p>", unsafe_allow_html=True)
-        st.markdown(f"**Why selected:** {p.get('rationale','')[:250]}")
+            if bd:
+                st.markdown("**Score breakdown:**")
+                for dim, val in bd.items():
+                    st.caption(f"  {dim}: {val}")
+        with col3:
+            st.markdown(f"<p style='font-size:2em;font-weight:700;color:{c};text-align:center;'>{score:.2f}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;font-size:0.85em;'>{p.get('tier','')}</p>", unsafe_allow_html=True)
+        st.markdown(f"**Why selected:** {p.get('rationale','')[:300]}")

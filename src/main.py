@@ -30,6 +30,7 @@ from src.engines.lcoh_engine import calculate_lcoh
 from src.engines.pm_review_engine import review_assessment
 from src.models.data_models import Query, Technology
 from src.utils.helpers import normalise_country, normalise_industry, get_industry_matches
+from src.engines.executive_insights_engine import generate_insights, generate_gate_justification, generate_risk_consequences, generate_project_match_breakdown
 
 
 class FeasibilityEngine:
@@ -120,6 +121,11 @@ class FeasibilityEngine:
                     "status": m.project.status,
                     "primary_offtake": m.project.primary_offtake,
                     "composite_score": m.composite_score,
+                    "tech_score": m.tech_score,
+                    "industry_score": m.industry_score,
+                    "capacity_score": m.capacity_score,
+                    "country_score": m.country_score,
+                    "maturity_score": m.maturity_score,
                     "tier": m.tier,
                     "rationale": m.rationale,
                 }
@@ -135,6 +141,26 @@ class FeasibilityEngine:
             risk_assessment, capex_estimate, lcoh_estimate,
         )
 
+        # --- Executive Intelligence ---
+        assessment_payload = {
+            "query": {
+                "country": norm_country, "industry": norm_industry,
+                "technology": technology, "capacity_mw": capacity_mw,
+                "target_cod": target_cod,
+                "offtake": primary_offtake,
+            },
+            "similar_projects": matching_output,
+            "technology_assessment": tech_assessment,
+            "risk_assessment": risk_assessment,
+            "capex_assessment": capex_estimate,
+            "lcoh_assessment": lcoh_estimate,
+            "pm_review": pm_review,
+        }
+        executive_insights = generate_insights(assessment_payload)
+        gate_justification = generate_gate_justification(pm_review, tech_assessment, risk_assessment, query.__dict__)
+        risk_consequences = generate_risk_consequences(risk_assessment)
+        project_breakdown = generate_project_match_breakdown(matching_output.get("ranked_projects", []))
+
         return {
             "query": {
                 "country": norm_country, "industry": norm_industry,
@@ -148,6 +174,10 @@ class FeasibilityEngine:
             "capex_assessment": capex_estimate,
             "lcoh_assessment": lcoh_estimate,
             "pm_review": pm_review,
+            "executive_insights": executive_insights,
+            "gate_justification": gate_justification,
+            "risk_consequences": risk_consequences,
+            "project_match_breakdown": project_breakdown,
         }
 
 
