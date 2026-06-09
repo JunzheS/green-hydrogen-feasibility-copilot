@@ -1,94 +1,79 @@
-"""Green Hydrogen Project Feasibility Copilot — Streamlit Application."""
+"""Green Hydrogen Project Feasibility Copilot — Decision-Support Platform."""
 import streamlit as st
 
-st.set_page_config(
-    page_title="H2 Feasibility Copilot",
-    page_icon=" ",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+st.set_page_config(page_title="H2 Feasibility Copilot", page_icon=" ", layout="wide", initial_sidebar_state="expanded")
 
 from utils.session import init_session
 from utils.theme import apply_theme
-
-init_session()
-apply_theme()
+init_session(); apply_theme()
 
 with st.sidebar:
     st.markdown("## H2 Feasibility Copilot")
-    st.markdown("Green Hydrogen Pre-Feasibility Assessment")
+    st.markdown("Decision-Support Platform | v1.0")
     st.divider()
-
     if st.session_state.get("report"):
-        report = st.session_state["report"]
-        pm = report.get("pm_review", {})
-        gate = pm.get("gate_outcome", "-")
-        conf = pm.get("overall_confidence", {})
-        gate_colors = {"PROCEED": "#2E7D32", "PROCEED WITH CAUTION": "#F9A825",
-                       "DO NOT PROCEED": "#C62828", "INSUFFICIENT DATA": "#78909C"}
+        r = st.session_state["report"]; pm = r.get("pm_review", {}); gate = pm.get("gate_outcome","-")
+        conf = pm.get("overall_confidence",{})
+        gcolor = {"PROCEED":"#2E7D32","PROCEED WITH CAUTION":"#F9A825","DO NOT PROCEED":"#C62828","INSUFFICIENT DATA":"#78909C"}.get(gate,"#78909C")
         st.markdown("**Current Assessment**")
-        q = st.session_state.get("query", {})
-        st.caption(f"{q.get('country','')} | {q.get('capacity_mw','')} MW | {q.get('technology','')}")
-        gcolor = gate_colors.get(gate, "#78909C")
+        q = st.session_state.get("query",{}); st.caption(f"{q.get('country','')} | {q.get('capacity_mw','')} MW | {q.get('technology','')}")
         st.markdown(f"<span style='background:{gcolor};padding:4px 12px;border-radius:4px;color:white;font-weight:600;font-size:0.85em;'>{gate}</span>", unsafe_allow_html=True)
-        st.markdown(f"Confidence: {conf.get('label','-')} ({conf.get('score',0):.2f})")
-
+        st.caption(f"Confidence: {conf.get('label','-')} ({conf.get('score',0):.2f})")
     st.divider()
     st.caption("KB: 10 projects | 30 risks | 30 cost records")
-    st.caption("Engine v1.0 | June 2026")
 
-# ─── MAIN CONTENT ───
-st.title("Green Hydrogen Project Feasibility Copilot")
-st.markdown("<p style='color:#558B2F;font-size:1.05em;'>Pre-Feasibility Assessment for PEM and Alkaline Electrolysis Projects</p>", unsafe_allow_html=True)
-
+# ─── LANDING PAGE ───
 if not st.session_state.get("assessment_complete"):
-    # ─── Knowledge Base KPIs ───
-    col_k1, col_k2, col_k3, col_k4, col_k5 = st.columns(5)
-    with col_k1: st.metric("Projects", "10", "European references")
-    with col_k2: st.metric("Risks", "30", "8 categories")
-    with col_k3: st.metric("Cost Records", "30", "CAPEX benchmarks")
-    with col_k4: st.metric("Technology Cards", "2", "PEM + Alkaline")
-    with col_k5: st.metric("Tests", "35/35", "all passing")
+    col_logo, col_title = st.columns([1, 6])
+    with col_title:
+        st.title("Green Hydrogen Feasibility Copilot")
+        st.markdown("<p style='color:#558B2F;font-size:1.1rem;'>Decision-Support for PEM and Alkaline Electrolysis Projects</p>", unsafe_allow_html=True)
 
-    # ─── Welcome ───
-    st.markdown("""
-    <div style="background:#F1F8E9;padding:20px;border-radius:8px;border-left:4px solid #2E7D32;margin:16px 0;">
-        <strong>Welcome.</strong> Enter your project parameters on the <strong>Project Input</strong> page
-        and click <strong>Run Assessment</strong> to generate a complete pre-feasibility report.
-    </div>
-    """, unsafe_allow_html=True)
+    # Knowledge base KPI banner
+    k1, k2, k3, k4, k5 = st.columns(5)
+    with k1: st.metric("Reference Projects", "10")
+    with k2: st.metric("Risk Records", "30")
+    with k3: st.metric("Cost Benchmarks", "30")
+    with k4: st.metric("Technology Cards", "2")
+    with k5: st.metric("Tests Passing", "35/35")
+    st.caption("Knowledge base: European hydrogen projects, IEA/IRENA benchmarks, peer-reviewed engineering methodologies.")
 
-    # ─── About ───
-    st.subheader("Why This Tool")
-    st.markdown("""
-    Pre-feasibility assessments for green hydrogen projects require weeks of manual research.
-    This Copilot answers in seconds: What is a realistic CAPEX range? What are the top risks?
-    How mature is this technology for my application? What reference projects exist?
-    """)
+    st.divider()
 
-    # ─── Workflow ───
-    st.subheader("Assessment Workflow")
-    wf_cols = st.columns(4)
-    steps = [
-        ("1. Input", "Enter 5 project parameters: country, industry, technology, capacity, COD"),
-        ("2. Retrieve", "Matching against 10 European reference projects"),
-        ("3. Assess", "Technology readiness, risks, CAPEX and LCOH"),
-        ("4. Decide", "Gate decision with evidence traceability"),
-    ]
-    for i, (title, desc) in enumerate(steps):
-        with wf_cols[i]:
-            st.markdown(f"**{title}**")
-            st.caption(desc)
+    # How it works
+    hcol1, hcol2, hcol3 = st.columns(3)
+    with hcol1:
+        st.markdown("##### 1. Enter Your Project")
+        st.caption("Country, industry, technology, capacity, and target year. Five parameters define your project profile.")
+    with hcol2:
+        st.markdown("##### 2. Engine Analyses")
+        st.caption("The system matches against 10 reference projects, assesses technology readiness, identifies risks, and estimates CAPEX and LCOH.")
+    with hcol3:
+        st.markdown("##### 3. Decision Output")
+        st.caption("A structured gate assessment: should the project proceed? What are the conditions? What information is missing?")
 
-    # ─── Example Output ───
-    st.subheader("Example Output")
+    st.divider()
+
+    # What you get
+    st.markdown("#### Assessment Deliverables")
+    d1, d2, d3, d4 = st.columns(4)
+    with d1: st.markdown("**Executive Summary**"); st.caption("Gate decision with justification, dimension scores, and conditions for advancement.")
+    with d2: st.markdown("**Risk Dashboard**"); st.caption("Class-ranked risk register with mitigation actions and reference project evidence.")
+    with d3: st.markdown("**CAPEX & LCOH**"); st.caption("AACE Class 4 cost estimate, category breakdown, and LCOH sensitivity analysis.")
+    with d4: st.markdown("**Full Traceability**"); st.caption("Agent Trace page showing the complete reasoning from input to decision.")
+
+    st.divider()
+
+    # Example
+    st.markdown("#### Demonstration: France, Steel, PEM, 100 MW, 2029")
     st.code(
-        "Gate: PROCEED WITH CAUTION\n"
+        "Gate: PROCEED WITH CAUTION (Confidence: GOOD)\n"
         "CAPEX: EUR 150M (EUR 1,500/kW)\n"
         "LCOH: EUR 4.96/kg\n"
         "Top Reference: Normand'Hy (Score 0.81)\n"
-        "Top Risk: Manufacturing Capacity (RPN 36)"
+        "Top Risk: Manufacturing Capacity (RPN 36)\n"
+        "Key Gap: No steel-offtake PEM project in reference dataset"
     )
 
     st.divider()
-    st.caption("Navigate to **Project Input** in the sidebar to begin.")
+    st.info("Navigate to **Project Input** in the sidebar to begin a new assessment.")

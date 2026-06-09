@@ -34,7 +34,8 @@
       "Bash(git commit -m 'feat\\(m12\\): executive decision intelligence layer *)",
       "Bash(git push *)",
       "Bash(git commit -m 'fix\\(m12\\): streamlit schema compatibility *)",
-      "Bash(git commit -m 'fix\\(ui\\): restore landing page and capex visualization *)"
+      "Bash(git commit -m 'fix\\(ui\\): restore landing page and capex visualization *)",
+      "Bash(git commit -m 'feat\\(m13\\): consulting-grade decision-support platform *)"
     ]
   }
 }
