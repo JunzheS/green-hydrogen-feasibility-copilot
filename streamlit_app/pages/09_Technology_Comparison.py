@@ -1,5 +1,6 @@
 """Page 9 — Technology Comparison with executive cards."""
 import streamlit as st
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 from src.main import FeasibilityEngine
 from src.engines.technology_comparison_engine import compare_technologies
 

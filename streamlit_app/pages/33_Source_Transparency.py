@@ -1,6 +1,7 @@
 """Page 33 — Source Transparency Dashboard. Evidence quality visible."""
 import streamlit as st
 import pandas as pd
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 from collections import Counter
 
 if not st.session_state.get("report"):
