@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-082",
+  "project_name": "Alcoa / Green H2 Alumina (France)",
+  "alias_names": ["Alcoa H2 France", "Alumina H2", "French Alumina H2"],
+  "status": "planned",
+  "status_detail": "Green hydrogen project for alumina refining in southern France. 50 MW alkaline electrolysis to provide H2 for thermal processes in alumina production. Replacing natural gas. Part of the industrial decarbonization of the alumina sector. 2028 COD target.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "The Alcoa Green H2 project in southern France targets replacing natural gas with green hydrogen in alumina refining thermal processes. A 50 MW alkaline electrolysis plant would produce hydrogen for the high-temperature thermal processes used in alumina production, one of the most energy-intensive industrial processes. The project is part of the broader decarbonization of the French alumina and aluminum sector.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-006", "GA-PR-075", "GA-PR-079"]
+  },
+  "location": { "country": "France", "region": "Provence-Alpes-Cote d'Azur", "city": "Gardanne area", "coordinates": { "lat": 43.45, "lon": 5.47 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 50, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 20000, "hydrogen_output_tons_per_year": 7300, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at industrial alumina plant", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": [], "offtaker_name": "Alumina refining facility (thermal process heat replacement)", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Alcoa Corporation / French subsidiary", "developer_type": "chemical_company", "co_developers": [], "epc_contractor": null, "operations_operator": "Alcoa", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "french_state_subsidy"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2024", "fid_date": null, "construction_start_date": null, "commissioning_date": "2029", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-032", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Alcoa green hydrogen for alumina refining — decarbonization program, southern France", "author": "Alcoa Corporation / IEA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

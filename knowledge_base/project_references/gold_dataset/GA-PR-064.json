@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-064",
+  "project_name": "Hystar HyPilot (Norway)",
+  "alias_names": ["Hystar Norway", "HyPilot H2", "Hystar 1.5 MW PEM"],
+  "status": "operational", "status_detail": "1.5 MW containerized PEM electrolysis pilot by Hystar in Norway. Commissioned 2024. Hystar's patented PEM technology with higher current density and reduced iridium loading. Testing advanced PEM technology for full-scale deployment. Part of the Norwegian hydrogen innovation ecosystem.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "Hystar HyPilot is a 1.5 MW containerized PEM electrolysis pilot project in Norway, commissioned in 2024. Hystar uses patented PEM technology with a 3D membrane architecture that enables significantly higher current density (4-5x conventional PEM) and reduced iridium loading, potentially lowering stack costs by 40%. The pilot demonstrates the technology at semi-commercial scale and provides operating data for Hystar's first full-scale commercial plant. The project is supported by the Norwegian government and European innovation programs.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-051"]
+  },
+  "location": { "country": "Norway", "region": "Vestland", "city": "Bergen area", "coordinates": { "lat": 60.39, "lon": 5.32 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Hystar AS", "electrolyzer_model": "Hystar 3D PEM 1.5 MW", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 1.5, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 600, "hydrogen_output_tons_per_year": 220, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Norwegian test site", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility"], "offtaker_name": "Demonstration project — no commercial offtake", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Hystar AS", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "Hystar AS", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2024, "funding_sources": ["equity", "norwegian_government"], "total_investment_decision_date": "2022", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2022", "fid_date": "2022", "construction_start_date": "2023", "commissioning_date": "2024", "construction_duration_months": 12, "current_operational_year": 2 },
+  "sources": [ { "source_id": "SRC-SP3-014", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Hystar HyPilot 1.5 MW PEM electrolysis pilot — Norway 2024", "author": "Hystar AS / Norwegian Government", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

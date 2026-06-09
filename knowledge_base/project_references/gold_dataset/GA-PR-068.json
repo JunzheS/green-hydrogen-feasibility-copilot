@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-068",
+  "project_name": "Bayern Hydrogen Hub (Germany)",
+  "alias_names": ["Bayern H2", "Bavarian Hydrogen Hub", "Bavaria Electrolyzer"],
+  "status": "planned",
+  "status_detail": "Multi-hundred MW hydrogen production network in Bavaria, Germany. Combining PEM and Alkaline electrolysis, powered by Bavarian hydro, solar, and wind. Backed by Bavarian State Government hydrogen strategy. Targeting industrial offtake for automotive, chemical, and manufacturing sectors.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "The Bayern Hydrogen Hub is a coordinated program to deploy 500+ MW of electrolysis capacity across the state of Bavaria, Germany, combining PEM and Alkaline technologies. Bavaria's industrial base (automotive, chemicals, manufacturing) represents significant hydrogen demand. The state has abundant hydroelectric capacity from the Alps and growing solar/wind resources. The hub is supported by the Bavarian State Government's hydrogen strategy and is designed as a network of interconnected production sites serving industrial clusters around Munich, Augsburg, Ingolstadt, and Nuremberg.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-024", "GA-PR-019"]
+  },
+  "location": { "country": "Germany", "region": "Bavaria", "city": "Multiple (Munich, Augsburg, Ingolstadt)", "coordinates": { "lat": 48.4, "lon": 11.0 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM+Alkaline", "technology_selection_status": "not_selected", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": null },
+  "capacity": { "electrolyzer_capacity_mw": 500, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 200000, "hydrogen_output_tons_per_year": 73000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "hydro", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected across multiple Bavarian industrial sites", "ppa_structure": "Hydroelectric PPAs from Bavarian Alpine hydro" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility", "chemicals"], "offtaker_name": "Bavarian automotive, chemical, and manufacturing industry cluster", "offtake_agreement_type": null, "h2_storage_type": "pipeline", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Bavarian State Government / Industrial Consortium", "developer_type": "consortium", "co_developers": [], "epc_contractor": null, "operations_operator": null, "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "german_federal", "bavarian_state"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2030", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-018", "source_type": "government_announcement", "source_quality_level": "A", "source_reliability_score": 5, "title": "Bavarian State Government — Hydrogen strategy and Bayern Hydrogen Hub", "author": "Bavarian State Ministry of Economic Affairs", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

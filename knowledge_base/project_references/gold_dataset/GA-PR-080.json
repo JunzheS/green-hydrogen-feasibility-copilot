@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-080",
+  "project_name": "OGF / H2 Grid Injection (Denmark/Germany)",
+  "alias_names": ["OGF H2 Injection", "H2 Grid Injection Denmark", "Gas Infrastructure H2"],
+  "status": "operational",
+  "status_detail": "Pilot project for injecting green hydrogen into the natural gas grid by OGF (Danske Gas Distributionsselskab). 1 MW PEM electrolyzer feeding H2 into the Danish gas grid at up to 10% blend. Demonstrating grid injection for power-to-grid applications. Part of Denmark's gas sector decarbonization strategy.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "OGF (Danske Gas Distributionsselskab) is operating a 1 MW PEM electrolysis pilot that injects green hydrogen into the Danish natural gas grid at up to 10% blend. The project demonstrates the technical feasibility of hydrogen grid injection for power-to-grid applications, providing a large-scale offtake pathway for hydrogen production that doesn't require dedicated industrial offtakers. Denmark is a leader in hydrogen grid injection pilots, supporting the transition of gas infrastructure for the hydrogen economy.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-007", "GA-PR-074"]
+  },
+  "location": { "country": "Denmark", "region": "Region of Southern Denmark", "city": "Esbjerg area", "coordinates": { "lat": 55.47, "lon": 8.45 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 1, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 400, "hydrogen_output_tons_per_year": 146, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected pilot with hydrogen injection into Danish natural gas grid", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "grid_injection", "secondary_applications": [], "offtaker_name": "Danish natural gas grid (up to 10% blend)", "offtake_agreement_type": "Grid injection tariff" },
+  "stakeholders": { "developer": "OGF (Danske Gas Distributionsselskab)", "developer_type": "utility", "co_developers": [], "epc_contractor": null, "operations_operator": "OGF", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2023, "funding_sources": ["equity", "danish_government"], "total_investment_decision_date": "2021", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2021", "fid_date": "2021", "construction_start_date": "2022", "commissioning_date": "2023", "current_operational_year": 3 },
+  "sources": [ { "source_id": "SRC-SP3-030", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 4, "title": "OGF hydrogen grid injection pilot — Denmark's gas grid H2 blending demonstration", "author": "OGF / Energinet", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

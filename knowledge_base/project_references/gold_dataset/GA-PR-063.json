@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-063",
+  "project_name": "Neom Green Hydrogen Company (Saudi Arabia)",
+  "alias_names": ["Neom H2", "ACWA NEOM", "NEOM Green Hydrogen 2 GW"],
+  "status": "under_construction",
+  "status_detail": "World's largest green hydrogen project at Neom, Saudi Arabia. 2.2 GW alkaline electrolysis (Thyssenkrupp Nucera). 600 tonnes/day H2 converted to 1.2 million tonnes/year green ammonia. JV: ACWA Power, Air Products, Neom. Total investment EUR 8.4B. Financial close 2023. First production expected 2026-2027.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "construction", "last_data_update": "2026-06-09",
+    "narrative_summary": "NEOM Green Hydrogen Company is the world's largest green hydrogen project, under construction in the Neom region of Saudi Arabia. A joint venture between ACWA Power, Air Products, and Neom, the project features 2.2 GW of alkaline electrolysis capacity (Thyssenkrupp Nucera Scalum modules) producing 600 tonnes of green hydrogen daily. The hydrogen is converted to 1.2 million tonnes per year of green ammonia for global export via dedicated ships. Total investment is USD 8.4 billion. Financial close was achieved in 2023 with 23 banks and investment partners. First production is expected in 2026-2027. The project demonstrates the scale potential of alkaline electrolysis when paired with world-class solar and wind resources.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-003", "GA-PR-005"]
+  },
+  "location": { "country": "Saudi Arabia", "region": "Neom", "city": "Neom (Tabuk province)", "coordinates": { "lat": 27.5, "lon": 35.5 }, "coordinates_verified": false, "region_classification": "mena" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Thyssenkrupp Nucera", "electrolyzer_model": "Scalum 20 MW modules", "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 2200, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 600000, "hydrogen_output_tons_per_year": 219000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv_wind_hybrid", "renewable_capacity_mw": 4000, "grid_connection": false, "grid_connection_detail": "Off-grid — dedicated 4 GW solar + wind farm", "ppa_structure": "Behind-the-meter dedicated renewable generation" },
+  "water": { "source_type": "seawater_desalination", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "ammonia", "secondary_applications": ["export"], "offtaker_name": "Air Products (global green ammonia offtake)", "offtake_agreement_type": "Long-term offtake agreement with Air Products" },
+  "stakeholders": { "developer": "NEOM Green Hydrogen Company", "developer_type": "consortium", "co_developers": ["ACWA Power", "Air Products", "NEOM"], "epc_contractor": "Thyssenkrupp Nucera / Air Products (integrated)", "operations_operator": "Air Products", "financial_advisors": ["23 international banks"], "lenders": ["multiple_banks"] },
+  "financial": { "total_capex_eur": 8400000000, "capex_per_kw_eur": 3818, "capex_per_kw_method": "calculated_total_div_mw", "capex_confidence": "official", "capex_year_reference": 2023, "funding_sources": ["equity", "project_finance_debt"], "total_investment_decision_date": "2023", "lcoh_eur_per_kg": 1.5 },
+  "timeline": { "announcement_date": "2020-07", "fid_date": "2023", "construction_start_date": "2023", "commissioning_date": "2027", "construction_duration_months": 48, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-013", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "NEOM Green Hydrogen Company — financial close for world's largest green H2 project", "author": "NEOM / ACWA Power / Air Products", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-079",
+  "project_name": "Valorem Hydrogen / Green H2 Aquitaine (France)",
+  "alias_names": ["Valorem H2", "Green H2 Aquitaine", "Valorem Aquitaine"],
+  "status": "planned",
+  "status_detail": "10 MW PEM electrolysis project in Nouvelle-Aquitaine, France, by Valorem. Co-located with 30 MW wind farm. Producing green hydrogen for local industrial and mobility offtake. Part of Valorem's integrated renewable energy strategy for hydrogen.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "Valorem, a French renewable energy developer, is developing a 10 MW PEM electrolysis project in Nouvelle-Aquitaine co-located with a 30 MW wind farm. The project will produce green hydrogen for local industrial and mobility customers in southwestern France. Valorem is one of several French independent renewable developers entering the hydrogen sector with co-located wind/H2 projects, demonstrating the integration potential of renewable energy and electrolysis.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-011", "GA-PR-013", "GA-PR-075"]
+  },
+  "location": { "country": "France", "region": "Nouvelle-Aquitaine", "city": "Nouvelle-Aquitaine region", "coordinates": { "lat": 44.8, "lon": -0.5 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 10, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 4000, "hydrogen_output_tons_per_year": 1460, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "onshore_wind", "renewable_capacity_mw": 30, "grid_connection": true, "grid_connection_detail": "Grid-connected with 30 MW dedicated wind farm", "ppa_structure": "Behind-the-meter Valorem wind farm" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility"], "offtaker_name": "Local industrial and mobility customers in Nouvelle-Aquitaine", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Valorem SA", "developer_type": "renewable_developer", "co_developers": [], "epc_contractor": null, "operations_operator": "Valorem", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2024", "fid_date": null, "construction_start_date": null, "commissioning_date": "2028", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-029", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "Valorem 10 MW PEM green hydrogen project — co-located wind-to-H2 in Aquitaine, France", "author": "Valorem SA / industry press", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

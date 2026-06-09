@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-065",
+  "project_name": "PKN Orlen Hydrogen (Poland)",
+  "alias_names": ["Orlen H2", "PKN Orlen Plock", "Orlen Alkaline"],
+  "status": "operational",
+  "status_detail": "Green hydrogen production at PKN Orlen's Plock refinery, Poland. 5 MW alkaline electrolysis. Operational since 2021. Producing green hydrogen for refinery operations. Part of Orlen's broader hydrogen strategy targeting 1 GW of electrolysis capacity by 2030.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "PKN Orlen has deployed green hydrogen production at its Plock refinery in Poland, starting with a 5 MW alkaline electrolysis plant commissioned in 2021. The plant produces green hydrogen for the refinery's hydrotreating and desulfurization operations. Orlen is Poland's largest energy company and is developing a multi-GW hydrogen pipeline as part of its strategy to reach 1 GW of installed electrolysis capacity by 2030. The Plock project provides operational experience with alkaline electrolysis in a refinery environment and serves as the foundation for Orlen's larger planned hydrogen projects in Poland and the Baltic region.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-002", "GA-PR-006"]
+  },
+  "location": { "country": "Poland", "region": "Masovia", "city": "Plock", "coordinates": { "lat": 52.55, "lon": 19.70 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 5, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 2000, "hydrogen_output_tons_per_year": 730, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Orlen Plock refinery", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": [], "offtaker_name": "PKN Orlen Plock refinery (captive use)", "offtake_agreement_type": "Internal supply" },
+  "stakeholders": { "developer": "PKN Orlen SA", "developer_type": "oil_and_gas", "co_developers": [], "epc_contractor": null, "operations_operator": "PKN Orlen", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2021, "funding_sources": ["equity"], "total_investment_decision_date": "2019", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2019", "fid_date": "2019", "construction_start_date": "2020", "commissioning_date": "2021", "current_operational_year": 5 },
+  "sources": [ { "source_id": "SRC-SP3-015", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 4, "title": "PKN Orlen — hydrogen strategy and Plock electrolysis project", "author": "PKN Orlen SA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

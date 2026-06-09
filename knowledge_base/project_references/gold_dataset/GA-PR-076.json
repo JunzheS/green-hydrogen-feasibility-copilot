@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-076",
+  "project_name": "HyDeal Hydrogen Ambition / Asturias (Spain)",
+  "alias_names": ["HyDeal Asturias", "DH2 Energy Asturias", "Spanish Hydrogen Valley"],
+  "status": "planned",
+  "status_detail": "Large-scale green hydrogen cluster in Asturias, Spain. 1 GW+ alkaline electrolysis for steel (ArcelorMittal), ammonia (Fertiberia), and other industrial offtake. Follow-on from HyDeal Espana (GA-PR-005) with more concrete project structure. 2030 COD target.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "HyDeal Hydrogen Ambition is the next phase of the HyDeal Espana initiative (GA-PR-005), focused on developing a 1 GW+ green hydrogen cluster in Asturias, northern Spain. The project supplies hydrogen to ArcelorMittal's Asturias steel plant for H2-DRI steelmaking and to Fertiberia for green ammonia production. DH2 Energy leads the project development with support from Enagas, ArcelorMittal, and regional government. The project leverages Spain's abundant solar resources and existing industrial hydrogen demand in the Asturias region.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-005", "GA-PR-015", "GA-PR-062"]
+  },
+  "location": { "country": "Spain", "region": "Asturias", "city": "Gijon / Aviles", "coordinates": { "lat": 43.55, "lon": -5.92 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 1000, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 400000, "hydrogen_output_tons_per_year": 146000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv", "renewable_capacity_mw": 2500, "grid_connection": true, "grid_connection_detail": "Grid-connected in Asturias with dedicated 2.5 GW solar PV", "ppa_structure": "Dedicated solar PV PPAs" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "steel", "secondary_applications": ["ammonia"], "offtaker_name": "ArcelorMittal Asturias (steel), Fertiberia (ammonia)", "offtake_agreement_type": "Long-term offtake MOUs" },
+  "stakeholders": { "developer": "DH2 Energy / HyDeal Consortium", "developer_type": "consortium", "co_developers": ["ArcelorMittal", "Fertiberia", "Enagas"], "epc_contractor": null, "operations_operator": null, "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "spanish_government", "eu_ipcei"], "total_investment_decision_date": null, "lcoh_eur_per_kg": 1.5 },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2031", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-026", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "HyDeal Asturias — 1 GW green hydrogen cluster for steel and ammonia decarbonization", "author": "DH2 Energy / ArcelorMittal / Fertiberia", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

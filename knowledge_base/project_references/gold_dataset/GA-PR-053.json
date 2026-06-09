@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-053",
+  "project_name": "P2X Solutions Joensuu (Finland)",
+  "alias_names": ["P2X Joensuu", "Joensuu Green H2 40 MW", "P2X Joensuu e-Methanol"],
+  "status": "planned", "status_detail": "40 MW pressurized alkaline electrolysis plant in Joensuu, Finland, for e-methanol production. Developed by P2X Solutions. Environmental permit legally binding January 2026. Sunfire technology selected. FEED study underway. Operations target ~2029.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "P2X Solutions' Joensuu project is a 40 MW pressurized alkaline electrolysis plant planned in Joensuu, Finland. Following the successful commissioning of the 20 MW Harjavalta plant (GA-PR-052), this project is the next step in P2X Solutions' strategy to reach 1 GW of green hydrogen capacity. The plant will produce green hydrogen for e-methanol synthesis using captured CO2, targeting the shipping fuel market. Sunfire has been selected to supply the pressurized alkaline electrolyzer technology. The environmental permit was approved and became legally binding in January 2026. Operations are targeted for approximately 2029.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-052", "GA-PR-054"]
+  },
+  "location": { "country": "Finland", "region": "North Karelia", "city": "Joensuu", "coordinates": { "lat": 62.60, "lon": 29.74 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Sunfire GmbH", "electrolyzer_model": "Sunfire pressurized alkaline", "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 40, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 19200, "hydrogen_output_tons_per_year": 7000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected with Finnish renewable energy PPAs", "ppa_structure": null },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "methanol", "secondary_applications": ["export"], "offtaker_name": "Shipping fuel market (e-methanol), industrial customers", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "P2X Solutions Oy", "developer_type": "startup", "co_developers": ["Sunfire GmbH", "Alpiq"], "epc_contractor": "Sunfire GmbH (FEED)", "operations_operator": "P2X Solutions", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "finnish_government"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2024", "fid_date": null, "construction_start_date": null, "commissioning_date": "2029", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-003", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "P2X Solutions 40 MW Joensuu e-methanol project — permit approved 2026", "author": "P2X Solutions / Sunfire / FuelCellChina", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

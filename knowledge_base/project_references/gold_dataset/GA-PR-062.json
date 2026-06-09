@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-062",
+  "project_name": "ArcelorMittal Ecocem / Green H2 France (France)",
+  "alias_names": ["ArcelorMittal Dunkirk H2", "Ecocem France", "Dunkirk Green Steel H2"],
+  "status": "planned",
+  "status_detail": "ArcelorMittal developing green hydrogen supply for its Dunkirk steel plant. Part of the ZIBAC decarbonization program. Multi-hundred MW electrolysis capacity planned to supply H2-DRI steelmaking at Dunkirk. Technology TBD. Partnership with H2V (GA-PR-015) and DH2 Energy (GA-PR-031). 2030 COD target.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "ArcelorMittal is developing green hydrogen supply infrastructure for its Dunkirk steel plant in northern France, as part of the ZIBAC (Zone Industrielle Bas Carbone) decarbonization program. The company is working with project developers H2V Industry (GA-PR-015) and DH2 Energy (GA-PR-031) to secure multi-hundred MW of green hydrogen supply for converting its Dunkirk steel production to H2-DRI technology. The hydrogen would replace natural gas in the steelmaking process. This is one of the largest planned green hydrogen offtake agreements in Europe and is critical for the decarbonization of the European steel industry. Target COD is 2030.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-015", "GA-PR-031", "GA-PR-022"]
+  },
+  "location": { "country": "France", "region": "Hauts-de-France", "city": "Dunkerque", "coordinates": { "lat": 51.04, "lon": 2.38 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM+Alkaline", "technology_selection_status": "not_selected", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": null },
+  "capacity": { "electrolyzer_capacity_mw": 500, "electrolyzer_capacity_mw_source": "estimated", "hydrogen_output_kg_per_day": 200000, "hydrogen_output_tons_per_year": 73000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv_wind_hybrid", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Dunkirk steelworks", "ppa_structure": "Multi-sourced renewable PPAs" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "steel", "secondary_applications": [], "offtaker_name": "ArcelorMittal Dunkirk steel plant (captive H2-DRI supply)", "offtake_agreement_type": "Long-term offtake MOUs with H2V and DH2 Energy" },
+  "stakeholders": { "developer": "ArcelorMittal / ZIBAC consortium", "developer_type": "chemical_company", "co_developers": ["ArcelorMittal", "H2V Industry", "DH2 Energy"], "epc_contractor": null, "operations_operator": "ArcelorMittal", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "french_state_subsidy", "eu_ipcei"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2030", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-012", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "ArcelorMittal ZIBAC Dunkirk — green hydrogen supply agreements for decarbonized steel", "author": "ArcelorMittal / EIT InnoEnergy", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

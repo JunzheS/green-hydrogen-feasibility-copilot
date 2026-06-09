@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-067",
+  "project_name": "Dolphyn Hydrogen / ERM (UK / Offshore)",
+  "alias_names": ["ERM Dolphyn", "Dolphyn UK", "UK Offshore H2"],
+  "status": "planned",
+  "status_detail": "Offshore green hydrogen production combining floating wind with PEM electrolysis. Developed by ERM in the UK. Demonstrator project targeting 10 MW floating H2 turbine. Leveraging UK offshore wind supply chain and North Sea oil & gas expertise for hydrogen production at sea.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "ERM-Dolphyn is a pioneering UK project developing floating offshore wind turbines with integrated PEM electrolysis, producing green hydrogen directly at sea. The project targets a 10 MW demonstrator combining a floating wind turbine with onboard desalination and PEM electrolysis, delivering hydrogen via pipeline to shore. The project leverages the UK's world-class offshore wind resources and North Sea oil & gas engineering expertise. If successful, the Dolphyn concept could enable large-scale offshore hydrogen production at lower cost than separate wind + electrolysis configurations.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-055"]
+  },
+  "location": { "country": "United Kingdom", "region": "Scotland (Offshore)", "city": "Offshore North Sea", "coordinates": { "lat": 57.0, "lon": -2.0 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 10, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 4000, "hydrogen_output_tons_per_year": 1460, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": 10, "grid_connection": false, "grid_connection_detail": "Floating offshore wind turbine with integrated electrolysis. No grid connection.", "ppa_structure": "Behind-the-meter floating wind turbine" },
+  "water": { "source_type": "seawater_desalination", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "export", "secondary_applications": ["industrial_heat"], "offtaker_name": "North Sea offshore gas platform substitution, UK industrial users (pipeline to shore)", "offtake_agreement_type": null, "h2_storage_type": "pipeline", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "ERM / Dolphyn Hydrogen Ltd", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "ERM", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "uk_government"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2021", "fid_date": null, "construction_start_date": null, "commissioning_date": "2028", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-017", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "ERM Dolphyn — floating offshore wind-to-hydrogen demonstration project UK", "author": "ERM / UK Government", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

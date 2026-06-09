@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-070",
+  "project_name": "Siemens Energy Gigafactory (Berlin)",
+  "alias_names": ["Siemens Energy Berlin", "Berlin H2 Gigafactory", "Siemens PEM Manufacturing"],
+  "status": "operational",
+  "status_detail": "Siemens Energy's PEM electrolyzer gigafactory in Berlin-Moabit. 3 GW annual manufacturing capacity. Operational since 2024. Producing Silyzer 300 PEM modules. One of the world's largest PEM electrolyzer factories. Supplying Normand'Hy and other major European projects.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "Siemens Energy's PEM electrolyzer gigafactory in Berlin-Moabit is one of the world's largest electrolyzer manufacturing facilities, with 3 GW of annual production capacity. Operational since 2024, it produces the Silyzer 300 PEM stack modules used in major European hydrogen projects including Normand'Hy (GA-PR-001) and HGHH (GA-PR-004). The factory represents a EUR 3 billion investment from Siemens Energy into the hydrogen economy and is a cornerstone of Europe's electrolyzer manufacturing capacity.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-001", "GA-PR-004", "GA-PR-024"]
+  },
+  "location": { "country": "Germany", "region": "Berlin", "city": "Berlin (Moabit)", "coordinates": { "lat": 52.53, "lon": 13.33 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Siemens Energy AG", "electrolyzer_model": "Silyzer 300 PEM modules", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 3000, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": null, "hydrogen_output_tons_per_year": null, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected manufacturing facility in Berlin", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": [], "offtaker_name": "European PEM electrolysis projects (manufacturing plant)", "offtake_agreement_type": "OEM supply contracts" },
+  "stakeholders": { "developer": "Siemens Energy AG", "developer_type": "utility", "co_developers": [], "epc_contractor": null, "operations_operator": "Siemens Energy", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2024, "funding_sources": ["equity"], "total_investment_decision_date": "2022", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2021", "fid_date": "2022", "construction_start_date": "2022", "commissioning_date": "2024", "current_operational_year": 2 },
+  "sources": [ { "source_id": "SRC-SP3-020", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Siemens Energy Berlin PEM gigafactory — 3 GW annual capacity, operational 2024", "author": "Siemens Energy AG", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

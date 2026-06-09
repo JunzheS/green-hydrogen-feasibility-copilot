@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-078",
+  "project_name": "Linde Engineering Gigafactory (Austria/Germany)",
+  "alias_names": ["Linde Gigafactory", "Linde PEM Manufacturing", "Linde Electrolyzer Production"],
+  "status": "under_construction",
+  "status_detail": "Linde Engineering's large-scale PEM electrolyzer manufacturing facility in Austria. Producing ITM Power TRIDENT stacks under license. Annual capacity 1.5 GW. Supplying REFHYNE II (GA-PR-008) and other major European projects.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "construction", "last_data_update": "2026-06-09",
+    "narrative_summary": "Linde Engineering has established a major PEM electrolyzer manufacturing facility in Austria/Europe to produce ITM Power TRIDENT stacks under license. The facility has an annual capacity of 1.5 GW and is critical for meeting European electrolyzer demand. The stacks produced here are used in major projects including REFHYNE II (GA-PR-008) and other large-scale PEM installations. Linde's entry into PEM stack manufacturing diversifies the global supply base beyond Siemens Energy and ITM Power.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-008", "GA-PR-070"]
+  },
+  "location": { "country": "Austria", "region": "Upper Austria", "city": "Schaerding / Linz area", "coordinates": { "lat": 48.45, "lon": 13.85 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Linde Engineering / ITM Power", "electrolyzer_model": "ITM Power TRIDENT stacks", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 1500, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": null, "hydrogen_output_tons_per_year": null, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected manufacturing facility", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": [], "offtaker_name": "European PEM electrolysis projects (manufacturing capacity)", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Linde Engineering GmbH", "developer_type": "industrial_gas", "co_developers": ["ITM Power"], "epc_contractor": null, "operations_operator": "Linde Engineering", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": "2023", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": "2023", "construction_start_date": "2024", "commissioning_date": "2026", "construction_duration_months": 24, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-028", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Linde Engineering PEM electrolyzer manufacturing facility — ITM Power licensing agreement", "author": "Linde Engineering GmbH / ITM Power PLC", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

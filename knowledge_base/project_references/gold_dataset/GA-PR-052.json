@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-052",
+  "project_name": "P2X Solutions Harjavalta (Finland)",
+  "alias_names": ["P2X Harjavalta", "Finland 20 MW H2", "Harjavalta Green H2"],
+  "status": "operational", "status_detail": "Finland's first industrial-scale green hydrogen plant at Harjavalta. 20 MW pressurized alkaline electrolysis (Sunfire). Operational since February 2025. Produces 400 kg/h green hydrogen. Can also produce synthetic methane. Total investment ~EUR 70M.",
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "P2X Solutions' Harjavalta plant is Finland's first industrial-scale green hydrogen facility, located in Harjavalta, Finland. Commissioned in February 2025 and officially inaugurated in March 2025, the 20 MW pressurized alkaline electrolysis plant (Sunfire technology) produces approximately 400 kg of green hydrogen per hour for industrial applications. The plant can also produce synthetic methane using captured CO2, making it a pioneer in power-to-X applications in the Nordic region. The total investment was approximately EUR 70 million, with EUR 36 million in Finnish government and Climate Fund support. P2X Solutions plans to expand to 1 GW of total capacity over the next decade, with a 40 MW plant in Joensuu and up to 100 MW in Oulu under development.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-053", "GA-PR-054"]
+  },
+  "location": { "country": "Finland", "region": "Satakunta", "city": "Harjavalta", "coordinates": { "lat": 61.32, "lon": 22.14 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Sunfire GmbH", "electrolyzer_model": "Sunfire pressurized alkaline 20 MW", "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 20, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 9600, "hydrogen_output_tons_per_year": 3500, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "hydro", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Harjavalta industrial park. Finnish hydroelectric grid.", "ppa_structure": null },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "export", "secondary_applications": ["industrial_heat"], "offtaker_name": "Industrial users in Harjavalta region, synthetic methane production", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "P2X Solutions Oy", "developer_type": "startup", "co_developers": ["Sunfire GmbH", "Alpiq"], "epc_contractor": "Sunfire GmbH", "operations_operator": "P2X Solutions", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 70000000, "capex_per_kw_eur": 3500, "capex_per_kw_method": "stated", "capex_confidence": "official", "capex_year_reference": 2025, "funding_sources": ["equity", "finnish_government", "finnish_climate_fund"], "total_investment_decision_date": "2022", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2021", "fid_date": "2022", "construction_start_date": "2022", "commissioning_date": "2025-02", "construction_duration_months": 30, "current_operational_year": 1 },
+  "sources": [ { "source_id": "SRC-SP3-002", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Sunfire: P2X Solutions Harjavalta — Finland's first industrial-scale green hydrogen plant online 2025", "author": "P2X Solutions / Sunfire / HydrogenOne", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

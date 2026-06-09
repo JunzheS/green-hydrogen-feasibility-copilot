@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-055",
+  "project_name": "H2 Green Hydrogen / Lhyfe Offshore Pilot (France)",
+  "alias_names": ["Lhyfe SEM-REV Offshore", "Lhyfe Le Croisic", "Offshore H2 Pilot"],
+  "status": "operational", "status_detail": "World's first offshore green hydrogen production pilot at Centrale Nantes SEM-REV test site, Le Croisic, Atlantic France. 1 MW PEM electrolyzer on a floating platform. Demonstrated seawater-to-hydrogen production at sea. Proved feasibility of offshore hydrogen production. Successful pilot completed 2023. Led to commercial offshore project development in Belgium and Norway.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "Lhyfe's offshore hydrogen pilot at the Centrale Nantes SEM-REV test site off Le Croisic, France, was the world's first offshore green hydrogen production pilot. The 1 MW PEM electrolyzer was installed on a floating platform and successfully demonstrated seawater-to-hydrogen production at sea, using desalination integrated with PEM electrolysis. The pilot, completed in 2023, proved the technical feasibility of offshore hydrogen production and provided critical data on offshore electrolyzer operation in marine conditions. The success of this pilot directly led to Lhyfe's commercial offshore hydrogen project development in Ostend, Belgium and Norway.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-011", "GA-PR-009"]
+  },
+  "location": { "country": "France", "region": "Pays-de-la-Loire", "city": "Le Croisic (Offshore)", "coordinates": { "lat": 47.29, "lon": -2.51 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 1, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 400, "hydrogen_output_tons_per_year": 150, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": null, "grid_connection": false, "grid_connection_detail": "Offshore floating platform. Self-powered via SEM-REV test site infrastructure.", "ppa_structure": null },
+  "water": { "source_type": "seawater_desalination", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": [], "offtaker_name": "Pilot demonstration — no commercial offtake", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Lhyfe SAS / Centrale Nantes", "developer_type": "startup", "co_developers": ["Centrale Nantes", "CNRS"], "epc_contractor": null, "operations_operator": "Lhyfe", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2022, "funding_sources": ["equity", "eu_horizon_2020"], "total_investment_decision_date": "2020", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2020", "fid_date": "2020", "construction_start_date": "2021", "commissioning_date": "2022", "construction_duration_months": 12, "current_operational_year": 4 },
+  "sources": [ { "source_id": "SRC-SP3-005", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Lhyfe launches world's first offshore green hydrogen production pilot — SEM-REV, Le Croisic", "author": "Lhyfe SAS / Centrale Nantes", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

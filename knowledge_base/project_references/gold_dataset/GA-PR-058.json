@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-058",
+  "project_name": "Iberdrola Green H2 Spain 100 MW",
+  "alias_names": ["Iberdrola Toledo H2", "Iberdrola Castilla La Mancha H2", "Iberdrola Puertollano Expansion"],
+  "status": "planned", "status_detail": "100 MW green hydrogen project in Castilla-La Mancha, Spain, by Iberdrola. PEM electrolysis. Co-located with 200 MW solar PV. Targeting ammonia and industrial offtake. Follow-on from the operational 20 MW Puertollano plant. FID expected 2026.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "Iberdrola is developing a 100 MW PEM electrolysis project in Castilla-La Mancha, Spain, as a scale-up of its successful 20 MW Puertollano plant (GA-PR-006). The project will be co-located with 200 MW of new solar PV capacity and will produce green hydrogen primarily for ammonia and industrial offtake. This project is part of Iberdrola's EUR 3 billion green hydrogen pipeline, targeting 800 MW of installed electrolysis capacity by 2027. The Puertollano reference provides critical operational data, reducing technology risk for the scale-up.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-006", "GA-PR-035"]
+  },
+  "location": { "country": "Spain", "region": "Castilla-La Mancha", "city": "Toledo area", "coordinates": { "lat": 39.86, "lon": -4.03 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "announced", "electrolyzer_manufacturer": "Nel Hydrogen", "electrolyzer_model": "Nel PEM stacks", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 100, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 40000, "hydrogen_output_tons_per_year": 14600, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv", "renewable_capacity_mw": 200, "grid_connection": true, "grid_connection_detail": "Grid-connected with 200 MW dedicated solar PV plant", "ppa_structure": "Iberdrola-owned solar PV behind-the-meter" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "ammonia", "secondary_applications": ["refinery"], "offtaker_name": "Industrial ammonia and refinery customers", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Iberdrola SA", "developer_type": "utility", "co_developers": [], "epc_contractor": null, "operations_operator": "Iberdrola", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 150000000, "capex_per_kw_eur": 1500, "capex_per_kw_method": "estimated", "capex_confidence": "analyst_estimate", "capex_year_reference": 2025, "funding_sources": ["equity", "spanish_government"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2028", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-008", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Iberdrola hydrogen strategy — 800 MW target by 2027, Puertollano expansion", "author": "Iberdrola SA / IEA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

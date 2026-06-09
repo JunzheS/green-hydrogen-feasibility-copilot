@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-075",
+  "project_name": "Rochelle Green H2 Park (France)",
+  "alias_names": ["La Rochelle H2", "Green H2 Park Rochelle", "Atlantique H2"],
+  "status": "operational",
+  "status_detail": "Green hydrogen production and distribution hub at La Rochelle, France. 5 MW PEM electrolysis for industrial, maritime, and mobility offtake. Part of the La Rochelle Zero Carbon Territory initiative. Operational since 2023. Supporting port decarbonization with hydrogen for cranes, trucks, and shipping.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "The La Rochelle Green H2 Park is a 5 MW PEM electrolysis facility in the port city of La Rochelle, France, operational since 2023. The project produces green hydrogen for port equipment, industrial trucks, and potentially for shipping fuel as part of the broader La Rochelle Zero Carbon Territory program. The project demonstrates the integration of green hydrogen into port operations and logistics.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-011", "GA-PR-013", "GA-PR-037"]
+  },
+  "location": { "country": "France", "region": "Nouvelle-Aquitaine", "city": "La Rochelle", "coordinates": { "lat": 46.16, "lon": -1.15 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 5, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 2000, "hydrogen_output_tons_per_year": 730, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at La Rochelle port area", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "mobility", "secondary_applications": ["industrial_heat"], "offtaker_name": "La Rochelle port authority, local logistics and industrial users", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "La Rochelle Zero Carbon Territory / Urban Community", "developer_type": "consortium", "co_developers": [], "epc_contractor": null, "operations_operator": "Local authority", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2023, "funding_sources": ["equity", "french_state_subsidy"], "total_investment_decision_date": "2021", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2021", "fid_date": "2021", "construction_start_date": "2022", "commissioning_date": "2023", "current_operational_year": 3 },
+  "sources": [ { "source_id": "SRC-SP3-025", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 4, "title": "La Rochelle Green H2 Park — port decarbonization with PEM electrolysis", "author": "La Rochelle Urban Community / ADEME", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-057",
+  "project_name": "TotalEnergies Zeeland Green H2 (Netherlands)",
+  "alias_names": ["Zeeland H2 JV", "TotalEnergies Air Liquide Zeeland", "250 MW Zeeland"],
+  "status": "planned", "status_detail": "250 MW green hydrogen project in Zeeland, Netherlands, developed by TotalEnergies and Air Liquide. 50/50 JV. PEM electrolysis. Located near TotalEnergies Zeeland refinery. Target COD 2029. Total investment expected ~EUR 700M. IPCEI candidate.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "TotalEnergies and Air Liquide are developing a 250 MW PEM electrolysis project in Zeeland, Netherlands, as a 50/50 joint venture. Located near TotalEnergies' Zeeland refinery, the project will produce green hydrogen for refining operations, reducing CO2 emissions by approximately 300,000 tonnes per year. Total investment is expected to be in the range of EUR 700 million, with IPCEI funding under consideration. The project represents the second major collaboration between TotalEnergies and Air Liquide after the ELYgator 200 MW project (GA-PR-017), demonstrating the scalability of their partnership model.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-017", "GA-PR-003"]
+  },
+  "location": { "country": "Netherlands", "region": "Zeeland", "city": "Terneuzen", "coordinates": { "lat": 51.34, "lon": 3.82 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 250, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 100000, "hydrogen_output_tons_per_year": 36500, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Zeeland industrial zone", "ppa_structure": "Offshore wind PPAs" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": [], "offtaker_name": "TotalEnergies Zeeland refinery", "offtake_agreement_type": "Internal supply via JV" },
+  "stakeholders": { "developer": "TotalEnergies SE / Air Liquide (50/50 JV)", "developer_type": "consortium", "co_developers": ["TotalEnergies", "Air Liquide"], "epc_contractor": null, "operations_operator": "Zeeland H2 JV", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 700000000, "capex_per_kw_eur": 2800, "capex_per_kw_method": "estimated", "capex_confidence": "analyst_estimate", "capex_year_reference": 2025, "funding_sources": ["equity", "eu_ipcei"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2025-02", "fid_date": null, "construction_start_date": null, "commissioning_date": "2029", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-007", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "TotalEnergies and Air Liquide join forces to decarbonise refineries with green hydrogen — EUR 1B+ program", "author": "TotalEnergies SE / Air Liquide", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

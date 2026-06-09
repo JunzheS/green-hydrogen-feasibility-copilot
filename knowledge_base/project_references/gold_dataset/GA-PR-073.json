@@ -1,0 +1,21 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-073",
+  "project_name": "Morbihan Hydrogen Valley (France)",
+  "alias_names": ["Morbihan H2 Valley", "Brittany H2 Valley", "Bretagne H2"],
+  "status": "under_construction", "status_detail": "Green hydrogen production and distribution network in the Morbihan region, Brittany, France. Multiple small-scale PEM electrolyzers totaling 10 MW. Supplying industrial and mobility offtake. Part of the French Hydrogen Valleys program.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "construction", "last_data_update": "2026-06-09",
+    "narrative_summary": "The Morbihan Hydrogen Valley in Brittany, France, is deploying 10 MW of distributed PEM electrolysis capacity across multiple sites to supply green hydrogen for local industrial and mobility applications. The project is part of France's Hydrogen Valleys program and benefits from Brittany's growing offshore wind and solar resources. The valley model demonstrates decentralized hydrogen production for industrial regions, reducing the need for hydrogen transport infrastructure.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-012", "GA-PR-050"]
+  },
+  "location": { "country": "France", "region": "Brittany", "city": "Morbihan (multiple sites)", "coordinates": { "lat": 47.75, "lon": -3.0 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 10, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 4000, "hydrogen_output_tons_per_year": 1460, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Multiple grid connections at distributed production sites", "ppa_structure": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility"], "offtaker_name": "Local industrial and mobility customers in Brittany", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Brittany Regional Council / Industrial consortium", "developer_type": "consortium", "co_developers": [], "epc_contractor": null, "operations_operator": null, "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "french_state_subsidy"], "total_investment_decision_date": "2024", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2022", "fid_date": "2024", "construction_start_date": "2024", "commissioning_date": "2027", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-023", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "Morbihan Hydrogen Valley — Brittany's decentralized green hydrogen network", "author": "ADEME / Brittany Regional Council", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

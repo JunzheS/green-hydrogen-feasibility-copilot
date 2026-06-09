@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-060",
+  "project_name": "Uniper Green Hydrogen (Netherlands/Germany)",
+  "alias_names": ["Uniper H2 Maasvlakte", "Uniper Electrolyzer NL", "Uniper 100 MW H2"],
+  "status": "planned", "status_detail": "100 MW electrolysis project at Uniper's Maasvlakte power plant site, Rotterdam. Part of the H2-Fifty project. Alkaline electrolysis technology under evaluation. 2030 target COD.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "Uniper is developing a 100 MW green hydrogen project at its Maasvlakte power plant site in the Port of Rotterdam, Netherlands, as part of the broader H2-Fifty initiative. The project leverages the existing power plant infrastructure, including grid connection and cooling water, to reduce costs. The hydrogen will be supplied to industrial customers in the Rotterdam port area. Uniper is evaluating alkaline electrolysis technology for the project. Target commercial operation is 2030. Uniper is also involved in hydrogen projects in Germany, including the world's first coal-to-hydrogen conversion at its Wilhelmshaven site.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-003", "GA-PR-017", "GA-PR-020"]
+  },
+  "location": { "country": "Netherlands", "region": "South Holland", "city": "Rotterdam (Maasvlakte)", "coordinates": { "lat": 51.96, "lon": 4.04 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "not_selected", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 100, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 40000, "hydrogen_output_tons_per_year": 14600, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Uniper Maasvlakte power plant site. Reusing existing infrastructure.", "ppa_structure": "Offshore wind PPAs" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": [], "offtaker_name": "Industrial users in Rotterdam port area", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Uniper SE", "developer_type": "utility", "co_developers": [], "epc_contractor": null, "operations_operator": "Uniper", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2030", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP3-010", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "Uniper H2-Fifty 100 MW electrolysis project at Maasvlakte Rotterdam", "author": "Uniper SE / industry media", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}
