@@ -56,7 +56,7 @@ if bd:
                  column_config={"EUR/kW": st.column_config.NumberColumn(format="%.0f"),
                                 "EUR M": st.column_config.NumberColumn(format="%.1f"),
                                 "%": st.column_config.NumberColumn(format="%.1f%%")})
-    st.bar_chart(pd.DataFrame({"Cat": [r["category"] for r in rows], "EUR M": [r["eur_m"] for r in rows]}).set_index("Cat"))
+    st.bar_chart(pd.DataFrame({"Category": [r["Category"] for r in rows], "EUR M": [r["EUR M"] for r in rows]}).set_index("Category"))
 
 st.divider()
 
