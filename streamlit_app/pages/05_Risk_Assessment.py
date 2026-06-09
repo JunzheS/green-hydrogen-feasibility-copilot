@@ -111,3 +111,9 @@ for r in (consequences if consequences else top[:10]):
         st.markdown(r.get('description','')[:300])
         if r.get("mitigation"): st.markdown(f"**Mitigation:** {r['mitigation'][:250]}")
         if r.get("reference_projects"): st.caption(f"Evidence: {', '.join(r['reference_projects'][:4])}")
+
+st.divider()
+st.markdown("""<div style="display:flex;gap:16px;font-size:0.9rem;">
+<a href='/Assessment_Report' target='_self' style="color:#2E7D32;">← Assessment Report</a>
+<a href='/Contradiction_Detection' target='_self' style="color:#2E7D32;">Agent Collaboration Analysis →</a>
+</div>""", unsafe_allow_html=True)

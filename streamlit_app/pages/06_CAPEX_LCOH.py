@@ -89,3 +89,9 @@ if tornado:
 if lcoh.get("data_quality_note"):
     st.warning(lcoh["data_quality_note"][:200])
 st.caption("LCOH is CLASS D (preliminary); OPEX Library not yet populated.")
+
+st.divider()
+st.markdown("""<div style="display:flex;gap:16px;font-size:0.9rem;">
+<a href='/Assessment_Report' target='_self' style="color:#2E7D32;">← Assessment Report</a>
+<a href='/Reference_Projects' target='_self' style="color:#2E7D32;">Reference Projects →</a>
+</div>""", unsafe_allow_html=True)
