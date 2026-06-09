@@ -1,8 +1,9 @@
 """Enterprise theme — professional green, large fonts, consulting aesthetic."""
 import streamlit as st
 
+
 def apply_sidebar():
-    """Shared sidebar navigation for all pages (replaces Streamlit auto-nav)."""
+    """Shared sidebar navigation for all pages — SPA navigation via st.page_link."""
     # ── Session recovery: restore assessment if lost on page navigation ──
     if not st.session_state.get("report"):
         history = st.session_state.get("history") or []
@@ -20,14 +21,14 @@ def apply_sidebar():
     st.sidebar.markdown("Multi-Agent Decision Platform")
     st.sidebar.divider()
     st.sidebar.markdown("**Workflow**")
-    st.sidebar.markdown("<a href='/' target='_self'>- Home</a>", unsafe_allow_html=True)
-    st.sidebar.markdown("<a href='/Project_Input' target='_self'>- Project Input</a>", unsafe_allow_html=True)
-    st.sidebar.markdown("<a href='/Assessment_Report' target='_self'>- Assessment Report</a>", unsafe_allow_html=True)
-    st.sidebar.markdown("<a href='/Risk_Assessment' target='_self'>- Risk Dashboard</a>", unsafe_allow_html=True)
-    st.sidebar.markdown("<a href='/CAPEX_LCOH' target='_self'>- CAPEX & LCOH</a>", unsafe_allow_html=True)
-    st.sidebar.markdown("<a href='/Assessment_History' target='_self'>- History</a>", unsafe_allow_html=True)
+    st.sidebar.page_link("app.py", label="Home")
+    st.sidebar.page_link("pages/01_Project_Input.py", label="Project Input")
+    st.sidebar.page_link("pages/02_Assessment_Report.py", label="Assessment Report")
+    st.sidebar.page_link("pages/05_Risk_Assessment.py", label="Risk Dashboard")
+    st.sidebar.page_link("pages/06_CAPEX_LCOH.py", label="CAPEX & LCOH")
+    st.sidebar.page_link("pages/08_Assessment_History.py", label="History")
     st.sidebar.markdown("**Information**")
-    st.sidebar.markdown("<a href='/Why_This_Matters' target='_self'>- Why This Matters</a>", unsafe_allow_html=True)
+    st.sidebar.page_link("pages/99_Why_This_Matters.py", label="Why This Matters")
     st.sidebar.divider()
     if st.session_state.get("report"):
         r, pm = st.session_state["report"], st.session_state["report"].get("pm_review", {})
@@ -39,7 +40,11 @@ def apply_sidebar():
         st.sidebar.markdown(f"<span style='background:{gc.get(gate,'#78909C')};padding:4px 12px;border-radius:4px;color:white;font-weight:600;'>{gate}</span>", unsafe_allow_html=True)
     st.sidebar.caption("v1.0 | 141 validated knowledge assets")
 
+
 def apply_theme():
+    """Enterprise theme CSS — injected once per session."""
+    if st.session_state.get("_theme_applied"):
+        return
     st.markdown("""
 <style>
     .stApp { background: #F8FAF8; }
@@ -120,3 +125,4 @@ def apply_theme():
     }
 </style>
 """, unsafe_allow_html=True)
+    st.session_state["_theme_applied"] = True

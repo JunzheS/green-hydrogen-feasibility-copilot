@@ -1,6 +1,5 @@
 """Page 9 — Technology Comparison with executive cards."""
 import streamlit as st
-from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 from src.main import FeasibilityEngine
 from src.engines.technology_comparison_engine import compare_technologies
 
@@ -15,7 +14,9 @@ else:
 
 with st.spinner("Running comparison..."):
     try:
-        engine = FeasibilityEngine()
+        if "fe_engine" not in st.session_state:
+            st.session_state["fe_engine"] = FeasibilityEngine()
+        engine = st.session_state["fe_engine"]
         comp = compare_technologies({"country":q.get("country","France"),"industry":q.get("industry","Steel"),
                                        "technology":"PEM","capacity_mw":q.get("capacity_mw",100),
                                        "target_cod":q.get("target_cod",2029)}, engine)

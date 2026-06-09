@@ -1,7 +1,6 @@
 """Page 31 — Developer Intelligence. Hidden portfolio data exposed."""
 import streamlit as st
 import pandas as pd
-from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 from collections import Counter
 
 from src.main import FeasibilityEngine
