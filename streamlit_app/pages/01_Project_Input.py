@@ -1,7 +1,7 @@
 """Page 1 -- Project Input Form."""
 import streamlit as st
 from utils.session import run_engine, save_assessment
-from utils.theme import apply_theme; apply_theme()
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 
 st.title("Project Input")
 st.caption("Enter your green hydrogen project parameters below.")

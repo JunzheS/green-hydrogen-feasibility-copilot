@@ -1,7 +1,7 @@
 """Page 8 -- Assessment History."""
 import streamlit as st
 import pandas as pd
-from utils.theme import apply_theme; apply_theme()
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 import os
 
 from utils.session import load_history, HISTORY_FILE

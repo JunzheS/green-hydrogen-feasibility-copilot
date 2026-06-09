@@ -1,7 +1,7 @@
 """Page 3 -- Reference Projects with score breakdown."""
 import streamlit as st
 import pandas as pd
-from utils.theme import apply_theme; apply_theme()
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 
 if not st.session_state.get("report"):
     st.warning("No assessment yet. Go to **Project Input** to run one.")

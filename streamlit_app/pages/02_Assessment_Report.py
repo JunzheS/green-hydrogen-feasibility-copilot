@@ -1,6 +1,6 @@
 """Page 2 — Executive Dashboard with Snapshot, Insights, and Next Actions."""
 import streamlit as st
-from utils.theme import apply_theme; apply_theme()
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 from components.pdf_export import generate_html_report
 
 if not st.session_state.get("report"):

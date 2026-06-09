@@ -1,6 +1,31 @@
 """Enterprise theme — professional green, large fonts, consulting aesthetic."""
 import streamlit as st
 
+def apply_sidebar():
+    """Shared sidebar navigation for all pages (replaces Streamlit auto-nav)."""
+    st.sidebar.markdown("### H2 Feasibility Copilot")
+    st.sidebar.markdown("Multi-Agent Decision Platform")
+    st.sidebar.divider()
+    st.sidebar.markdown("**Workflow**")
+    st.sidebar.markdown("<a href='/' target='_self'>- Home</a>", unsafe_allow_html=True)
+    st.sidebar.markdown("<a href='/Project_Input' target='_self'>- Project Input</a>", unsafe_allow_html=True)
+    st.sidebar.markdown("<a href='/Assessment_Report' target='_self'>- Assessment Report</a>", unsafe_allow_html=True)
+    st.sidebar.markdown("<a href='/Risk_Assessment' target='_self'>- Risk Dashboard</a>", unsafe_allow_html=True)
+    st.sidebar.markdown("<a href='/CAPEX_LCOH' target='_self'>- CAPEX & LCOH</a>", unsafe_allow_html=True)
+    st.sidebar.markdown("<a href='/Assessment_History' target='_self'>- History</a>", unsafe_allow_html=True)
+    st.sidebar.markdown("**Information**")
+    st.sidebar.markdown("<a href='/Why_This_Matters' target='_self'>- Why This Matters</a>", unsafe_allow_html=True)
+    st.sidebar.divider()
+    if st.session_state.get("report"):
+        r, pm = st.session_state["report"], st.session_state["report"].get("pm_review", {})
+        gate = pm.get("gate_outcome","-")
+        gc = {"PROCEED":"#2E7D32","PROCEED WITH CAUTION":"#F9A825","DO NOT PROCEED":"#C62828","INSUFFICIENT DATA":"#78909C"}
+        st.sidebar.markdown("**Assessment**")
+        q = st.session_state.get("query",{})
+        st.sidebar.caption(f"{q.get('capacity_mw','')} MW {q.get('technology','')} | {q.get('country','')}")
+        st.sidebar.markdown(f"<span style='background:{gc.get(gate,'#78909C')};padding:4px 12px;border-radius:4px;color:white;font-weight:600;'>{gate}</span>", unsafe_allow_html=True)
+    st.sidebar.caption("v1.0 | 141 validated knowledge assets")
+
 def apply_theme():
     st.markdown("""
 <style>

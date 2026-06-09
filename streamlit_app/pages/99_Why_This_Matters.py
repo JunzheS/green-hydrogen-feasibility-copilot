@@ -1,6 +1,6 @@
 """Page 99 — Recruiter Mode / Why This Project Is Different."""
 import streamlit as st
-from utils.theme import apply_theme; apply_theme()
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 
 st.title("Why This Project Is Different")
 st.caption("A structured decision-support platform — not a machine learning model, not a chat bot, not a database.")

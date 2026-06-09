@@ -1,6 +1,6 @@
 """Page 7 — Agent Trace: timeline workflow for decision auditability."""
 import streamlit as st
-from utils.theme import apply_theme; apply_theme()
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 
 if not st.session_state.get("report"):
     st.warning("No assessment yet. Run one from **Project Input**.")

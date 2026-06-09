@@ -1,7 +1,7 @@
 """Page 30 — OEM Intelligence. Hidden data exposed."""
 import streamlit as st
 import pandas as pd
-from utils.theme import apply_theme; apply_theme()
+from utils.theme import apply_theme, apply_sidebar; apply_theme(); apply_sidebar()
 from src.main import FeasibilityEngine
 from src.engines.oem_intelligence_engine import get_oem_summary
 

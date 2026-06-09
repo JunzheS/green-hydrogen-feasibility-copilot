@@ -4,28 +4,7 @@ st.set_page_config(page_title="H2 Feasibility Copilot", page_icon=" ", layout="w
 from utils.session import init_session; from utils.theme import apply_theme
 init_session(); apply_theme()
 
-with st.sidebar:
-    st.markdown("### H2 Feasibility Copilot")
-    st.markdown("Multi-Agent Decision Platform")
-    st.divider()
-    st.markdown("**Workflow**")
-    st.markdown("<a href='/Project_Input' target='_self'>- Project Input</a>", unsafe_allow_html=True)
-    st.markdown("<a href='/Assessment_Report' target='_self'>- Assessment Report</a>", unsafe_allow_html=True)
-    st.markdown("<a href='/Risk_Assessment' target='_self'>- Risk Dashboard</a>", unsafe_allow_html=True)
-    st.markdown("<a href='/CAPEX_LCOH' target='_self'>- CAPEX & LCOH</a>", unsafe_allow_html=True)
-    st.markdown("<a href='/Assessment_History' target='_self'>- History</a>", unsafe_allow_html=True)
-    st.markdown("**Information**")
-    st.markdown("<a href='/' target='_self'>- Home</a>", unsafe_allow_html=True)
-    st.markdown("<a href='/Why_This_Matters' target='_self'>- Why This Matters</a>", unsafe_allow_html=True)
-    st.divider()
-    if st.session_state.get("report"):
-        r, pm = st.session_state["report"], st.session_state["report"].get("pm_review", {})
-        gate = pm.get("gate_outcome","-")
-        gc = {"PROCEED":"#2E7D32","PROCEED WITH CAUTION":"#F9A825","DO NOT PROCEED":"#C62828","INSUFFICIENT DATA":"#78909C"}
-        st.markdown("**Assessment**")
-        q = st.session_state.get("query",{}); st.caption(f"{q.get('capacity_mw','')} MW {q.get('technology','')} | {q.get('country','')}")
-        st.markdown(f"<span style='background:{gc.get(gate,'#78909C')};padding:4px 12px;border-radius:4px;color:white;font-weight:600;'>{gate}</span>", unsafe_allow_html=True)
-    st.caption("v1.0 | 141 validated knowledge assets")
+apply_sidebar()
 
 # ─── HOME ───
 st.title("Green Hydrogen Feasibility Copilot")
