@@ -32,7 +32,8 @@
       "PowerShell(git -C \"d:\\\\IA\\\\??\\\\Hydrogen_Projet_Copilot\" branch)",
       "Bash(git add *)",
       "Bash(git commit -m 'feat\\(m12\\): executive decision intelligence layer *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git commit -m 'fix\\(m12\\): streamlit schema compatibility *)"
     ]
   }
 }

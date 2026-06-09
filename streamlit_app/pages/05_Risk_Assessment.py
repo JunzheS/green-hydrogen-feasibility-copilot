@@ -47,7 +47,7 @@ if consequences:
               "MEDIUM": "background:#F9A825;color:#1B5E20;font-weight:600",
               "LOW": "background:#2E7D32;color:white;font-weight:600"}
         return cs.get(v, "")
-    st.dataframe(df.style.applymap(color_class, subset=["Class"]), use_container_width=True, hide_index=True)
+    st.dataframe(df.style.map(color_class, subset=["Class"]), use_container_width=True, hide_index=True)
 else:
     st.dataframe(pd.DataFrame(top[:16]), use_container_width=True, hide_index=True)
 
