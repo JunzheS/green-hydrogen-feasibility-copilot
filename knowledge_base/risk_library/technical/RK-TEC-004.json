@@ -1,0 +1,48 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-TEC-004",
+  "risk_name": "Technology Obsolescence — Rapid PEM Cost Reduction Making Early Projects Uncompetitive",
+  "risk_category": "technical",
+  "risk_subcategory": "01.4_technology_obsolescence",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "PEM electrolysis technology is improving rapidly (15% learning rate, stack size doubling from 20→50 MW by 2030, iridium loading reduction). A project commissioning in 2027-2029 using 2025-vintage PEM technology may be cost-uncompetitive by 2032-2035 against newer plants using next-generation stacks with 40-50% lower CAPEX.",
+    "detailed": "PEM technology is on a steep learning curve: stack CAPEX ~€800/kW (2025) projected to €500-600/kW (2030) and €350-450/kW (2035). Stack module size increasing from 20 MW to 50 MW (Siemens Energy roadmap). Iridium loading reducing from ~0.3-0.5 g/kW to <0.1 g/kW. A project that locks in 2025 technology through a single-OEM supply agreement will be competing in 2035 against plants built with 2030-vintage technology at 40-50% lower stack cost. The first stack replacement (typically year 8-10) provides an opportunity to upgrade, but BOP compatibility with new-generation stacks is not guaranteed. This risk is analogous to early solar PV projects (2008-2012) that were rapidly undercut by technology improvements.",
+    "root_cause": "PEM electrolysis is early in its technology S-curve. Rapid innovation in catalysts, membranes, and manufacturing processes is driving aggressive cost reduction. First-mover projects bear technology obsolescence risk that late-mover projects avoid.",
+    "trigger_events": ["Next-generation PEM stack announced with >30% cost reduction and improved performance", "Competitor plant commissioned 2-3 years after project with significantly lower LCOH", "OEM discontinues support for legacy stack design", "IEA/IRENA cost projections revised downward faster than project financial model assumed"]
+  },
+  "assessment": {
+    "probability": 4, "probability_rationale": "The 15% PEM learning rate is well-documented (IEA, IRENA, Hydrogen Council). Historical analogs (solar PV, Li-ion batteries) show that early-mover projects in rapidly innovating technologies face obsolescence risk. At probability 4 (Likely), this reflects the documented learning rate, not speculation.",
+    "impact": 3, "impact_rationale": "Moderate: newer plants will have lower LCOH, but an existing plant with sunk CAPEX can still operate profitably if electricity and offtake contracts are favorable. The impact is on competitive positioning and refinancing, not on the plant's ability to produce hydrogen.",
+    "detectability": 1, "detectability_rationale": "Technology roadmaps are public (IEA, IRENA, OEM investor presentations). Cost trajectories are forecast years in advance. The project team has perfect visibility of this risk before FID.",
+    "risk_priority_number": 12, "risk_class": "low",
+    "assessment_method": "IEA/IRENA learning rate analysis + solar PV historical analog",
+    "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "cost": { "impact_eur": 50000000, "description": "Long-term: ~€50M competitive disadvantage over 20-year project life if next-gen stacks are 40% cheaper. Refinancing at year 5-7 may be more difficult if technology has advanced significantly." },
+    "performance": { "description": "No direct performance impact — existing plant continues to function. Competitive disadvantage rather than operational failure." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (CTO / Technology Strategy)",
+    "preventive_actions": [
+      { "action_id": "MIT-TEC-004-P-01", "description": "Include stack technology refresh option in OEM supply agreement: right to purchase next-generation stacks at preferred pricing for the first stack replacement cycle", "responsible_party": "Developer (Procurement)", "timing": "pre_fid" },
+      { "action_id": "MIT-TEC-004-P-02", "description": "Design BOP for stack-agnostic interface (DC power, water quality, footprint, control protocols) to accommodate future stack generations from current or alternative OEMs", "responsible_party": "FEED Engineer", "timing": "feed" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "IEA/IRENA annual PEM stack cost benchmark vs. project financial model assumption", "threshold_green": "Within 10% of model assumption", "threshold_amber": "10-25% below model (faster cost reduction)", "threshold_red": ">25% below model assumption" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-002", "GA-PR-008"],
+    "incident_descriptions": ["Masshylia (GA-PR-002): Originally 40 MW (2021), expanded to 120 MW (2022), then scaled back to 20 MW (2025). The rapid evolution of technology costs and subsidy expectations during 2021-2025 made the original project economics obsolete before FID could be reached. This is a form of pre-FID technology/market obsolescence.", "REFHYNE II (GA-PR-008): ITM Power TRIDENT stacks represent current-generation technology. Shell's experience with REFHYNE I (10 MW, 2021) informed the REFHYNE II technology selection. The 3-year gap between REFHYNE I and II commissioning illustrates the pace of technology evolution."],
+    "lessons_learned": "BOP should be designed stack-agnostic to preserve technology refresh optionality. Stack replacement cycle (year 8-10) is a natural technology upgrade point. Early-mover PEM projects should budget for technology refresh in the financial model rather than assume 20-year static technology.",
+    "technology_card_references": ["TC-PEM-001"]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-040", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA Global Hydrogen Review 2025", "author": "IEA", "retrieval_date": "2026-05-15", "confidence": "high" }
+  ]
+}

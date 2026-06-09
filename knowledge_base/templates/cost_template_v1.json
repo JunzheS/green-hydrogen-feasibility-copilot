@@ -1,0 +1,111 @@
+{
+  "_schema_version": "1.0.0-PMO",
+  "_template_name": "Cost Record Template v1 (PMO-Enhanced)",
+  "_description": "Template for recording a CAPEX cost data point using the PMO-enhanced schema. Copy, fill, save to /knowledge_base/cost_library/{category}/.",
+  "_references": {
+    "taxonomy": "cost_taxonomy_framework.md",
+    "scaling": "cost_scaling_methodology.md",
+    "confidence": "cost_confidence_framework.md"
+  },
+
+  "cost_id": "<<CS-STK-001>>",
+  "cost_name": "<<PEM Electrolyzer Stack — Installed Cost — 100 MW — Europe 2024>>",
+  "cost_category": "<<electrolyzer_system | electrical_infrastructure | water_systems | hydrogen_processing | civil_construction | thermal_management | instrumentation_controls | indirect_owners_costs>>",
+  "cost_subcategory": "<<01.1_electrolyzer_stack | 04.1_compression | 08.5_contingency | ...>>",
+  "cost_basis": "<<equipment_only | installed_cost | epc_total | all_in>>",
+  "cost_version": "1.0.0",
+  "cost_status": "draft",
+  "supersedes": null,
+  "last_review_date": "<<2026-06-05>>",
+
+  "cost_data": {
+    "eur_per_kw": "<<Central estimate>>",
+    "eur_per_kw_low": "<<P10 or minimum>>",
+    "eur_per_kw_high": "<<P90 or maximum>>",
+    "eur_per_kg_per_day": null,
+    "total_eur": null,
+    "currency_original": "EUR",
+    "exchange_rate_used": null,
+    "exchange_rate_date": null,
+    "cost_year": "<<2024>>",
+    "is_inflation_adjusted": false,
+    "inflation_base_year": null,
+    "escalation_rate_applied_percent": null,
+    "percentage_of_total_capex": "<<Estimated % of total project CAPEX>>"
+  },
+
+  "context": {
+    "technology_type": "<<PEM | Alkaline | PEM+Alkaline | technology_agnostic>>",
+    "project_scale_mw": "<<100>>",
+    "project_scale_category": "<<medium_10-100mw | large_100-500mw>>",
+    "scale_is_extrapolated": false,
+    "original_scale_mw": null,
+    "extrapolation_method": null,
+    "project_reference_id": "<<GA-PR-NNN or null>>",
+    "project_location_region": "<<europe>>",
+    "project_country": null,
+    "greenfield_or_brownfield": "<<greenfield | brownfield | not_applicable>>",
+    "epc_contract_type": "<<lump_sum_turnkey | epcm | cost_plus | multi_contract | unknown>>"
+  },
+
+  "estimation": {
+    "aace_class": "<<class_5_conceptual | class_4_feasibility | class_3_budget>>",
+    "expected_accuracy_range": "<<±30% | ±50%>>",
+    "estimation_method": "<<OEM budget quotation (2024) | IEA GHR 2025 benchmark | Project actual cost (EPC close-out, 2023)>>"
+  },
+
+  "confidence": {
+    "level": "<<A_actual_cost | B_contracted_price | C_industry_benchmark | D_analyst_estimate>>",
+    "rationale": "<<Justification for confidence level>>",
+    "range_confidence_percent": 80,
+    "data_points_contributing": 1,
+    "verified_by_second_source": false,
+    "second_source_reference": null
+  },
+
+  "cost_drivers": {
+    "primary_drivers": [
+      "<<Main cost driver 1>>",
+      "<<Main cost driver 2>>"
+    ],
+    "sensitivity_to_scale": "<<high | medium | low>>",
+    "scaling_exponent": null,
+    "learning_rate_percent": null,
+    "regional_multiplier_notes": "<<China −20-30%; N. America +5-15%>>",
+    "exclusions": [
+      "<<Freight and import duties>>",
+      "<<Spare parts inventory>>"
+    ],
+    "inclusions": [
+      "<<Equipment, installation labor, subcontractors>>"
+    ]
+  },
+
+  "sources": [
+    {
+      "source_id": "<<SRC-CST-YYYY-NNN>>",
+      "source_type": "<<project_data | industry_report | oem_quotation | press_release>>",
+      "source_quality_level": "<<A | B | C | D>>",
+      "source_reliability_score": "<<1-5>>",
+      "title": "<<Source document title>>",
+      "author": "<<Author / Organization>>",
+      "url": null,
+      "local_file_ref": null,
+      "publication_date": "<<YYYY-MM-DD>>",
+      "retrieval_date": "<<YYYY-MM-DD>>",
+      "confidence": "<<high | medium | low>>"
+    }
+  ],
+
+  "integration": {
+    "technology_card_reference": "<<TC-PEM-001.cost_profile | TC-ALK-001.cost_profile>>",
+    "risk_references": ["<<RK-FIN-001>>"],
+    "related_cost_ids": []
+  },
+
+  "rag_metadata": {
+    "text_for_embedding": "<<Pipeline-generated>>",
+    "keywords": [],
+    "last_indexed": null
+  }
+}

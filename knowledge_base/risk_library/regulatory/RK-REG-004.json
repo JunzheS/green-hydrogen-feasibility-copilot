@@ -1,0 +1,35 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-REG-004",
+  "risk_name": "Land Acquisition Delay or Cost Overrun for Greenfield Sites",
+  "risk_category": "regulatory",
+  "risk_subcategory": "04.4_land_acquisition_and_rights",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Land required for the electrolysis plant or dedicated renewable generation cannot be secured on acceptable terms, is contested by competing land uses, or requires expensive remediation. Brownfield sites mitigate this risk; greenfield sites amplify it.",
+    "detailed": "A 100 MW electrolyzer requires ~2 hectares (PEM) to 3 hectares (Alkaline) for the plant itself, plus land for renewable generation (solar: 2-3 ha/MW ≈ 200-300 ha for 100 MW dedicated solar; wind: 0.3 ha/turbine with wider spacing). Land acquisition involves: purchase or long-term lease negotiation, zoning/planning permission, potential agricultural land conversion, mineral rights, and environmental remediation if previously industrial. Competition from agriculture, residential development, and other industrial uses drives land price inflation in target regions. The Gold Dataset provides both cautionary and best-practice examples.",
+    "root_cause": "Competing land uses in industrial and high-renewable-resource areas. Greenfield sites require full land acquisition process. Contaminated brownfield sites require remediation before construction.",
+    "trigger_events": ["Land purchase negotiations extend >6 months past planned timeline", "Zoning change application rejected or appealed", "Environmental site assessment reveals contamination requiring >€5M remediation", "Competing land use application (agricultural, residential) delays or blocks acquisition"]
+  },
+  "assessment": {
+    "probability": 2, "impact": 3, "detectability": 2,
+    "risk_priority_number": 12, "risk_class": "low",
+    "probability_rationale": "Most hydrogen projects target existing industrial zones or brownfield sites where land availability is known. Greenfield projects in high-competition areas face higher probability.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Site Selection & Real Estate)",
+    "preventive_actions": [
+      { "action_id": "MIT-REG-004-P-01", "description": "Prioritize brownfield/industrial zone sites where land ownership and zoning are already resolved (HGHH/Moorburg model)", "responsible_party": "Developer (Site Selection)", "timing": "pre_feasibility" },
+      { "action_id": "MIT-REG-004-P-02", "description": "Secure land option agreement with fixed price before FID. Option period should cover permitting phase + 12-month buffer.", "responsible_party": "Developer (Real Estate)", "timing": "pre_fid" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-004", "GA-PR-009"],
+    "incident_descriptions": ["HGHH (GA-PR-004): Moorburg coal plant site — brownfield with existing industrial zoning, grid connection, water infrastructure, quayside access. Land acquisition risk effectively zero. The 16,000 m² site was already owned by Hamburger Energiewerke (municipal utility). This is the optimal land scenario.", "Hyoffwind (GA-PR-009): Port of Zeebrugge — port authority land with industrial zoning. Land allocation within established industrial port zone. No land acquisition risk."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-094", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "HGHH (GA-PR-004) — Moorburg site reuse: existing infrastructure advantage", "author": "HGHH / Luxcara", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

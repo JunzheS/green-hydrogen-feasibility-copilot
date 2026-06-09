@@ -1,0 +1,18 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELC-005",
+  "cost_name": "Alkaline Power Electronics — Thyristor Rectifier System — 100 MW — Europe 2025",
+  "cost_category": "electrolyzer_system", "cost_subcategory": "01.3_power_electronics",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": {
+    "eur_per_kw": 100, "eur_per_kw_low": 80, "eur_per_kw_high": 140,
+    "cost_year": 2025, "is_inflation_adjusted": false,
+    "percentage_of_total_capex": 4
+  },
+  "context": { "technology_type": "Alkaline", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "IRENA 2024 + thyristor rectifier cost data. Alkaline can use thyristor (lower cost, more harmonics) vs IGBT (higher cost, cleaner power)." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Based on IRENA 2024 cost data and industrial thyristor rectifier pricing for electrochemical processes (chlor-alkali analog).", "data_points_contributing": 3 },
+  "cost_drivers": { "primary_drivers": ["Thyristor vs IGBT technology choice", "Harmonic filtering requirements (grid code dependent)", "Transformer rating and impedance", "DC busbar system design"], "sensitivity_to_scale": "medium", "exclusions": ["Active harmonic filtering (may be required at +€20-40/kW)", "Reactive power compensation"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA Green Hydrogen Cost Reduction 2024", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-ALK-001.cost_profile" }
+}

@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELI-003",
+  "cost_name": "Grid Connection — HH1 200 MW New 380 kV Substation — Netherlands 2022",
+  "cost_category": "electrical_infrastructure", "cost_subcategory": "02.1_grid_connection",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 250, "eur_per_kw_low": 200, "eur_per_kw_high": 350, "cost_year": 2022, "is_inflation_adjusted": false, "percentage_of_total_capex": 5 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 200, "scale_is_extrapolated": false, "project_location_region": "europe", "project_country": "Netherlands", "project_reference_id": "GA-PR-003", "greenfield_or_brownfield": "greenfield", "epc_contract_type": "multi_contract" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "Derived from HH1 total CAPEX (~€1B all-in). TenneT Amaliahaven 380 kV substation dedicated to HH1. Includes 165t transformer transport (Mammoet), substation construction, and HV connection. FOAK cost — includes first-of-a-kind premium." },
+  "confidence": { "level": "D_analyst_estimate", "rationale": "Total CAPEX is Level A (Shell/EU Innovation Fund). Grid connection portion is DERIVED from industry norms (~5% of total for dedicated substation). HH1 includes FOAK premium — not representative of nth-of-a-kind grid connection.", "data_points_contributing": 1 },
+  "cost_drivers": { "primary_drivers": ["Dedicated 380 kV substation (not shared)", "New construction at Maasvlakte II port area", "165t transformer special transport (Mammoet)", "TenneT connection study and grid compliance"], "sensitivity_to_scale": "medium", "exclusions": ["Ongoing grid connection O&M (TenneT tariff)", "Grid reinforcement beyond Amaliahaven"] },
+  "sources": [ { "source_id": "SRC-CST-HH1-TENNET", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Shell and TenneT Partner to Connect Holland Hydrogen 1 to High-Voltage Grid", "author": "TenneT / Shell", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "risk_references": ["RK-GRD-001", "RK-SCP-004"] }
+}

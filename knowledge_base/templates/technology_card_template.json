@@ -1,0 +1,202 @@
+{
+  "_schema_version": "1.0.0",
+  "_template_name": "Technology Knowledge Card Template",
+  "_description": "Template for recording structured technical knowledge about PEM or Alkaline electrolysis technology. Copy this file, replace placeholder values, and save to /knowledge_base/technology_cards/{pem|alkaline}/.",
+  "_instructions": [
+    "1. Copy this template",
+    "2. Replace all <<PLACEHOLDER>> values with real data from authoritative sources",
+    "3. Technology cards should reference peer-reviewed literature, IEA/IRENA reports, or OEM datasheets",
+    "4. Each card represents a technology variant, not a specific product",
+    "5. Maintain version history — create a new card version when technology improves significantly",
+    "6. Review annually against latest publications"
+  ],
+
+  "technology_id": "<<TC-PEM-001>>",
+  "technology_name": "<<PEM Electrolysis — Pressurized — Large Scale>>",
+  "technology_type": "PEM",
+  "technology_subtype": "<<Pressurized PEM, PFSA membrane>>",
+  "card_version": "1.0.0",
+  "card_status": "draft",
+  "supersedes": null,
+  "superseded_by": null,
+
+  "maturity": {
+    "trl_level": 8,
+    "trl_rationale": "<<Commercially deployed at >100 MW scale with multiple reference plants operating >2 years. Stack manufacturing at GW-scale capacity. Minor improvements ongoing in membrane durability and reduced iridium loading.>>",
+    "trl_assessment_date": "2025-12-01",
+    "trl_assessed_by": "<<IEA Hydrogen TCP / Internal assessment based on IEA 2025 report>>",
+    "commercial_maturity": "early_commercial",
+    "mrl_level": 8,
+    "technology_learning_rate_percent": 15,
+    "cumulative_global_capacity_mw": 3500,
+    "cumulative_capacity_year": 2025
+  },
+
+  "performance": {
+    "nominal_current_density_a_per_cm2": 2.0,
+    "current_density_range_a_per_cm2": {
+      "min": 0.5,
+      "max": 3.0,
+      "typical": 2.0
+    },
+    "system_efficiency_kwh_per_kg_h2": 55,
+    "system_efficiency_lhv_percent": 60,
+    "stack_lifetime_hours": 60000,
+    "stack_lifetime_years": 8,
+    "stack_degradation_rate_percent_per_year": 1.0,
+    "operating_temperature_range_c": {
+      "min": 50,
+      "max": 80,
+      "nominal": 65
+    },
+    "operating_pressure_range_bar": {
+      "min": 15,
+      "max": 50,
+      "nominal": 30
+    },
+    "hydrogen_output_purity_percent": 99.99,
+    "hydrogen_output_pressure_bar": 30,
+    "cold_start_time_minutes": 15,
+    "warm_start_time_minutes": 1,
+    "min_load_percent": 5,
+    "load_ramp_rate_percent_per_second": 10,
+    "water_consumption_liters_per_kg_h2": 10,
+    "water_quality_required": "<<ASTM Type II, < 1 µS/cm conductivity>>"
+  },
+
+  "scalability": {
+    "typical_stack_size_mw": 20,
+    "max_stack_size_mw": 25,
+    "typical_plant_size_range_mw": {
+      "min": 10,
+      "max": 500,
+      "typical": 100
+    },
+    "modularity": "highly_modular",
+    "footprint_sqm_per_mw": 50,
+    "max_plant_size_known_mw": 260,
+    "scaling_constraints": [
+      "iridium_supply",
+      "membrane_manufacturing_capacity",
+      "titanium_bipolar_plate_supply_chain"
+    ]
+  },
+
+  "infrastructure": {
+    "power_supply_requirements": "<<Requires stable DC power via transformer-rectifier. Compatible with intermittent renewable input (rapid ramp capability). Power quality: <5% THD recommended. Dedicated transformer typically required per 20 MW stack module.>>",
+    "water_infrastructure_needed": "<<Ultra-pure water system required (ASTM Type II minimum, <1 µS/cm). Typical system includes: pre-treatment → RO → EDI → polishing loop. Closed-loop cooling water system for thermal management.>>",
+    "cooling_requirements": "<<Approximately 15–20% of electrical input removed as heat. Cooling tower or dry cooler required. Can integrate with district heating if local offtake exists.>>",
+    "hydrogen_compression_needed": true,
+    "footprint_requirements": "<<Approximately 50 m²/MW for electrolyzer hall. Additional space for BOP, substation, water treatment, storage. Total plant: ~200 m²/MW excluding renewable generation.>>",
+    "control_system_requirements": "<<DCS with integrated safety instrumented system (SIS). Real-time monitoring of cell voltages, temperatures, pressures. Automated load-following capability for renewable integration.>>",
+    "workforce_skill_requirements": "<<Operators require chemical/process engineering background. Specialized training on PEM stack handling, high-pressure hydrogen safety, and control systems. Typical staffing: 5–8 operators per shift for 100 MW plant.>>",
+    "supply_chain_critical_materials": [
+      "iridium",
+      "PFSA_membrane",
+      "titanium",
+      "platinum"
+    ],
+    "maintenance_requirements": "<<Preventive maintenance every 8,000 operating hours. Stack replacement at 60,000–80,000 hours (8–10 years). BOP maintenance aligned with standard chemical plant practices. Membrane inspection every 2 years.>>"
+  },
+
+  "applications": {
+    "primary_applications": [
+      "refinery",
+      "ammonia",
+      "methanol",
+      "mobility",
+      "steel"
+    ],
+    "unsuitable_applications": [],
+    "application_notes": "<<Best suited where high-purity H₂ (>99.99%) is required without additional purification. Excellent for dynamic operation paired with intermittent renewables. Preferred for mobility applications due to high purity. Competitive in all major applications above 10 MW scale.>>",
+    "reference_project_ids": [
+      "PR-OP-001",
+      "PR-UC-002",
+      "PR-PL-003"
+    ]
+  },
+
+  "advantages": [
+    "High hydrogen purity (>99.99%) without additional purification",
+    "Excellent dynamic response — suitable for intermittent renewable power",
+    "Wide operating range (5–100% load) without significant efficiency loss",
+    "Compact footprint compared to Alkaline at equivalent capacity",
+    "Fast cold start capability (<15 minutes)",
+    "Pressurized hydrogen output (30 bar) reduces downstream compression needs",
+    "Proven at >100 MW single-plant scale"
+  ],
+
+  "limitations": [
+    "Dependence on iridium — one of the rarest elements on Earth",
+    "Higher stack cost than Alkaline due to precious metal catalysts and PFSA membranes",
+    "Stack lifetime (60,000–80,000 hours) shorter than Alkaline (80,000–100,000 hours)",
+    "PFSA membrane degradation accelerated by metal ion contamination",
+    "Titanium bipolar plates more expensive than nickel/stainless steel (Alkaline)",
+    "Limited number of large-scale OEMs (>20 MW modules) — supply chain concentration risk",
+    "Water quality requirements more stringent than Alkaline"
+  ],
+
+  "technology_differentiators": [
+    "Uses solid polymer electrolyte (PFSA membrane) instead of liquid KOH electrolyte",
+    "Proton (H⁺) conduction vs. hydroxide (OH⁻) conduction in Alkaline",
+    "Zero-gap cell design enables higher current density (2–3 A/cm² vs 0.2–0.5 A/cm²)",
+    "Fast-responding to load changes — better renewable integration profile",
+    "Pressurized operation simplifies downstream compression for most applications"
+  ],
+
+  "improvement_trajectory": "<<Near-term (2026–2030): Iridium loading reduction from ~0.5 to <0.1 g/kW through advanced catalyst structuring. Membrane thickness reduction for lower resistance. Stack size increase from 20 MW to 50 MW modules. Learning rate of ~15% expected to continue through 2030 as cumulative capacity doubles 3–4 times.>>",
+
+  "sources": [
+    {
+      "source_id": "SRC-TEC-2025-001",
+      "source_type": "industry_report",
+      "title": "<<IEA Global Hydrogen Review 2025>>",
+      "url": "https://www.iea.org/reports/global-hydrogen-review-2025",
+      "local_file_ref": "source_documents/industry_reports/iea_ghr_2025.pdf",
+      "publication_date": "2025-09-15",
+      "retrieval_date": "2025-10-01",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC-TEC-2024-002",
+      "source_type": "academic_paper",
+      "title": "<<Current status and future trends of PEM electrolysis for green hydrogen production — Energy & Environmental Science, 2024>>",
+      "url": "https://doi.org/10.1039/example",
+      "local_file_ref": "source_documents/academic_papers/pem_review_2024.pdf",
+      "publication_date": "2024-03-15",
+      "retrieval_date": "2024-06-20",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC-TEC-2024-003",
+      "source_type": "industry_report",
+      "title": "<<IRENA Green Hydrogen Cost Reduction: Scaling up Electrolysers to Meet the 1.5°C Climate Goal, 2024 Update>>",
+      "url": "https://www.irena.org/publications/2024/green-hydrogen-cost-reduction",
+      "local_file_ref": "source_documents/industry_reports/irena_h2_cost_2024.pdf",
+      "publication_date": "2024-06-01",
+      "retrieval_date": "2024-07-01",
+      "confidence": "high"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "TC-PEM-001_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.0.0",
+    "last_indexed": "2025-12-10T14:00:00Z",
+    "text_for_embedding": "PEM Electrolysis — Pressurized — Large Scale. Type: PEM (Pressurized PEM, PFSA membrane). TRL 8 — early_commercial. Efficiency: 55 kWh/kg H₂. Stack lifetime: 60000 hours. Operating at 65°C. Typical plant scale: 10–500 MW. Advantages: High purity, dynamic response, compact footprint. Limitations: Iridium dependence, higher stack cost, shorter lifetime vs Alkaline. Critical materials: iridium, PFSA_membrane, titanium, platinum. Keywords: PEM, electrolysis, green hydrogen, pressurized, large scale, PFSA membrane, TRL8.",
+    "keywords": [
+      "PEM",
+      "electrolysis",
+      "green_hydrogen",
+      "pressurized",
+      "large_scale",
+      "PFSA_membrane",
+      "TRL8",
+      "iridium",
+      "dynamic_operation",
+      "high_purity"
+    ],
+    "tags": ["PEM", "core_technology", "commercial", "reviewed_2025"]
+  }
+}

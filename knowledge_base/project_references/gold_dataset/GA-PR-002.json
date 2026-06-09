@@ -1,0 +1,158 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-002",
+  "project_name": "Masshylia",
+  "alias_names": [],
+  "status": "planned",
+  "status_detail": "Significantly scaled down from original 120 MW plan to a 20 MW first phase. Originally announced in January 2021 as a 40 MW project, expanded to 120 MW in 2022 with >300 MW solar and wind, then scaled back to 20 MW. Target production now ~10,000 tonnes/year by 2029, subject to confirmation of European and French subsidies and public authorizations. TotalEnergies also signed separate €150M deal with Air Liquide for 25,000 t/yr to the same biorefinery.",
+
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic",
+    "project_phase_at_collection": "pre_fid",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "Masshylia is a green hydrogen project at TotalEnergies' La Mède biorefinery in Châteauneuf-les-Martigues, Provence-Alpes-Côte d'Azur, France. Originally announced in January 2021 as a 40 MW project by TotalEnergies and ENGIE, it was expanded to 120 MW in 2022 before being significantly scaled back to a 20 MW first phase, with a new target of ~10,000 tonnes/year of green hydrogen by 2029, subject to subsidies. The hydrogen would replace fossil-based hydrogen in biofuel production (biodiesel and sustainable aviation fuel). The project was designed to pioneer digital piloting for continuous hydrogen supply with real-time solar management and large-scale storage. As of 2026, FID has not been taken and technology selection is not confirmed.",
+    "is_first_of_a_kind": true,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "France",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "city": "Châteauneuf-les-Martigues (La Mède biorefinery)",
+    "coordinates": {
+      "lat": 43.39,
+      "lon": 5.01
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM",
+    "technology_selection_status": "not_selected",
+    "electrolyzer_manufacturer": null,
+    "electrolyzer_model": null,
+    "technology_card_ref": "TC-PEM-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 20,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 27400,
+    "hydrogen_output_tons_per_year": 10000,
+    "number_of_stacks": null,
+    "stack_capacity_mw": null
+  },
+
+  "power": {
+    "renewable_type": "solar_pv",
+    "renewable_capacity_mw": null,
+    "grid_connection": null,
+    "grid_connection_detail": null,
+    "ppa_structure": null
+  },
+
+  "water": {
+    "source_type": null,
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": null
+  },
+
+  "offtake": {
+    "primary_application": "refinery",
+    "secondary_applications": [],
+    "offtaker_name": "TotalEnergies La Mède biorefinery",
+    "offtake_agreement_type": null,
+    "h2_storage_type": null,
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "TotalEnergies and ENGIE (joint venture)",
+    "developer_type": "consortium",
+    "co_developers": ["TotalEnergies", "ENGIE"],
+    "epc_contractor": null,
+    "operations_operator": null,
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": null,
+    "capex_per_kw_eur": null,
+    "capex_per_kw_method": null,
+    "capex_confidence": null,
+    "capex_year_reference": null,
+    "funding_sources": ["subject_to_eu_french_subsidies"],
+    "total_investment_decision_date": null,
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2021-01-13",
+    "fid_date": null,
+    "construction_start_date": null,
+    "commissioning_date": "2029",
+    "construction_duration_months": null,
+    "current_operational_year": null
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2021-003",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Total and ENGIE partner to develop France's largest site for the production of green hydrogen from 100% renewable electricity",
+      "author": "TotalEnergies / ENGIE",
+      "url": "https://en.newsroom.engie.com/news/total-and-engie-partner-to-develop-frances-largest-site-for-the-production-of-green-hydrogen-from-100-renewable-electricity-5c6b-314df.html",
+      "local_file_ref": "source_documents/project_data/masshylia_announcement_2021.pdf",
+      "publication_date": "2021-01-13",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Original project announcement with 40 MW capacity and >100 MW solar"
+    },
+    {
+      "source_id": "SRC-2025-005",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Engie, TotalEnergies scale down green hydrogen project — Masshylia",
+      "author": "Montel News",
+      "url": "https://montelnews.com/news/d7b9825a-2f56-4af1-9bf4-986bfdae490c/engie-totalenergies-scale-down-green-hydrogen-project",
+      "local_file_ref": "source_documents/project_data/masshylia_scaledown_2025.pdf",
+      "publication_date": "2025-02",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms scale-down to 20 MW first phase, 2029 target, subject to subsidies"
+    },
+    {
+      "source_id": "SRC-2022-005",
+      "source_type": "government_announcement",
+      "source_quality_level": "B",
+      "source_reliability_score": 4,
+      "title": "Concertation Masshylia — Projet de production d'hydrogène renouvelable à La Mède",
+      "author": "Concertation Masshylia / CNDP",
+      "url": "https://www.concertation-masshylia.fr/",
+      "local_file_ref": "source_documents/project_data/masshylia_concertation_2022.pdf",
+      "publication_date": "2022-06",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Public consultation documentation with detailed project description and environmental context"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-002_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "Masshylia is a green hydrogen project at TotalEnergies' La Mède biorefinery in Châteauneuf-les-Martigues, Provence, France. Jointly developed by TotalEnergies and ENGIE. Originally 120 MW plan scaled back to 20 MW first phase, targeting ~10,000 t/yr green hydrogen by 2029 for biofuel production, subject to subsidies. Technology not yet selected (likely PEM). Solar-powered. Pre-FID planned project. France. Europe. refinery. Planned. 20MW.",
+    "keywords": ["France", "Provence", "refinery", "biofuels", "20MW", "planned", "pre_FID", "TotalEnergies", "ENGIE", "solar_pv", "scaled_down"],
+    "tags": ["gold_dataset", "europe", "pre_FID", "scaled_down", "planned"]
+  }
+}

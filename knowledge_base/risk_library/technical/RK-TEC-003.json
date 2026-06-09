@@ -1,0 +1,48 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-TEC-003",
+  "risk_name": "Hydrogen Processing Equipment Failure (Compression, Purification, Drying)",
+  "risk_category": "technical",
+  "risk_subcategory": "01.2_hydrogen_processing",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Downstream hydrogen compression, purification (PSA/deoxo), drying, or metering equipment fails or underperforms, causing production curtailment, offtake quality non-compliance, or safety incidents. This risk affects both PEM and Alkaline plants but is more severe for Alkaline given atmospheric output requiring full compression train.",
+    "detailed": "After electrolysis, hydrogen requires processing before delivery: compression (from 1-30 bar stack output to pipeline/storage pressure of 30-200+ bar), purification (PSA or deoxo catalytic purifier for Alkaline to reach fuel cell-grade >99.97%), drying (dew point ≤-40°C for most applications), and metering (custody transfer accuracy). Equipment failures in this chain can halt production even if the electrolyzer is functioning perfectly. Reciprocating compressors are particularly prone to valve and piston ring wear in hydrogen service. PSA systems experience adsorbent degradation from moisture or impurities. The risk is technology-differentiated: PEM's pressurized output (30 bar) eliminates first-stage compression and reduces processing complexity. Alkaline's atmospheric output requires full compression from 1 bar and additional purification for fuel cell applications.",
+    "root_cause": "Hydrogen's small molecular size (permeation, embrittlement), high-pressure operation, and purity requirements create demanding conditions for rotating equipment, adsorbents, and instrumentation.",
+    "trigger_events": ["Compressor vibration trending exceeds ISO 10816 limits", "PSA tail gas H₂ concentration increasing (adsorbent breakthrough)", "Product H₂ dew point rising above -40°C specification", "Custody transfer meter calibration drift exceeds ±0.5%"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 3, "detectability": 3,
+    "risk_priority_number": 27, "risk_class": "medium",
+    "probability_rationale": "Compressor and PSA maintenance events are routine in industrial gas plants. Industry data: 2-4 unplanned H₂ compressor outages per year for a typical multi-train plant. PSA adsorbent replacement every 5-7 years is standard maintenance, not a failure — but can surprise inexperienced operators.",
+    "impact_rationale": "Moderate: 1-3 weeks production loss for major compressor overhaul; €2-5M revenue impact at 100 MW scale. H₂ quality non-compliance can trigger offtake agreement penalties or rejection of product.",
+    "detectability_rationale": "Vibration monitoring, online gas analyzers, and dew point meters provide continuous surveillance. Compressor wear typically detectable 4-8 weeks before failure through trending.",
+    "assessment_method": "Industrial gas plant reliability data + equipment OEM maintenance guidelines",
+    "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "schedule": { "impact": "1-3_months", "description": "Cumulative: 2-4 weeks/year total downtime from H₂ processing equipment events at a well-maintained plant." },
+    "cost": { "impact_eur": 3000000, "description": "Annualized: €2-5M revenue loss from production downtime + €500K-1M maintenance cost for a 100 MW plant." },
+    "safety": { "impact": "minor_injury", "description": "H₂ leaks from compressor seals and valve packing — standard industrial hydrogen safety protocols apply. Proper ATEX zoning and gas detection mitigate." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Operations Manager",
+    "preventive_actions": [
+      { "action_id": "MIT-TEC-003-P-01", "description": "Specify N+1 compressor configuration to allow maintenance without production stoppage. Size each compressor for 60% of plant capacity (2-of-3 running for full flow).", "responsible_party": "FEED Engineer", "timing": "feed" },
+      { "action_id": "MIT-TEC-003-P-02", "description": "Install online H₂ purity, dew point, and compressor vibration monitoring with automated alerting to DCS", "responsible_party": "EPC Contractor", "timing": "construction" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Compressor mean time between maintenance (MTBM)", "threshold_green": ">8,000 hours", "threshold_amber": "4,000-8,000 hours", "threshold_red": "<4,000 hours" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["commissioning", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-004", "GA-PR-009"],
+    "technology_card_references": ["TC-PEM-001", "TC-ALK-001"]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-030", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Compressor reliability in hydrogen service — Industrial gas industry benchmark data", "author": "Hydrocarbon Processing / CompressorTech2", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

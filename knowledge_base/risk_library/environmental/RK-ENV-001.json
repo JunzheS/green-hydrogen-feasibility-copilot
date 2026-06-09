@@ -1,0 +1,38 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-ENV-001",
+  "risk_name": "Water Scarcity and Community Opposition Threatening Social License",
+  "risk_category": "environmental",
+  "risk_subcategory": "08.1_water_scarcity_and_competing_uses",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The project's water consumption creates or exacerbates local water stress, triggering community opposition, regulatory intervention, or water permit revocation. Risk is location-dependent: critical in water-stressed regions (Spain, Portugal, MENA); lower in water-abundant regions (Netherlands, Denmark, Germany).",
+    "detailed": "A 100 MW electrolyzer consumes ~400 m³/day of water — modest in absolute terms (~0.4% of a typical municipal plant) but symbolically significant in water-stressed regions. Public perception of 'water-for-hydrogen' can trigger opposition even when the actual water impact is small. Community opposition dimensions: (1) Water competition: agricultural users perceive hydrogen as competing for scarce water, (2) Safety fears: H₂ explosion risk perception (though H₂ is safer than gasoline in many respects), (3) Visual/noise impact: renewable generation + industrial plant, (4) Perceived lack of local benefit: 'hydrogen for export, not for us.' Gold Dataset evidence: Puertollano is in Ciudad Real — a water-stressed region of Spain. The project uses 100 MW solar (no water for power) + electrolyzer water (~36 m³/day for 3,000 t/yr H₂) — a small water footprint that was likely a permitting consideration. Masshylia underwent formal public consultation (Concertation Masshylia, 2022) demonstrating regulatory requirements for community engagement.",
+    "root_cause": "Regional water scarcity. Community perception of water competition. Lack of local economic benefit. Hydrogen safety perception gap.",
+    "trigger_events": ["Local water authority declares drought restriction affecting industrial users", "Community group organizes formal opposition to water permit renewal", "Media coverage frames project as 'competing with farmers for water'", "Municipal election brings in administration opposed to industrial water allocation"]
+  },
+  "assessment": {
+    "probability": 2, "impact": 4, "detectability": 2,
+    "risk_priority_number": 16, "risk_class": "low",
+    "probability_rationale": "Most Gold Dataset projects are in industrial zones with established water infrastructure. Water-scarce regions (southern Spain, Portugal) face higher probability. Probability 2 (Unlikely for well-sited projects; possible for projects in water-stressed regions).",
+    "impact_rationale": "Water permit revocation stops production. Community opposition can delay project by years (permitting challenges, public inquiries). Reputational damage to developer.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Sustainability & Community Relations Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-ENV-001-P-01", "description": "Use alternative water sources where possible: seawater desalination (coastal sites), recycled industrial water (refinery sites — Galp Sines model), or air-cooled systems to reduce water consumption.", "responsible_party": "Developer (Sustainability)", "timing": "pre_feasibility" },
+      { "action_id": "MIT-ENV-001-P-02", "description": "Conduct early community engagement and transparent water use reporting. Publish annual water consumption and demonstrate minimal impact on local water resources.", "responsible_party": "Developer (Community Relations)", "timing": "pre_feasibility" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-002", "GA-PR-006", "GA-PR-010"],
+    "incident_descriptions": ["Masshylia (GA-PR-002): Underwent formal Concertation Masshylia public consultation (2022) under French CNDP (National Commission for Public Debate). This is a regulatory requirement for large industrial projects in France — demonstrating the community engagement burden for hydrogen projects.", "Puertollano (GA-PR-006): Located in Ciudad Real, Castilla-La Mancha — a water-stressed region. The project's small water footprint (36 m³/day for 20 MW) and co-location with an existing Fertiberia ammonia plant (already an industrial water user) mitigate water competition concerns.", "Galp Sines (GA-PR-010): Recycled refinery water — zero additional freshwater consumption. This is the most water-sustainable model in the Gold Dataset."],
+    "lessons_learned": "Water consumption is small in absolute terms but large in public perception. Recycled water (Galp Sines) and desalination (coastal sites) address the perception gap. Early community engagement (Masshylia Concertation model) is essential for projects in populated areas."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-130", "source_type": "government_announcement", "source_quality_level": "A", "source_reliability_score": 5, "title": "Concertation Masshylia — Public consultation documentation (CNDP, 2022)", "author": "Concertation Masshylia / CNDP", "retrieval_date": "2026-06-01", "confidence": "high" },
+    { "source_id": "SRC-RSK-2026-131", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "Galp Sines (GA-PR-010) — Recycled industrial water for electrolysis", "author": "Galp", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

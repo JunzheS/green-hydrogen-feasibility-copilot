@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-IND-007",
+  "cost_name": "All-In Total CAPEX — Alkaline 100 MW Greenfield — Europe 2025 (Aggregated Benchmark)",
+  "cost_category": "indirect_owners_costs", "cost_subcategory": "08_all",
+  "cost_basis": "all_in", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 1308, "eur_per_kw_low": 1010, "eur_per_kw_high": 1840, "cost_year": 2025, "percentage_of_total_capex": 100 },
+  "context": { "technology_type": "Alkaline", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe", "greenfield_or_brownfield": "greenfield" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "Bottom-up aggregation of CS-ELC-007 + CS-ELI-001 + CS-HPR-002 + CS-CIV-002 + CS-IND-001/002/003/005. Validated against IRENA total system cost range (€1,010-1,840/kW). Central estimate consistent with Technology Card TC-ALK-001." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Aggregated from Class C components. Weighted confidence 0.62 (Medium). Consistent with IRENA range and TC-ALK-001.", "data_points_contributing": 15, "verified_by_second_source": true, "second_source_reference": "IRENA 2024 total system cost range" },
+  "cost_drivers": { "primary_drivers": ["Electrolyzer stack cost (16% of total)", "Compression (atmospheric penalty) (4%)", "Civil works (9%, larger footprint)", "Contingency (11%, lower than PEM due to TRL 9)", "Engineering (8%)"], "sensitivity_to_scale": "high", "exclusions": ["Same as CS-IND-006"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA 2024 + IEA GHR 2025 aggregated total Alkaline CAPEX", "author": "IRENA / IEA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-ALK-001.cost_profile", "risk_references": ["RK-FIN-001"] }
+}

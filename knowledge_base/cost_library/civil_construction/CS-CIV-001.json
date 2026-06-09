@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-CIV-001",
+  "cost_name": "Civil & Construction — PEM Greenfield — 100 MW — Europe 2025",
+  "cost_category": "civil_construction", "cost_subcategory": "05_all",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 200, "eur_per_kw_low": 140, "eur_per_kw_high": 280, "cost_year": 2025, "percentage_of_total_capex": 7 },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe", "greenfield_or_brownfield": "greenfield" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "IRENA 2024 + chemical plant civil cost norms. PEM footprint ~50 m²/MW. Includes site preparation, electrolyzer hall building, control room, warehouse, foundations, pipe racks, roads, drainage, fencing." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Civil costs are well-established for industrial plants. Hydrogen-specific factors (ATEX zoning, blast protection) add ~10-15% vs standard industrial building.", "data_points_contributing": 4 },
+  "cost_drivers": { "primary_drivers": ["Greenfield vs brownfield (greenfield +25-40%)", "Soil conditions (piling required?)", "ATEX zoning and blast protection requirements", "Local building codes and seismic zone", "Climate (snow/wind loads, enclosure requirements)"], "sensitivity_to_scale": "medium", "exclusions": ["Land acquisition cost", "Permitting fees (included in owner's costs)", "Decommissioning provision"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA 2024 — Civil & construction cost breakdown", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

@@ -1,0 +1,37 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELC-003",
+  "cost_name": "PEM Electrolyzer Stack — 20 MW Scale Premium — Europe 2025",
+  "cost_category": "electrolyzer_system", "cost_subcategory": "01.1_electrolyzer_stack",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": {
+    "eur_per_kw": 900, "eur_per_kw_low": 700, "eur_per_kw_high": 1200,
+    "cost_year": 2025, "is_inflation_adjusted": false,
+    "percentage_of_total_capex": 23
+  },
+  "context": {
+    "technology_type": "PEM", "project_scale_mw": 20,
+    "scale_is_extrapolated": true, "original_scale_mw": 100,
+    "extrapolation_method": "Power law scaling: n=0.90. 20 MW benchmark derived from 100 MW IEA benchmark. 20 MW price includes small-scale premium (~+12%).",
+    "project_location_region": "europe"
+  },
+  "estimation": {
+    "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%",
+    "estimation_method": "Extrapolated from CS-ELC-001 (IEA 100 MW PEM benchmark) using power law exponent n=0.90. Cross-validated against Puertollano GA-PR-006 (20 MW PEM, operational 2022)."
+  },
+  "confidence": {
+    "level": "D_analyst_estimate",
+    "rationale": "Derived from Class C benchmark via scaling. Puertollano actual cost provides qualitative validation but project-specific CAPEX includes solar + battery. Downgraded per cost_confidence_framework.md extrapolation rule.",
+    "data_points_contributing": 1
+  },
+  "cost_drivers": {
+    "primary_drivers": ["Small-scale procurement penalty (fewer modules, less volume discount)", "Fixed OEM overhead spread over fewer MW", "Higher per-unit logistics cost", "Minimum engineering scope regardless of plant size"],
+    "sensitivity_to_scale": "high",
+    "exclusions": ["Same as CS-ELC-001"]
+  },
+  "sources": [
+    { "source_id": "SRC-CST-2025-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA GHR 2025 — 100 MW benchmark used as scaling reference", "author": "IEA", "retrieval_date": "2026-06-01", "confidence": "high" },
+    { "source_id": "SRC-CST-2026-PROJ", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "Puertollano GA-PR-006 — 20 MW PEM operational data (qualitative scale validation)", "author": "Iberdrola", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ],
+  "integration": { "technology_card_reference": "TC-PEM-001.cost_profile", "risk_references": ["RK-FIN-001"] }
+}

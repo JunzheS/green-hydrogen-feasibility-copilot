@@ -1,0 +1,34 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-CST-002",
+  "risk_name": "Electrolyzer Module Integration and Commissioning Sequence Failure",
+  "risk_category": "construction",
+  "risk_subcategory": "06.2_module_integration_and_commissioning",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Integration of electrolyzer modules with BOP systems during commissioning fails to meet performance specifications, delaying first hydrogen production by 1-3 months. First-of-a-kind plants using multiple OEMs for different subsystems face elevated integration risk.",
+    "detailed": "Commissioning a large electrolysis plant involves: individual stack module commissioning (power-up, leak test, performance test), BOP system commissioning (water treatment, cooling, compression, purification), integrated system test (full-load operation with all systems), and performance/availability demonstration tests. Multi-vendor integration (electrolyzer OEM A, rectifier OEM B, DCS OEM C, BOP contractor D) creates interface complexity. Gold Dataset: Normand'Hy's 12 staggered module deliveries require sequential commissioning — each module must be commissioned before the next is delivered. HH1's 10 parallel rows allow parallel commissioning but increase coordination complexity.",
+    "root_cause": "Multi-vendor interface complexity. Limited integrated testing before site commissioning. Sequential module delivery requiring staggered commissioning.",
+    "trigger_events": ["First module commissioning exceeds planned duration by >50%", "Integrated system test fails to achieve full-load operation within 2 weeks of first attempt", "Performance test shows system efficiency >5% below design specification"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 3, "detectability": 3,
+    "risk_priority_number": 27, "risk_class": "medium",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "EPC Contractor (Commissioning Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-CST-002-P-01", "description": "Conduct integrated factory acceptance testing (FAT) with all major subsystem controllers before shipment. Include dynamic load-following, grid disturbance, and emergency shutdown scenarios.", "responsible_party": "EPC Contractor", "timing": "pre_commissioning" },
+      { "action_id": "MIT-CST-002-P-02", "description": "Commission first module to full performance acceptance before commencing subsequent modules. Use first-module learnings to optimize remaining commissioning sequence.", "responsible_party": "Commissioning Manager", "timing": "commissioning" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw"], "project_phases": ["commissioning"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-001", "GA-PR-003"],
+    "incident_descriptions": ["Normand'Hy (GA-PR-001): 12 PEM modules delivered sequentially (staggered). 9 of 12 delivered as of late 2025. Sequential commissioning approach — first modules commissioned while later modules still in manufacturing. This reduces peak site workforce but extends overall commissioning period.", "Holland Hydrogen I (GA-PR-003): 10 parallel rows of Scalum modules. Parallel commissioning possible but requires 10× commissioning resources simultaneously. Yokogawa MAC scope includes commissioning support — single automation contractor reduces integration risk."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-111", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "Normand'Hy (GA-PR-001) — Siemens Energy 9-of-12 module delivery status", "author": "FuelCellChina / Siemens Energy", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

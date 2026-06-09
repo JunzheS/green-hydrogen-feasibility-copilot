@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-HPR-001",
+  "cost_name": "PEM H₂ Compression — 30 bar Outlet → Industrial Offtake (30-50 bar) — 100 MW — Europe 2025",
+  "cost_category": "hydrogen_processing", "cost_subcategory": "04.1_compression",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 40, "eur_per_kw_low": 20, "eur_per_kw_high": 70, "cost_year": 2025, "percentage_of_total_capex": 1.5 },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "IRENA 2024 compression cost breakdown. PEM 30 bar outlet already at industrial offtake pressure — minimal additional compression for pressure regulation and metering only. One small booster stage if offtake requires >30 bar." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Based on IRENA cost data for industrial offtake compression. PEM's pressurized output minimizes compression cost — this is a technology-specific advantage documented in TC-PEM-001.", "data_points_contributing": 2 },
+  "cost_drivers": { "primary_drivers": ["Offtake pressure above 30 bar (additional stage per 30 bar increment)", "Flow rate (larger compressor = lower per-unit cost)", "Compressor type (reciprocating for H₂, oil-free)"], "sensitivity_to_scale": "medium", "exclusions": ["Mobility-grade compression (500-900 bar) — see CS-HPR-004", "Pipeline injection >80 bar"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA Green Hydrogen Cost Reduction 2024 — Compression cost breakdown", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-PEM-001.cost_profile" }
+}

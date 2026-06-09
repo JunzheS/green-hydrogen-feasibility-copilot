@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELI-002",
+  "cost_name": "Grid Connection — Brownfield (Reuse Existing Infrastructure) — 100 MW — Europe 2025",
+  "cost_category": "electrical_infrastructure", "cost_subcategory": "02.1_grid_connection",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 60, "eur_per_kw_low": 30, "eur_per_kw_high": 120, "cost_year": 2025, "percentage_of_total_capex": 2 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe", "greenfield_or_brownfield": "brownfield", "project_reference_id": "GA-PR-004" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±40%", "estimation_method": "Based on HGHH/ Moorburg model: reuse existing 380 kV connection from decommissioned coal plant. Includes minor switchgear upgrades and protection system reconfiguration. Does NOT include new transformer (existing unit reused)." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "HGHH project provides qualitative validation of brownfield grid reuse cost savings. HGHH explicitly cited 380 kV reuse as a key cost advantage. Range reflects site-specific condition of existing equipment.", "data_points_contributing": 2 },
+  "cost_drivers": { "primary_drivers": ["Condition of existing switchgear and protection", "Transformer remaining life assessment", "Grid code compliance upgrades (new vs legacy standards)", "TSO reconnection study and approval"], "sensitivity_to_scale": "low", "exclusions": ["Major transformer replacement (if existing unit fails condition assessment)", "New transmission line (if existing line is decommissioned)"] },
+  "sources": [ { "source_id": "SRC-CST-2025-IEA-GRID", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA Electricity Grids 2025", "author": "IEA", "retrieval_date": "2026-06-01", "confidence": "high" }, { "source_id": "SRC-CST-HGHH", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "HGHH (GA-PR-004) — Moorburg coal plant 380 kV connection reuse", "author": "Luxcara / Hamburger Energiewerke", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "risk_references": ["RK-GRD-001"] }
+}

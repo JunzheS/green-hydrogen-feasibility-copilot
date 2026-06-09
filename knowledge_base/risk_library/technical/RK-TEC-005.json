@@ -1,0 +1,47 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-TEC-005",
+  "risk_name": "Multi-Vendor Control System Integration Failure During Commissioning",
+  "risk_category": "technical",
+  "risk_subcategory": "01.5_control_and_safety_systems",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Integration of electrolyzer OEM control system with balance-of-plant DCS, safety instrumented system, and grid interface fails during commissioning, delaying first hydrogen production by 1-3 months. This risk is particularly acute for projects using multiple vendors for different subsystems.",
+    "detailed": "A large electrolysis plant typically involves: electrolyzer OEM control system (proprietary), BOP DCS (e.g., Siemens PCS7, Yokogawa Centum, ABB 800xA), safety instrumented system (SIS) to IEC 61511, grid interface (TSO SCADA), water treatment PLC, hydrogen processing package controls, and offtake pipeline/storage controls. Each subsystem arrives with its own control logic, communication protocol, and commissioning requirements. Integration testing is the critical path activity in commissioning. Interface issues (signal mismatches, protocol incompatibilities, timing conflicts, alarm flooding) are common in first-of-a-kind multi-vendor integrations.",
+    "root_cause": "Multi-vendor project structure with proprietary control systems. Insufficient interface definition during FEED. Limited integrated factory acceptance testing (FAT) before site commissioning.",
+    "trigger_events": ["Integrated FAT reveals unresolved interface issues", "Commissioning sequence delayed >2 weeks due to control system interlock conflicts", "Alarm flooding during first integrated test run (>100 alarms/hour)"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 3, "detectability": 3,
+    "risk_priority_number": 27, "risk_class": "medium",
+    "probability_rationale": "Multi-vendor integration issues are common in first-of-a-kind industrial plants. HGHH (Kraftanlagen BOP + Siemens Energy electrolyzer + HH-WIN network) and HH1 (Thyssenkrupp electrolyzer + Worley EPCM + Yokogawa MAC + TenneT grid) exemplify the multi-vendor challenge.",
+    "impact_rationale": "1-3 month commissioning delay; €3-8M revenue loss at 100 MW scale. Does not damage equipment — schedule impact only.",
+    "detectability_rationale": "Most interface issues are discovered during integrated FAT or early commissioning. Some issues only emerge under full-load dynamic operation and are harder to detect pre-commissioning.",
+    "assessment_method": "Industrial plant commissioning experience + Gold Dataset project evidence",
+    "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "schedule": { "impact": "1-3_months", "description": "Commissioning extended by 1-3 months due to control system integration debugging. First H₂ milestone delayed." },
+    "cost": { "impact_eur": 5000000, "description": "€3-8M revenue delay + €500K-1M additional commissioning engineering support at 100 MW scale." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "EPC Contractor (Commissioning Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-TEC-005-P-01", "description": "Require integrated FAT with all major subsystem controllers connected and tested before shipment to site. Include dynamic load-following and grid disturbance scenarios in test protocol.", "responsible_party": "EPC Contractor", "timing": "pre_commissioning" },
+      { "action_id": "MIT-TEC-005-P-02", "description": "Select single Main Automation Contractor (MAC) with contractual responsibility for full system integration. HH1 appointed Yokogawa as MAC — a risk-reducing best practice.", "responsible_party": "Developer (Procurement)", "timing": "feed" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Integrated FAT completion vs. schedule", "threshold_green": "FAT completed on schedule; <5 open interface issues", "threshold_amber": "FAT delayed <2 weeks; 5-15 open issues", "threshold_red": "FAT delayed >2 weeks; >15 open issues" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw"], "project_phases": ["commissioning"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-004"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Appointed Yokogawa as Main Automation Contractor (MAC) specifically to manage multi-vendor integration risk. Thyssenkrupp Nucera electrolyzer, Worley EPCM, TenneT grid, Evides water — all integrated under Yokogawa's MAC scope. This is a risk mitigation best practice.", "Hamburg Green Hydrogen Hub (GA-PR-004): Kraftanlagen BOP + Siemens Energy electrolyzer + HH-WIN network + trailer loading station. Multi-party integration with no publicly announced single MAC — potential integration risk if not managed through clear interface specifications."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-050", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "Yokogawa selected as MAC for Holland Hydrogen I", "author": "Yokogawa Electric Corporation", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

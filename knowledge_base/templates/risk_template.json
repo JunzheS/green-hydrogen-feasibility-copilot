@@ -1,0 +1,140 @@
+{
+  "_schema_version": "1.0.0",
+  "_template_name": "Risk Entry Template",
+  "_description": "Template for recording a project risk entry. Copy this file, replace placeholder values, and save to the appropriate risk category folder under /knowledge_base/risk_library/.",
+  "_instructions": [
+    "1. Copy this template",
+    "2. Replace all <<PLACEHOLDER>> values with risk analysis data",
+    "3. Always link to at least one real reference project where this risk has been observed",
+    "4. Use the controlled vocabularies defined in database_architecture.md §6",
+    "5. Risk score = Probability (1–5) × Impact (1–5) on a 1–25 scale",
+    "6. Risk level: low (1–4), medium (5–9), high (10–16), critical (17–25)",
+    "7. Tag cascading risks using their risk_id references"
+  ],
+
+  "risk_id": "<<RK-TEC-001>>",
+  "risk_name": "<<PEM Electrolyzer Stack Degradation Exceeding Warranty Specifications>>",
+  "risk_description": "<<PEM electrolyzer stacks may experience accelerated degradation when operated under highly dynamic conditions with frequent start-stop cycles, leading to efficiency loss beyond the OEM warranty curve. This results in higher electricity consumption per kg H₂, reducing project economics. Degradation is typically non-linear and may accelerate after 40,000–50,000 operating hours, well within the project financing period.>>",
+  "risk_category": "technical",
+  "risk_subcategory": "Electrolyzer Performance",
+  "risk_version": "1.0.0",
+  "risk_status": "draft",
+
+  "assessment": {
+    "probability_qualitative": "moderate",
+    "probability_quantitative_percent": 35,
+    "impact_qualitative": "major",
+    "impact_cost_eur": 15000000,
+    "impact_schedule_months": 6,
+    "risk_score": 12,
+    "risk_level": "high",
+    "assessment_method": "<<Expert elicitation workshop with 5 SMEs from electrolyzer OEMs, project developers, and independent engineers. Delphi method, 2 rounds.>>",
+    "assessment_date": "2025-11-15",
+    "assessed_by": "<<Internal Risk Assessment Team — Green Hydrogen Copilot Project>>"
+  },
+
+  "applicability": {
+    "technology_types": ["PEM"],
+    "project_scale": "medium_10_to_100mw",
+    "project_phase": ["operations"],
+    "region_relevance": ["all"],
+    "first_of_a_kind_only": false
+  },
+
+  "consequences": {
+    "description": "<<If stack degradation exceeds the warranted rate (typically ~1%/year for PEM), the project faces: (1) Progressive increase in electricity consumption per kg H₂ — a 2%/year degradation vs 1% warranted means ~10% higher electricity cost by year 10. (2) Early stack replacement at year 5–6 instead of year 8–10, adding €15–20M unplanned CAPEX for a 100 MW plant. (3) Potential disputes with OEM over warranty coverage if degradation is attributed to operational profile. (4) Reduced plant availability during stack replacement (4–6 weeks per module replacement).>>",
+    "worst_case_scenario": "<<Catastrophic stack failure requiring full replacement at year 3. OEM disputes warranty due to operational profile (frequent starts). Unbudgeted €20M+ replacement cost. 3 months downtime. Project IRR drops 3–5 percentage points, potentially triggering loan covenant breach.>>",
+    "cascading_risks": ["RK-FIN-002", "RK-OPS-001", "RK-MKT-001"]
+  },
+
+  "mitigation": {
+    "strategy": "reduce",
+    "actions": [
+      {
+        "action_id": "MIT-TEC-001-A",
+        "description": "<<Include stack degradation warranty with clear operational profile boundaries in EPC contract. Negotiate degradation guarantee: ≤1.0%/year for first 5 years, ≤1.5%/year through year 10.>>",
+        "responsible_party": "Developer (Procurement)",
+        "timing": "pre_fid",
+        "effectiveness": "high",
+        "cost_eur": 0
+      },
+      {
+        "action_id": "MIT-TEC-001-B",
+        "description": "<<Implement advanced condition monitoring system: individual cell voltage monitoring, electrochemical impedance spectroscopy (EIS) periodic testing, AI-based degradation prediction.>>",
+        "responsible_party": "Operations Operator",
+        "timing": "during_operations",
+        "effectiveness": "medium",
+        "cost_eur": 500000
+      },
+      {
+        "action_id": "MIT-TEC-001-C",
+        "description": "<<Design plant with N+1 stack redundancy so one module can be offline for maintenance without stopping production. Size BOP for full capacity even with one module down.>>",
+        "responsible_party": "EPC Contractor",
+        "timing": "pre_construction",
+        "effectiveness": "high",
+        "cost_eur": 8000000
+      },
+      {
+        "action_id": "MIT-TEC-001-D",
+        "description": "<<Establish stack replacement sinking fund: allocate €0.05/kg H₂ produced into reserved account starting year 1. By year 8, fund covers 100% of stack replacement cost.>>",
+        "responsible_party": "Developer (Finance)",
+        "timing": "ongoing",
+        "effectiveness": "high",
+        "cost_eur": 0
+      }
+    ]
+  },
+
+  "evidence": {
+    "reference_project_ids": ["PR-OP-001", "PR-OP-004", "PR-UC-002"],
+    "incident_descriptions": [
+      "<<Project Alpha (Germany, 100 MW PEM): Stack degradation of 1.8%/year observed in first 3 years vs 1.0% warranted. Root cause: higher-than-expected start-stop cycles due to wind variability. OEM provided partial compensation. Replacement advanced to year 5.>>",
+      "<<Project Beta (Netherlands, 20 MW PEM): Membrane thinning detected at 35,000 hours via EIS. Preventive stack replacement at 40,000 hours — 33% earlier than planned. Learning: EIS monitoring is effective for early detection.>>"
+    ],
+    "lessons_learned": "<<(1) Real-world degradation often exceeds lab/pilot data due to dynamic operation. (2) OEM warranties typically exclude degradation caused by 'excessive cycling' — operational profile must be negotiated upfront. (3) EIS monitoring provides 12–18 months early warning before irreversible degradation. (4) Stack replacement fund is essential — do not depend solely on warranty. (5) N+1 redundancy adds ~8% CAPEX but eliminates production loss during stack swaps.>>",
+    "frequency_in_reference_projects": "<<Observed in 3 of 18 reference PEM projects >20 MW with more than 3 years of operating data. Frequency: ~17%.>>",
+    "industry_standards_reference": [
+      "IEC 62282-8-101: Energy storage systems using fuel cell modules",
+      "ISO 22734: Hydrogen generators using water electrolysis",
+      "ISO 31000: Risk management — Guidelines"
+    ]
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-RSK-2025-001",
+      "source_type": "industry_report",
+      "title": "<<IEA Electrolyser Durability and Degradation: Lessons from First Commercial Plants, 2025>>",
+      "url": "https://www.iea.org/reports/electrolyser-durability-2025",
+      "local_file_ref": "source_documents/industry_reports/iea_electrolyser_durability_2025.pdf",
+      "publication_date": "2025-04-10",
+      "retrieval_date": "2025-05-01",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC-RSK-2024-002",
+      "source_type": "academic_paper",
+      "title": "<<Accelerated stress tests for PEM electrolysis: Bridging lab and field degradation — Journal of Power Sources, 2024>>",
+      "url": "https://doi.org/10.1016/j.example.2024",
+      "local_file_ref": "source_documents/academic_papers/pem_ast_2024.pdf",
+      "publication_date": "2024-08-20",
+      "retrieval_date": "2024-11-01",
+      "confidence": "medium"
+    }
+  ],
+
+  "rag_metadata": {
+    "text_for_embedding": "PEM Electrolyzer Stack Degradation Exceeding Warranty Specifications. Category: technical > Electrolyzer Performance. Probability: moderate, Impact: major. Applies to: PEM at medium_10_to_100mw. Consequences: Accelerated stack degradation beyond warranty rate leads to higher electricity consumption, early stack replacement costs, OEM warranty disputes, and production downtime. Mitigation strategy: reduce. Evidence: Observed in 3 of 18 reference PEM projects >20 MW with >3 years data (~17% frequency). Lessons: Real-world degradation often exceeds lab data; EIS monitoring provides early warning; stack replacement fund essential. Keywords: PEM, stack degradation, warranty, dynamic operation, efficiency loss, stack replacement.",
+    "keywords": [
+      "PEM",
+      "stack_degradation",
+      "warranty",
+      "dynamic_operation",
+      "efficiency_loss",
+      "stack_replacement",
+      "EIS_monitoring",
+      "electrolyzer_durability"
+    ],
+    "last_indexed": "2025-12-10T14:00:00Z"
+  }
+}

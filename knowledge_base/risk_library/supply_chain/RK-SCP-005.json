@@ -1,0 +1,40 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-SCP-005",
+  "risk_name": "EPC/EPCM Contractor Performance Failure — Schedule, Quality, or Safety",
+  "risk_category": "supply_chain",
+  "risk_subcategory": "02.5_contractor_and_subcontractor_performance",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The EPC or EPCM contractor fails to meet contractual schedule, quality, or safety standards. Hydrogen projects face a specific challenge: limited number of EPC contractors with demonstrated large-scale electrolysis experience. The Gold Dataset shows projects using diverse EPC models (EPCM, split contracts, owner's engineer) — reflecting the immaturity of the hydrogen EPC market.",
+    "detailed": "The hydrogen EPC market is immature. Traditional EPC contractors (Technip, Worley, Linde Engineering, Technicas Reunidas) have transferable skills from oil & gas and chemical industries but limited electrolysis-specific track records. The Gold Dataset shows varied approaches: HH1 uses Worley as EPCM (engineering, procurement, construction management — owner retains more risk), HGHH split the scope (Siemens Energy for electrolyzer, Kraftanlagen for BOP), HyDeal España engaged 4 separate FEED contractors. This fragmentation increases integration risk but reflects the reality that no single EPC contractor has delivered a >100 MW green hydrogen plant.",
+    "root_cause": "Immature hydrogen EPC market. Limited number of contractors with demonstrated electrolysis experience at >20 MW scale. Transferable skills from oil & gas and chemicals exist but electrolysis-specific integration expertise is developing.",
+    "trigger_events": ["EPC contractor reports schedule variance >10% from baseline", "EPC contractor experiences key personnel turnover on project", "Subcontractor default or insolvency affecting critical path", "EPC contractor requests significant change order outside contingency"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 4, "detectability": 3,
+    "risk_priority_number": 36, "risk_class": "medium",
+    "probability_rationale": "First-of-a-kind projects with contractors lacking electrolysis-specific track records carry elevated EPC performance risk. As the market matures (2028+), this probability should decrease.",
+    "impact_rationale": "EPC performance failure can delay COD by 6-12 months and add 10-25% to construction cost through change orders and claims.",
+    "detectability_rationale": "Monthly EPC progress reports provide partial visibility. But true performance issues (productivity, quality defects) may not be apparent until 30-50% through construction.",
+    "assessment_method": "Industrial project benchmarking + Gold Dataset EPC model analysis",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Project Director)",
+    "preventive_actions": [
+      { "action_id": "MIT-SCP-005-P-01", "description": "Use competitive FEED + EPC procurement with minimum 3 qualified bidders. Require demonstration of electrolysis or chlor-alkali project experience.", "responsible_party": "Developer (Procurement)", "timing": "feed" },
+      { "action_id": "MIT-SCP-005-P-02", "description": "Engage Owner's Engineer with hydrogen project experience to provide independent oversight of EPC contractor performance. TSK serves this role on HyDeal España.", "responsible_party": "Developer", "timing": "feed" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["feed", "construction", "commissioning"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-004", "GA-PR-005"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Worley as EPCM. Shell retained significant owner oversight — reflecting Shell's in-house engineering capability and the immaturity of the hydrogen EPC market.", "Hamburg Green Hydrogen Hub (GA-PR-004): Split scope approach: Siemens Energy for electrolyzer (OEM), Kraftanlagen for BOP, Drees & Sommer for project management. This split model manages risk by matching each scope to the most qualified contractor but increases integration complexity.", "HyDeal España (GA-PR-005): 4 FEED contractors (VINCI/Cobra, Técnicas Reunidas, PowerChina, TSK as Owner's Engineer). Competitive FEED approach to de-risk technology and cost before EPC selection.", "Masshylia (GA-PR-002): No EPC contractor appointed — project has not reached that stage, illustrating that EPC market readiness is contingent on project maturity."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-065", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Hydrogen Council / McKinsey — Hydrogen Insights 2024: EPC market analysis", "author": "Hydrogen Council", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

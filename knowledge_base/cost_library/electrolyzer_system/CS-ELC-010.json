@@ -1,0 +1,28 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELC-010",
+  "cost_name": "Alkaline Stack Cost — Hyoffwind 25 MW Project — Belgium 2024",
+  "cost_category": "electrolyzer_system", "cost_subcategory": "01.1_electrolyzer_stack",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": {
+    "eur_per_kw": 500, "eur_per_kw_low": 400, "eur_per_kw_high": 650,
+    "cost_year": 2024, "is_inflation_adjusted": false,
+    "percentage_of_total_capex": 17
+  },
+  "context": {
+    "technology_type": "Alkaline", "project_scale_mw": 25,
+    "scale_is_extrapolated": false, "project_location_region": "europe", "project_country": "Belgium",
+    "project_reference_id": "GA-PR-009", "greenfield_or_brownfield": "brownfield"
+  },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "Estimated from Hyoffwind total CAPEX (€72M all-in for 25 MW). Electrolyzer portion estimated at ~17% of all-in based on IEA/IRENA cost breakdown for 25 MW Alkaline plants. John Cockerill pressurized Alkaline (4 × 6.25 MW)." },
+  "confidence": {
+    "level": "D_analyst_estimate",
+    "rationale": "Total CAPEX is Level A (Virya Energy disclosure). Stack proportion is DERIVED. The €500/kW estimate is based on cost breakdown norms for small-scale Alkaline. John Cockerill is a European OEM — costs reflect Western manufacturing.",
+    "data_points_contributing": 1
+  },
+  "cost_drivers": { "primary_drivers": ["John Cockerill pressurized Alkaline (up to 30 bar) — premium over atmospheric", "Small scale (25 MW) procurement penalty", "Belgian labor costs (Western Europe)", "4 × 6.25 MW module configuration"], "sensitivity_to_scale": "high", "exclusions": ["Full BOP (Kraftanlagen-type scope)", "Compression beyond 30 bar", "Owner's costs and contingency included in total €72M"] },
+  "sources": [
+    { "source_id": "SRC-CST-2024-HOF", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Hyoffwind — Belgium's first green hydrogen plant: €72M total, 25 MW, John Cockerill alkaline", "author": "Virya Energy / John Cockerill", "publication_date": "2024", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ],
+  "integration": { "technology_card_reference": "TC-ALK-001.cost_profile", "risk_references": ["RK-SCP-001"] }
+}

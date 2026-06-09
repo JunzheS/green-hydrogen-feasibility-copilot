@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-IND-006",
+  "cost_name": "All-In Total CAPEX — PEM 100 MW Greenfield — Europe 2025 (Aggregated Benchmark)",
+  "cost_category": "indirect_owners_costs", "cost_subcategory": "08_all",
+  "cost_basis": "all_in", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 1500, "eur_per_kw_low": 1100, "eur_per_kw_high": 2100, "cost_year": 2025, "percentage_of_total_capex": 100 },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe", "greenfield_or_brownfield": "greenfield" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "Bottom-up aggregation of CS-ELC-006 + CS-ELI-001 + CS-HPR-001 + CS-CIV-001 + CS-IND-001/002/003/004. Validated against IRENA total system cost range (€1,100-2,100/kW). Central estimate consistent with Technology Card TC-PEM-001." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Aggregated from Class C components. Weighted confidence 0.60 (Medium). This is a reference class estimate — an AVERAGE for this technology/scale/region. Individual projects will deviate based on site, offtake, developer, and procurement strategy.", "data_points_contributing": 15, "verified_by_second_source": true, "second_source_reference": "IRENA 2024 total system cost range" },
+  "cost_drivers": { "primary_drivers": ["Electrolyzer stack cost (21% of total)", "Contingency (13%)", "Engineering (8%)", "Civil works (7%)", "Grid connection (6%)"], "sensitivity_to_scale": "high", "exclusions": ["This is an AGGREGATED BENCHMARK. It is NOT a project-specific estimate.", "OPEX, LCOH, financing costs during construction", "Dedicated renewable generation (solar farm, wind farm)"] },
+  "sources": [ { "source_id": "SRC-CST-2025-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA GHR 2025 + IRENA 2024 aggregated total PEM CAPEX", "author": "IEA / IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-PEM-001.cost_profile", "risk_references": ["RK-FIN-001"] }
+}

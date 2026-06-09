@@ -1,0 +1,172 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-004",
+  "project_name": "Hamburg Green Hydrogen Hub",
+  "alias_names": ["HGHH", "Moorburg Electrolyzer", "Hamburg Green Hydrogen Hub (HGHH)"],
+  "status": "under_construction",
+  "status_detail": "Construction started December 2025 with foundation stone laid at former Moorburg coal power plant site. Siemens Energy supplying six PEM electrolyzer units. Kraftanlagen Energies & Services building balance-of-plant infrastructure. Building for electrolyzer and compressors expected mid-2026. Commercial operation targeted for second half of 2027. IPCEI funding of >€250 million awarded July 2024 (combined with HH-WIN hydrogen network). Site reuses existing 380 kV grid connection, water treatment facilities, and quayside infrastructure from former coal plant.",
+
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed",
+    "project_phase_at_collection": "construction",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "The Hamburg Green Hydrogen Hub (HGHH) is a 100 MW PEM electrolysis project being built at the former Moorburg coal-fired power plant site in Hamburg, Germany. The project is owned by Luxcara (74.9%), an asset manager, and Hamburger Energiewerke (25.1%), the city's municipal utility. Siemens Energy is supplying six PEM electrolyzer units with a 10-year maintenance agreement, manufactured at the Berlin Gigafactory. Kraftanlagen Energies & Services is building the balance-of-plant infrastructure including power distribution, water treatment, cooling, compressor stations, and hydrogen network connections. The hydrogen will be distributed via the HH-WIN hydrogen distribution network and a planned trailer loading station, serving industrial users, the Port of Hamburg, and the transport sector. The project reuses existing infrastructure from the decommissioned coal plant including the 380 kV grid connection, water treatment facilities, and quayside access. Total investment exceeds €280 million with >€250 million in combined federal and state IPCEI funding. Construction started in December 2025 with commercial operation expected in the second half of 2027.",
+    "is_first_of_a_kind": false,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "Germany",
+    "region": "Hamburg",
+    "city": "Hamburg (Moorburg)",
+    "coordinates": {
+      "lat": 53.49,
+      "lon": 9.95
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM",
+    "technology_selection_status": "confirmed",
+    "electrolyzer_manufacturer": "Siemens Energy",
+    "electrolyzer_model": "Siemens Energy PEM (Berlin Gigafactory modules)",
+    "technology_card_ref": "TC-PEM-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 100,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 27400,
+    "hydrogen_output_tons_per_year": 10000,
+    "number_of_stacks": 6,
+    "stack_capacity_mw": 16.67
+  },
+
+  "power": {
+    "renewable_type": "grid_mix",
+    "renewable_capacity_mw": null,
+    "grid_connection": true,
+    "grid_connection_detail": "Reuse of existing 380 kV extra-high-voltage connection from former Moorburg coal plant",
+    "ppa_structure": null
+  },
+
+  "water": {
+    "source_type": "freshwater",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": "Existing Moorburg treatment facilities repurposed; Kraftanlagen building new BOP water systems"
+  },
+
+  "offtake": {
+    "primary_application": "industrial_heat",
+    "secondary_applications": ["mobility", "export"],
+    "offtaker_name": "Industrial users in Hamburg, Port of Hamburg, transport sector (via HH-WIN network and trailer station)",
+    "offtake_agreement_type": null,
+    "h2_storage_type": "compressed_gas",
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "Luxcara (74.9%) and Hamburger Energiewerke GmbH (25.1%)",
+    "developer_type": "consortium",
+    "co_developers": ["Luxcara GmbH", "Hamburger Energiewerke GmbH"],
+    "epc_contractor": "Kraftanlagen Energies & Services (BOP infrastructure)",
+    "operations_operator": null,
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": 280000000,
+    "capex_per_kw_eur": 2800,
+    "capex_per_kw_method": "calculated_total_div_mw",
+    "capex_confidence": "official",
+    "capex_year_reference": 2025,
+    "funding_sources": ["equity", "german_federal", "hamburg_state", "eu_ipcei"],
+    "total_investment_decision_date": "2024-07",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2022",
+    "fid_date": "2024-07",
+    "construction_start_date": "2025-12-01",
+    "commissioning_date": "2027-H2",
+    "construction_duration_months": 22,
+    "current_operational_year": null
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2024-012",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Hamburg Green Hydrogen Hub orders electrolyser from Siemens Energy",
+      "author": "Hamburg Business / HGHH",
+      "url": "https://hamburg-business.com/en/news/hamburg-green-hydrogen-hub-orders-electrolyser-from-siemens-energy",
+      "local_file_ref": null,
+      "publication_date": "2024-09",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms Siemens Energy contract for six PEM units, 10-year maintenance agreement"
+    },
+    {
+      "source_id": "SRC-2024-013",
+      "source_type": "government_announcement",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "BMWK awards funding: Hamburg Hydrogen Industrial Network and large-scale electrolyzer of the HGHH project receive IPCEI-funding",
+      "author": "HGHH / BMWK",
+      "url": "https://www.hghh.eu/news/bmwk-awards-funding",
+      "local_file_ref": "source_documents/project_data/hghh_ipcei_funding_2024.pdf",
+      "publication_date": "2024-07-15",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms >€250M combined funding for HGHH + HH-WIN; IPCEI approval Feb 2024"
+    },
+    {
+      "source_id": "SRC-2025-007",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Kraftanlagen commissioned to construct infrastructure for 100 MW electrolyzer at HGHH",
+      "author": "Kraftanlagen Energies & Services",
+      "url": "https://www.kraftanlagen.com/",
+      "local_file_ref": "source_documents/project_data/hghh_kraftanlagen_bop_2025.pdf",
+      "publication_date": "2025-10-16",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms BOP scope: power distribution, water treatment, cooling, compressors, H₂ network connections"
+    },
+    {
+      "source_id": "SRC-2025-008",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Construction begins on 100-MW green hydrogen plant at former Moorburg coal site",
+      "author": "Biofuels Digest",
+      "url": "https://biofuelsdigest.com/construction-begins-on-100-mw-green-hydrogen-plant-at-former-moorburg-coal-site/",
+      "local_file_ref": null,
+      "publication_date": "2025-12",
+      "retrieval_date": "2026-06-01",
+      "confidence": "medium",
+      "notes": "Confirms construction start December 2025; foundation stone laid"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-004_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "Hamburg Green Hydrogen Hub (HGHH) is a 100 MW PEM electrolysis project at the former Moorburg coal plant site in Hamburg, Germany. Owned by Luxcara (74.9%) and Hamburger Energiewerke (25.1%). Siemens Energy supplying six PEM electrolyzer units. Kraftanlagen building BOP. Hydrogen distributed via HH-WIN network and trailer station for industrial users, Port of Hamburg, and transport sector. Reuses 380 kV grid connection and water treatment from decommissioned coal plant. >€280M investment with >€250M IPCEI funding. Construction started December 2025, commercial operation H2 2027. Germany. Europe. industrial_heat + mobility. PEM. 100MW. Under construction.",
+    "keywords": ["PEM", "Germany", "Hamburg", "Moorburg", "industrial_heat", "mobility", "100MW", "under_construction", "Siemens_Energy", "Luxcara", "Hamburger_Energiewerke", "IPCEI", "brownfield", "coal_repurposing"],
+    "tags": ["gold_dataset", "europe", "IPCEI_funded", "brownfield", "coal_repurposing", "PEM"]
+  }
+}

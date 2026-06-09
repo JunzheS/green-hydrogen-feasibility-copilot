@@ -1,0 +1,58 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "_library": "Gold Dataset Sprint 1",
+  "risk_id": "RK-TEC-001",
+  "risk_name": "PEM Stack Degradation Exceeding Warranty Rate Under Dynamic Operation",
+  "risk_category": "technical",
+  "risk_subcategory": "01.1_electrolyzer_performance",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "PEM stacks operated under highly variable renewable profiles degrade at 1.5-2.0%/year versus the warranted 1.0%/year, leading to higher electricity consumption and early stack replacement (year 5-6 instead of year 8-10).",
+    "detailed": "PEM electrolyzer stacks degrade through multiple mechanisms: membrane thinning, catalyst dissolution, bipolar plate corrosion, and membrane electrode assembly delamination. Dynamic operation (frequent start-stop, rapid ramping, partial load) accelerates degradation beyond the steady-state rate used for OEM warranty specifications. Observed degradation rates of 1.5-2.0%/year in real-world dynamic operation vs 1.0%/year warranted create a 0.5-1.0%/year gap. At 100 MW scale, each 0.5% additional degradation rate translates to ~€200,000/year in additional electricity cost, compounding over the project life. Early stack replacement at 40,000-50,000 hours instead of 60,000-80,000 adds €15-25M unplanned CAPEX. OEM warranty disputes are emerging as a significant issue in early commercial PEM plants.",
+    "root_cause": "Dynamic operation (renewable intermittency) accelerates degradation mechanisms beyond steady-state lab testing conditions used for warranty specifications. OEMs have limited field data for >20 MW plants with >3 years dynamic operation.",
+    "trigger_events": ["Annual efficiency audit shows >1.2%/year degradation rate", "EIS monitoring detects accelerating membrane resistance trend", "Individual cell voltage monitoring identifies >5% cells operating above 2.0V", "OEM notifies warranty exclusion due to operational profile"]
+  },
+  "assessment": {
+    "probability": 3, "probability_rationale": "Observed in 3 of 18 reference PEM projects >20 MW with >3 years operating data (~17% frequency). TC-PEM-001 TCR-PEM-001 documents as moderate probability.",
+    "impact": 4, "impact_rationale": "Major: €15-25M unplanned stack replacement CAPEX + 5-10% higher electricity OPEX over project life. Schedule impact: 4-6 week outage per stack module replacement.",
+    "detectability": 2, "detectability_rationale": "EIS monitoring provides 12-18 month early warning before irreversible degradation. Individual cell voltage monitoring detects anomalies within weeks. High detectability with proper monitoring investment.",
+    "risk_priority_number": 24, "risk_class": "medium",
+    "assessment_method": "Technology Card evidence + IEA Electrolyser Durability 2025 + Gold Dataset project evidence",
+    "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "schedule": { "impact": "1-3_months", "description": "4-6 weeks per stack module replacement. N+1 redundancy allows production to continue during replacement." },
+    "cost": { "impact_eur": 20000000, "description": "€20M P50 for early stack replacement at 100 MW scale + €2-5M/year additional electricity cost at 1.5%/year degradation vs 1.0% warranted." },
+    "performance": { "description": "Progressive efficiency loss of 1.5-2.0%/year vs 1.0% warranted. By year 10, plant may consume 5-10% more electricity per kg H₂ than financial model assumes." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Operations Manager + OEM (joint)",
+    "preventive_actions": [
+      { "action_id": "MIT-TEC-001-P-01", "description": "Negotiate degradation guarantee ≤1.0%/year for first 5 years, ≤1.5%/year through year 10, with defined operational profile boundaries", "responsible_party": "Developer (Procurement)", "timing": "pre_fid" },
+      { "action_id": "MIT-TEC-001-P-02", "description": "Implement EIS-based predictive monitoring with quarterly diagnostic testing", "responsible_party": "Operations Manager", "timing": "during_operations" }
+    ],
+    "corrective_actions": [
+      { "action_id": "MIT-TEC-001-C-01", "description": "Design plant with N+1 stack redundancy. Size BOP for full capacity even with one module offline.", "responsible_party": "EPC Contractor", "timing": "pre_construction" },
+      { "action_id": "MIT-TEC-001-C-02", "description": "Establish stack replacement sinking fund: allocate €0.05/kg H₂ into reserved account from year 1.", "responsible_party": "Developer (Finance)", "timing": "ongoing" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Annual stack degradation rate (%)", "threshold_green": "<1.0%/year", "threshold_amber": "1.0-1.5%/year", "threshold_red": ">1.5%/year" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["operations"], "first_of_a_kind_only": false },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-006", "GA-PR-008"],
+    "incident_descriptions": ["Puertollano (GA-PR-006): 20 MW PEM operational since 2022. Accumulating real-world degradation data under solar-coupled dynamic operation in Spanish climate. First multi-year operational dataset for PEM at this scale. Results are being monitored by the industry.", "REFHYNE I (10 MW precursor to GA-PR-008 REFHYNE II): Operational since 2021 at Shell Wesseling. Provided degradation data that informed REFHYNE II specifications and warranty negotiations with ITM Power."],
+    "lessons_learned": "Real-world degradation often exceeds lab data due to dynamic operation. EIS monitoring provides 12-18 months early warning. OEM warranties typically exclude degradation caused by 'excessive cycling' — operational profile must be negotiated upfront. Stack replacement sinking fund is essential — do not depend solely on warranty. N+1 redundancy adds ~8% CAPEX but eliminates production loss during stack swaps.",
+    "frequency_observed": "Observed in ~17% of reference PEM projects >20 MW with >3 years data (3 of 18 projects)",
+    "technology_card_references": ["TC-PEM-001"],
+    "industry_standards": ["IEC 62282-8-101", "ISO 22734"]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-010", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA Electrolyser Durability and Degradation: Lessons from First Commercial Plants, 2025", "author": "IEA", "retrieval_date": "2026-05-15", "confidence": "high" },
+    { "source_id": "SRC-RSK-2026-011", "source_type": "technology_card", "source_quality_level": "B", "source_reliability_score": 5, "title": "TC-PEM-001 §technical_risks[TCR-PEM-001] — PEM Stack Degradation", "author": "Technology Knowledge Base", "retrieval_date": "2026-06-01", "confidence": "high" },
+    { "source_id": "SRC-RSK-2026-012", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "GA-PR-006 Puertollano — Iberdrola operational data 2022-present", "author": "Iberdrola", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

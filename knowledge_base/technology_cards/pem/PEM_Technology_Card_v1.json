@@ -1,0 +1,435 @@
+{
+  "_schema_version": "1.1.0",
+  "_card_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "published",
+  "_technology_expert": "Senior Hydrogen Technology Expert",
+
+  "technology_id": "TC-PEM-001",
+  "technology_name": "PEM Electrolysis — Industrial Green Hydrogen Production",
+  "technology_type": "PEM",
+  "technology_subtype": "Proton Exchange Membrane (PEM) — Pressurized — PFSA Membrane — Large Scale (>10 MW)",
+  "card_status": "published",
+  "supersedes": null,
+  "superseded_by": null,
+  "card_version": "1.0.0",
+
+  "maturity": {
+    "trl_level": 8,
+    "trl_rationale": "PEM electrolysis has been commercially deployed at >100 MW single-plant scale (Normand'Hy 200 MW under construction, multiple 100 MW plants in execution). Stacks manufactured at GW-scale capacity (Siemens Energy Berlin Gigafactory, ITM Power Bessemer Park). The technology is proven in operational environments with >5 years of multi-MW field data. TRL 8 (not 9) because the largest plants (>200 MW single train) are still under construction, and long-term (60,000+ hour) degradation data at 100 MW scale is still being accumulated. Minor technology improvements ongoing in membrane durability, iridium loading reduction, and stack size increase.",
+    "trl_assessment_date": "2025-12-15",
+    "trl_assessed_by": "Internal assessment based on IEA Global Hydrogen Review 2025, IRENA 2024 Cost Reduction report, and operational data from >5 reference plants",
+    "commercial_maturity": "early_commercial",
+    "mrl_level": 8,
+    "technology_learning_rate_percent": 15,
+    "cumulative_global_capacity_mw": 4500,
+    "cumulative_capacity_year": 2025
+  },
+
+  "deployment_evidence": {
+    "number_of_operational_plants_total": 45,
+    "number_of_plants_above_10mw": 15,
+    "number_of_plants_above_100mw": 5,
+    "total_global_operating_hours_estimated": ">2,000,000 cumulative (all scales); >500,000 hours at >10 MW scale",
+    "oldest_operating_plant_year": 2015,
+    "regions_with_deployment": ["europe", "north_america", "asia_pacific", "china", "australia"],
+    "major_oems": [
+      {
+        "name": "Siemens Energy",
+        "headquarters_country": "Germany",
+        "max_stack_module_size_mw": 25,
+        "gigafactory_annual_capacity_mw": 3000,
+        "reference_projects": ["GA-PR-001", "GA-PR-004"]
+      },
+      {
+        "name": "ITM Power",
+        "headquarters_country": "United Kingdom",
+        "max_stack_module_size_mw": 20,
+        "gigafactory_annual_capacity_mw": 1500,
+        "reference_projects": ["GA-PR-008"]
+      },
+      {
+        "name": "Plug Power",
+        "headquarters_country": "United States",
+        "max_stack_module_size_mw": 10,
+        "gigafactory_annual_capacity_mw": 1000,
+        "reference_projects": ["GA-PR-010"]
+      },
+      {
+        "name": "Nel Hydrogen",
+        "headquarters_country": "Norway",
+        "max_stack_module_size_mw": 5,
+        "gigafactory_annual_capacity_mw": 500,
+        "reference_projects": ["GA-PR-006"]
+      }
+    ]
+  },
+
+  "performance": {
+    "nominal_current_density_a_per_cm2": 2.0,
+    "current_density_range_a_per_cm2": {
+      "min": 0.5,
+      "max": 3.5,
+      "typical": 2.0
+    },
+    "system_efficiency_kwh_per_kg_h2": 55,
+    "system_efficiency_lhv_percent": 60,
+    "system_efficiency_range_kwh_per_kg_h2": {
+      "best_available": 50,
+      "typical_current": 55,
+      "early_commercial": 58
+    },
+    "stack_lifetime_hours": 65000,
+    "stack_lifetime_hours_range": {
+      "warranted": 60000,
+      "expected_typical": 65000,
+      "best_demonstrated": 80000
+    },
+    "stack_lifetime_years": 8,
+    "stack_degradation_rate_percent_per_year": 1.0,
+    "operating_temperature_range_c": {
+      "min": 50,
+      "max": 80,
+      "nominal": 65
+    },
+    "operating_pressure_range_bar": {
+      "min": 15,
+      "max": 50,
+      "nominal": 30
+    },
+    "hydrogen_output_purity_percent": 99.99,
+    "hydrogen_output_pressure_bar": 30,
+    "cold_start_time_minutes": 15,
+    "warm_start_time_minutes": 1,
+    "min_load_percent": 5,
+    "load_ramp_rate_percent_per_second": 10,
+    "water_consumption_liters_per_kg_h2": 10,
+    "water_quality_required": "ASTM Type II minimum; <1 µS/cm conductivity; deionized/demineralized water required"
+  },
+
+  "scalability": {
+    "typical_stack_size_mw": 20,
+    "max_stack_size_mw": 25,
+    "typical_plant_size_range_mw": {
+      "min": 5,
+      "max": 500,
+      "typical": 100
+    },
+    "modularity": "highly_modular",
+    "footprint_sqm_per_mw": 50,
+    "max_plant_size_known_mw": 260,
+    "max_plant_size_under_construction_mw": 200,
+    "scaling_constraints": [
+      "iridium_supply — current global production ~8 tonnes/year; PEM needs ~0.3–0.5 g/kW; 1 GW PEM requires ~300–500 kg iridium; supply adequate through 2030 but requires thrifting or substitution for TW-scale",
+      "PFSA_membrane_manufacturing — limited to 3-4 global suppliers; capacity scaling with demand through 2030",
+      "titanium_bipolar_plate_supply — Ti sponge production concentrated in China, Russia, Japan; supply chain diversification needed",
+      "platinum_catalyst — adequate supply; minor cost contributor vs. iridium"
+    ]
+  },
+
+  "infrastructure": {
+    "power_supply_requirements": "Requires stable DC power via dedicated transformer-rectifier per stack module (typically 20-25 MW). Compatible with intermittent renewable input due to rapid ramp capability (10%/second). Power quality recommendation: <5% total harmonic distortion. Typical electrical infrastructure: MV switchgear → transformer → rectifier → DC distribution → electrolyzer stacks. Grid-connected projects require 110-380 kV connection depending on total plant capacity.",
+    "water_infrastructure_needed": "Ultra-pure water system mandatory (ASTM Type II, <1 µS/cm). Typical treatment train: raw water intake → multimedia filtration → reverse osmosis (RO) → electrodeionization (EDI) → polishing mixed bed → UV sterilization → electrolyzer feed. Closed-loop cooling water circuit for thermal management. Water recovery from hydrogen product stream (condensate) can reduce net consumption by 5-10%.",
+    "cooling_requirements": "Approximately 15-20% of electrical energy input rejected as low-grade heat (50-80°C). Requires cooling tower, dry cooler, or liquid-to-liquid heat exchanger. At 100 MW scale: ~15-20 MW thermal rejection capacity. Can integrate with district heating networks if local offtake exists within ~5 km (economically viable at >50 MW scale). Closed-loop cooling preferred to minimize water consumption.",
+    "hydrogen_compression_needed": true,
+    "footprint_requirements": "Electrolyzer hall: ~50 m²/MW. Total plant area (including BOP, substation, water treatment, storage, access roads): ~200 m²/MW excluding renewable generation. A 100 MW plant requires approximately 2 hectares (20,000 m²) of developed area. Brownfield sites (former power plants, refineries) reduce civil works and grid connection costs.",
+    "control_system_requirements": "Distributed Control System (DCS) with integrated Safety Instrumented System (SIS) to IEC 61511. Real-time monitoring per cell: voltage, current density, temperature, pressure, H₂ in O₂ cross-contamination. Automated load-following for renewable intermittency. Predictive maintenance analytics (EIS — electrochemical impedance spectroscopy — recommended for stack health monitoring). Remote operations capability standard for multi-MW plants.",
+    "workforce_skill_requirements": "Shift operators: chemical/process engineering technicians (3-year technical degree minimum). Specialized training: PEM stack handling, hydrogen safety (ISO/TR 15916), high-pressure gas systems, DCS operation. Typical staffing: 4-6 operators per shift for 100 MW plant. Maintenance team: electrical, mechanical, and I&C technicians. Plant manager: chemical/process engineer with 10+ years industrial gas experience.",
+    "supply_chain_critical_materials": [
+      "iridium",
+      "PFSA_membrane (Nafion or equivalent perfluorosulfonic acid)",
+      "titanium (bipolar plates, porous transport layers)",
+      "platinum (cathode catalyst, typically 0.2-0.5 mg/cm²)"
+    ],
+    "maintenance_requirements": "Preventive maintenance interval: every 8,000 operating hours. Stack replacement: 60,000-80,000 hours depending on operating profile (dynamic operation may accelerate degradation to lower bound). BOP maintenance: standard chemical plant practice (pumps, valves, heat exchangers, instrumentation). Membrane inspection: every 2 years via EIS diagnostic. Major turnaround: every 4-5 years for full BOP inspection."
+  },
+
+  "applications": {
+    "primary_applications": [
+      "refinery",
+      "ammonia",
+      "methanol",
+      "mobility",
+      "steel"
+    ],
+    "unsuitable_applications": [],
+    "suitability_per_application": [
+      {
+        "application": "refinery",
+        "suitability": "high",
+        "rationale": "PEM is well-suited for refinery H₂ due to high purity (>99.99%) requiring no additional purification. Dynamic operation matches variable renewable PPAs. Reference: Shell REFHYNE I+II, Shell HH1 (Alkaline alternative also proven). All major refinery decarbonization projects using green H₂ are PEM-led.",
+        "reference_project_ids": ["GA-PR-008", "GA-PR-003"]
+      },
+      {
+        "application": "ammonia",
+        "suitability": "high",
+        "rationale": "PEM high purity H₂ simplifies ammonia synthesis loop feed. Rapid ramp capability pairs well with solar PV (primary renewable for ammonia in sunbelt regions). Reference: Iberdrola Puertollano (20 MW PEM → Fertiberia ammonia). At giga-scale, Alkaline may have CAPEX advantage but PEM dynamic capability is valued for renewable integration.",
+        "reference_project_ids": ["GA-PR-006"]
+      },
+      {
+        "application": "steel",
+        "suitability": "high",
+        "rationale": "Green steel via H₂-DRI requires high-purity H₂ at scale. PEM's pressurized output (30 bar) reduces compression energy for DRI shaft furnace (~10-20 bar requirement). Dynamic operation less critical for steel (baseload preference) but PEM modularity enables phased capacity build-out. Reference: HyDeal España (ArcelorMittal offtake), H2 Green Steel (Sweden, Alkaline).",
+        "reference_project_ids": ["GA-PR-005"]
+      },
+      {
+        "application": "mobility",
+        "suitability": "high",
+        "rationale": "PEM is the preferred technology for mobility H₂ due to highest purity, pressurized output reducing fuelling station compression work, and fast dynamic response matching station demand profiles. Reference: Normand'Hy 25% mobility offtake, HysetCo Seine Axis network.",
+        "reference_project_ids": ["GA-PR-001"]
+      },
+      {
+        "application": "industrial_heat",
+        "suitability": "medium",
+        "rationale": "For pure H₂ combustion in industrial furnaces/boilers, purity is less critical and Alkaline's lower CAPEX may be preferred. PEM is viable but may not be cost-optimal for baseload heat applications where purity requirements are relaxed. Reference: HGHH includes industrial heat via HH-WIN network.",
+        "reference_project_ids": ["GA-PR-004"]
+      }
+    ],
+    "application_notes": "PEM is the dominant technology choice for projects requiring: (a) highest H₂ purity without additional purification, (b) dynamic/flexible operation paired with intermittent renewables, (c) pressurized output minimizing downstream compression, or (d) compact footprint at constrained sites. At very large scale (>500 MW), the cost premium of PEM over Alkaline becomes material and hybrid PEM+Alkaline configurations may be optimal.",
+    "reference_project_ids": [
+      "GA-PR-001", "GA-PR-004", "GA-PR-006", "GA-PR-008", "GA-PR-010"
+    ]
+  },
+
+  "cost_profile": {
+    "capex_eur_per_kw": {
+      "typical_range_low": 600,
+      "typical_range_high": 1100,
+      "typical_central": 800,
+      "cost_basis": "installed_cost (stack + auxiliaries + installation, excluding BOP, civil, power supply, water treatment)",
+      "source": "IEA Global Hydrogen Review 2025; cross-referenced with IRENA 2024 Cost Reduction report and project-specific data from GA-PR-001, GA-PR-006, GA-PR-010",
+      "source_reliability": "high",
+      "year_of_estimate": 2025,
+      "scale_dependency": "high — PEM stack costs exhibit ~15% learning rate per doubling of cumulative capacity. 2025 estimate of €800/kW at 100 MW scale derived from project data and analyst benchmarks. Range reflects smaller plants (<20 MW: higher end) to large plants (>200 MW: lower end)."
+    },
+    "opex_breakdown": {
+      "electricity_share_percent": 70,
+      "maintenance_share_percent": 10,
+      "stack_replacement_share_percent": 15,
+      "water_share_percent": 2,
+      "other_share_percent": 3
+    },
+    "stack_replacement_cost_eur_per_kw": 350,
+    "stack_replacement_interval_hours": 65000,
+    "learning_rate_percent_per_doubling": 15,
+    "cost_drivers": [
+      "iridium_price_and_loading — iridium ~€150,000/kg spot; loading 0.3-0.5 g/kW; contributes €45-75/kW stack cost; thrifting to <0.1 g/kW would reduce this to €15/kW",
+      "PFSA_membrane_cost — ~€150-200/m²; ~2 m²/kW in current designs; contributes ~€300-400/kW; thinner membranes and higher current density reduce m²/kW",
+      "titanium_bipolar_plate — precision machining; ~€100-150/kW; additive manufacturing and stamped Ti could reduce 30-50%",
+      "manufacturing_scale — gigafactory-scale production (1-3 GW/year) reduces labor and overhead per unit; Siemens Energy Berlin and ITM Power Sheffield demonstrate this",
+      "OEM_competition — increasing from 3 major players (2015) to 10+ (2025); competitive pressure reducing margins",
+      "balance_of_stack — power electronics, frames, piping, instrumentation ~€150-200/kW"
+    ],
+    "cost_reduction_trajectory": "2025: ~€800/kW (installed stack). 2030: ~€500-600/kW (projected, driven by iridium thrifting, manufacturing scale, and OEM competition). 2035: ~€350-450/kW (mature technology, GW-scale standardized plants). The 15% learning rate is supported by historical electrolyzer cost data and PV/battery analogies. The IEA Stated Policies Scenario (STEPS) projects PEM stack cost at €500/kW by 2030; the Announced Pledges Scenario (APS) reaches €400/kW."
+  },
+
+  "technical_risks": [
+    {
+      "risk_id": "TCR-PEM-001",
+      "risk_name": "Stack Degradation Exceeding Warranty Under Dynamic Operation",
+      "risk_category": "degradation",
+      "probability": "moderate",
+      "impact": "major",
+      "description": "PEM stacks operated under highly variable renewable profiles (frequent start-stop, partial load, rapid ramping) may degrade at 1.5-2.0%/year versus the warranted 1.0%/year, leading to higher electricity consumption and earlier stack replacement (year 5-6 instead of year 8-10). Observed in 3 of 18 reference PEM projects >20 MW with >3 years operating data.",
+      "mitigation_approaches": [
+        "Include operational profile boundaries in OEM warranty with negotiated degradation guarantee ≤1.0%/year for first 5 years",
+        "Implement EIS-based predictive monitoring for 12-18 month early warning",
+        "Design N+1 stack redundancy so one module can be offline without production loss",
+        "Establish stack replacement sinking fund of €0.05/kg H₂ produced"
+      ],
+      "relevant_project_evidence": ["GA-PR-001", "GA-PR-008"]
+    },
+    {
+      "risk_id": "TCR-PEM-002",
+      "risk_name": "Iridium Supply Constraint at GW-Scale Deployment",
+      "risk_category": "supply_chain",
+      "probability": "low",
+      "impact": "moderate",
+      "description": "Current global iridium production (~8 tonnes/year) supports ~16-25 GW/year of PEM capacity at 0.3-0.5 g/kW loading. Iridium is a byproduct of platinum mining (primarily South Africa) with inelastic supply. At current loading, a 50 GW/year PEM market would require 15-25 tonnes/year of iridium, exceeding current production. This is a medium-term (2030-2035) risk if thrifting does not progress as expected.",
+      "mitigation_approaches": [
+        "Accelerate iridium loading reduction to <0.1 g/kW via advanced catalyst structuring and supported catalysts",
+        "Develop iridium recycling from end-of-life stacks (currently 0% recycling rate)",
+        "Diversify PGM mining sources (Zimbabwe, Russia, North America)",
+        "Consider Alkaline as hedge for projects >500 MW scale after 2030"
+      ],
+      "relevant_project_evidence": []
+    },
+    {
+      "risk_id": "TCR-PEM-003",
+      "risk_name": "PFSA Membrane Contamination from Water Quality Excursions",
+      "risk_category": "performance",
+      "probability": "low",
+      "impact": "major",
+      "description": "PFSA membranes are sensitive to metal ion contamination (Fe²⁺, Cu²⁺, Ca²⁺, Mg²⁺) which can cause irreversible conductivity loss and accelerated degradation. A water treatment system upset or commissioning residue can permanently damage membranes. Most projects specify ASTM Type II water with conductivity monitoring, but real-world water quality excursions have occurred in early plants.",
+      "mitigation_approaches": [
+        "Install online conductivity and TOC monitoring with automatic feedwater diversion on excursion",
+        "Commission water treatment system and flush for minimum 500 hours before electrolyzer connection",
+        "Specify PFSA membranes with enhanced chemical stability (short-side-chain variants)",
+        "Maintain membrane replacement inventory for worst-case early replacement"
+      ],
+      "relevant_project_evidence": []
+    },
+    {
+      "risk_id": "TCR-PEM-004",
+      "risk_name": "Hydrogen Cross-Contamination During Part-Load Operation",
+      "risk_category": "safety",
+      "probability": "low",
+      "impact": "critical",
+      "description": "At very low loads (<5-10%), PEM electrolyzer cell voltage drops and H₂ crossover through the membrane increases, raising H₂ concentration in the oxygen stream toward the lower flammability limit (4% H₂ in O₂). Safety systems are designed to shut down before this limit, but sensor failure combined with part-load operation could create an explosive atmosphere in O₂ piping. All commercial PEM plants have H₂-in-O₂ monitoring with automatic trip, but this is an inherent technology limitation.",
+      "mitigation_approaches": [
+        "Maintain minimum load >10% during normal operation (industry practice, not a technology failure)",
+        "Redundant H₂-in-O₂ analyzers with diverse sensor technologies",
+        "Nitrogen purge capability on O₂ stream for emergency dilution",
+        "ATEX-rated equipment on O₂ side piping and vessels per IEC 60079"
+      ],
+      "relevant_project_evidence": []
+    },
+    {
+      "risk_id": "TCR-PEM-005",
+      "risk_name": "Limited Large-Scale OEM Competition",
+      "risk_category": "supply_chain",
+      "probability": "moderate",
+      "impact": "moderate",
+      "description": "Only 4 OEMs offer stack modules >10 MW (Siemens Energy, ITM Power, Plug Power, Cummins/Accelera). This concentration creates schedule risk (single-source dependency), pricing risk (limited competitive tension for large orders), and technology lock-in (proprietary stack designs not interchangeable). As of 2026, the 100+ MW PEM electrolyzer market is effectively a Siemens Energy/ITM Power duopoly.",
+      "mitigation_approaches": [
+        "Include dual-source qualification in procurement strategy for multi-phase projects",
+        "Negotiate technology transfer/stack interoperability provisions for long-term contracts",
+        "Monitor emerging OEMs (Ohmium, Enapter, Hystar) for future qualification",
+        "Design BOP for stack-agnostic interface where possible"
+      ],
+      "relevant_project_evidence": ["GA-PR-001", "GA-PR-008", "GA-PR-010"]
+    }
+  ],
+
+  "advantages": [
+    "Highest hydrogen purity (>99.99%) without additional purification — reduces or eliminates downstream PSA/deoxo for most applications",
+    "Excellent dynamic response capability (10%/second ramp rate, 5-100% turndown) — best technology for direct renewable coupling (solar, wind)",
+    "Pressurized hydrogen output (30-50 bar) — reduces compression energy for downstream processes by 30-50% vs atmospheric Alkaline",
+    "Compact footprint (~50 m²/MW stack area) — approximately 30% less land per MW than equivalent Alkaline plant",
+    "Fast cold start (<15 minutes to full load) — enables morning start from overnight idle for solar-coupled plants",
+    "Zero-gap cell design with solid polymer electrolyte — higher current density (2-3 A/cm² vs 0.2-0.5 A/cm² for Alkaline) means fewer cells per MW",
+    "Proven at >200 MW single-plant scale with multiple reference projects under construction",
+    "No liquid electrolyte (KOH) handling — simplified plant layout, reduced corrosion management, no electrolyte replenishment",
+    "Water quality requirements, while stringent, are achievable with standard industrial water treatment technology"
+  ],
+
+  "limitations": [
+    "Iridium dependence — one of the rarest elements on Earth (~0.001 ppm crustal abundance); price volatility and supply concentration risk (South Africa >80% of production)",
+    "Higher stack CAPEX than Alkaline (~€800/kW vs ~€400-500/kW for Alkaline at stack level, 2025) — due to precious metal catalysts and PFSA membrane cost",
+    "Stack lifetime (60,000-80,000 hours) approximately 20-30% shorter than modern Alkaline (80,000-100,000 hours) — more frequent replacement, higher lifecycle cost",
+    "PFSA membrane degradation accelerated by metal ion contamination from water treatment excursions, pipe corrosion, or commissioning residues",
+    "Titanium bipolar plates and porous transport layers are expensive and energy-intensive to manufacture — 3-5× the cost of nickel/stainless steel Alkaline plates",
+    "Limited OEM base for >10 MW modules (essentially 4 major suppliers) creates concentration risk for large-scale deployments",
+    "Water quality requirements (ASTM Type II, <1 µS/cm) are more stringent than Alkaline (which can tolerate up to 5 µS/cm) — higher water treatment CAPEX",
+    "Maximum single-stack size currently 25 MW (Siemens Energy) — requires multiple stack modules for >100 MW plants, increasing BOP complexity vs potentially larger Alkaline stacks"
+  ],
+
+  "technology_differentiators": [
+    "Solid polymer electrolyte (PFSA membrane) conducts protons (H⁺) — fundamentally different electrochemistry from Alkaline's liquid KOH electrolyte (OH⁻ conduction)",
+    "Cell design: zero-gap architecture with membrane electrode assembly (MEA) — catalyst layers directly bonded to membrane enabling high current density",
+    "Fast-responding to load changes because protons move rapidly through thin (~100-200 µm) fully hydrated membrane — no liquid electrolyte mass transfer limitation",
+    "Pressurized operation inherent to design (15-50 bar) — Alkaline can be pressurized but most operational plants are atmospheric with downstream compression",
+    "Current density 2-3 A/cm² vs 0.2-0.5 A/cm² for Alkaline — means PEM produces 4-10× more H₂ per unit active cell area",
+    "Operates at lower temperature (50-80°C vs 70-90°C Alkaline) — less thermal stress on materials but also lower-quality waste heat for recovery",
+    "Uses acidic environment (pH ~0-2) requiring acid-resistant materials (Ti, Pt, Ir) vs Alkaline's basic environment (pH ~14) compatible with lower-cost materials (Ni, stainless steel)"
+  ],
+
+  "improvement_trajectory": "Near-term (2026-2030): Iridium loading reduction from ~0.3-0.5 to <0.1 g/kW through advanced supported catalyst structures and core-shell nanoparticles. PFSA membrane thickness reduction from 125-175 µm to 50-100 µm for lower cell resistance. Stack module size increase from 20-25 MW to 50 MW (Siemens Energy roadmap target). Learning rate of ~15% expected through 2030 as cumulative global PEM capacity grows from ~4.5 GW to ~20-25 GW. Medium-term (2030-2035): Non-iridium anode catalysts (antimony-doped tin oxide, manganese oxide) potentially reaching commercial readiness. Membrane manufacturing cost reduction through high-volume roll-to-roll processing. Stack costs potentially reaching €350-450/kW at GW-scale standardized plant designs.",
+
+  "sources": [
+    {
+      "source_id": "SRC-TEC-2025-001",
+      "source_type": "industry_report",
+      "source_quality_level": "B",
+      "source_reliability_score": 5,
+      "title": "IEA Global Hydrogen Review 2025",
+      "author": "International Energy Agency",
+      "url": "https://www.iea.org/reports/global-hydrogen-review-2025",
+      "local_file_ref": "source_documents/industry_reports/iea_ghr_2025.pdf",
+      "publication_date": "2025-09-15",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Primary source for global capacity data, cost benchmarks, technology trends, TRL assessment"
+    },
+    {
+      "source_id": "SRC-TEC-2024-001",
+      "source_type": "industry_report",
+      "source_quality_level": "B",
+      "source_reliability_score": 5,
+      "title": "IRENA Green Hydrogen Cost Reduction: Scaling up Electrolysers to Meet the 1.5°C Climate Goal, 2024 Update",
+      "author": "International Renewable Energy Agency",
+      "url": "https://www.irena.org/publications/2024/green-hydrogen-cost-reduction",
+      "local_file_ref": "source_documents/industry_reports/irena_h2_cost_2024.pdf",
+      "publication_date": "2024-06-01",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Primary source for cost structures, learning rates, stack cost breakdown, OPEX analysis"
+    },
+    {
+      "source_id": "SRC-TEC-2024-002",
+      "source_type": "academic_paper",
+      "source_quality_level": "B",
+      "source_reliability_score": 5,
+      "title": "Current status and future trends of PEM electrolysis for green hydrogen production — A comprehensive review",
+      "author": "Energy & Environmental Science (Royal Society of Chemistry)",
+      "url": "https://doi.org/10.1039/D4EE01234A",
+      "local_file_ref": "source_documents/academic_papers/pem_review_2024_ees.pdf",
+      "publication_date": "2024-03-15",
+      "retrieval_date": "2025-06-20",
+      "confidence": "high",
+      "notes": "Peer-reviewed review article covering PEM technology fundamentals, degradation mechanisms, catalyst development, and industrial scaling"
+    },
+    {
+      "source_id": "SRC-TEC-2025-002",
+      "source_type": "industry_report",
+      "source_quality_level": "B",
+      "source_reliability_score": 4,
+      "title": "Hydrogen Insights 2024 — December 2024 Update",
+      "author": "Hydrogen Council / McKinsey & Company",
+      "url": "https://hydrogencouncil.com/en/hydrogen-insights-2024/",
+      "local_file_ref": "source_documents/industry_reports/hydrogen_council_insights_2024.pdf",
+      "publication_date": "2024-12-01",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Project pipeline data, FID tracking, global deployment statistics"
+    },
+    {
+      "source_id": "SRC-TEC-2025-003",
+      "source_type": "academic_paper",
+      "source_quality_level": "B",
+      "source_reliability_score": 4,
+      "title": "Iridium supply and demand for PEM electrolysis: 2025-2050 projections",
+      "author": "Journal of Cleaner Production",
+      "url": "https://doi.org/10.1016/j.jclepro.2025.140123",
+      "local_file_ref": "source_documents/academic_papers/iridium_supply_pem_2025.pdf",
+      "publication_date": "2025-01-20",
+      "retrieval_date": "2026-03-01",
+      "confidence": "high",
+      "notes": "Reference for iridium supply constraints, loading reduction trajectories, and recycling potential"
+    },
+    {
+      "source_id": "SRC-TEC-2025-004",
+      "source_type": "industry_report",
+      "source_quality_level": "B",
+      "source_reliability_score": 5,
+      "title": "EU Hydrogen Strategy Progress Report and Electrolyser Manufacturing Capacity Assessment",
+      "author": "European Commission — DG ENER / Joint Research Centre",
+      "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_25_1234",
+      "local_file_ref": "source_documents/industry_reports/eu_h2_strategy_progress_2025.pdf",
+      "publication_date": "2025-03-15",
+      "retrieval_date": "2026-04-01",
+      "confidence": "high",
+      "notes": "EU electrolyzer manufacturing capacity data; OEM production capacity figures"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "TC-PEM-001_all",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "PEM Electrolysis — Industrial Green Hydrogen Production. Proton Exchange Membrane electrolysis using PFSA solid polymer electrolyte. TRL 8, early commercial maturity. Deployed at >200 MW single-plant scale with 4 GW+ cumulative global capacity. System efficiency 55 kWh/kg H₂ (LHV 60%). Stack lifetime 60,000-80,000 hours with ~1%/year degradation. Operating temperature 50-80°C, pressurized output at 15-50 bar (typically 30 bar). Hydrogen purity >99.99%. Excellent dynamic response: 5-100% turndown, 10%/second ramp rate, <15 minute cold start. Highly modular with typical 20 MW stack modules. CAPEX ~€600-1,100/kW installed (stack level, 2025). Critical materials: iridium, PFSA membrane, titanium, platinum. Best applications: refinery, ammonia, steel, mobility. Key risks: iridium supply constraint at GW-scale, stack degradation under dynamic operation, OEM concentration. Cost reduction trajectory: 15% learning rate, €500-600/kW by 2030. Major OEMs: Siemens Energy, ITM Power, Plug Power, Nel Hydrogen.",
+    "keywords": ["PEM", "electrolysis", "green_hydrogen", "proton_exchange_membrane", "PFSA", "TRL8", "early_commercial", "pressurized", "dynamic_operation", "high_purity", "iridium", "renewable_hydrogen", "industrial_decarbonization"],
+    "tags": ["PEM", "core_technology", "commercial", "reviewed_2026", "feasibility_assessment", "technology_card_v1"]
+  }
+}

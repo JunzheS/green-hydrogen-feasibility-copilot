@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-IND-004",
+  "cost_name": "Contingency — AACE Class 4 Standard — PEM Project — 100 MW — Europe 2025",
+  "cost_category": "indirect_owners_costs", "cost_subcategory": "08.5_contingency",
+  "cost_basis": "epc_total", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 200, "eur_per_kw_low": 130, "eur_per_kw_high": 300, "cost_year": 2025, "percentage_of_total_capex": 13 },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±40%", "estimation_method": "AACE Class 4 standard: 15% base contingency on direct costs. PEM-specific: +5% technology risk (TRL 8, limited >100 MW references, iridium supply uncertainty). Total: 20% on direct costs = ~13% of total CAPEX." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Contingency is fundamentally a management decision, not an empirically derived number. The AACE standard provides the baseline. The PEM increment is based on Technology Card risk assessment and Gold Dataset evidence (NO operational >100 MW PEM plant exists).", "data_points_contributing": 5 },
+  "cost_drivers": { "primary_drivers": ["AACE estimate class (Class 5: 25-30%, Class 4: 15-20%, Class 3: 10-15%)", "Technology maturity (PEM TRL 8 +5% vs Alkaline TRL 9 +0%)", "FOAK premium (+5-10% for first-of-a-kind projects)", "Developer experience (−5% for experienced developer)", "EPC contract type (LSTK transfers risk, reduces contingency need)"], "sensitivity_to_scale": "low", "exclusions": ["Escalation contingency (separate line item for multi-year construction)", "Currency fluctuation contingency"] },
+  "sources": [ { "source_id": "SRC-CST-AACE", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "AACE 18R-97 — Contingency guidelines per estimate class", "author": "AACE", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "risk_references": ["RK-FIN-001", "RK-TEC-001"] }
+}

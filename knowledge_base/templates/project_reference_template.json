@@ -1,0 +1,134 @@
+{
+  "_schema_version": "1.0.0",
+  "_template_name": "Project Reference Template",
+  "_description": "Template for recording a green hydrogen project reference. Copy this file, replace placeholder values, and save to the appropriate status folder under /knowledge_base/project_references/.",
+  "_instructions": [
+    "1. Copy this template",
+    "2. Replace all <<PLACEHOLDER>> values with real data",
+    "3. Remove any fields where data is not available (they are optional unless marked mandatory in the schema)",
+    "4. Set status to 'draft' until reviewed by a second analyst",
+    "5. Save as {project_id}.json in the correct status subfolder",
+    "6. Update the cross-reference index after saving"
+  ],
+
+  "project_id": "<<PR-OP-001>>",
+  "project_name": "<<Example Green Hydrogen Plant>>",
+  "alias_names": [],
+  "status": "<<operational>>",
+  "status_detail": "",
+
+  "location": {
+    "country": "<<Germany>>",
+    "region": "<<Lower Saxony>>",
+    "city": "<<Stade>>",
+    "coordinates": {
+      "lat": 53.6,
+      "lon": 9.5
+    },
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM",
+    "electrolyzer_manufacturer": "<<Siemens Energy>>",
+    "electrolyzer_model": "<<Silyzer 300>>",
+    "stack_pressure_type": "pressurized",
+    "technology_card_ref": "TC-PEM-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 100,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 42000,
+    "hydrogen_output_tons_per_year": 15000,
+    "number_of_stacks": 5,
+    "stack_capacity_mw": 20
+  },
+
+  "power": {
+    "renewable_type": "offshore_wind",
+    "renewable_capacity_mw": 250,
+    "grid_connection": true,
+    "grid_connection_detail": "<<Connected to 380 kV transmission grid via dedicated substation>>",
+    "ppa_structure": "<<15-year fixed-price PPA with offshore wind farm>>",
+    "expected_capacity_factor_percent": 45
+  },
+
+  "water": {
+    "source_type": "municipal",
+    "consumption_cubic_m_per_hour": 25,
+    "water_treatment_provider": "<<Veolia>>"
+  },
+
+  "offtake": {
+    "primary_application": "refinery",
+    "secondary_applications": ["mobility"],
+    "offtaker_name": "<<Local Refinery AG>>",
+    "offtake_agreement_type": "<<10-year take-or-pay>>",
+    "h2_storage_type": "compressed_gas",
+    "h2_storage_capacity_kg": 5000
+  },
+
+  "stakeholders": {
+    "developer": "<<GreenH2 GmbH>>",
+    "developer_type": "renewable_developer",
+    "co_developers": ["<<Local Utility Partner>>"],
+    "epc_contractor": "<<Technip Energies>>",
+    "operations_operator": "<<GreenH2 GmbH>>",
+    "financial_advisors": ["<<Societe Generale>>"],
+    "lenders": ["<<EIB>>", "<<KfW>>"]
+  },
+
+  "financial": {
+    "total_capex_eur": 180000000,
+    "capex_per_kw_eur": 1800,
+    "capex_breakdown_available": true,
+    "capex_year_reference": 2023,
+    "funding_sources": ["equity", "project_finance_debt", "eu_grant"],
+    "total_investment_decision_date": "2020-06-15",
+    "expected_irr_percent": 8.5,
+    "lcoh_eur_per_kg": 4.2
+  },
+
+  "timeline": {
+    "announcement_date": "2019-03-01",
+    "fid_date": "2020-06-15",
+    "construction_start_date": "2020-10-01",
+    "commissioning_date": "2023-03-15",
+    "construction_duration_months": 29,
+    "current_operational_year": 3
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2023-001",
+      "source_type": "press_release",
+      "title": "<<GreenH2 GmbH announces commissioning of 100 MW PEM electrolyzer>>",
+      "url": "https://example.com/press-release-001",
+      "local_file_ref": "source_documents/project_data/PR-OP-001_press_release_2023.pdf",
+      "publication_date": "2023-03-15",
+      "retrieval_date": "2024-01-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC-2023-002",
+      "source_type": "investor_presentation",
+      "title": "<<GreenH2 GmbH Q1 2023 Investor Update>>",
+      "url": "https://example.com/investor-update-q1-2023",
+      "local_file_ref": "source_documents/project_data/PR-OP-001_investor_presentation_q1_2023.pdf",
+      "publication_date": "2023-04-20",
+      "retrieval_date": "2024-01-15",
+      "confidence": "high"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "PR-OP-001_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.0.0",
+    "last_indexed": "2024-01-20T10:30:00Z",
+    "text_for_embedding": "Example Green Hydrogen Plant. operational. Located in Germany, europe. PEM electrolysis, 100 MW. Powered by offshore_wind. Primary offtake: refinery. Developed by GreenH2 GmbH. CAPEX: 1800 EUR/kW. Keywords: PEM, 100MW, Germany, offshore wind, refinery, operational.",
+    "keywords": ["PEM", "Germany", "offshore_wind", "refinery", "100MW", "operational", "pressurized"],
+    "tags": ["reference_project", "eu_funded", "first_of_a_kind"]
+  }
+}

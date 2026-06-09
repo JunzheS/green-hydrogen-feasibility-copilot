@@ -1,0 +1,40 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-FIN-002",
+  "risk_name": "Hydrogen Offtake Agreement Default or Revenue Shortfall",
+  "risk_category": "financial",
+  "risk_subcategory": "05.4_hydrogen_offtake_and_revenue_risk",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The hydrogen offtaker defaults on the purchase agreement, renegotiates at lower price/volume, or the H₂ market develops slower than projected, leaving the project with unsold production or below-model pricing. This risk is the financial counterpart to technology risk — even a perfectly functioning plant is unviable without a creditworthy offtaker.",
+    "detailed": "Green hydrogen projects depend on long-term offtake agreements to secure project financing. The offtake landscape is evolving: traditional industrial H₂ consumers (refineries, ammonia plants) are the anchor offtakers, but new applications (steel, mobility, power generation) are emerging with less established credit profiles. Offtake risk dimensions: (1) volume risk — offtaker takes less than contracted (take-or-pay clauses mitigate), (2) price risk — H₂ market price falls below project LCOH, (3) counterparty credit risk — offtaker financial distress, (4) market development risk — new applications (H₂ mobility, green steel) may not scale as projected, leaving projects dependent on traditional offtakers who may have their own decarbonization alternatives. The Gold Dataset provides both positive and cautionary evidence.",
+    "root_cause": "Green hydrogen market is nascent. Offtaker credit quality varies. New applications (mobility, steel) lack established offtake precedents. Grey H₂ remains cheaper in most locations, creating price competition.",
+    "trigger_events": ["Offtaker announces delay or cancellation of decarbonization project that anchors H₂ demand", "Offtaker credit rating downgraded by two notches", "H₂ spot market price falls below project LCOH for >6 consecutive months", "Offtaker requests renegotiation of offtake agreement terms"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 5, "detectability": 2,
+    "risk_priority_number": 30, "risk_class": "medium",
+    "probability_rationale": "Offtake risk varies significantly by offtaker type: refinery offtakers (Shell, TotalEnergies, Galp) have investment-grade credit. Steel offtakers face sector cyclicality. Mobility offtakers are nascent. Probability 3 reflects the blended risk across offtake types.",
+    "impact_rationale": "Critical: without offtake, the project produces stranded hydrogen. Revenue loss can trigger loan default. Impact 5 (Critical) because this can kill the project.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "transfer", "risk_owner": "Developer (Commercial Director)",
+    "preventive_actions": [
+      { "action_id": "MIT-FIN-002-P-01", "description": "Secure long-term (10-15 year) take-or-pay offtake agreement with investment-grade counterparty. Minimum 80% of nameplate capacity under contract at FID.", "responsible_party": "Developer (Commercial)", "timing": "pre_fid" },
+      { "action_id": "MIT-FIN-002-P-02", "description": "Diversify offtake portfolio: no single offtaker >60% of production. Blend anchor industrial offtaker (credit quality) with mobility/power offtakers (price upside).", "responsible_party": "Developer (Commercial)", "timing": "pre_fid" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Offtaker credit rating (S&P/Moody's)", "threshold_green": "Investment grade (BBB-/Baa3 or higher)", "threshold_amber": "BB+/Ba1 (highest non-investment grade)", "threshold_red": "Below BB+/Ba1 or on negative watch" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-002", "GA-PR-005", "GA-PR-007"],
+    "incident_descriptions": ["Masshylia (GA-PR-002): Originally planned to supply TotalEnergies' La Mède biorefinery. Despite being an affiliate offtaker (TotalEnergies is a JV partner), the offtake was not sufficient to support the 120 MW scale — demonstrating that even affiliated offtakers have limits.", "HyDeal España (GA-PR-005): 20-year, 6.6 Mt offtake agreement with ArcelorMittal (steel) and Fertiberia (ammonia). This is the strongest offtake agreement in the Gold Dataset — two investment-grade industrial offtakers with long-term contracts. But the project has no FID, suggesting that even strong offtake is not sufficient without confirmed financing and technology.", "HySynergy (GA-PR-007): Crossbridge Energy refinery offtaker. First H₂ delivery February 2025. Offtake is operational — proving that refinery offtake for Alkaline hydrogen is commercially viable at 20 MW scale."],
+    "lessons_learned": "A strong offtake agreement is necessary but not sufficient for project viability (HyDeal has strong offtake but no FID). Affiliated offtakers don't guarantee project economics (Masshylia). Of the 10 Gold Dataset projects, 8 have named offtakers — demonstrating that identifiable offtake is achievable for well-structured projects."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-101", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Hydrogen Council — Hydrogen Insights 2024: Offtake agreement analysis", "author": "Hydrogen Council / McKinsey", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

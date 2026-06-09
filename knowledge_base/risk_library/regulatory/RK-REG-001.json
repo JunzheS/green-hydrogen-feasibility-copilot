@@ -1,0 +1,36 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-REG-001",
+  "risk_name": "Environmental Permitting Delays Extending Project Development Timeline by 12-24 Months",
+  "risk_category": "regulatory",
+  "risk_subcategory": "04.1_environmental_permitting_delays",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Required environmental permits (EIA, water abstraction, construction, operating) are delayed, challenged, or denied, extending project development by 12-24 months. Permitting is the most common cause of project schedule slippage in the pre-FID phase.",
+    "detailed": "Hydrogen projects require multiple environmental permits: Environmental Impact Assessment (EIA), water abstraction permit, construction permit, operating permit (often integrated with IPPC/IED), and potentially Natura 2000 assessment. EIA timelines vary by country: France 12-18 months, Germany 12-24 months, Spain 8-14 months. Public consultation can extend this if community opposition triggers a public inquiry. The EU's revised Renewable Energy Directive (RED III) includes provisions to accelerate permitting for renewable H₂, but national implementation varies.",
+    "root_cause": "Multi-permit requirement with sequential dependencies. Public consultation can trigger unexpected delays. National implementation of EU permitting acceleration varies.",
+    "trigger_events": ["EIA scoping opinion indicates extensive study requirements", "Public consultation triggers formal inquiry", "Water abstraction permit contested by agricultural users", "Natura 2000 screening identifies potential impact requiring full assessment"]
+  },
+  "assessment": {
+    "probability": 4, "impact": 3, "detectability": 2,
+    "risk_priority_number": 24, "risk_class": "medium",
+    "probability_rationale": "Permitting delays affect >50% of large European industrial projects. Masshylia's subject-to-authorizations status exemplifies this. HGHH's coal plant decommissioning + hydrogen repurposing required complex multi-agency permitting.",
+    "impact_rationale": "12-24 month delay in pre-FID phase pushes COD and revenue start. Does not damage equipment or incur construction costs — schedule impact only during development phase.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Permitting & Regulatory Affairs Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-REG-001-P-01", "description": "Initiate EIA and permit applications at project announcement, not after feasibility study completion. Run permitting in parallel with feasibility, not sequentially.", "responsible_party": "Developer (Permitting Manager)", "timing": "pre_feasibility" },
+      { "action_id": "MIT-REG-001-P-02", "description": "Conduct early community engagement before formal public consultation. Identify and address concerns proactively.", "responsible_party": "Developer (Community Relations)", "timing": "pre_feasibility" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-002", "GA-PR-004"],
+    "incident_descriptions": ["Masshylia (GA-PR-002): 'Subject to confirmation of European and French subsidies and necessary public authorizations.' The 2029 COD target (vs original 2024) reflects permitting and subsidy timelines, not technology readiness. The Concertation Masshylia public consultation process (2022) demonstrates the formal community engagement required for hydrogen projects in France.", "Hamburg Green Hydrogen Hub (GA-PR-004): Coal plant decommissioning + hydrogen repurposing required integrated permitting across environmental, energy, and industrial regulations. The 2022 announcement to 2025 construction start (3-year permitting phase) illustrates the timeline reality."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-090", "source_type": "government_announcement", "source_quality_level": "A", "source_reliability_score": 5, "title": "EU RED III — Renewable Energy Directive (2023/2413) — Permitting acceleration provisions", "author": "European Commission", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELI-005",
+  "cost_name": "Backup/UPS Systems — Diesel Generator + Battery UPS — 100 MW — Europe 2025",
+  "cost_category": "electrical_infrastructure", "cost_subcategory": "02.3_backup_ups_systems",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 25, "eur_per_kw_low": 15, "eur_per_kw_high": 45, "cost_year": 2025, "percentage_of_total_capex": 1 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "Industry norms for industrial plant backup power. Diesel generator sized for black-start and safety systems (not full production). UPS for DCS, SIS, and critical instrumentation per IEC 61511." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Standard industrial backup power cost data. Cost depends on black-start philosophy (full plant vs safety-only) and grid reliability at site." },
+  "cost_drivers": { "primary_drivers": ["Black-start capability requirement", "Grid reliability at site location", "Safety system autonomy duration (UPS battery capacity)", "Emissions regulations for diesel generator"], "sensitivity_to_scale": "low", "exclusions": ["Full production backup power (not economically viable for electrolysis)", "Fuel storage and supply contract"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "IRENA 2024 + industrial electrical cost norms", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

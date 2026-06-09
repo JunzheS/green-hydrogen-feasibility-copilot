@@ -1,0 +1,172 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-006",
+  "project_name": "Puertollano Green Hydrogen Plant",
+  "alias_names": ["Iberdrola Puertollano H2", "Puertollano Green Hydrogen Complex"],
+  "status": "operational",
+  "status_detail": "Commissioned in May 2022 and fully operational since Q1 2023. One of Europe's first large-scale industrial green hydrogen plants. Supplies Fertiberia ammonia plant on-site. Part of Iberdrola's broader IPCEI hydrogen program targeting 800 MW by 2027. Plant uses 100 MW solar PV with 5 MW/20 MWh battery storage. 16 PEM stacks of 1.25 MW each from Nel Hydrogen Electrolyser. 11 hydrogen storage tanks at 60 bar.",
+
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed",
+    "project_phase_at_collection": "operational",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "The Puertollano Green Hydrogen Plant is a 20 MW PEM electrolysis facility in Puertollano, Ciudad Real, Spain, developed by Iberdrola in partnership with Fertiberia. It was one of Europe's first large-scale industrial green hydrogen plants when commissioned in May 2022. The plant uses 16 Nel Hydrogen PEM electrolyzer stacks of 1.25 MW each, powered by an adjacent 100 MW solar PV plant with a 5 MW/20 MWh lithium-ion battery storage system. It produces approximately 3,000 tonnes of green hydrogen per year, which is used on-site by Fertiberia's ammonia plant (capacity >200,000 tonnes/year) to produce green ammonia and emission-free fertilizers, replacing hydrogen previously produced via steam methane reforming. The plant includes 11 hydrogen storage tanks at 60 bar with total storage capacity exceeding 6.5 tonnes. The total investment was approximately €150 million and the project is part of Iberdrola's broader IPCEI program targeting 800 MW of green hydrogen capacity by 2027.",
+    "is_first_of_a_kind": true,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "Spain",
+    "region": "Castilla-La Mancha",
+    "city": "Puertollano (Ciudad Real)",
+    "coordinates": {
+      "lat": 38.68,
+      "lon": -4.11
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM",
+    "technology_selection_status": "confirmed",
+    "electrolyzer_manufacturer": "Nel Hydrogen Electrolyser (Nel ASA)",
+    "electrolyzer_model": "Nel PEM stacks (1.25 MW each)",
+    "technology_card_ref": "TC-PEM-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 20,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 8200,
+    "hydrogen_output_tons_per_year": 3000,
+    "number_of_stacks": 16,
+    "stack_capacity_mw": 1.25
+  },
+
+  "power": {
+    "renewable_type": "solar_pv",
+    "renewable_capacity_mw": 100,
+    "grid_connection": true,
+    "grid_connection_detail": "100 MW solar PV plant co-located on-site with 5 MW / 20 MWh lithium-ion battery storage system",
+    "ppa_structure": "Iberdrola-owned solar PV plant directly powering the electrolyzer"
+  },
+
+  "water": {
+    "source_type": "municipal",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": null
+  },
+
+  "offtake": {
+    "primary_application": "ammonia",
+    "secondary_applications": [],
+    "offtaker_name": "Fertiberia ammonia plant (on-site, >200,000 tonnes/year ammonia capacity)",
+    "offtake_agreement_type": null,
+    "h2_storage_type": "compressed_gas",
+    "h2_storage_capacity_kg": 6000
+  },
+
+  "stakeholders": {
+    "developer": "Iberdrola",
+    "developer_type": "utility",
+    "co_developers": ["Fertiberia (offtake partner)"],
+    "epc_contractor": null,
+    "operations_operator": "Iberdrola",
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": 150000000,
+    "capex_per_kw_eur": 7500,
+    "capex_per_kw_method": "calculated_total_div_mw",
+    "capex_confidence": "official",
+    "capex_year_reference": 2022,
+    "funding_sources": ["equity", "eu_ipcei"],
+    "total_investment_decision_date": "2020-11",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2020-07",
+    "fid_date": "2020-11",
+    "construction_start_date": "2021",
+    "commissioning_date": "2022-05",
+    "construction_duration_months": 18,
+    "current_operational_year": 3
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2020-001",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Iberdrola advances Europe's largest green hydrogen project with electrolyser award to Nel",
+      "author": "Iberdrola",
+      "url": "https://www.iberdrola.com/press-room/news/detail/iberdrola-advances-europe-s-largest-green-hydrogen-project-with-electrolyser-award",
+      "local_file_ref": "source_documents/project_data/puertollano_electrolyser_award_2020.pdf",
+      "publication_date": "2020-11-03",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Confirms 20 MW PEM, 16 stacks of 1.25 MW, Nel electrolyzer, Fertiberia offtake, €150M investment"
+    },
+    {
+      "source_id": "SRC-2022-011",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Iberdrola starts first Spanish hydrogen plant at Puertollano",
+      "author": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.cn/commodityinsights/en/market-insights/latest-news/electric-power/051622-iberdrola-starts-first-spanish-hydrogen-plant-at-puertollano",
+      "local_file_ref": null,
+      "publication_date": "2022-05-16",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms commissioning May 2022; 100 MW solar; battery storage; 11 H₂ tanks"
+    },
+    {
+      "source_id": "SRC-2024-014",
+      "source_type": "project_website",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Green Hydrogen Plant — Puertollano (Industrial Use)",
+      "author": "Iberdrola",
+      "url": "https://www.iberdrola.com/documents/20125/641225/green_hydrogen_plant_industrial_use.pdf",
+      "local_file_ref": "source_documents/project_data/puertollano_iberdrola_factsheet.pdf",
+      "publication_date": "2024",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Official Iberdrola factsheet with full technical specifications"
+    },
+    {
+      "source_id": "SRC-2024-015",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 2,
+      "title": "Green ammonia based on solar power — Puertollano hydrogen-fertilizer plant",
+      "author": "SMA Altenso",
+      "url": "https://www.sma-altenso.com/references/hydrogen-fertilizer-plant-puertollano/",
+      "local_file_ref": null,
+      "publication_date": "2024",
+      "retrieval_date": "2026-06-01",
+      "confidence": "medium",
+      "notes": "Confirms technical details: storage pressure, tank count, battery system specs"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-006_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "Puertollano Green Hydrogen Plant is a 20 MW PEM electrolysis facility in Puertollano, Ciudad Real, Spain, developed by Iberdrola with Fertiberia. Uses 16 Nel Hydrogen PEM stacks of 1.25 MW each, powered by 100 MW solar PV with 5 MW battery storage. Produces ~3,000 t/yr green hydrogen for on-site Fertiberia ammonia plant to produce green ammonia and emission-free fertilizers. 11 H₂ storage tanks at 60 bar. €150M investment. Commissioned May 2022. One of Europe's first large-scale industrial green hydrogen plants. Operational. Spain. Europe. ammonia. PEM. 20MW. Solar PV. First-of-a-kind. Operational since Q1 2023.",
+    "keywords": ["PEM", "Spain", "Puertollano", "ammonia", "fertilizers", "solar_pv", "operational", "20MW", "Iberdrola", "Nel_Hydrogen", "Fertiberia", "first_of_a_kind", "battery_storage"],
+    "tags": ["gold_dataset", "europe", "operational", "first_of_a_kind", "PEM", "solar_pv", "ammonia"]
+  }
+}

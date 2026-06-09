@@ -1,0 +1,34 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-FIN-003",
+  "risk_name": "Project Financing Failure — Inability to Reach Financial Close",
+  "risk_category": "financial",
+  "risk_subcategory": "05.3_financing_and_interest_rate_risk",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The project cannot secure debt financing on acceptable terms, delaying or preventing financial close. Lenders perceive green hydrogen as a novel technology risk, particularly for PEM (TRL 8 vs Alkaline TRL 9) and first-of-a-kind projects. Rising interest rates compound this risk.",
+    "detailed": "Project finance for green hydrogen faces several challenges: (1) Technology risk perception — lenders are unfamiliar with large-scale electrolysis, particularly PEM, (2) Offtake risk — lenders require long-term offtake agreements with creditworthy counterparties, (3) Merchant risk — some projects plan partial merchant (spot market) H₂ sales, which lenders discount heavily, (4) Construction risk — limited EPC contractor track record in hydrogen, (5) Interest rate environment — post-2022 rate increases have raised debt service costs. Gold Dataset evidence: Public funding (IPCEI, EU Innovation Fund, EIB) plays a disproportionate role — of the 7 projects with funding data, all rely on public finance. This is not a sign of weakness but a sign of market immaturity.",
+    "root_cause": "Lender unfamiliarity with hydrogen technology risk. Nascent offtake market. Limited project finance precedents. Macroeconomic interest rate environment.",
+    "trigger_events": ["Lead bank withdraws from financing syndicate after due diligence", "Debt service coverage ratio (DSCR) projection falls below lender minimum (typically 1.3x)", "Credit committee requires additional equity contribution beyond sponsor commitment", "Public funding (IPCEI/EIB) not confirmed before financial close deadline"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 5, "detectability": 2,
+    "risk_priority_number": 30, "risk_class": "medium",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (CFO)",
+    "preventive_actions": [
+      { "action_id": "MIT-FIN-003-P-01", "description": "Secure public funding commitments (IPCEI, EU Innovation Fund, EIB) before approaching commercial lenders. Public funding de-risks the project and provides lender comfort.", "responsible_party": "Developer (CFO)", "timing": "pre_fid" },
+      { "action_id": "MIT-FIN-003-P-02", "description": "Engage lender technical advisor (LTA) during FEED to identify and resolve lender concerns before financial close process begins", "responsible_party": "Developer (Finance)", "timing": "feed" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["pre_feasibility", "feasibility"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-002", "GA-PR-005", "GA-PR-010"],
+    "incident_descriptions": ["Masshylia (GA-PR-002): No financing secured beyond 'subject to subsidies.' The project's failure to reach financial close at 120 MW is a financing risk case study.", "HyDeal España (GA-PR-005): EIB involvement + 'other banks structuring the debt side.' Despite strong offtake (20-year, 6.6 Mt), financing is not yet secured — demonstrating that offtake alone does not guarantee financial close.", "Galp Sines (GA-PR-010): EIB €430M loan (combined H₂ + biofuels). EIB financing provides a model: public development bank takes the technology risk, commercial banks follow for construction/operational phases."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-102", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "EIB — Galp Sines €430M financing announcement Feb 2025", "author": "European Investment Bank", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

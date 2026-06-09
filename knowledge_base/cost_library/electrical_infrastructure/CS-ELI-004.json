@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELI-004",
+  "cost_name": "MV/LV Plant Distribution — Switchgear, Cabling, Busbars — 100 MW — Europe 2025",
+  "cost_category": "electrical_infrastructure", "cost_subcategory": "02.2_mv_lv_distribution",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 60, "eur_per_kw_low": 40, "eur_per_kw_high": 90, "cost_year": 2025, "percentage_of_total_capex": 2 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "IRENA 2024 electrical BOP cost breakdown. MV/LV distribution includes switchgear, power cables, busbar trunking, cable trays, and lighting distribution within plant boundary." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Standard industrial electrical distribution — well-established cost data. IRENA benchmark cross-referenced with chemical plant electrical norms.", "data_points_contributing": 3 },
+  "cost_drivers": { "primary_drivers": ["Plant layout (cable trenching distance)", "Switchgear rating and arc-flash protection", "Local electrical codes and standards", "Indoor vs outdoor switchgear"], "sensitivity_to_scale": "medium", "exclusions": ["Grid connection (see CS-ELI-001/002)", "Backup power systems (UPS, diesel generator)"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA Green Hydrogen Cost Reduction 2024", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

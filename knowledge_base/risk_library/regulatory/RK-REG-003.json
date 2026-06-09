@@ -1,0 +1,37 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-REG-003",
+  "risk_name": "Subsidy Dependency and Public Funding Withdrawal or Delay",
+  "risk_category": "regulatory",
+  "risk_subcategory": "04.3_subsidy_and_policy_instability",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The project depends on public subsidies (IPCEI, EU Innovation Fund, national programs) for financial viability. If subsidies are delayed, reduced, or withdrawn — due to policy change, budget constraints, or election cycles — the project may become uneconomic before FID or face financial distress after FID. The Gold Dataset provides direct evidence: Masshylia was scaled down 83% primarily due to subsidy dependency.",
+    "detailed": "European green hydrogen projects rely heavily on public funding: IPCEI (Important Projects of Common European Interest) provides billions in state aid approval, EU Innovation Fund grants cover CAPEX gaps, and national programs (France 2030, German BMWK, Spanish PERTE) provide additional support. Gold Dataset evidence: Normand'Hy (French State + EU IPCEI), HGHH (>€250M German federal + Hamburg state IPCEI), HH1 (€89M EU Innovation Fund), HyDeal España (EIB structuring). Masshylia is the cautionary tale: originally 120 MW with >€300M expected subsidy support, scaled back to 20 MW when 'subject to confirmation of subsidies.' The risk is not that all subsidies disappear — it's that the specific program, amount, or timing the project's financial model depends on does not materialize as assumed.",
+    "root_cause": "Green hydrogen projects are not yet commercially viable without public support at most locations and scales. Subsidy programs have finite budgets, complex application processes, uncertain timelines, and political vulnerability.",
+    "trigger_events": ["National election results in government change with different energy policy priorities", "IPCEI funding disbursement delayed beyond financial model assumption", "EU budget negotiation reduces innovation fund allocation", "Subsidy program application rejected or awarded at significantly lower amount than requested"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 5, "detectability": 2,
+    "risk_priority_number": 30, "risk_class": "medium",
+    "probability_rationale": "Probability 3 (Possible): Subsidy dependency is near-universal for current projects. Masshylia demonstrates the downside case. But most IPCEI-approved projects (Normand'Hy, HGHH) have received committed funding — the probability of withdrawal after IPCEI approval is low.",
+    "impact_rationale": "Critical: loss of subsidy can make a project uneconomic. Masshylia's 120 MW → 20 MW scale-down is the most dramatic example in the Gold Dataset.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (CFO + Government Relations)",
+    "preventive_actions": [
+      { "action_id": "MIT-REG-003-P-01", "description": "Design financial model with conservative subsidy assumptions. Stress-test: project must demonstrate pathway to viability without subsidies by year 10 (post-learning-curve cost reduction).", "responsible_party": "Developer (Finance)", "timing": "feasibility" },
+      { "action_id": "MIT-REG-003-P-02", "description": "Diversify subsidy sources: don't depend on a single program. Blend IPCEI (CAPEX), national programs (tax incentives), and EU Innovation Fund (operational support).", "responsible_party": "Developer (Government Relations)", "timing": "pre_feasibility" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-002", "GA-PR-001", "GA-PR-004", "GA-PR-005"],
+    "incident_descriptions": ["Masshylia (GA-PR-002): THE cautionary tale. Announced 40 MW (Jan 2021), expanded to 120 MW (2022), then scaled back to 20 MW (2025) — an 83% reduction — because of 'subject to confirmation of European and French subsidies.' This is the clearest evidence in the Gold Dataset of subsidy dependency risk.", "Normand'Hy (GA-PR-001): French State support (€190M requested under IPCEI) + EU IPCEI. Air Liquide's balance sheet strength (€27B revenue) means the project is not solely dependent on subsidies — Air Liquide can fund it from corporate balance sheet if needed. This developer characteristic mitigates subsidy risk.", "Hamburg Green Hydrogen Hub (GA-PR-004): >€250M combined federal + state IPCEI funding. The project reached FID only after funding was confirmed (July 2024) — demonstrating the correct sequence: confirm subsidy, then FID.", "HyDeal España (GA-PR-005): No FID; EIB structuring. The project's viability depends on billions in financing that has not been secured. This is the pre-FID subsidy risk state — ambitious targets without confirmed funding."],
+    "lessons_learned": "Do not take FID before subsidy confirmation. Masshylia's scale-down is the textbook example. Diversify subsidy sources across programs and jurisdictions. Developer balance sheet strength matters — Air Liquide and Shell can self-fund if subsidies are delayed; startups and consortiums of smaller players cannot."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-093", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "Masshylia (GA-PR-002) — Montel News scale-down report Feb 2025", "author": "Montel News", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

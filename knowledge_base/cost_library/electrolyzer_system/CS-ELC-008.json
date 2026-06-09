@@ -1,0 +1,29 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELC-008",
+  "cost_name": "PEM Stack — Normand'Hy 200 MW Project Actual — France 2024",
+  "cost_category": "electrolyzer_system", "cost_subcategory": "01.1_electrolyzer_stack",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": {
+    "eur_per_kw": 800, "eur_per_kw_low": 700, "eur_per_kw_high": 1000,
+    "cost_year": 2024, "is_inflation_adjusted": false,
+    "percentage_of_total_capex": 18,
+    "total_eur": 160000000
+  },
+  "context": {
+    "technology_type": "PEM", "project_scale_mw": 200,
+    "scale_is_extrapolated": false, "project_location_region": "europe", "project_country": "France",
+    "project_reference_id": "GA-PR-001", "greenfield_or_brownfield": "brownfield"
+  },
+  "estimation": { "aace_class": "class_3_budget", "expected_accuracy_range": "±15%", "estimation_method": "Derived from Air Liquide total CAPEX disclosure (>€400M). Stack portion estimated from IEA benchmark percentage of total electrolyzer system cost. Not audited actual — derived from total CAPEX." },
+  "confidence": {
+    "level": "D_analyst_estimate",
+    "rationale": "Total CAPEX is Level A (Air Liquide official disclosure). Stack proportion is DERIVED (estimated at ~36% of total CAPEX based on IEA cost breakdown for large-scale PEM). No published stack-specific cost from Air Liquide. Downgraded to D because stack cost is inferred, not stated.",
+    "data_points_contributing": 1
+  },
+  "cost_drivers": { "primary_drivers": ["Siemens Energy 12 × 16.7 MW modules", "Berlin gigafactory manufacturing scale (3 GW/year)", "French State IPCEI support reducing effective cost to developer"], "sensitivity_to_scale": "high", "exclusions": ["BOP integration (separate contract)", "Grid connection (RTE)", "Civil works at Port-Jérôme site"] },
+  "sources": [
+    { "source_id": "SRC-CST-2024-AL", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Air Liquide Normand'Hy — Total investment >€400M (2024 FID)", "author": "Air Liquide", "publication_date": "2024", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ],
+  "integration": { "technology_card_reference": "TC-PEM-001.cost_profile", "risk_references": ["RK-SCP-001", "RK-SCP-003"] }
+}

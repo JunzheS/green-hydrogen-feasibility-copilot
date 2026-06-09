@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-IND-002",
+  "cost_name": "Procurement & Supply Chain Management — 100 MW — Europe 2025",
+  "cost_category": "indirect_owners_costs", "cost_subcategory": "08.2_procurement_and_supply_chain",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 45, "eur_per_kw_low": 30, "eur_per_kw_high": 70, "cost_year": 2025, "percentage_of_total_capex": 3 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "AACE factored estimate: procurement ~3% of direct costs. Includes sourcing, tendering, expediting, inspection, logistics coordination, and supplier quality management." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Standard industrial procurement cost factor. Hydrogen projects may have higher logistics cost (oversized electrolyzer modules, specialized transport).", "data_points_contributing": 4 },
+  "cost_drivers": { "primary_drivers": ["Global vs local sourcing strategy", "Number of purchase orders and suppliers", "OEM factory inspection requirements (FAT attendance)", "Import duties and customs brokerage", "Module transport logistics (oversized loads)"], "sensitivity_to_scale": "low", "exclusions": ["Equipment cost (included in respective categories)", "Spare parts inventory"] },
+  "sources": [ { "source_id": "SRC-CST-AACE", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "AACE 18R-97 — Procurement cost factor for process plants", "author": "AACE", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

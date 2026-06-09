@@ -1,0 +1,43 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-SCP-003",
+  "risk_name": "OEM Single-Source Dependency — PEM Electrolyzer Supply Concentration",
+  "risk_category": "supply_chain",
+  "risk_subcategory": "02.3_oem_single_source_dependency",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "PEM projects >20 MW face a de facto duopoly (Siemens Energy, ITM Power) for electrolyzer stack supply. Single-source dependency creates pricing power imbalance, schedule risk (no alternative if OEM delays), and technology lock-in (proprietary stack interfaces prevent multi-sourcing over the project life).",
+    "detailed": "The PEM electrolyzer market for >20 MW modules is concentrated: Siemens Energy (25 MW modules, 3 GW/year Berlin gigafactory) and ITM Power (20 MW TRIDENT stacks, 1.5 GW/year Sheffield). Plug Power (10 MW GenEco modules) is a third option at smaller scale. Cummins/Accelera has announced but not yet delivered >20 MW modules. This concentration means: (a) limited competitive tension in procurement — pricing power sits with OEMs, (b) no alternative supplier if the selected OEM faces production issues, (c) proprietary stack designs mean switching OEM requires expensive BOP redesign, and (d) OEMs control spare parts, maintenance support, and technology upgrades for the project life. This is the single most significant structural risk differentiating PEM from Alkaline (which has 10+ OEMs). The Gold Dataset confirms this: 4 of 6 PEM projects use Siemens Energy; 1 uses ITM Power; 1 uses Plug Power.",
+    "root_cause": "PEM electrolyzer manufacturing at >20 MW scale requires specialized expertise (PFSA membrane handling, titanium machining, iridium catalyst deposition) with high barriers to entry. Market is young — first >20 MW modules shipped ~2020-2022.",
+    "trigger_events": ["Selected OEM experiences production quality issue requiring factory shutdown", "OEM acquired by competitor who prioritizes own projects", "OEM discontinues support for the stack generation installed in the project", "Trade restrictions imposed on OEM country of manufacture"]
+  },
+  "assessment": {
+    "probability": 3, "probability_rationale": "The PEM OEM market is demonstrably concentrated — this is not a hypothetical risk, it's the current market structure. Gold Dataset confirms Siemens Energy supplies 4 of 6 PEM projects.",
+    "impact": 4, "impact_rationale": "Major: loss of OEM support would require complete stack replacement strategy costing €50-100M at 200 MW scale. More realistically, pricing power imbalance adds 10-20% to stack procurement cost vs a competitive market.",
+    "detectability": 1, "detectability_rationale": "OEM financial health is publicly reported (Siemens Energy, ITM Power are publicly traded). OEM manufacturing performance is tracked quarterly. Market concentration is well-documented. Perfect visibility.",
+    "risk_priority_number": 12, "risk_class": "low",
+    "assessment_method": "Gold Dataset OEM tracking + Technology Card evidence + market structure analysis",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Procurement Director + CTO)",
+    "preventive_actions": [
+      { "action_id": "MIT-SCP-003-P-01", "description": "Design BOP for stack-agnostic interface (standardized DC bus voltage, water quality, cooling, control protocols) to preserve OEM switching optionality at the first stack replacement (year 8-10)", "responsible_party": "FEED Engineer", "timing": "feed" },
+      { "action_id": "MIT-SCP-003-P-02", "description": "Include technology escrow provision in OEM contract: in event of OEM insolvency or support discontinuation, project owner receives stack design documentation and manufacturing license", "responsible_party": "Developer (Legal)", "timing": "pre_fid" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "PEM OEM market concentration (Herfindahl-Hirschman Index for >20 MW modules)", "threshold_green": "HHI <2,500 (moderately concentrated)", "threshold_amber": "HHI 2,500-5,000 (highly concentrated)", "threshold_red": "HHI >5,000 (effectively monopolized)" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["feasibility", "feed", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-001", "GA-PR-004", "GA-PR-008", "GA-PR-010"],
+    "incident_descriptions": ["Siemens Energy supplies 4 of 6 Gold Dataset PEM projects: Normand'Hy (200 MW, 12 modules), HGHH (100 MW, 6 units). ITM Power supplies REFHYNE II (100 MW, TRIDENT stacks). Plug Power supplies Galp Sines (100 MW, 10 × 10 MW). Only 3 OEMs cover all 6 PEM projects in the Gold Dataset."],
+    "lessons_learned": "PEM OEM concentration is a structural market risk that cannot be eliminated — only managed through stack-agnostic BOP design, technology escrow provisions, and competitive tension in procurement. The Alkaline market's OEM diversity (10+ suppliers + Chinese option) is a significant risk advantage for Alkaline at large scale."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-063", "source_type": "technology_card", "source_quality_level": "B", "source_reliability_score": 5, "title": "TC-PEM-001 §technical_risks[TCR-PEM-005] — Limited Large-Scale OEM Competition", "author": "Technology Knowledge Base", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

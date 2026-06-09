@@ -1,0 +1,37 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-GRD-005",
+  "risk_name": "Power Quality Issues Causing Electrolyzer Trips or Rectifier Damage",
+  "risk_category": "grid_energy",
+  "risk_subcategory": "03.5_power_quality_and_harmonics",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Grid power quality problems (voltage sags, harmonics, frequency deviations) cause electrolyzer trips, rectifier damage, or efficiency loss. Technology-differentiated: PEM (IGBT rectifier) produces cleaner power but is more sensitive to grid disturbances. Alkaline (thyristor rectifier) is more tolerant of grid issues but generates more harmonics.",
+    "detailed": "Industrial grids near large loads (arc furnaces, rolling mills, large motor starts) experience voltage sags and harmonic distortion that can trip sensitive power electronics. PEM electrolyzers use IGBT-based rectifiers that provide clean DC output but are sensitive to input voltage sags >10-15%. Alkaline electrolyzers using thyristor rectifiers are more robust to grid disturbances but inject harmonic currents back into the grid, potentially incurring reactive power penalties from the TSO. Both technologies require power quality analysis during FEED.",
+    "root_cause": "Grid power quality at industrial sites. Technology-specific rectifier design determines sensitivity vs. harmonic generation trade-off.",
+    "trigger_events": ["Voltage sag monitoring records events exceeding electrolyzer ride-through capability", "TSO issues reactive power penalty notice", "Harmonic distortion measurement exceeds IEEE 519 / EN 50160 limits at point of common coupling"]
+  },
+  "assessment": {
+    "probability": 2, "impact": 3, "detectability": 2,
+    "risk_priority_number": 12, "risk_class": "low",
+    "probability_rationale": "Power quality is well-characterized during FEED studies. Most sites can be adequately assessed and mitigated. Industrial sites with known heavy loads carry higher probability.",
+    "impact_rationale": "Electrolyzer trips cause production loss (hours to days). Rectifier damage is rare but costly (€500K-1M replacement).",
+    "detectability_rationale": "Power quality studies during FEED characterize the risk. Online power quality monitoring provides real-time visibility during operations.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Electrical Engineer)",
+    "preventive_actions": [
+      { "action_id": "MIT-GRD-005-P-01", "description": "Conduct grid power quality study at point of common coupling during FEED. Specify rectifier with appropriate ride-through capability.", "responsible_party": "FEED Electrical Engineer", "timing": "feed" },
+      { "action_id": "MIT-GRD-005-P-02", "description": "Install active harmonic filtering if thyristor rectifier selected (Alkaline). Install voltage sag ride-through (CVT/DVR) if IGBT rectifier selected and grid is weak (PEM).", "responsible_party": "EPC Contractor", "timing": "construction" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw"], "project_phases": ["feed", "commissioning", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Alkaline (thyristor rectifier). TenneT's new Amaliahaven 380 kV substation provides dedicated, clean grid connection — minimizing power quality risk through infrastructure investment. Yokogawa MAC includes power quality monitoring."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-082", "source_type": "technology_card", "source_quality_level": "B", "source_reliability_score": 5, "title": "TC-PEM-001 & TC-ALK-001 — Infrastructure: Power Supply Requirements", "author": "Technology Knowledge Base", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

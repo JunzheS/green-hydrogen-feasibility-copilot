@@ -1,0 +1,172 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-007",
+  "project_name": "HySynergy",
+  "alias_names": ["HySynergy Fredericia", "Everfuel HySynergy"],
+  "status": "operational",
+  "status_detail": "Phase I (20 MW) inaugurated November 3, 2025. First hydrogen production and delivery to Crossbridge Energy refinery achieved February 28, 2025. First RFNBO-certified green hydrogen export from Denmark to Germany commenced. World-first grid balancing service demonstrated December 2025 (with Energinet and Centrica) while simultaneously producing green hydrogen. Site infrastructure prepared for expansion up to 350 MW. Phase II (300 MW) planned but timeline not confirmed. Phase III target 1 GW by 2030.",
+
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed",
+    "project_phase_at_collection": "operational",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "HySynergy is a 20 MW green hydrogen plant in Fredericia, Denmark, developed and operated by Everfuel A/S with investment from Hy24 (49% stake). It is Denmark's first industrial-scale green hydrogen facility and one of the first in the world to achieve RFNBO (Renewable Fuel of Non-Biological Origin) certification. The plant uses 8 electrolyzer units powered by 100% renewable electricity (solar and wind) to produce approximately 8 tonnes of green hydrogen per day. The hydrogen is supplied to the adjacent Crossbridge Energy Fredericia refinery (which consumes ~35 tonnes of hydrogen daily, mostly fossil-based) and exported to German industrial customers via tanker truck. The plant was inaugurated on November 3, 2025, and achieved a world-first in December 2025 by providing balancing services to the Danish electricity grid while simultaneously producing hydrogen. Surplus heat is fed into the local Fredericia district heating network. The site is prepared for expansion up to 350 MW with land, power connection, and utilities in place.",
+    "is_first_of_a_kind": true,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "Denmark",
+    "region": "Region of Southern Denmark",
+    "city": "Fredericia",
+    "coordinates": {
+      "lat": 55.56,
+      "lon": 9.75
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "Alkaline",
+    "technology_selection_status": "confirmed",
+    "electrolyzer_manufacturer": null,
+    "electrolyzer_model": null,
+    "technology_card_ref": "TC-ALK-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 20,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 8000,
+    "hydrogen_output_tons_per_year": 2920,
+    "number_of_stacks": 8,
+    "stack_capacity_mw": 2.5
+  },
+
+  "power": {
+    "renewable_type": "solar_pv_wind_hybrid",
+    "renewable_capacity_mw": null,
+    "grid_connection": true,
+    "grid_connection_detail": "Connected to Danish electricity grid; demonstrated grid balancing services with Energinet and Centrica (Dec 2025)",
+    "ppa_structure": "100% renewable electricity from solar and wind sources"
+  },
+
+  "water": {
+    "source_type": "municipal",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": null
+  },
+
+  "offtake": {
+    "primary_application": "refinery",
+    "secondary_applications": ["export"],
+    "offtaker_name": "Crossbridge Energy Fredericia Refinery (primary), German industrial customers (tanker export)",
+    "offtake_agreement_type": null,
+    "h2_storage_type": "compressed_gas",
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "Everfuel A/S (51%) and Hy24 (49%)",
+    "developer_type": "startup",
+    "co_developers": ["Everfuel A/S", "Hy24 (via Clean H2 Infra Fund)"],
+    "epc_contractor": "Ramboll (FEED and engineering)",
+    "operations_operator": "Everfuel A/S",
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": null,
+    "capex_per_kw_eur": null,
+    "capex_per_kw_method": null,
+    "capex_confidence": null,
+    "capex_year_reference": null,
+    "funding_sources": ["equity", "hy24_infrastructure_fund", "danish_government_support"],
+    "total_investment_decision_date": "2023",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2020",
+    "fid_date": "2023",
+    "construction_start_date": "2023",
+    "commissioning_date": "2025-11-03",
+    "construction_duration_months": 30,
+    "current_operational_year": 0
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2025-009",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Denmark inaugurates rare low-carbon hydrogen plant — HySynergy Fredericia",
+      "author": "France 24 / AFP",
+      "url": "https://www.france24.com/en/live-news/20251103-denmark-inaugurates-rare-low-carbon-hydrogen-plant",
+      "local_file_ref": null,
+      "publication_date": "2025-11-03",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms inauguration date, 20 MW capacity, 8 tonnes/day, RFNBO certification, export to Germany"
+    },
+    {
+      "source_id": "SRC-2025-010",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 4,
+      "title": "Everfuel and Crossbridge Energy Fredericia announces the first production and delivery of hydrogen to the Crossbridge Energy Refinery",
+      "author": "Everfuel A/S",
+      "url": null,
+      "local_file_ref": "source_documents/project_data/hysynergy_first_production_2025.pdf",
+      "publication_date": "2025-02-28",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms first H₂ production and delivery February 2025"
+    },
+    {
+      "source_id": "SRC-2025-011",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "World-first: HySynergy electrolyser provides balancing services to Danish grid while producing green hydrogen",
+      "author": "HydroNews / Everfuel",
+      "url": "https://www.hydronews.it/en/the-hysynergy-of-everfuel-for-the-first-time-produces-green-hydrogen-while-also-providing-balancing-services-to-the-grid/",
+      "local_file_ref": null,
+      "publication_date": "2025-12-23",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms world-first grid balancing with Energinet and Centrica"
+    },
+    {
+      "source_id": "SRC-2022-012",
+      "source_type": "project_website",
+      "source_quality_level": "B",
+      "source_reliability_score": 4,
+      "title": "HySynergy green H2 production plant — Ramboll project reference",
+      "author": "Ramboll Group",
+      "url": "https://www.ramboll.com/en-apac/projects/energy/hysynergy-green-h2-production-plant",
+      "local_file_ref": null,
+      "publication_date": "2022",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms Ramboll FEED role, phased expansion plans to 350 MW and 1 GW"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-007_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "HySynergy is a 20 MW green hydrogen plant in Fredericia, Denmark, developed by Everfuel A/S with Hy24 Clean H2 Infra Fund (49%). Denmark's first industrial-scale green hydrogen facility and world-first RFNBO-certified. Uses 8 electrolyzer units powered by 100% renewable solar and wind electricity. Produces ~8 tonnes/day green hydrogen supplied to Crossbridge Energy Fredericia refinery and exported to German industrial customers. Inaugurated November 3, 2025. Achieved world-first grid balancing with Energinet/Centrica in December 2025. Surplus heat feeds Fredericia district heating. Site prepared for 350 MW expansion. Operational. Denmark. Europe. refinery + export. Alkaline. 20MW.",
+    "keywords": ["Alkaline", "Denmark", "Fredericia", "refinery", "operational", "20MW", "Everfuel", "RFNBO", "grid_balancing", "first_of_a_kind", "district_heating", "solar_pv_wind_hybrid"],
+    "tags": ["gold_dataset", "europe", "operational", "first_of_a_kind", "Alkaline", "RFNBO_certified", "grid_balancing"]
+  }
+}

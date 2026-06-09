@@ -1,0 +1,161 @@
+{
+  "_schema_version": "1.0.0-PMO",
+  "_template_name": "Risk Record Template v1 (PMO-Enhanced)",
+  "_description": "Template for recording a project risk entry using the PMO-enhanced schema with FMEA scoring, residual risk tracking, and monitoring indicators. Copy, fill, save to /knowledge_base/risk_library/{category}/.",
+  "_references": {
+    "taxonomy": "risk_taxonomy_framework.md",
+    "scoring": "risk_scoring_methodology.md",
+    "schema": "risk_schema_v1.md"
+  },
+
+  "risk_id": "<<RK-TEC-001>>",
+  "risk_name": "<<Concise negative outcome statement (max 120 chars)>>",
+  "risk_category": "<<technical | supply_chain | grid_energy | regulatory | financial | construction | operational | environmental>>",
+  "risk_subcategory": "<<01.1_electrolyzer_performance | 03.4_electricity_price_volatility | ...>>",
+  "risk_version": "1.0.0",
+  "risk_status": "draft",
+  "supersedes": null,
+  "last_review_date": "<<2026-06-05>>",
+  "next_review_date": "<<2026-12-05>>",
+
+  "description": {
+    "summary": "<<2-3 sentence executive summary of the risk>>",
+    "detailed": "<<Full description: what could happen, how, why it matters (max 2000 chars)>>",
+    "root_cause": "<<Underlying cause(s) enabling this risk>>",
+    "trigger_events": [
+      "<<Observable event indicating risk is materializing>>",
+      "<<Second trigger event>>"
+    ]
+  },
+
+  "assessment": {
+    "probability": "<<1-5>>",
+    "probability_rationale": "<<Why this probability rating? Cite evidence.>>",
+    "impact": "<<1-5>>",
+    "impact_rationale": "<<Why this impact rating?>>",
+    "detectability": "<<1-5>>",
+    "detectability_rationale": "<<How and when could this risk be detected before impact?>>",
+    "risk_priority_number": "<<P × I × D = [1-125]>>",
+    "risk_class": "<<low | medium | high | critical>>",
+    "assessment_method": "<<Expert elicitation (Delphi, 2 rounds, 5 SMEs) | FMEA workshop | Monte Carlo | Industry benchmark>>",
+    "assessment_date": "<<2026-06-05>>",
+    "assessed_by": "<<Name / Role / Organization>>"
+  },
+
+  "residual": {
+    "probability": "<<Post-mitigation 1-5, or null if not assessed>>",
+    "impact": "<<Post-mitigation 1-5, or null>>",
+    "detectability": "<<Post-mitigation 1-5, or null>>",
+    "risk_priority_number": "<<Post-mitigation RPN, or null>>",
+    "risk_class": "<<Post-mitigation class, or null>>"
+  },
+
+  "applicability": {
+    "technology_types": ["<<PEM>>", "<<Alkaline>>"],
+    "project_scale": ["<<medium_10-100mw>>", "<<large_100-500mw>>"],
+    "project_phases": ["<<feasibility>>", "<<feed>>", "<<construction>>"],
+    "regions": ["<<all>>"],
+    "first_of_a_kind_only": false,
+    "project_type": ["<<greenfield>>", "<<brownfield>>"]
+  },
+
+  "consequences": {
+    "schedule": {
+      "impact": "<<none | <1_month | 1-3_months | 3-6_months | 6-12_months | >12_months>>",
+      "description": "<<Narrative schedule impact>>"
+    },
+    "cost": {
+      "impact_eur": "<<Estimated EUR, P50>>",
+      "description": "<<Narrative cost impact with breakdown>>"
+    },
+    "performance": {
+      "description": "<<Impact on H₂ output, availability, efficiency>>"
+    },
+    "safety": {
+      "impact": "<<none | minor_injury | major_injury | fatality_risk | multiple_fatality_risk>>",
+      "description": "<<Narrative safety consequences>>"
+    },
+    "reputation": {
+      "description": "<<Reputation / community / industry impact>>"
+    },
+    "regulatory": {
+      "description": "<<Fines, permit issues, certification loss>>"
+    },
+    "worst_case_scenario": "<<Plausible worst-case outcome>>",
+    "cascading_risk_ids": ["<<RK-XXX-NNN>>"]
+  },
+
+  "mitigation": {
+    "strategy": "<<avoid | reduce | transfer | accept | contingency>>",
+    "strategy_rationale": "<<Why this strategy?>>",
+    "risk_owner": "<<Role or entity: EPC Contractor | Developer (Procurement) | Operations Manager>>",
+    "preventive_actions": [
+      {
+        "action_id": "<<MIT-{RISK_ID}-P-01>>",
+        "description": "<<Action to reduce probability>>",
+        "responsible_party": "<<Who>>",
+        "timing": "<<pre_fid | pre_construction | during_construction | pre_commissioning | during_operations | ongoing>>",
+        "cost_eur": "<<Cost to implement, EUR>>",
+        "status": "<<planned | in_progress | completed | deferred>>"
+      }
+    ],
+    "corrective_actions": [
+      {
+        "action_id": "<<MIT-{RISK_ID}-C-01>>",
+        "description": "<<Action to reduce impact if risk materializes>>",
+        "responsible_party": "<<Who>>",
+        "timing": "<<during_operations | ongoing>>",
+        "cost_eur": "<<Contingency cost, EUR>>",
+        "status": "<<planned>>"
+      }
+    ],
+    "monitoring_indicators": [
+      {
+        "indicator": "<<What to monitor>>",
+        "threshold_green": "<<Normal range>>",
+        "threshold_amber": "<<Warning range>>",
+        "threshold_red": "<<Action required>>",
+        "current_value": null,
+        "last_updated": null
+      }
+    ]
+  },
+
+  "evidence": {
+    "reference_project_ids": ["<<GA-PR-NNN>>"],
+    "incident_descriptions": [
+      "<<Brief factual description of real incident in a reference project>>"
+    ],
+    "lessons_learned": "<<Key lessons from real project experiences>>",
+    "frequency_observed": "<<Qualitative frequency: Observed in X of Y reference projects (~Z%)>>",
+    "technology_card_references": ["<<TC-PEM-001 | TC-ALK-001>>"],
+    "industry_standards": ["<<ISO 31000:2018>>", "<<IEC 62282-8-101>>"]
+  },
+
+  "sources": [
+    {
+      "source_id": "<<SRC-RSK-YYYY-NNN>>",
+      "source_type": "<<industry_report | academic_paper | press_release | news_article>>",
+      "source_quality_level": "<<A | B | C | D>>",
+      "source_reliability_score": "<<1-5>>",
+      "title": "<<Source document title>>",
+      "author": "<<Author / Organization>>",
+      "url": "<<URL or null>>",
+      "local_file_ref": "<<source_documents/...path or null>>",
+      "publication_date": "<<YYYY-MM-DD>>",
+      "retrieval_date": "<<YYYY-MM-DD>>",
+      "confidence": "<<high | medium | low>>"
+    }
+  ],
+
+  "integration": {
+    "related_risk_ids": [],
+    "cost_library_references": []
+  },
+
+  "rag_metadata": {
+    "text_for_embedding": "<<Pipeline-generated from risk_name + category + assessment + consequences + mitigation>>",
+    "keywords": [],
+    "last_indexed": null
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-FIN-004",
+  "risk_name": "OPEX Escalation — Electricity, Maintenance, and Consumables Exceeding Budget",
+  "risk_category": "financial",
+  "risk_subcategory": "05.2_opex_escalation",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Operating costs exceed the project's financial model projections over the operational life, eroding margins and potentially triggering loan covenant breaches. Electricity (70-75% of OPEX) is the dominant cost, but maintenance, stack replacement, water, and consumables collectively contribute 25-30% and can escalate unexpectedly.",
+    "detailed": "OPEX categories at risk: (1) Electricity cost — covered by RK-GRD-004 (price volatility), (2) Stack replacement cost — covered by RK-TEC-001 (PEM degradation) and RK-TEC-002 (Alkaline carbonate), (3) Maintenance cost — limited operational data for large-scale PEM/Alkaline plants means maintenance budgets are based on OEM estimates and chlor-alkali analogs, not hydrogen-specific data, (4) Water cost — water treatment consumables (RO membranes, EDI modules, ion exchange resin) and wastewater disposal costs, (5) Insurance — hydrogen plant insurance market is immature; premiums may adjust upward after industry incidents, (6) Workforce — specialized hydrogen technicians command salary premiums in competitive markets.",
+    "root_cause": "Limited long-term operational data for large-scale electrolysis. OEM maintenance estimates may be optimistic. Immature insurance market. Competitive labor market for hydrogen skills.",
+    "trigger_events": ["Annual maintenance cost exceeds budget by >20% for two consecutive years", "Insurance renewal premium increases >30% year-on-year", "Water treatment consumable replacement interval 30% shorter than OEM specification", "Key maintenance event (compressor overhaul, transformer service) costs 50% more than budgeted"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 3, "detectability": 2,
+    "risk_priority_number": 18, "risk_class": "low",
+    "probability_rationale": "Some OPEX escalation is nearly certain (electricity) but is accounted for in separate risks. Non-electricity OPEX escalation probability is moderate — limited operational data creates uncertainty but most cost categories have industrial analogs.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Operations Manager + CFO",
+    "preventive_actions": [
+      { "action_id": "MIT-FIN-004-P-01", "description": "Include OPEX contingency of 15% in financial model during feasibility, reducing to 10% at FID after OEM maintenance quotes received", "responsible_party": "Developer (Finance)", "timing": "feasibility" },
+      { "action_id": "MIT-FIN-004-P-02", "description": "Negotiate long-term service agreements (LTSA) with OEM and major equipment suppliers with capped escalation rates", "responsible_party": "Developer (Procurement)", "timing": "pre_fid" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-006", "GA-PR-007"],
+    "incident_descriptions": ["Puertollano (GA-PR-006): Operational since 2022 — accumulating the first multi-year PEM OPEX dataset at 20 MW scale. Iberdrola has not publicly reported OPEX overruns, suggesting maintenance costs are within expectations for a well-designed plant.", "HySynergy (GA-PR-007): Operational since 2025. World-first grid balancing demonstration (Dec 2025) provides ancillary revenue that offsets OPEX — a potential OPEX mitigation strategy through grid service revenue."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-103", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA Global Hydrogen Review 2025 — Operating cost analysis", "author": "IEA", "retrieval_date": "2026-05-15", "confidence": "high" }
+  ]
+}

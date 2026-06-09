@@ -1,0 +1,158 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-005",
+  "project_name": "HyDeal España",
+  "alias_names": [],
+  "status": "planned",
+  "status_detail": "Giga-scale green hydrogen hub. Joint venture incorporated November 2021. IRENA-classified as world's largest giga-scale renewable hydrogen project. Anchor sponsors: ArcelorMittal, Enagás, Grupo Fertiberia, DH2 Energy. EPC FEED partners selected May 2022: VINCI Construction/Cobra IS, Técnicas Reunidas, PowerChina Guizhou Engineering. TSK appointed Owner's Engineer. Target: 150,000–200,000 t/yr H₂ by 2026, 330,000 t/yr by 2030. Target LCOH: €1.50/kg before 2030. 6.6 Mt offtake over 20 years. As of 2026, no confirmed FID; remained in early planning with phased development approach.",
+
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic",
+    "project_phase_at_collection": "pre_fid",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "HyDeal España is a giga-scale green hydrogen hub planned for northern Spain, supplying industrial complexes in Asturias. It is the first industrial implementation of the HyDeal Ambition platform and was classified by IRENA as the world's largest giga-scale renewable hydrogen project when announced. The plan includes 9.5 GW of solar PV capacity powering 7.4 GW of electrolyzers to produce up to 330,000 tonnes of green hydrogen per year by 2030. Anchor offtakers include ArcelorMittal (green steel) and Grupo Fertiberia (green ammonia/fertilizers) with a 20-year, 6.6 million tonne offtake agreement. The joint venture includes Enagás (transmission infrastructure), DH2 Energy (developer), and the offtakers. EPC FEED partners include VINCI Construction, Técnicas Reunidas, and PowerChina. Target LCOH is €1.50/kg before 2030. As of 2026, FID has not been confirmed and the project remains in phased planning.",
+    "is_first_of_a_kind": true,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "Spain",
+    "region": "Asturias (northern Spain)",
+    "city": "Avilés (industrial complex)",
+    "coordinates": {
+      "lat": 43.55,
+      "lon": -5.92
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM+Alkaline",
+    "technology_selection_status": "not_selected",
+    "electrolyzer_manufacturer": null,
+    "electrolyzer_model": null,
+    "technology_card_ref": null
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 7400,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 904000,
+    "hydrogen_output_tons_per_year": 330000,
+    "number_of_stacks": null,
+    "stack_capacity_mw": null
+  },
+
+  "power": {
+    "renewable_type": "solar_pv",
+    "renewable_capacity_mw": 9500,
+    "grid_connection": null,
+    "grid_connection_detail": null,
+    "ppa_structure": null
+  },
+
+  "water": {
+    "source_type": null,
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": null
+  },
+
+  "offtake": {
+    "primary_application": "steel",
+    "secondary_applications": ["ammonia"],
+    "offtaker_name": "ArcelorMittal (green steel), Grupo Fertiberia (green ammonia/fertilizers)",
+    "offtake_agreement_type": "20-year, 6.6 million tonnes total renewable hydrogen",
+    "h2_storage_type": "salt_cavern",
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "DH2 Energy (originator) / HyDeal España JV",
+    "developer_type": "consortium",
+    "co_developers": ["ArcelorMittal", "Enagás", "Grupo Fertiberia", "DH2 Energy"],
+    "epc_contractor": "VINCI Construction / Cobra IS / Técnicas Reunidas / PowerChina Guizhou Engineering (FEED phase)",
+    "operations_operator": null,
+    "financial_advisors": ["European Investment Bank (EIB)"],
+    "lenders": ["EIB (structuring)"]
+  },
+
+  "financial": {
+    "total_capex_eur": null,
+    "capex_per_kw_eur": null,
+    "capex_per_kw_method": null,
+    "capex_confidence": null,
+    "capex_year_reference": null,
+    "funding_sources": ["equity", "project_finance_debt", "eib"],
+    "total_investment_decision_date": null,
+    "lcoh_eur_per_kg": 1.5
+  },
+
+  "timeline": {
+    "announcement_date": "2021-11",
+    "fid_date": null,
+    "construction_start_date": null,
+    "commissioning_date": "2030",
+    "construction_duration_months": null,
+    "current_operational_year": null
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2022-008",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 4,
+      "title": "HyDeal España, the world's largest integrated renewable and competitive hydrogen hub",
+      "author": "ArcelorMittal",
+      "url": "https://corporate.arcelormittal.com/media/news/non-regulatory-news/hydeal-espana-the-worlds-largest-integrated-renewable-and-competitive-hydrogen-hub",
+      "local_file_ref": "source_documents/project_data/hydeal_espana_announcement_2022.pdf",
+      "publication_date": "2022-02",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Confirms JV partners, 7.4 GW electrolyzers, 9.5 GW solar, offtake agreement"
+    },
+    {
+      "source_id": "SRC-2022-009",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 4,
+      "title": "HyDeal España and TSK announce partnerships for the largest green hydrogen hub in Europe",
+      "author": "TSK / HyDeal España",
+      "url": "https://www.grupotsk.com/en/hydeal-espana-and-tsk-announce-partnerships-for-the-largest-green-hydrogen-hub-in-europe-and-one-of-the-largest-in-the-world/",
+      "local_file_ref": "source_documents/project_data/hydeal_espana_epc_2022.pdf",
+      "publication_date": "2022-05-31",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Confirms EPC FEED partners, TSK as Owner's Engineer"
+    },
+    {
+      "source_id": "SRC-2022-010",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Green hydrogen is now competitive with fossil fuels — ArcelorMittal among offtakers at massive 7.4GW project in Spain",
+      "author": "Recharge News",
+      "url": "https://www.rechargenews.com/energy-transition/green-hydrogen-is-now-competitive-with-fossil-fuels-arcelormittal-among-offtakers-at-massive-7-4gw-project-in-spain/2-1-1169455",
+      "local_file_ref": null,
+      "publication_date": "2022-02",
+      "retrieval_date": "2026-06-01",
+      "confidence": "medium",
+      "notes": "Cites €1.50/kg LCOH target; project ambition context"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-005_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "HyDeal España is a giga-scale green hydrogen hub in Asturias, northern Spain. Plans 9.5 GW solar PV powering 7.4 GW electrolyzers for up to 330,000 t/yr green hydrogen by 2030. Anchor offtakers: ArcelorMittal (green steel) and Grupo Fertiberia (green ammonia/fertilizers) under 20-year 6.6 Mt agreement. JV includes Enagás (transmission) and DH2 Energy (developer). Target LCOH €1.50/kg. As of 2026, no FID confirmed. Pre-FID planned. Spain. Europe. steel + ammonia. 7400MW. Giga-scale.",
+    "keywords": ["Spain", "Asturias", "steel", "ammonia", "7400MW", "giga_scale", "planned", "pre_FID", "ArcelorMittal", "Fertiberia", "Enagás", "solar_pv", "HyDeal", "first_of_a_kind"],
+    "tags": ["gold_dataset", "europe", "giga_scale", "pre_FID", "planned", "solar_pv", "first_of_a_kind"]
+  }
+}

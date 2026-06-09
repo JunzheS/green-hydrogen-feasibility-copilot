@@ -1,0 +1,34 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-CST-003",
+  "risk_name": "Site Conditions — Ground Contamination, Archaeology, or Geotechnical Surprises",
+  "risk_category": "construction",
+  "risk_subcategory": "06.1_site_preparation_and_civil_works",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Unexpected ground conditions (contamination, poor geotechnical properties, archaeological finds, unexploded ordnance) discovered during site preparation cause construction delays and cost increases. Brownfield industrial sites carry contamination risk; greenfield sites carry geotechnical uncertainty.",
+    "detailed": "Hydrogen projects at industrial sites face site condition risks: (1) Brownfield sites: soil and groundwater contamination from previous industrial use (hydrocarbons, heavy metals, asbestos). HGHH at former coal plant site required coal ash remediation. (2) Greenfield sites: geotechnical uncertainty (bearing capacity, groundwater, settlement). (3) All sites: archaeological chance finds (common in Europe), unexploded ordnance (WWII-era in Germany, France, Belgium, Netherlands). Contamination remediation can cost €1-10M and add 3-12 months. Archaeological finds can stop work for weeks to months while authorities investigate.",
+    "root_cause": "Incomplete site investigation during feasibility. Brownfield contamination from previous industrial use. Geological/archaeological uncertainty inherent to all construction.",
+    "trigger_events": ["Site investigation during FEED identifies contamination exceeding feasibility study assumptions", "Ground investigation reveals bearing capacity below foundation design assumptions", "Archaeological find during excavation stops work on affected area"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 3, "detectability": 2,
+    "risk_priority_number": 18, "risk_class": "low",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "EPC Contractor (Civil Works Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-CST-003-P-01", "description": "Conduct comprehensive geotechnical and environmental site investigation during FEED — not at construction start. Minimum 3 boreholes for 2 ha site.", "responsible_party": "Developer (Site Development)", "timing": "feed" },
+      { "action_id": "MIT-CST-003-P-02", "description": "Include soil remediation contingency of €2-5M and 6-month schedule float in brownfield project budget", "responsible_party": "Project Director", "timing": "pre_fid" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["feasibility", "construction"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-004"],
+    "incident_descriptions": ["Hamburg Green Hydrogen Hub (GA-PR-004): Former Moorburg coal-fired power plant (1,600 MW, operated 2015-2021). Site required: coal plant dismantling (completed 2024 before hydrogen construction started), coal ash pond remediation, existing infrastructure assessment for reuse (380 kV connection, water treatment, buildings). The 2022 announcement → Dec 2025 foundation (3+ years) includes site preparation. The brownfield premium is offset by reused infrastructure value."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-112", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "HGHH (GA-PR-004) — Moorburg coal plant repurposing: site preparation and infrastructure reuse", "author": "HGHH / Luxcara / Hamburger Energiewerke", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

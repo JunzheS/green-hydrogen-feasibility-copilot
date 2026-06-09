@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-HPR-003",
+  "cost_name": "PEM H₂ Purification & Drying — Industrial Offtake — 100 MW — Europe 2025",
+  "cost_category": "hydrogen_processing", "cost_subcategory": "04.2_purification_and_drying",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 20, "eur_per_kw_low": 10, "eur_per_kw_high": 35, "cost_year": 2025, "percentage_of_total_capex": 1 },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "IRENA 2024 purification cost data. PEM produces 99.99% purity natively — industrial offtake (refinery, ammonia, steel DRI) requires only TSA drying to remove water vapor. No deoxo or PSA needed." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "PEM's inherent purity advantage is well-documented (TC-PEM-001). Purification cost is minimal for industrial offtake — drying only.", "data_points_contributing": 2 },
+  "cost_drivers": { "primary_drivers": ["Offtake dew point specification (typically -40°C)", "TSA dryer sizing", "Regeneration gas management"], "sensitivity_to_scale": "low", "exclusions": ["Fuel cell-grade purification for mobility (additional deoxo + PSA)"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA 2024 — Purification cost breakdown", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-PEM-001" }
+}

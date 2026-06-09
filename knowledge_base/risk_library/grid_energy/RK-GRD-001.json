@@ -1,0 +1,48 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-GRD-001",
+  "risk_name": "Grid Connection Delay Exceeding Project Schedule Contingency",
+  "risk_category": "grid_energy",
+  "risk_subcategory": "03.1_grid_connection_delays",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The high-voltage grid connection required for electrolyzer operation is not completed by the scheduled commissioning date, delaying first hydrogen production and revenue. Grid connection delays are among the most frequently reported risks in European renewable energy and hydrogen projects.",
+    "detailed": "Green hydrogen projects require dedicated HV grid connection (110-380 kV). The connection involves TSO agreement negotiation, substation design/procurement/construction, transmission line installation, grid compliance testing, and synchronization with plant commissioning. In European markets, TSO resource constraints, transformer lead times (18-36 months), permitting complications, and coordination failures are primary causes. Financial impact includes delayed revenue (~€3-5M/month at 100 MW), potential offtake penalties, and interim power costs.",
+    "root_cause": "TSO/DSO resource constraints; long transformer lead times; mismatch between project timeline and grid operator planning cycle; competing connection requests in congested industrial zones.",
+    "trigger_events": ["TSO connection agreement not signed within 6 months of FID", "Substation transformer order not placed within 12 months of target COD", "Grid compliance testing date slips by >3 months", "TSO notifies project of connection queue re-prioritization"]
+  },
+  "assessment": {
+    "probability": 4, "probability_rationale": ">40% of European renewable and industrial electrification projects report grid connection delays. Both HH1 and HGHH explicitly managed this as a critical schedule risk.",
+    "impact": 4, "impact_rationale": "3-6 month delay: €10-20M lost revenue at 100 MW scale. Plus offtake penalties and extended overhead.",
+    "detectability": 2, "detectability_rationale": "TSO milestones provide 6-12 month detection window. Monthly coordination meetings track progress.",
+    "risk_priority_number": 32, "risk_class": "medium",
+    "assessment_method": "Industry benchmark analysis + Gold Dataset evidence", "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "schedule": { "impact": "3-6_months", "description": "First H₂ production delayed. Construction team demobilization/remobilization costs if gap between mechanical completion and grid energization." },
+    "cost": { "impact_eur": 15000000, "description": "P50: €15M for 100 MW plant with 4-month delay." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Electrical & Grid Interface Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-GRD-001-P-01", "description": "Initiate TSO connection application at pre-feasibility stage. Secure agreement ≥24 months before target COD.", "responsible_party": "Developer (Electrical Manager)", "timing": "pre_feasibility" },
+      { "action_id": "MIT-GRD-001-P-02", "description": "Order long-lead electrical items (transformer, HV switchgear) directly rather than through TSO procurement", "responsible_party": "Developer (Procurement)", "timing": "pre_fid" },
+      { "action_id": "MIT-GRD-001-P-03", "description": "Include 6-month hidden grid connection buffer in project schedule", "responsible_party": "Project Director", "timing": "pre_fid" }
+    ],
+    "corrective_actions": [
+      { "action_id": "MIT-GRD-001-C-01", "description": "Contract mobile HV substation as interim power supply. Enables commissioning at 50-70% capacity.", "responsible_party": "Developer (Electrical Manager)", "timing": "during_construction", "cost_eur": 1500000 }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "TSO connection agreement status", "threshold_green": "Signed; milestones on track", "threshold_amber": "In negotiation >3 months", "threshold_red": "No agreement >6 months after application" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["feasibility", "feed", "construction", "commissioning"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-004"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Required new Amaliahaven 380 kV substation from TenneT. Grid connection was identified as a critical path item. Shell's early TSO engagement and direct procurement strategy mitigated this risk.", "Hamburg Green Hydrogen Hub (GA-PR-004): BENEFITED from existing 380 kV connection at former Moorburg coal plant. This brownfield advantage was explicitly cited as a schedule risk mitigation — no new grid connection required."],
+    "lessons_learned": "Brownfield sites with existing grid connections eliminate the single largest schedule risk. Early TSO engagement (pre-feasibility) is the most effective preventive action. Direct procurement of long-lead electrical equipment bypasses TSO bottlenecks. Mobile substation provides viable interim solution at ~€1.5M."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-070", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA Electricity Grids and Secure Energy Transitions 2025", "author": "IEA", "retrieval_date": "2026-05-15", "confidence": "high" }
+  ]
+}

@@ -1,0 +1,3 @@
+# Green Hydrogen Project Feasibility Copilot — Python dependencies
+# Core: stdlib only (no external dependencies for the executable engine)
+# Streamlit UI (future): streamlit, plotly

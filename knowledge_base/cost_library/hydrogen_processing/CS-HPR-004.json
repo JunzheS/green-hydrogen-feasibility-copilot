@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-HPR-004",
+  "cost_name": "H₂ Compression — Mobility Offtake (30→500 bar) — 100 MW — Europe 2025",
+  "cost_category": "hydrogen_processing", "cost_subcategory": "04.1_compression",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 160, "eur_per_kw_low": 110, "eur_per_kw_high": 230, "cost_year": 2025, "percentage_of_total_capex": 6 },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "IRENA 2024 + hydrogen refueling station compressor cost data. 30 bar (PEM outlet) → 500 bar (tube trailer or HRS cascade). Multi-stage ionic or reciprocating compressor. Alkaline variant (CS-HPR-002A) would add first stage 1→30 bar (+€70/kW)." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Hydrogen mobility compression is a growing market with established compressor technology (PDC Machines, Howden, Burckhardt). Cost data from HRS industry benchmarks.", "data_points_contributing": 3 },
+  "cost_drivers": { "primary_drivers": ["Final pressure (500 bar vs 900 bar for 700 bar HRS)", "Flow rate and number of compressor trains", "Cooling between stages (high compression heat)", "Oil-free requirement for fuel cell grade"], "sensitivity_to_scale": "medium", "exclusions": ["HRS dispenser and on-site storage at fueling station", "Tube trailer filling station equipment"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA 2024 + HRS compressor cost benchmarks", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

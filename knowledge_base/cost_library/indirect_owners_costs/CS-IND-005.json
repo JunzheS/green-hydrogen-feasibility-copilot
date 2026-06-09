@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-IND-005",
+  "cost_name": "Contingency — AACE Class 4 Standard — Alkaline Project — 100 MW — Europe 2025",
+  "cost_category": "indirect_owners_costs", "cost_subcategory": "08.5_contingency",
+  "cost_basis": "epc_total", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 150, "eur_per_kw_low": 100, "eur_per_kw_high": 220, "cost_year": 2025, "percentage_of_total_capex": 11 },
+  "context": { "technology_type": "Alkaline", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±35%", "estimation_method": "AACE Class 4 standard: 15% base contingency. Alkaline: no technology risk increment (TRL 9, fully mature). No precious metal supply risk. 10+ OEMs provide competitive supply security. Total: 15% on direct costs = ~11% of total CAPEX." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Alkaline's technology maturity (100+ years, TRL 9, >500 plants globally) justifies lower contingency than PEM. The 15% base is the AACE minimum for Class 4 — no technology-specific increment warranted.", "data_points_contributing": 5 },
+  "cost_drivers": { "primary_drivers": ["Same base drivers as CS-IND-004", "Alkaline TRL 9: no technology increment (vs PEM +5%)", "10+ OEMs: no supply concentration increment (vs PEM +2%)"], "sensitivity_to_scale": "low", "exclusions": ["Same as CS-IND-004"] },
+  "sources": [ { "source_id": "SRC-CST-AACE", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "AACE 18R-97", "author": "AACE", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "risk_references": ["RK-FIN-001"] }
+}

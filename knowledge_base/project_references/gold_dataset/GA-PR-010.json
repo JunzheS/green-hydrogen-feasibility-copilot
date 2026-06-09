@@ -1,0 +1,158 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-010",
+  "project_name": "Galp Sines Green Hydrogen",
+  "alias_names": ["Galp Sines Refinery H2", "Galp Sines Electrolyzer", "Galp Plug Power H2"],
+  "status": "under_construction",
+  "status_detail": "Final Investment Decision taken September 2023. First 10 MW PEM electrolyzer module delivered by Plug Power on October 1, 2025. Full 100 MW capacity (10 × 10 MW GenEco PEM arrays) expected by first half of 2026. Part of larger €650 million investment combining hydrogen production with HVO/SAF biofuels unit. EIB provided €430 million financing (including €180M for H₂ component) in February 2025. One of the few large-scale electrolyzer projects actively under construction in Europe. Will replace ~20% of grey hydrogen at Sines Refinery. Scale-up potential to 600 MW to fully decarbonize refinery hydrogen. Uses industrial recycled water (<3% of refinery's annual needs). CO₂ reduction ~110,000 tonnes/year (Scope 1 & 2).",
+
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed",
+    "project_phase_at_collection": "construction",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "The Galp Sines Green Hydrogen Project is a 100 MW PEM electrolysis facility being built at Galp's Sines Refinery in Portugal. Using Plug Power GenEco PEM electrolyzer arrays (10 units of 10 MW each), the plant will produce up to 15,000 tonnes of renewable hydrogen per year, replacing approximately 20% of the grey hydrogen used at the refinery. FID was taken in September 2023, making it one of the few large-scale electrolyzer projects under active construction in Europe. The first 10 MW module was delivered in October 2025 with full capacity expected by the first half of 2026. The total combined investment (including an HVO/SAF biofuels unit) is €650 million, supported by a €430 million EIB loan with €180 million allocated to the hydrogen component. The project is a cornerstone of Galp's refinery decarbonization strategy with a vision to scale up to 600 MW to fully decarbonize all refinery hydrogen consumption. It will abate approximately 110,000 tonnes of CO₂ per year.",
+    "is_first_of_a_kind": false,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "Portugal",
+    "region": "Alentejo (Setúbal District)",
+    "city": "Sines",
+    "coordinates": {
+      "lat": 37.95,
+      "lon": -8.87
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM",
+    "technology_selection_status": "confirmed",
+    "electrolyzer_manufacturer": "Plug Power Inc.",
+    "electrolyzer_model": "GenEco PEM (10 units of 10 MW each)",
+    "technology_card_ref": "TC-PEM-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 100,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 41100,
+    "hydrogen_output_tons_per_year": 15000,
+    "number_of_stacks": 10,
+    "stack_capacity_mw": 10
+  },
+
+  "power": {
+    "renewable_type": "grid_mix",
+    "renewable_capacity_mw": null,
+    "grid_connection": true,
+    "grid_connection_detail": "Grid-connected at Sines Refinery. Renewable electricity sourcing per EU RFNBO requirements.",
+    "ppa_structure": null
+  },
+
+  "water": {
+    "source_type": "wastewater_recycled",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": null
+  },
+
+  "offtake": {
+    "primary_application": "refinery",
+    "secondary_applications": [],
+    "offtaker_name": "Galp Sines Refinery (on-site consumption)",
+    "offtake_agreement_type": null,
+    "h2_storage_type": null,
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "Galp",
+    "developer_type": "oil_and_gas",
+    "co_developers": [],
+    "epc_contractor": null,
+    "operations_operator": "Galp",
+    "financial_advisors": ["European Investment Bank (EIB)"],
+    "lenders": ["European Investment Bank (EIB) — €430M total, ~€180M for H₂"]
+  },
+
+  "financial": {
+    "total_capex_eur": 650000000,
+    "capex_per_kw_eur": 2500,
+    "capex_per_kw_method": "calculated_total_div_mw",
+    "capex_confidence": "official",
+    "capex_year_reference": 2023,
+    "funding_sources": ["equity", "eib_loan"],
+    "total_investment_decision_date": "2023-09",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2022",
+    "fid_date": "2023-09",
+    "construction_start_date": "2024",
+    "commissioning_date": "2026-H1",
+    "construction_duration_months": 30,
+    "current_operational_year": null
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2025-014",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Plug Power Delivers First Electrolyzer for 100MW Green Hydrogen Project at Galp's Sines Refinery",
+      "author": "Plug Power Inc. / Galp",
+      "url": "https://hk.marketscreener.com/news/plug-power-delivers-first-electrolyzer-for-100mw-green-hydrogen-project-at-galpa-s-sines-refinery-ce7d5bd9da8ff723",
+      "local_file_ref": "source_documents/project_data/galp_sines_first_module_2025.pdf",
+      "publication_date": "2025-10-01",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms first 10 MW module delivered, 10 × 10 MW GenEco PEM arrays, full capacity H1 2026"
+    },
+    {
+      "source_id": "SRC-2025-015",
+      "source_type": "government_announcement",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "EIB allocates €430 million in financing for Galp's biofuels and hydrogen projects in Sines",
+      "author": "European Investment Bank",
+      "url": "https://www.sulinformacao.pt/en/2025/02/bei-atribui-430-me-de-financiamento-para-projetos-de-biocombustiveis-e-hidrogenio-da-galp-em-sines/",
+      "local_file_ref": "source_documents/project_data/galp_sines_eib_loan_2025.pdf",
+      "publication_date": "2025-02",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms €430M EIB loan, ~€180M for H₂, €650M total, 15,000 t/yr H₂, 110,000 t/yr CO₂ abatement"
+    },
+    {
+      "source_id": "SRC-2024-020",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Portugal's largest grey hydrogen consumer invests in green H2 plant to displace 20% of its demand",
+      "author": "FuelCellChina",
+      "url": "https://www.fuelcellchina.com/Industry_information_details/1800.html",
+      "local_file_ref": null,
+      "publication_date": "2024",
+      "retrieval_date": "2026-06-01",
+      "confidence": "medium",
+      "notes": "Confirms expansion potential to 600 MW, recycled water use, 20% displacement"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-010_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "Galp Sines Green Hydrogen is a 100 MW PEM electrolysis project at Galp's Sines Refinery in Portugal. Uses 10 Plug Power GenEco PEM arrays of 10 MW each. Produces 15,000 t/yr renewable hydrogen replacing ~20% of grey hydrogen at refinery. FID September 2023. First module delivered October 2025, full capacity H1 2026. €650M total investment (with HVO/SAF unit) including €180M for H₂ via EIB €430M loan. Scale-up potential to 600 MW. Recycled water from refinery. ~110,000 t/yr CO₂ abatement. Under construction. Portugal. Europe. refinery. PEM. 100MW.",
+    "keywords": ["PEM", "Portugal", "Sines", "refinery", "100MW", "under_construction", "Galp", "Plug_Power", "GenEco", "EIB", "recycled_water", "expansion_potential"],
+    "tags": ["gold_dataset", "europe", "PEM", "large_scale", "EIB_funded", "under_construction", "Portugal"]
+  }
+}

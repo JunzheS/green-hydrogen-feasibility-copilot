@@ -1,0 +1,53 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-TEC-002",
+  "risk_name": "Alkaline Electrolyte Degradation from CO₂ Absorption (Carbonate Formation)",
+  "risk_category": "technical",
+  "risk_subcategory": "01.1_electrolyzer_performance",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "KOH electrolyte absorbs atmospheric CO₂ forming potassium carbonate (K₂CO₃) precipitate which reduces ionic conductivity, fouls diaphragms, and gradually degrades Alkaline electrolyzer performance. Well-understood phenomenon requiring ongoing electrolyte management.",
+    "detailed": "Atmospheric Alkaline electrolyzers expose KOH electrolyte to ambient air. CO₂ absorption forms K₂CO₃ precipitate that: (1) reduces KOH concentration and ionic conductivity (increasing cell voltage and energy consumption by 2-5%), (2) fouls the porous Zirfon diaphragm (reducing effective surface area and increasing resistance), (3) can block electrolyte flow channels causing localized hotspots, and (4) requires periodic electrolyte filtration and replenishment. Pressurized Alkaline designs operating in a closed gas loop are less susceptible. This is a well-characterized phenomenon from 100+ years of industrial Alkaline electrolysis (chlor-alkali industry) with established mitigation procedures. However, for new green hydrogen projects without experienced chlor-alkali operators, this risk can surprise plant management.",
+    "root_cause": "KOH electrolyte's chemical affinity for CO₂. Open-system (atmospheric) Alkaline designs expose electrolyte to ambient air. Closed-system (pressurized) designs minimize but do not eliminate exposure.",
+    "trigger_events": ["Conductivity trending shows >5% reduction with stable KOH concentration", "Increased differential pressure across diaphragm indicating fouling", "Electrolyte sample shows K₂CO₃ concentration exceeding maintenance threshold", "Cell voltage distribution showing >5% deviation from baseline"]
+  },
+  "assessment": {
+    "probability": 5, "probability_rationale": "This is an inherent chemical process — CO₂ absorption occurs continuously in any atmospheric Alkaline system. 100% of atmospheric Alkaline plants experience some degree of carbonate formation. Pressurized Alkaline designs reduce but do not eliminate exposure.",
+    "impact": 2, "impact_rationale": "Minor: 2-5% efficiency loss from carbonate fouling; managed through established electrolyte maintenance procedures. Cost impact: ~€100-300K/year in additional electricity and electrolyte consumables at 100 MW scale.",
+    "detectability": 2, "detectability_rationale": "Routine electrolyte sampling and conductivity monitoring detect carbonate buildup within days to weeks. Well-established monitoring protocols from chlor-alkali industry. Pressurized designs have slower buildup, providing longer detection window.",
+    "risk_priority_number": 20, "risk_class": "low",
+    "assessment_method": "Technology Card evidence + chlor-alkali industry operational data (100+ years)",
+    "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "schedule": { "impact": "<1_month", "description": "Minor: electrolyte change-out can be done during scheduled maintenance. No forced outage required." },
+    "cost": { "impact_eur": 300000, "description": "Annual: €200-300K in additional electricity (2-5% efficiency loss) + €50-100K in electrolyte consumables and filtration at 100 MW scale." },
+    "performance": { "description": "Gradual 2-5% efficiency degradation between scheduled electrolyte maintenance cycles. Reversible through electrolyte filtration/regeneration." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Operations Manager",
+    "preventive_actions": [
+      { "action_id": "MIT-TEC-002-P-01", "description": "Install continuous electrolyte filtration and carbonate removal system with automated KOH concentration control", "responsible_party": "EPC Contractor", "timing": "feed" },
+      { "action_id": "MIT-TEC-002-P-02", "description": "Nitrogen blanket on electrolyte storage tanks to exclude atmospheric CO₂", "responsible_party": "Operations Manager", "timing": "during_operations" },
+      { "action_id": "MIT-TEC-002-P-03", "description": "Consider pressurized Alkaline design (20-30 bar) to operate in closed gas loop, minimizing atmospheric exposure", "responsible_party": "FEED Engineer", "timing": "pre_fid" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Electrolyte K₂CO₃ concentration (monthly sample)", "threshold_green": "<0.5 wt%", "threshold_amber": "0.5-2.0 wt%", "threshold_red": ">2.0 wt%" }
+    ]
+  },
+  "applicability": { "technology_types": ["Alkaline"], "project_scale": ["any"], "project_phases": ["operations"], "first_of_a_kind_only": false },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-007", "GA-PR-003"],
+    "incident_descriptions": ["HySynergy (GA-PR-007): 20 MW Alkaline operational since 2025. Electrolyte management is part of standard operating procedures. No significant carbonate issues reported, demonstrating that established chlor-alkali practices transfer effectively to green hydrogen.", "Holland Hydrogen I (GA-PR-003): 200 MW Alkaline using Thyssenkrupp Nucera Scalum pressurized design. Pressurized operation in closed loop minimizes atmospheric CO₂ exposure — a design choice that partially mitigates this inherent Alkaline risk."],
+    "lessons_learned": "Carbonate formation is manageable through standard industrial electrochemical process practices. The risk is well-understood — it should never surprise an experienced operator. However, new entrants to hydrogen without chlor-alkali background may underestimate the ongoing electrolyte management workload. Pressurized Alkaline designs reduce this risk significantly. Automated electrolyte management reduces labor cost.",
+    "frequency_observed": "100% of atmospheric Alkaline plants experience some carbonate formation. This is inherent chemistry, not a failure mode.",
+    "technology_card_references": ["TC-ALK-001"],
+    "industry_standards": ["ISO 22734"]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-020", "source_type": "technology_card", "source_quality_level": "B", "source_reliability_score": 5, "title": "TC-ALK-001 §technical_risks[TCR-ALK-001] — Electrolyte Degradation and Carbonate Formation", "author": "Technology Knowledge Base", "retrieval_date": "2026-06-01", "confidence": "high" },
+    { "source_id": "SRC-RSK-2026-021", "source_type": "academic_paper", "source_quality_level": "B", "source_reliability_score": 5, "title": "Alkaline water electrolysis: from historical development to modern industrial deployment", "author": "Int. J. Hydrogen Energy, 2024", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

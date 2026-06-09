@@ -1,0 +1,50 @@
+{
+  "_schema_version": "1.0.0-OPEX",
+  "_template_name": "OPEX Record Template v1",
+  "_references": { "taxonomy": "opex_taxonomy_framework.md", "lcoh": "lcoh_methodology_framework.md", "schema": "opex_schema_v1.md" },
+  "opex_id": "<<OX-ELC-001>>",
+  "opex_name": "<<PEM Electricity Cost — 100 MW — 4,500 hrs/yr — €40/MWh — Europe 2025>>",
+  "opex_category": "<<electricity | stack_replacement | maintenance | labor | water_consumables | insurance | land_facilities | regulatory_compliance | other>>",
+  "opex_subcategory": "<<O1_electricity | O2_stack_replacement | O3.1_preventive_maintenance | ...>>",
+  "opex_unit": "<<eur_per_kg_h2 | eur_per_kw_per_year | eur_per_year | eur_per_mwh | percent_of_total_opex>>",
+  "opex_version": "1.0.0", "opex_status": "draft", "last_review_date": "<<2026-06-05>>",
+  "opex_data": {
+    "value": "<<Central estimate in opex_unit>>",
+    "value_low": "<<P10 or minimum>>",
+    "value_high": "<<P90 or maximum>>",
+    "cost_year": "<<2025>>",
+    "percentage_of_opex": "<<% of total annual OPEX>>",
+    "percentage_of_lcoh": "<<% contribution to LCOH>>"
+  },
+  "context": {
+    "technology_type": "<<PEM | Alkaline | technology_agnostic>>",
+    "project_scale_mw": "<<100>>",
+    "full_load_hours_per_year": "<<4500>>",
+    "electricity_price_assumption_eur_per_mwh": null,
+    "project_reference_id": null
+  },
+  "confidence": {
+    "level": "<<A_actual | B_contracted | C_benchmark | D_estimate>>",
+    "rationale": "<<Justification for confidence level citing source>>"
+  },
+  "sensitivity": {
+    "primary_driver": "<<Main factor driving this OPEX category>>",
+    "lcoh_impact_per_unit_change": "<<±€X.XX/kg per ±unit change>>",
+    "scale_dependency": "<<strong | moderate | weak | none>>"
+  },
+  "sources": [{
+    "source_id": "<<SRC-OX-YYYY-NNN>>",
+    "source_type": "<<industry_report | project_data | press_release>>",
+    "source_quality_level": "<<A | B | C>>",
+    "source_reliability_score": "<<1-5>>",
+    "title": "<<Source title>>", "author": "<<Author>>",
+    "publication_date": "<<YYYY-MM-DD>>", "retrieval_date": "<<YYYY-MM-DD>>",
+    "confidence": "<<high | medium | low>>"
+  }],
+  "integration": {
+    "technology_card_reference": "<<TC-PEM-001.cost_profile.opex_breakdown | TC-ALK-001.cost_profile.opex_breakdown>>",
+    "risk_references": ["<<RK-FIN-004>>"],
+    "cost_library_references": []
+  },
+  "rag_metadata": { "text_for_embedding": "<<Pipeline-generated>>", "keywords": [], "last_indexed": null }
+}

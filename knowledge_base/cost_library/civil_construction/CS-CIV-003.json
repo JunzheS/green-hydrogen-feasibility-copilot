@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-CIV-003",
+  "cost_name": "Civil & Construction — PEM Brownfield (Existing Industrial Site) — 100 MW — Europe 2025",
+  "cost_category": "civil_construction", "cost_subcategory": "05_all",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 140, "eur_per_kw_low": 100, "eur_per_kw_high": 200, "cost_year": 2025, "percentage_of_total_capex": 5 },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe", "greenfield_or_brownfield": "brownfield", "project_reference_id": "GA-PR-004" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "CS-CIV-001 (greenfield PEM) with brownfield discount (−30%). HGHH/Moorburg model: reused existing buildings, roads, drainage. Normand'Hy: Port-Jérôme brownfield — similar advantage." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Brownfield civil cost savings of 25-35% are well-documented in industrial projects. HGHH provides qualitative validation. Range accounts for site condition variability (contamination remediation may offset savings).", "data_points_contributing": 2 },
+  "cost_drivers": { "primary_drivers": ["Reuse of existing foundations, roads, drainage", "Existing buildings adaptable to electrolyzer hall", "Contamination remediation cost (offsets savings)", "Demolition of obsolete structures"], "sensitivity_to_scale": "medium", "exclusions": ["Land cost (assumed already owned/leased)", "Grid connection — see separate CS-ELI-002 for brownfield electrical"] },
+  "sources": [ { "source_id": "SRC-CST-HGHH", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "HGHH (GA-PR-004) — Moorburg coal plant brownfield repurposing", "author": "Luxcara / HEnW", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

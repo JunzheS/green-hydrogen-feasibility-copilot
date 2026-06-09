@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-HPR-002",
+  "cost_name": "Alkaline H₂ Compression — 1 bar Outlet → Industrial Offtake (30 bar) — 100 MW — Europe 2025",
+  "cost_category": "hydrogen_processing", "cost_subcategory": "04.1_compression",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 110, "eur_per_kw_low": 80, "eur_per_kw_high": 160, "cost_year": 2025, "percentage_of_total_capex": 4 },
+  "context": { "technology_type": "Alkaline", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "IRENA 2024 compression cost breakdown. Alkaline atmospheric output requires first-stage compression from 1→30 bar (multi-stage reciprocating) plus second stage to offtake pressure. PEM avoids the first stage entirely." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Based on IRENA 2024 and compressor OEM data (Burckhardt, Howden). Well-established compression cost for hydrogen service. The Alkaline compression penalty vs PEM is ~€70/kW for industrial offtake.", "data_points_contributing": 3 },
+  "cost_drivers": { "primary_drivers": ["Pressure ratio (1→30 bar = high ratio requiring 3-4 compression stages)", "Flow rate", "Intercooling between stages", "Oil-free design for H₂ purity"], "sensitivity_to_scale": "medium", "exclusions": ["Purification (deoxo/dryer for mobility — see CS-HPR-005)", "Pipeline injection pressure >80 bar"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA 2024 — Alkaline compression cost penalty", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-ALK-001.cost_profile", "risk_references": ["RK-TEC-003"] }
+}

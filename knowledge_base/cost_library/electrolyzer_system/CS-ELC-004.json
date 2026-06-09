@@ -1,0 +1,18 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELC-004",
+  "cost_name": "PEM Power Electronics — IGBT Rectifier System — 100 MW — Europe 2025",
+  "cost_category": "electrolyzer_system", "cost_subcategory": "01.3_power_electronics",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": {
+    "eur_per_kw": 130, "eur_per_kw_low": 100, "eur_per_kw_high": 180,
+    "cost_year": 2025, "is_inflation_adjusted": false,
+    "percentage_of_total_capex": 4
+  },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "IRENA 2024 power electronics cost breakdown + OEM rectifier cost data (ABB, Siemens Energy, Ingeteam)" },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Based on IRENA cost breakdown and OEM product data for IGBT-based rectifier systems at 100 MW scale.", "data_points_contributing": 3 },
+  "cost_drivers": { "primary_drivers": ["IGBT module cost and availability", "Transformer integration (dedicated vs shared)", "DC bus architecture complexity", "Active front-end for grid code compliance"], "sensitivity_to_scale": "medium", "exclusions": ["Harmonic filtering (if required by grid code)", "Reactive power compensation"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA Green Hydrogen Cost Reduction 2024 — Power electronics cost breakdown", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-PEM-001.cost_profile" }
+}

@@ -1,0 +1,40 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-FIN-001",
+  "risk_name": "CAPEX Overrun — Total Project Cost Exceeding Budget by >20%",
+  "risk_category": "financial",
+  "risk_subcategory": "05.1_capex_overrun",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Total project CAPEX exceeds the budgeted amount by >20%, eroding project returns and potentially triggering loan covenant breaches. First-of-a-kind hydrogen projects carry elevated CAPEX uncertainty due to limited reference cost data, evolving supply chains, and integration complexity.",
+    "detailed": "CAPEX overrun sources for hydrogen projects: scope creep during FEED (additional BOP scope identified during detailed engineering), EPC contract change orders (ground conditions, interface issues), electrolyzer price escalation between bid and order (commodity-driven), construction delay costs (extended overhead, financing during construction), and contingency drawdown exceeding planned reserves. The Gold Dataset provides mixed evidence: projects with experienced developers (Air Liquide Normand'Hy, Shell HH1) have not publicly reported overruns. Masshylia's scale-down can be interpreted as pre-FID CAPEX discovery — the 120 MW project's CAPEX was likely higher than initially estimated, driving the decision to scale back.",
+    "root_cause": "Limited reference cost data for >100 MW hydrogen projects. First-of-a-kind integration complexity. Evolving supply chain pricing. Developer inexperience in hydrogen project delivery.",
+    "trigger_events": ["FEED cost estimate exceeds feasibility study estimate by >15%", "EPC bids received >20% above budget", "Contingency drawdown exceeds 50% before 50% construction completion", "Major change order (>5% of EPC contract value) approved"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 4, "detectability": 2,
+    "risk_priority_number": 24, "risk_class": "medium",
+    "probability_rationale": "First-of-a-kind industrial projects across all sectors average 20-30% CAPEX overrun (Bent Flyvbjerg data). Hydrogen projects are no exception. Experienced developers with in-house engineering (Air Liquide, Shell, Linde) have lower probability than consortiums of smaller players.",
+    "impact_rationale": "20% CAPEX overrun on €400M project = €80M. This can push project IRR below investment hurdle rate. Lenders may require equity injection or additional collateral.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Project Director + CFO)",
+    "preventive_actions": [
+      { "action_id": "MIT-FIN-001-P-01", "description": "Budget contingency at 25% during feasibility, 15% at FID, 10% at EPC contract award. Do not reduce contingency below 10% before mechanical completion.", "responsible_party": "Developer (Project Controls)", "timing": "pre_fid" },
+      { "action_id": "MIT-FIN-001-P-02", "description": "Use competitive FEED + EPC procurement with lump-sum turnkey (LSTK) contract structure. Transfer construction cost risk to EPC contractor where possible.", "responsible_party": "Developer (Procurement)", "timing": "feed" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Cost performance index (CPI) = Earned Value / Actual Cost", "threshold_green": "CPI ≥ 0.95", "threshold_amber": "CPI 0.85-0.95", "threshold_red": "CPI < 0.85" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["feasibility", "feed", "construction"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-002", "GA-PR-003", "GA-PR-010"],
+    "incident_descriptions": ["Masshylia (GA-PR-002): The 83% scale-down (120→20 MW) can be interpreted as pre-FID CAPEX discovery — the full-scale project was not financeable at projected costs given available subsidies and offtake pricing.", "Holland Hydrogen I (GA-PR-003): $1.17B (€1B) for 200 MW = €5,000/kW all-in. This is a high per-kW cost compared to IRENA benchmarks (€1,100-2,100/kW total installed) — reflecting first-of-a-kind costs including dedicated 380 kV substation, HyTransPort pipeline, and offshore wind integration.", "Galp Sines (GA-PR-010): €650M total investment (combined H₂ + biofuels unit; ~€250M for H₂). EIB €430M financing provides cost credibility through lender due diligence."],
+    "lessons_learned": "LSTK EPC contracts transfer construction cost risk but at a premium (10-20% higher contract price vs. cost-reimbursable). The trade-off is certainty vs. cost. Developer experience is the best predictor of CAPEX accuracy — Air Liquide and Shell have internal cost databases that new entrants lack."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-100", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA Green Hydrogen Cost Reduction 2024 — CAPEX benchmarks and sensitivity", "author": "IRENA", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

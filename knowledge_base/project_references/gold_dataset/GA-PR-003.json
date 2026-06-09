@@ -1,0 +1,186 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-003",
+  "project_name": "Holland Hydrogen I",
+  "alias_names": ["Holland Hydrogen 1", "HH1", "Shell Holland Hydrogen I"],
+  "status": "under_construction",
+  "status_detail": "Construction started August 2022 at Maasvlakte II, Port of Rotterdam. Thyssenkrupp Nucera Scalum alkaline electrolyzer modules installed. TenneT 380 kV grid connection at Amaliahaven substation. Originally expected operational in 2025, now tracking toward 2025–2026. HyTransPort pipeline connection to Shell Pernis refinery under construction by Gasunie/Hynetwork. Estimated total investment ~€1 billion.",
+
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed",
+    "project_phase_at_collection": "construction",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "Holland Hydrogen I (HH1) is a 200 MW alkaline electrolysis plant being built by Shell at Maasvlakte II in the Port of Rotterdam, Netherlands. The plant uses Thyssenkrupp Nucera Scalum alkaline electrolyzer modules configured in 10 parallel rows of approximately 20 MW each, producing up to 60,000 kg of green hydrogen per day. The hydrogen is powered by the 759 MW Hollandse Kust Noord offshore wind farm (CrossWind JV: Shell/Eneco) and will be transported via the HyTransPort pipeline to Shell's Energy and Chemicals Park Rotterdam (Pernis refinery) to replace grey hydrogen in refining operations. EPC management is by Worley, automation by Yokogawa, grid connection by TenneT, and demineralized water supply by Evides Industriewater. The project received ~€89 million from the EU Innovation Fund and is one of the world's first modularized large-scale electrolyzer plants. Total investment is estimated at approximately €1 billion.",
+    "is_first_of_a_kind": true,
+    "related_project_ids": ["GA-PR-008"]
+  },
+
+  "location": {
+    "country": "Netherlands",
+    "region": "South Holland",
+    "city": "Rotterdam (Maasvlakte II, Tweede Maasvlakte)",
+    "coordinates": {
+      "lat": 51.96,
+      "lon": 4.02
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "Alkaline",
+    "technology_selection_status": "confirmed",
+    "electrolyzer_manufacturer": "Thyssenkrupp Nucera",
+    "electrolyzer_model": "Scalum",
+    "technology_card_ref": "TC-ALK-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 200,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 60000,
+    "hydrogen_output_tons_per_year": 21900,
+    "number_of_stacks": 10,
+    "stack_capacity_mw": 20
+  },
+
+  "power": {
+    "renewable_type": "offshore_wind",
+    "renewable_capacity_mw": 759,
+    "grid_connection": true,
+    "grid_connection_detail": "New Amaliahaven 380 kV extra-high-voltage substation built by TenneT. One of the first large-scale electrolyzers in Europe directly connected to the high-voltage grid.",
+    "ppa_structure": "CrossWind JV (Shell 50% / Eneco 50%) — 759 MW Hollandse Kust Noord offshore wind farm"
+  },
+
+  "water": {
+    "source_type": "freshwater",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": "Evides Industriewater (15-year contract, dedicated demiwater pipeline from Demiwater Plant Maasvlakte, Brielse Meer source)"
+  },
+
+  "offtake": {
+    "primary_application": "refinery",
+    "secondary_applications": ["mobility"],
+    "offtaker_name": "Shell Energy and Chemicals Park Rotterdam (Pernis refinery)",
+    "offtake_agreement_type": null,
+    "h2_storage_type": "pipeline",
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "Shell (Rotterdam Hydrogen Company B.V.)",
+    "developer_type": "oil_and_gas",
+    "co_developers": [],
+    "epc_contractor": "Worley (EPCM — Engineering, Procurement & Construction Management)",
+    "operations_operator": "Shell",
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": 1000000000,
+    "capex_per_kw_eur": 5000,
+    "capex_per_kw_method": "calculated_total_div_mw",
+    "capex_confidence": "media_report",
+    "capex_year_reference": 2022,
+    "funding_sources": ["equity", "eu_innovation_fund"],
+    "total_investment_decision_date": "2022-07",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2021",
+    "fid_date": "2022-07",
+    "construction_start_date": "2022-08",
+    "commissioning_date": "2025",
+    "construction_duration_months": 42,
+    "current_operational_year": null
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2022-006",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Shell to start building Europe's largest renewable hydrogen plant — Holland Hydrogen I",
+      "author": "Shell plc",
+      "url": "https://www.shell.com/media/news-and-media-releases/2022/shell-to-start-building-europes-largest-renewable-hydrogen-plant.html",
+      "local_file_ref": "source_documents/project_data/hh1_shell_announcement_2022.pdf",
+      "publication_date": "2022-07-06",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Official FID announcement; confirms 200 MW, Thyssenkrupp Nucera, Hollandse Kust Noord, HyTransPort"
+    },
+    {
+      "source_id": "SRC-2022-007",
+      "source_type": "government_announcement",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "EU Innovation Fund — Project Factsheet: Holland Hydrogen I",
+      "author": "European Commission",
+      "url": "https://climate.ec.europa.eu/system/files/2022-12/if_pf_2022_hh_en.pdf",
+      "local_file_ref": "source_documents/project_data/hh1_eu_innovation_fund_2022.pdf",
+      "publication_date": "2022-12",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "EU Innovation Fund grant of ~€89M; ~5.1 Mt CO₂ avoided over 10 years"
+    },
+    {
+      "source_id": "SRC-2023-003",
+      "source_type": "press_release",
+      "source_quality_level": "B",
+      "source_reliability_score": 4,
+      "title": "Yokogawa selected as Main Automation Contractor for constructing Europe's largest renewable hydrogen plant",
+      "author": "Yokogawa Electric Corporation",
+      "url": "https://www.yokogawa.com/us/library/resources/articles/yokogawa-selected-as-mac-for-constructing-europes-largest-renewable-hydrogen-plant/",
+      "local_file_ref": null,
+      "publication_date": "2023",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms MAC contract, plant configuration details"
+    },
+    {
+      "source_id": "SRC-2025-006",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Shell Nears Launch of Estimated $1.17B Holland Green Hydrogen Project",
+      "author": "Engineering News-Record (ENR)",
+      "url": "https://www.enr.com/articles/62942-shell-nears-launch-of-estimated-117b-holland-green-hydrogen-project",
+      "local_file_ref": null,
+      "publication_date": "2025",
+      "retrieval_date": "2026-06-01",
+      "confidence": "medium",
+      "notes": "Cites ~$1.17B total investment; provides construction progress update"
+    },
+    {
+      "source_id": "SRC-2024-011",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Evides Industriewater supplies demiwater for Shell's green hydrogen plant — 15-year agreement",
+      "author": "H2 View / EIN Presswire",
+      "url": "https://www.einpresswire.com/article_print/615532778/evides-industriewater-supplies-demiwater-for-shell-s-green-hydrogen-plant",
+      "local_file_ref": null,
+      "publication_date": "2024",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms 15-year demiwater supply agreement, Brielse Meer source"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-003_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "Holland Hydrogen I (HH1) is a 200 MW alkaline electrolysis plant built by Shell at Maasvlakte II in the Port of Rotterdam, Netherlands. Uses Thyssenkrupp Nucera Scalum alkaline electrolyzer modules (10 rows, ~20 MW each). Produces 60,000 kg/day green hydrogen powered by 759 MW Hollandse Kust Noord offshore wind farm. Hydrogen piped via HyTransPort to Shell Pernis refinery to replace grey hydrogen. EPC by Worley, automation by Yokogawa, grid by TenneT, water by Evides Industriewater. ~€1B investment, €89M EU Innovation Fund. First modularized large-scale electrolyzer. Under construction since August 2022. Netherlands. Europe. refinery + mobility. Alkaline. 200MW.",
+    "keywords": ["Alkaline", "Netherlands", "Rotterdam", "refinery", "offshore_wind", "200MW", "under_construction", "Shell", "Thyssenkrupp_Nucera", "Scalum", "EU_Innovation_Fund", "first_of_a_kind", "modular"],
+    "tags": ["gold_dataset", "europe", "first_of_a_kind", "EU_funded", "large_scale", "Alkaline", "offshore_wind"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELI-001",
+  "cost_name": "Grid Connection — Greenfield 110-380 kV Substation — 100 MW — Europe 2025",
+  "cost_category": "electrical_infrastructure", "cost_subcategory": "02.1_grid_connection",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 180, "eur_per_kw_low": 120, "eur_per_kw_high": 280, "cost_year": 2025, "percentage_of_total_capex": 6 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe", "greenfield_or_brownfield": "greenfield" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "IEA Electricity Grids 2025 report + TSO connection cost data (TenneT, RTE, Amprion). Transformer lead times and substation costs from industry benchmarks. Range reflects distance to grid and voltage level." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "IEA grid infrastructure cost data with European TSO benchmarks. Wide range reflects site-specific variation (distance to existing HV line, voltage level, terrain).", "data_points_contributing": 4 },
+  "cost_drivers": { "primary_drivers": ["Distance to existing HV transmission line", "Voltage level (110 kV vs 380 kV)", "New substation vs. tap-in to existing", "Transformer lead time (18-36 months)", "Grid reinforcement costs (if allocated to project)"], "sensitivity_to_scale": "low", "exclusions": ["Grid reinforcement costs beyond connection point", "TSO application and study fees", "Reactive power compensation equipment"] },
+  "sources": [ { "source_id": "SRC-CST-2025-IEA-GRID", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA Electricity Grids and Secure Energy Transitions 2025", "author": "IEA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "risk_references": ["RK-GRD-001", "RK-GRD-002"] }
+}

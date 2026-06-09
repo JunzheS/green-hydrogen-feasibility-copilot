@@ -1,0 +1,36 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-REG-005",
+  "risk_name": "Safety Regulatory Compliance — ATEX, PED, Seveso III Directive",
+  "risk_category": "regulatory",
+  "risk_subcategory": "04.5_safety_regulatory_compliance",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The plant design or operation fails to meet EU safety regulations for hydrogen production and handling (ATEX 114/153, Pressure Equipment Directive 2014/68/EU, potentially Seveso III Directive 2012/18/EU). Non-compliance discovered late in construction or during commissioning requires costly redesign, delays COD, or prevents operating permit issuance.",
+    "detailed": "Hydrogen plants must comply with: ATEX 114 (equipment) and ATEX 153 (workplace) for explosive atmosphere zoning and equipment certification. PED for pressure vessels and piping (H₂ at 30-50 bar). Seveso III if hydrogen inventory exceeds 5 tonnes (lower tier) or 50 tonnes (upper tier) — most >20 MW plants with on-site storage will be upper-tier Seveso. Compliance requires: hazardous area classification (zoning), certified equipment selection, safety case/SMS for Seveso, pressure equipment conformity assessment, and competent authority approval before operation. Multi-jurisdiction projects (different national implementations of EU directives) face additional complexity.",
+    "root_cause": "Stringent EU industrial safety regulations. Hydrogen's specific properties (wide flammability range 4-75%, low ignition energy, embrittlement) require specialized engineering and certification. Multi-jurisdictional compliance complexity.",
+    "trigger_events": ["ATEX zoning study identifies discrepancies between design and regulatory requirements", "PED conformity assessment body raises non-conformity during audit", "Seveso safety report rejected by competent authority", "Operating permit issuance delayed due to unresolved safety compliance issues"]
+  },
+  "assessment": {
+    "probability": 2, "impact": 4, "detectability": 2,
+    "risk_priority_number": 16, "risk_class": "low",
+    "probability_rationale": "Industrial gas companies (Air Liquide, Linde, Shell) have decades of experience with these regulations. New entrants face higher probability. Probability 2 (Unlikely for experienced developers, possible for new entrants).",
+    "impact_rationale": "Late-stage non-compliance discovery can delay COD by 6-12 months (redesign + re-certification). €5-20M cost impact from equipment replacement, engineering rework, and delayed revenue.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (HSE Manager) + EPC Contractor",
+    "preventive_actions": [
+      { "action_id": "MIT-REG-005-P-01", "description": "Engage notified body for PED conformity assessment and competent authority for Seveso during FEED, not after detailed design. Conduct HAZOP/HAZID with regulatory reviewer participation.", "responsible_party": "FEED Contractor + Developer (HSE)", "timing": "feed" },
+      { "action_id": "MIT-REG-005-P-02", "description": "Select EPC contractor with demonstrated hydrogen or industrial gas project experience. Verify ATEX/PED/Seveso compliance track record in bid evaluation.", "responsible_party": "Developer (Procurement)", "timing": "feed" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["feed", "construction", "commissioning"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-004"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Shell has extensive experience with Seveso and ATEX compliance from refinery operations. The HH1 safety case builds on Shell's Pernis refinery (adjacent, upper-tier Seveso). This developer experience substantially mitigates this risk.", "HGHH (GA-PR-004): Kraftanlagen (BOP contractor) has industrial plant safety compliance track record. The project's moderate hydrogen inventory (compressed gas trailer loading) may keep it below upper-tier Seveso threshold, simplifying compliance."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-095", "source_type": "government_announcement", "source_quality_level": "A", "source_reliability_score": 5, "title": "EU Seveso III Directive 2012/18/EU — Control of major-accident hazards involving dangerous substances", "author": "European Commission", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

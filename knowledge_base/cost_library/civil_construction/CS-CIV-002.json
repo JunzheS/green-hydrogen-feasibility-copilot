@@ -1,0 +1,14 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-CIV-002",
+  "cost_name": "Civil & Construction — Alkaline Greenfield — 100 MW — Europe 2025",
+  "cost_category": "civil_construction", "cost_subcategory": "05_all",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 260, "eur_per_kw_low": 190, "eur_per_kw_high": 360, "cost_year": 2025, "percentage_of_total_capex": 9 },
+  "context": { "technology_type": "Alkaline", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe", "greenfield_or_brownfield": "greenfield" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "IRENA 2024 scaled for Alkaline footprint (~80 m²/MW vs PEM 50 m²/MW). +60% building area, +40% earthworks, additional KOH electrolyte storage building. Alkaline civil premium ~€60/kW vs PEM at 100 MW scale." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Alkaline's larger footprint is a well-documented characteristic (TC-ALK-001). Civil cost differential is proportional to area and equipment count.", "data_points_contributing": 3 },
+  "cost_drivers": { "primary_drivers": ["Larger electrolyzer hall (80 vs 50 m²/MW)", "KOH electrolyte storage building and containment", "Additional pipe racks for electrolyte circulation", "Larger gas-liquid separation area"], "sensitivity_to_scale": "medium", "exclusions": ["Same as CS-CIV-001"] },
+  "sources": [ { "source_id": "SRC-CST-2024-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA 2024 — Alkaline civil cost premium", "author": "IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-ALK-001" }
+}

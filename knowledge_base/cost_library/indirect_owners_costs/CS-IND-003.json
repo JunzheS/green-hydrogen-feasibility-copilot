@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-IND-003",
+  "cost_name": "Owner's Costs — PM, Legal, Insurance, Permitting, Land — 100 MW — Europe 2025",
+  "cost_category": "indirect_owners_costs", "cost_subcategory": "08.4_owners_costs",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 90, "eur_per_kw_low": 60, "eur_per_kw_high": 140, "cost_year": 2025, "percentage_of_total_capex": 6 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±35%", "estimation_method": "AACE factored estimate: owner's costs ~6% of total CAPEX. Includes project management team, legal and permitting, construction all-risk insurance, land lease/purchase, development costs, and owner's contingency management." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Standard for industrial projects. Hydrogen-specific: IPCEI application costs, RFNBO certification preparation, and French ICPE/enquête publique permitting costs add ~1-2% vs standard industrial.", "data_points_contributing": 4 },
+  "cost_drivers": { "primary_drivers": ["Regulatory complexity (IPCEI application, environmental permitting)", "Land status (already owned vs purchase vs long-term lease)", "Insurance market maturity for hydrogen (limited claims history)", "Developer experience (first project = higher owner's cost)"], "sensitivity_to_scale": "low", "exclusions": ["Financing costs during construction (IDC)", "Development costs prior to FID"] },
+  "sources": [ { "source_id": "SRC-CST-AACE", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "AACE 18R-97 — Owner's cost estimate factor", "author": "AACE", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

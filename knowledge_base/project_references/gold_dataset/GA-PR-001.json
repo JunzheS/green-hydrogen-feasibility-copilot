@@ -1,0 +1,186 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-001",
+  "project_name": "Normand'Hy",
+  "alias_names": ["H2V Normandy", "Air Liquide Normand'Hy"],
+  "status": "under_construction",
+  "status_detail": "Electrolyzer construction well advanced. 9 of 12 PEM electrolyzer modules delivered by Siemens Energy as of late 2025. Civil works complete. Commissioning expected H2 2026. Supported by EU IPCEI and French State (Plan de Relance / France 2030).",
+
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed",
+    "project_phase_at_collection": "construction",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "Normand'Hy is a 200 MW PEM electrolysis project developed by Air Liquide in the Port-Jérôme industrial basin of Normandy, France. The plant uses Siemens Energy PEM electrolyzer modules (12 units of approximately 16.7 MW each) manufactured at the Berlin gigafactory. It will produce up to 28,000 tonnes of renewable hydrogen per year, with 75% of output going to TotalEnergies' Gonfreville refinery and 25% to hydrogen refueling stations along the Seine Axis for mobility applications. The total investment exceeds €400 million, supported by EU IPCEI and French government funding. Construction began in 2023–2024, with full commissioning expected in the second half of 2026.",
+    "is_first_of_a_kind": true,
+    "related_project_ids": ["GA-PR-008"]
+  },
+
+  "location": {
+    "country": "France",
+    "region": "Normandy",
+    "city": "Port-Jérôme-sur-Seine (Saint-Jean-de-Folleville)",
+    "coordinates": {
+      "lat": 49.48,
+      "lon": 0.59
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM",
+    "technology_selection_status": "confirmed",
+    "electrolyzer_manufacturer": "Siemens Energy",
+    "electrolyzer_model": "Silyzer series (Berlin Gigafactory modules)",
+    "technology_card_ref": "TC-PEM-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 200,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 76700,
+    "hydrogen_output_tons_per_year": 28000,
+    "number_of_stacks": 12,
+    "stack_capacity_mw": 16.67
+  },
+
+  "power": {
+    "renewable_type": "grid_mix",
+    "renewable_capacity_mw": null,
+    "grid_connection": true,
+    "grid_connection_detail": "Connected to RTE French high-voltage transmission grid at Port-Jérôme industrial site",
+    "ppa_structure": null
+  },
+
+  "water": {
+    "source_type": "municipal",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": null
+  },
+
+  "offtake": {
+    "primary_application": "refinery",
+    "secondary_applications": ["mobility"],
+    "offtaker_name": "TotalEnergies Gonfreville Refinery (75%), HysetCo and Seine Axis HRS network (25%)",
+    "offtake_agreement_type": null,
+    "h2_storage_type": null,
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "Air Liquide",
+    "developer_type": "industrial_gas",
+    "co_developers": ["Siemens Energy (electrolyzer JV partner)"],
+    "epc_contractor": null,
+    "operations_operator": "Air Liquide",
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": 450000000,
+    "capex_per_kw_eur": 2250,
+    "capex_per_kw_method": "calculated_total_div_mw",
+    "capex_confidence": "official",
+    "capex_year_reference": 2024,
+    "funding_sources": ["equity", "french_state_subsidy", "eu_ipcei"],
+    "total_investment_decision_date": "2024",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2021-01-13",
+    "fid_date": "2024",
+    "construction_start_date": "2023",
+    "commissioning_date": "2026-H2",
+    "construction_duration_months": 36,
+    "current_operational_year": null
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2022-003",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Air Liquide receives support from French State for its 200 MW electrolyzer project in Normandy and accelerates the development of the hydrogen sector in Europe",
+      "author": "Air Liquide",
+      "url": "https://www.airliquide.com/group/press-releases-news/2022-03-15/air-liquide-receives-support-french-state-its-200-mw-electrolyzer-project-normandy",
+      "local_file_ref": "source_documents/project_data/normandhy_airliquide_press_2022.pdf",
+      "publication_date": "2022-03-15",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Official Air Liquide press release confirming French State support and project scope"
+    },
+    {
+      "source_id": "SRC-2024-008",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Air Liquide takes a further step in developing the hydrogen sector in France — Normand'Hy FID and ELYgator announcement",
+      "author": "Air Liquide",
+      "url": "https://www.airliquide.com/group/press-releases-news/2024",
+      "local_file_ref": "source_documents/project_data/normandhy_fid_2024.pdf",
+      "publication_date": "2024",
+      "retrieval_date": "2025-12-01",
+      "confidence": "high",
+      "notes": "Confirms FID in 2024; €400M+ investment"
+    },
+    {
+      "source_id": "SRC-2025-004",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Siemens Energy Delivers First Electrolysers to Air Liquide's 200MW Hydrogen Plant in France",
+      "author": "FuelCellChina",
+      "url": "https://www.fuelcellchina.com/Industry_information_details/7120.html",
+      "local_file_ref": "source_documents/project_data/normandhy_siemens_delivery_2025.pdf",
+      "publication_date": "2025",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms 12 modules, 9 delivered as of 2025, Siemens Energy Berlin gigafactory supply"
+    },
+    {
+      "source_id": "SRC-2024-009",
+      "source_type": "project_website",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Air Liquide Normand'Hy — Official Project Website",
+      "author": "Air Liquide",
+      "url": "https://normandhy.airliquide.com/en/air-liquide-normandhy-0",
+      "local_file_ref": null,
+      "publication_date": "2024",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Official project page with project description, location, offtake details"
+    },
+    {
+      "source_id": "SRC-2024-010",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Air Liquide invests €50M to supply hydrogen to refuelling stations from 200MW plant",
+      "author": "Air Liquide",
+      "url": "https://www.airliquide.com/group/press-releases-news/2024-11-15/air-liquide-invest-hydrogen-supply-chain-support-acceleration-low-carbon-mobility-along-seine-axis",
+      "local_file_ref": null,
+      "publication_date": "2024-11-15",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms mobility offtake via Seine Axis; additional €50M for hydrogen supply chain"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-001_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "Normand'Hy is a 200 MW PEM electrolysis project developed by Air Liquide in the Port-Jérôme industrial basin of Normandy, France. The plant uses Siemens Energy PEM electrolyzer modules and will produce up to 28,000 tonnes of renewable hydrogen per year, with 75% of output going to TotalEnergies' Gonfreville refinery and 25% to hydrogen refueling stations along the Seine Axis. Total investment exceeds €400 million with EU IPCEI and French government support. Construction began in 2023 with full commissioning expected in H2 2026. Under construction. PEM. 200MW. France. Europe. refinery + mobility offtake.",
+    "keywords": ["PEM", "France", "Normandy", "refinery", "mobility", "200MW", "under_construction", "Air_Liquide", "Siemens_Energy", "IPCEI", "first_of_a_kind"],
+    "tags": ["gold_dataset", "europe", "first_of_a_kind", "IPCEI_funded", "large_scale", "PEM"]
+  }
+}

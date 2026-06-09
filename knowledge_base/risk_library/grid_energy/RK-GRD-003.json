@@ -1,0 +1,39 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-GRD-003",
+  "risk_name": "Renewable Energy Intermittency Reducing Effective Plant Capacity Factor",
+  "risk_category": "grid_energy",
+  "risk_subcategory": "03.3_renewable_energy_availability_and_intermittency",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The renewable power source produces less energy than forecast, or its intermittency profile mismatches the electrolyzer's operational capabilities, reducing the effective capacity factor and increasing LCOH. This risk is technology-differentiated: PEM's superior dynamic response (10%/s ramp, 5% minimum load) captures 5-10% more renewable energy than Alkaline (2%/s ramp, 15% minimum load) under variable conditions.",
+    "detailed": "A hydrogen plant's financial model assumes a certain capacity factor (typically 4,000-6,000 full-load hours/year) based on the renewable resource. If the actual renewable output is lower or more variable than modeled, the electrolyzer runs fewer hours, producing less hydrogen and spreading fixed costs over fewer kilograms. Technology differentiation: PEM can ramp from 5-100% load in seconds and cold-start in 15 minutes, capturing more energy during morning/evening solar ramps and after cloud passages. Alkaline's 15% minimum load means it must shut down (60-minute restart) during extended low-renewable periods, losing production. For a solar-only profile, the PEM advantage is 8-12% higher effective capacity factor. For offshore wind (steadier), the PEM advantage is 3-5%. This risk also includes renewable resource forecasting error: wind and solar resource assessments carry ±5-10% uncertainty.",
+    "root_cause": "Renewable resource variability + electrolyzer operational constraints. Technology choice (PEM vs Alkaline) determines how much renewable energy is captured vs. lost during variable conditions.",
+    "trigger_events": ["First-year operational data shows capacity factor >15% below feasibility study assumption", "PPA counterparty delivers less renewable energy than contracted volume", "Solar/wind resource measurement campaign reveals lower resource than satellite/model data assumed"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 4, "detectability": 2,
+    "risk_priority_number": 24, "risk_class": "medium",
+    "probability_rationale": "Renewable resource uncertainty (±5-10%) is inherent. The probability of SOME deviation from forecast is near-certain, but material deviation (>15%) is less common with modern resource assessment methods.",
+    "impact_rationale": "A 10% lower capacity factor at 100 MW means ~€10-15M/year less revenue. Over 20 years: €200-300M NPV impact. This is the most financially significant operational risk.",
+    "detectability_rationale": "Resource measurement campaigns during feasibility reduce uncertainty. First-year operational data confirms or refutes assumptions.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Energy Manager + Technical Director)",
+    "preventive_actions": [
+      { "action_id": "MIT-GRD-003-P-01", "description": "Conduct ≥12-month on-site wind/solar measurement campaign during feasibility, not relying solely on satellite/model data", "responsible_party": "Developer (Resource Assessment)", "timing": "feasibility" },
+      { "action_id": "MIT-GRD-003-P-02", "description": "Select electrolysis technology appropriate for the renewable profile: PEM for solar-dominant (daily cycling); Alkaline for steady wind/hydro (baseload)", "responsible_party": "Developer (Technology Selection)", "timing": "pre_feasibility" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-006"],
+    "incident_descriptions": ["Puertollano (GA-PR-006): 20 MW PEM + 100 MW solar PV + 5 MW battery. Operational since 2022. This configuration was specifically designed to manage solar intermittency — the battery buffers short-term fluctuations while PEM's dynamic response handles longer-term variability. This is a model for solar-coupled PEM projects.", "Holland Hydrogen I (GA-PR-003): 200 MW Alkaline + 759 MW offshore wind. Offshore wind capacity factor (45-55%) is higher and steadier than solar — Alkaline's dynamic limitations are less binding for this renewable profile. This pairing is technologically well-matched."],
+    "technology_card_references": ["TC-PEM-001", "TC-ALK-001"],
+    "lessons_learned": "Technology selection should be driven by renewable profile, not by generic technology preference. Solar → PEM. Offshore wind → either (Alkaline cost advantage may dominate). Solar+battery → either (battery buffers intermittency). The financial impact of a technology/renewable mismatch can exceed the CAPEX differential between PEM and Alkaline."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-080", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IRENA Green Hydrogen Cost Reduction 2024 — Chapter 4: Renewable Integration", "author": "IRENA", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

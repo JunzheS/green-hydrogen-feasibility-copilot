@@ -1,0 +1,13 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-IND-001",
+  "cost_name": "Engineering & Design — FEED + Detailed Engineering — 100 MW — Europe 2025",
+  "cost_category": "indirect_owners_costs", "cost_subcategory": "08.1_engineering_and_design",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": { "eur_per_kw": 120, "eur_per_kw_low": 80, "eur_per_kw_high": 180, "cost_year": 2025, "percentage_of_total_capex": 8 },
+  "context": { "technology_type": "technology_agnostic", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±30%", "estimation_method": "AACE 18R-97 factored estimate: engineering ~8% of total CAPEX for process plants. Includes FEED (conceptual + basic engineering), detailed engineering, 3D modeling, and as-built documentation." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Engineering percentage is well-established for process plants (AACE standard). FOAK projects: upper end of range (+20%). Hydrogen-specific: limited number of engineering firms with electrolysis experience → premium for qualified engineers.", "data_points_contributing": 5 },
+  "cost_drivers": { "primary_drivers": ["FOAK vs nth-of-a-kind (FOAK +20-30% engineering hours)", "In-house vs outsourced engineering", "Multi-office execution (local + HQ engineering center)", "Regulatory permitting support (ICPE, Seveso safety case)", "3D model and digital twin requirements"], "sensitivity_to_scale": "low", "exclusions": ["Owner's project management team (see CS-IND-003)", "Construction supervision (included in construction management)"] },
+  "sources": [ { "source_id": "SRC-CST-AACE", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "AACE International 18R-97 — Cost Estimate Classification for Process Industries", "author": "AACE International", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

@@ -1,0 +1,18 @@
+{
+  "_schema": "cost_schema_v1.md", "cost_id": "CS-ELC-006",
+  "cost_name": "PEM Electrolyzer System — Total Installed (Stack + Power + Auxiliaries) — 100 MW — Europe 2025",
+  "cost_category": "electrolyzer_system", "cost_subcategory": "01_all",
+  "cost_basis": "installed_cost", "cost_version": "1.0.0", "cost_status": "published",
+  "last_review_date": "2026-06-05",
+  "cost_data": {
+    "eur_per_kw": 1100, "eur_per_kw_low": 850, "eur_per_kw_high": 1500,
+    "cost_year": 2025, "is_inflation_adjusted": false,
+    "percentage_of_total_capex": 32
+  },
+  "context": { "technology_type": "PEM", "project_scale_mw": 100, "scale_is_extrapolated": false, "project_location_region": "europe" },
+  "estimation": { "aace_class": "class_4_feasibility", "expected_accuracy_range": "±25%", "estimation_method": "Aggregated from IEA (stack) + IRENA (auxiliaries + power electronics) bottom-up cost benchmarks." },
+  "confidence": { "level": "C_industry_benchmark", "rationale": "Aggregated from Class C sub-component benchmarks. Consistent with IRENA total system cost range (€1,100-2,100/kW for complete PEM system).", "data_points_contributing": 5 },
+  "cost_drivers": { "primary_drivers": ["Stack cost (73% of this category)", "IGBT rectifier (12%)", "Module auxiliaries (10%)", "Gas-liquid separation (5%)"], "sensitivity_to_scale": "high", "exclusions": ["Grid connection", "Civil works", "Water treatment", "Compression", "Engineering", "Contingency"] },
+  "sources": [ { "source_id": "SRC-CST-2025-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA GHR 2025 + IRENA 2024 aggregated electrolyzer system cost", "author": "IEA / IRENA", "retrieval_date": "2026-06-01", "confidence": "high" } ],
+  "integration": { "technology_card_reference": "TC-PEM-001.cost_profile" }
+}

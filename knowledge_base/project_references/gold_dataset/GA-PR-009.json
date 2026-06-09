@@ -1,0 +1,158 @@
+{
+  "_schema_version": "1.1.0",
+  "_gold_dataset_version": "1.0.0",
+  "_entry_date": "2026-06-05",
+  "_review_status": "reviewed",
+
+  "project_id": "GA-PR-009",
+  "project_name": "Hyoffwind",
+  "alias_names": ["Hyoffwind Zeebrugge", "Zeebrugge Green Hydrogen Hub"],
+  "status": "under_construction",
+  "status_detail": "Belgium's first industrial-scale green hydrogen production plant. Final Investment Decision July 2024. Construction launched February 2025 with official groundbreaking ceremony attended by Flemish Minister-President. John Cockerill completed installation of four alkaline electrolyzer units (totaling 25 MW) at the Port of Zeebrugge. System integration, compression, grid connections, and testing ongoing 2025–2026. First hydrogen molecules expected mid-2026 with full commercial production later in 2026. Scalable to 100 MW. Received €30 million from EU NextGenerationEU / Flemish government. Project positioned to connect to European hydrogen backbone via Fluxys and Gasunie networks.",
+
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate",
+    "project_phase_at_collection": "construction",
+    "last_data_update": "2026-06-05T00:00:00Z",
+    "narrative_summary": "Hyoffwind is Belgium's first industrial-scale green hydrogen production plant, located at the Port of Zeebrugge. Developed by Virya Energy in partnership with HyoffGreen and Messer, the project uses four pressurized alkaline electrolyzer units from Belgian manufacturer John Cockerill Hydrogen, totaling 25 MW. It will produce approximately 3,700 tonnes of green hydrogen per year, powered by renewable electricity from local wind parks including offshore wind. The hydrogen is destined for industrial decarbonization, refueling stations, and mobility applications in the region. BESIX and BESIX Environment are the EPC partners alongside John Cockerill. The total project value is approximately €72 million with €30 million in subsidies from the EU NextGenerationEU fund and Flemish government. FID was reached in July 2024, construction launched in February 2025, and electrolyzer installation was completed in early-to-mid 2025. First hydrogen production is expected mid-2026. The project is positioned to connect to the broader European hydrogen backbone via Fluxys and Gasunie networks, with the port's proximity (~60 km from the Dutch border) making it a strategic distribution node for cross-border hydrogen flows.",
+    "is_first_of_a_kind": true,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "Belgium",
+    "region": "Flanders (West Flanders)",
+    "city": "Zeebrugge (Port of Zeebrugge)",
+    "coordinates": {
+      "lat": 51.33,
+      "lon": 3.20
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "Alkaline",
+    "technology_selection_status": "confirmed",
+    "electrolyzer_manufacturer": "John Cockerill Hydrogen",
+    "electrolyzer_model": "Pressurized Alkaline (KOH, 60–80°C, up to 30 bar)",
+    "technology_card_ref": "TC-ALK-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 25,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 10140,
+    "hydrogen_output_tons_per_year": 3700,
+    "number_of_stacks": 4,
+    "stack_capacity_mw": 6.25
+  },
+
+  "power": {
+    "renewable_type": "offshore_wind",
+    "renewable_capacity_mw": null,
+    "grid_connection": true,
+    "grid_connection_detail": "Grid-connected at Port of Zeebrugge; powered by renewable electricity from local and offshore wind parks",
+    "ppa_structure": null
+  },
+
+  "water": {
+    "source_type": "municipal",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": null
+  },
+
+  "offtake": {
+    "primary_application": "mobility",
+    "secondary_applications": ["industrial_heat"],
+    "offtaker_name": "Industrial users in Zeebrugge port area; hydrogen refueling stations; mobility sector",
+    "offtake_agreement_type": null,
+    "h2_storage_type": "compressed_gas",
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "Virya Energy (in partnership with HyoffGreen and Messer)",
+    "developer_type": "renewable_developer",
+    "co_developers": ["Virya Energy", "HyoffGreen", "Messer"],
+    "epc_contractor": "John Cockerill Hydrogen (electrolyzer) + BESIX & BESIX Environment (civil and construction)",
+    "operations_operator": null,
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": 72000000,
+    "capex_per_kw_eur": 2880,
+    "capex_per_kw_method": "calculated_total_div_mw",
+    "capex_confidence": "official",
+    "capex_year_reference": 2024,
+    "funding_sources": ["equity", "eu_next_generation_eu", "flemish_government"],
+    "total_investment_decision_date": "2024-07",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2023",
+    "fid_date": "2024-07",
+    "construction_start_date": "2025-02",
+    "commissioning_date": "2026-06",
+    "construction_duration_months": 16,
+    "current_operational_year": null
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2024-019",
+      "source_type": "press_release",
+      "source_quality_level": "A",
+      "source_reliability_score": 5,
+      "title": "Hyoffwind, Belgium's first green hydrogen production plant: John Cockerill and BESIX confirmed as first-class industrial partners",
+      "author": "John Cockerill",
+      "url": "https://johncockerill.com/en/press-and-news/news/hyoffwind-25mw-green-hydrogen-production-plant-in-belgium-with-besix/",
+      "local_file_ref": "source_documents/project_data/hyoffwind_john_cockerill_besix_2024.pdf",
+      "publication_date": "2024",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms 25 MW alkaline, 4 units, John Cockerill, BESIX partnership, Zeebrugge location"
+    },
+    {
+      "source_id": "SRC-2025-013",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "Construction has begun at 25MW green hydrogen project in Belgian port — Hyoffwind Zeebrugge",
+      "author": "Hydrogen Insight",
+      "url": "https://www.hydrogeninsight.com/production/construction-has-begun-at-25mw-green-hydrogen-project-in-belgian-port/2-1-1783198",
+      "local_file_ref": null,
+      "publication_date": "2025-02",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms construction start February 2025, Flemish Minister-President attendance"
+    },
+    {
+      "source_id": "SRC-2026-001",
+      "source_type": "news_article",
+      "source_quality_level": "C",
+      "source_reliability_score": 3,
+      "title": "John Cockerill Completes 25MW Electrolyzer Installation at Zeebrugge Hydrogen Hub",
+      "author": "Energy News",
+      "url": "https://energynews.biz/john-cockerill-completes-25mw-electrolyzer-installation-at-zeebrugge-hydrogen-hub/",
+      "local_file_ref": null,
+      "publication_date": "2026",
+      "retrieval_date": "2026-06-01",
+      "confidence": "high",
+      "notes": "Confirms electrolyzer installation completed; first H₂ mid-2026; €30M NextGenerationEU"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "GA-PR-009_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "Hyoffwind is Belgium's first industrial-scale green hydrogen plant at the Port of Zeebrugge. Developed by Virya Energy with HyoffGreen and Messer. Uses four John Cockerill pressurized Alkaline electrolyzer units totaling 25 MW. Produces ~3,700 t/yr green hydrogen from offshore wind for industrial users, HRS, and mobility. BESIX providing civil construction. €72M total project value with €30M NextGenerationEU funding. FID July 2024, construction launched February 2025, first H₂ expected mid-2026. Scalable to 100 MW. Positioned to connect to European hydrogen backbone (Fluxys/Gasunie). Under construction. Belgium. Europe. mobility + industrial_heat. Alkaline. 25MW. First-of-a-kind.",
+    "keywords": ["Alkaline", "Belgium", "Zeebrugge", "mobility", "offshore_wind", "25MW", "under_construction", "Virya_Energy", "John_Cockerill", "BESIX", "NextGenerationEU", "first_of_a_kind"],
+    "tags": ["gold_dataset", "europe", "first_of_a_kind", "Alkaline", "Belgium", "NextGenerationEU_funded", "under_construction"]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-GRD-002",
+  "risk_name": "Grid Capacity Congestion Preventing New Industrial Connection",
+  "risk_category": "grid_energy",
+  "risk_subcategory": "03.2_grid_capacity_and_congestion",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The local electricity grid is congested and cannot accept the project's full load connection request, requiring costly network reinforcement, alternative siting, or reduced capacity. This risk is acute in European industrial clusters (Rotterdam, Antwerp, Ruhr) where hydrogen projects concentrate but grid capacity is already allocated to existing industrial users.",
+    "detailed": "Grid congestion is a growing barrier for industrial electrification in Europe. In the Netherlands, TenneT has declared capacity constraints in multiple provinces; new connections >10 MW face queues of 2-4 years in congested areas. In Germany, the Ruhr and Rheinland industrial zones have limited available capacity at 380 kV. Hydrogen projects compounding this: a 200 MW electrolyzer is equivalent to adding a medium-sized city to the grid. Network reinforcement costs (new transmission lines, substation upgrades) can reach €10-50M and are often allocated to the connecting party. The Netherlands' Netbeheer Nederland reports that grid investment of €100+ billion is needed by 2040 to accommodate electrification.",
+    "root_cause": "Grid infrastructure investment has not kept pace with electrification demand. Industrial clusters concentrate demand. Grid planning cycles (5-10 years) are slower than hydrogen project development cycles (2-4 years).",
+    "trigger_events": ["TSO capacity study shows available capacity < project requirement", "Connection offer from TSO includes network reinforcement costs >10% of project CAPEX", "Connection queue position >2 years for target connection date"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 4, "detectability": 2,
+    "risk_priority_number": 24, "risk_class": "medium",
+    "probability_rationale": "Grid congestion is a well-documented barrier. Netherlands, Germany, and Belgium all have congested industrial zones. The probability depends heavily on site selection.",
+    "impact_rationale": "Network reinforcement costs of €10-50M can make a project uneconomic. Alternative sites may not be available at equivalent renewable resource and offtake proximity.",
+    "detectability_rationale": "Grid capacity is studied during pre-feasibility. TSOs publish capacity maps. Good visibility before site selection is finalized.",
+    "assessment_method": "TSO capacity data + EU grid infrastructure reports",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Electrical Manager + Site Selection)",
+    "preventive_actions": [
+      { "action_id": "MIT-GRD-002-P-01", "description": "Conduct grid capacity pre-feasibility study as first site screening criterion. Eliminate sites with known congestion before further investment.", "responsible_party": "Developer (Site Selection)", "timing": "pre_feasibility" },
+      { "action_id": "MIT-GRD-002-P-02", "description": "Prioritize brownfield sites with existing industrial grid connections (former power plants, refineries). The HGHH/Moorburg model — reuse existing 380 kV connection.", "responsible_party": "Developer (Site Selection)", "timing": "pre_feasibility" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "TSO capacity map status at target site", "threshold_green": "Available capacity >120% of project requirement", "threshold_amber": "Capacity 100-120% of requirement or conditional on reinforcement", "threshold_red": "Available capacity < project requirement" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["pre_feasibility", "feasibility"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-004"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Required NEW 380 kV substation at Amaliahaven — substantial grid infrastructure investment by TenneT. The fact that TenneT built dedicated infrastructure for HH1 indicates that existing capacity at Maasvlakte was insufficient for a 200 MW electrolyzer.", "Hamburg Green Hydrogen Hub (GA-PR-004): REUSED existing 380 kV connection at Moorburg. This is the optimal outcome — a 1,600 MW coal plant's grid connection was more than adequate for a 100 MW electrolyzer."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-071", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "Netbeheer Nederland — Grid Investment Requirements for Industrial Electrification 2025", "author": "Netbeheer Nederland", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "_schema_version": "1.1.0",
+  "_template_name": "Project Reference Template v1.1",
+  "_description": "FROZEN template for recording a green hydrogen project reference. This is the official Gold Dataset v1 entry template. Copy this file, replace placeholder values, and save to the appropriate status folder under /knowledge_base/project_references/. DO NOT modify the structure.",
+  "_instructions": [
+    "1. Copy this template",
+    "2. Replace all <<PLACEHOLDER>> values with real data from public sources",
+    "3. Fields marked 'mandatory: true' in the schema MUST be populated before 'published' status",
+    "4. Fields marked 'mandatory: false' may be left as null or with placeholder value if data unavailable",
+    "5. Set card_status to 'draft' until reviewed by a second analyst",
+    "6. Determine data_completeness_tier using the tier criteria (see database_architecture_v1.1.md §4.2.3)",
+    "7. Save as {project_id}.json in the correct status subfolder",
+    "8. Update the cross-reference index after saving",
+    "9. Update last_data_update to the date of any future data change"
+  ],
+  "_change_log": {
+    "v1.1.0": "Frozen 2026-06-05. Removed 4 Category C fields (irr, capex_breakdown, capacity_factor, stack_pressure_type). Added 10 fields (data completeness tier, project phase, last update, narrative summary, FOAK flag, related projects, coordinates verified, technology selection status, capex confidence, capex per kw method). Demoted power.renewable_type to optional."
+  },
+
+  "project_id": "<<PR-OP-001>>",
+  "project_name": "<<Example Green Hydrogen Plant>>",
+  "alias_names": [],
+  "status": "<<operational>>",
+  "status_detail": "<<Describe any nuance: phased commissioning, partial operation, delays, etc.>>",
+
+  "data_management": {
+    "data_completeness_tier": "<<tier_1_basic | tier_2_intermediate | tier_3_detailed | tier_4_full>>",
+    "project_phase_at_collection": "<<pre_feasibility | feasibility | pre_fid | post_fid | construction | commissioning | operational>>",
+    "last_data_update": "<<2026-06-05T00:00:00Z>>",
+    "narrative_summary": "<<3-5 sentence natural-language summary of the project: what it is, where it is, who is building it, what technology at what scale, what it produces and for whom. This is the primary field for RAG embedding quality. Maximum 2000 characters.>>",
+    "is_first_of_a_kind": false,
+    "related_project_ids": []
+  },
+
+  "location": {
+    "country": "<<Germany>>",
+    "region": "<<Lower Saxony>>",
+    "city": "<<Stade>>",
+    "coordinates": {
+      "lat": 53.6,
+      "lon": 9.5
+    },
+    "coordinates_verified": false,
+    "region_classification": "europe"
+  },
+
+  "technology": {
+    "type": "PEM",
+    "technology_selection_status": "<<confirmed | announced | not_selected>>",
+    "electrolyzer_manufacturer": "<<Siemens Energy>>",
+    "electrolyzer_model": "<<Silyzer 300>>",
+    "technology_card_ref": "TC-PEM-001"
+  },
+
+  "capacity": {
+    "electrolyzer_capacity_mw": 100,
+    "electrolyzer_capacity_mw_source": "stated",
+    "hydrogen_output_kg_per_day": 42000,
+    "hydrogen_output_tons_per_year": 15000,
+    "number_of_stacks": 5,
+    "stack_capacity_mw": 20
+  },
+
+  "power": {
+    "renewable_type": "<<solar_pv | onshore_wind | offshore_wind | solar_pv_wind_hybrid | hydro | grid_mix | other>>",
+    "renewable_capacity_mw": 250,
+    "grid_connection": true,
+    "grid_connection_detail": "<<Connected to 380 kV transmission grid via dedicated substation>>",
+    "ppa_structure": "<<15-year fixed-price PPA with offshore wind farm>>"
+  },
+
+  "water": {
+    "source_type": "<<freshwater | seawater_desalination | brackish_desalination | wastewater_recycled | municipal | other>>",
+    "consumption_cubic_m_per_hour": null,
+    "water_treatment_provider": "<<Veolia>>"
+  },
+
+  "offtake": {
+    "primary_application": "<<ammonia | methanol | refinery | steel | mobility | grid_injection | industrial_heat | export | other>>",
+    "secondary_applications": ["mobility"],
+    "offtaker_name": "<<Local Refinery AG>>",
+    "offtake_agreement_type": "<<10-year take-or-pay (if known, rarely public)>>",
+    "h2_storage_type": "<<compressed_gas | liquid | ammonia | LOHC | pipeline | salt_cavern | none | other>>",
+    "h2_storage_capacity_kg": null
+  },
+
+  "stakeholders": {
+    "developer": "<<GreenH2 GmbH>>",
+    "developer_type": "<<utility | oil_and_gas | industrial_gas | renewable_developer | chemical_company | consortium | startup | state_owned | other>>",
+    "co_developers": ["<<Local Utility Partner>>"],
+    "epc_contractor": "<<Technip Energies>>",
+    "operations_operator": "<<GreenH2 GmbH>>",
+    "financial_advisors": [],
+    "lenders": []
+  },
+
+  "financial": {
+    "total_capex_eur": 180000000,
+    "capex_per_kw_eur": 1800,
+    "capex_per_kw_method": "<<stated | calculated_total_div_mw>>",
+    "capex_confidence": "<<official | media_report | analyst_estimate | calculated>>",
+    "capex_year_reference": 2023,
+    "funding_sources": ["equity", "project_finance_debt", "eu_grant"],
+    "total_investment_decision_date": "2020-06-15",
+    "lcoh_eur_per_kg": null
+  },
+
+  "timeline": {
+    "announcement_date": "2019-03-01",
+    "fid_date": "2020-06-15",
+    "construction_start_date": "2020-10-01",
+    "commissioning_date": "2023-03-15",
+    "construction_duration_months": 29,
+    "current_operational_year": 3
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-2023-001",
+      "source_type": "press_release",
+      "title": "<<GreenH2 GmbH announces commissioning of 100 MW PEM electrolyzer>>",
+      "url": "https://example.com/press-release-001",
+      "local_file_ref": "source_documents/project_data/PR-OP-001_press_release_2023.pdf",
+      "publication_date": "2023-03-15",
+      "retrieval_date": "2024-01-10",
+      "confidence": "high"
+    }
+  ],
+
+  "rag_metadata": {
+    "chunk_id": "PR-OP-001_chunk_1",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_version": "1.1.0",
+    "last_indexed": "2026-06-05T00:00:00Z",
+    "text_for_embedding": "<<AUTO-GENERATED by pipeline from narrative_summary + key structured fields. Do not write manually.>>",
+    "keywords": ["PEM", "Germany", "offshore_wind", "refinery", "100MW", "operational"],
+    "tags": ["reference_project", "eu_funded"]
+  }
+}

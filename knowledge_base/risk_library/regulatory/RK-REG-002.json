@@ -1,0 +1,41 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-REG-002",
+  "risk_name": "Green Hydrogen Certification (RFNBO) Compliance Failure or Delay",
+  "risk_category": "regulatory",
+  "risk_subcategory": "04.2_green_h2_certification_rfnbo",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The project fails to achieve or maintain certification as producing Renewable Fuel of Non-Biological Origin (RFNBO) under EU Delegated Acts, disqualifying it from green hydrogen premiums, offtake agreements requiring certified green H₂, and EU renewable energy targets. RFNBO rules include additionality, temporal correlation, and geographical correlation requirements that add operational complexity.",
+    "detailed": "EU RFNBO rules (Delegated Acts under RED II/III) require: (1) Additionality: renewable electricity must come from new (≤36 months) renewable assets not already receiving subsidies (phased in through 2038), (2) Temporal correlation: monthly matching until 2030, then hourly, (3) Geographical correlation: same bidding zone or interconnected zone. Hourly matching from 2030 is the most operationally challenging requirement — it effectively requires the electrolyzer to operate only when renewable electrons are flowing. PEM's dynamic capability (fast ramp, low min load) is inherently better suited to hourly matching than Alkaline's baseload profile. Certification body delays, documentation gaps, or non-compliance can result in loss of green premium pricing (typically €1-3/kg H₂ premium over grey).",
+    "root_cause": "EU RFNBO rules create complex, evolving compliance requirements. Hourly matching from 2030 requires sophisticated renewable energy management that not all projects are designed for.",
+    "trigger_events": ["Certification body audit identifies non-compliance with temporal correlation requirement", "Renewable asset commissioning date falls outside additionality window", "Bidding zone reconfiguration breaks geographical correlation", "Hourly matching audit (post-2030) shows >5% non-compliant hours"]
+  },
+  "assessment": {
+    "probability": 2, "impact": 5, "detectability": 2,
+    "risk_priority_number": 20, "risk_class": "low",
+    "probability_rationale": "Most EU projects are designing for RFNBO compliance from inception. HySynergy achieved RFNBO certification in 2025 — proving it's achievable. Probability 2 (Unlikely for well-designed projects, possible for projects that underestimate requirements).",
+    "impact_rationale": "Critical: loss of RFNBO status eliminates green premium (€1-3/kg H₂). Offtake agreements may have RFNBO as condition precedent. Project may be economically unviable without certification.",
+    "detectability_rationale": "Certification requirements are published. Compliance can be modeled during feasibility. However, post-2030 hourly matching requires operational data that won't be available until after commissioning.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Regulatory & Compliance Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-REG-002-P-01", "description": "Design renewable energy supply for RFNBO compliance from day one. For post-2030 COD projects, design for hourly matching capability — favor PEM (dynamic response) or ensure Alkaline plant includes battery storage.", "responsible_party": "Developer (Energy Strategy)", "timing": "pre_feasibility" },
+      { "action_id": "MIT-REG-002-P-02", "description": "Engage certification body (e.g., CertifHy, TÜV) during FEED for pre-compliance assessment, not after commissioning", "responsible_party": "Developer (Compliance)", "timing": "feed" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "RFNBO compliance status", "threshold_green": "Certified; annual audit passed", "threshold_amber": "Certification pending; pre-compliance assessment in progress", "threshold_red": "Certification denied or revoked" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["pre_feasibility", "feasibility", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-007"],
+    "incident_descriptions": ["HySynergy (GA-PR-007): Achieved RFNBO certification — first in Denmark. Demonstrates that certification is achievable for well-designed projects. The plant's 100% renewable electricity procurement and grid balancing capability supported certification.", "Holland Hydrogen I (GA-PR-003): EU Innovation Fund grant of ~€89M is conditional on RFNBO compliance. Shell designed HH1 for certification from inception — offshore wind PPA + dedicated grid connection satisfies additionality and geographical correlation."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-091", "source_type": "government_announcement", "source_quality_level": "A", "source_reliability_score": 5, "title": "EU Delegated Acts on RFNBO (RED II) — Additionality, Temporal & Geographical Correlation", "author": "European Commission", "retrieval_date": "2026-05-01", "confidence": "high" },
+    { "source_id": "SRC-RSK-2026-092", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 4, "title": "Everfuel HySynergy RFNBO certification achievement — November 2025", "author": "Everfuel A/S", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

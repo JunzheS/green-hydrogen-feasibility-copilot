@@ -1,0 +1,41 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-OPS-002",
+  "risk_name": "Water Supply Interruption or Quality Excursion During Operations",
+  "risk_category": "operational",
+  "risk_subcategory": "07.2_water_supply_and_quality",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The water supply for electrolysis is interrupted (drought, infrastructure failure, contract dispute) or fails to meet quality specifications, causing production curtailment or equipment damage. PEM is more sensitive to water quality excursions (ASTM Type II, <1 µS/cm) than Alkaline (<5 µS/cm).",
+    "detailed": "Electrolysis requires ~10-11 liters of ultrapure water per kg H₂. A 100 MW plant producing ~40 t/day H₂ needs ~400 m³/day of ultrapure water — a modest industrial water demand (~0.4% of a typical municipal water treatment plant output). Water supply risks: (1) Source interruption: municipal supply curtailment during drought, (2) Quality excursion: raw water quality change (seasonal algae blooms, turbidity events) overwhelming treatment system, (3) Treatment system failure: RO membrane fouling, EDI module failure, ion exchange resin exhaustion, (4) PEM-specific: metal ion contamination (Fe²⁺, Cu²⁺, Ca²⁺) causing irreversible PFSA membrane damage. Gold Dataset evidence: HH1 secured a 15-year demiwater contract with Evides Industriewater — a risk mitigation best practice. Galp Sines uses recycled refinery water — an innovative water security strategy.",
+    "root_cause": "Water quality variability. Water treatment system reliability. PEM's stringent water quality requirement increases sensitivity to treatment upsets.",
+    "trigger_events": ["Raw water conductivity exceeds treatment system design basis for >48 hours", "RO membrane differential pressure increases >15% (indicating fouling)", "EDI product water conductivity exceeds 1 µS/cm (PEM) or 5 µS/cm (Alkaline)", "Municipal water supplier issues drought curtailment notice"]
+  },
+  "assessment": {
+    "probability": 2, "impact": 3, "detectability": 1,
+    "risk_priority_number": 6, "risk_class": "low",
+    "probability_rationale": "Most projects secure dedicated water supply contracts (HH1/Evides model). Water treatment technology is mature. Total plant water demand is modest (<0.5% of municipal supply).",
+    "impact_rationale": "Production curtailment during water interruption. PEM: membrane damage from quality excursion could cost €5-10M to replace. Alkaline: less severe — can tolerate brief conductivity excursions.",
+    "detectability_rationale": "Online conductivity, TOC, and flow monitoring provides real-time water quality data. Perfect detectability with proper instrumentation.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Operations Manager",
+    "preventive_actions": [
+      { "action_id": "MIT-OPS-002-P-01", "description": "Secure dedicated long-term water supply contract before FID (HH1/Evides 15-year contract model). Include guaranteed minimum supply, quality specifications, and drought curtailment provisions.", "responsible_party": "Developer (Utilities Procurement)", "timing": "pre_fid" },
+      { "action_id": "MIT-OPS-002-P-02", "description": "Install water storage buffer for minimum 72 hours of full-load operation (~1,200 m³ for 100 MW plant). Provides buffer for short supply interruptions.", "responsible_party": "FEED Engineer", "timing": "feed" },
+      { "action_id": "MIT-OPS-002-P-03", "description": "For PEM: install automatic feedwater diversion on conductivity excursion. If water quality exceeds PEM specification, divert to drain rather than risk membrane damage.", "responsible_party": "EPC Contractor", "timing": "construction" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "EDI product water conductivity (µS/cm, continuous)", "threshold_green": "<0.5 µS/cm", "threshold_amber": "0.5-1.0 µS/cm", "threshold_red": ">1.0 µS/cm (PEM immediate diversion)" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw"], "project_phases": ["feasibility", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-010"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): 15-year demiwater supply contract with Evides Industriewater. Dedicated pipeline from Demiwater Plant Maasvlakte. Brielse Meer source (Meuse/Rhine-fed freshwater lake — reliable supply). This is the gold standard for water supply risk mitigation.", "Galp Sines (GA-PR-010): Uses recycled water from refinery operations (<3% of refinery's annual water needs). This innovative approach: (a) eliminates external water supply dependency, (b) reduces freshwater consumption, and (c) demonstrates circular economy integration. Only feasible for refinery-co-located projects."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-121", "source_type": "project_data", "source_quality_level": "A", "source_reliability_score": 5, "title": "Evides Industriewater — 15-year demiwater supply contract for Holland Hydrogen I", "author": "Evides Industriewater / Shell", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

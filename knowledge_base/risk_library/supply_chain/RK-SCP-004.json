@@ -1,0 +1,39 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-SCP-004",
+  "risk_name": "Long-Lead Electrical Equipment Procurement Delay (Transformers, Switchgear)",
+  "risk_category": "supply_chain",
+  "risk_subcategory": "02.2_critical_materials_availability",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Large power transformers (110-380 kV, 50-200 MVA) and HV switchgear for electrolyzer grid connections have 18-36 month lead times globally. Competing demand from renewable energy projects, data centers, and grid infrastructure creates a procurement bottleneck that can delay project commissioning.",
+    "detailed": "A 100-200 MW electrolyzer requires a dedicated high-voltage transformer (typically 50-200 MVA) and associated switchgear. Global transformer manufacturing capacity is stretched: lead times have extended from 12-18 months (pre-2020) to 18-36 months (2024-2026) due to: renewable energy buildout, data center construction, grid modernization, and supply chain disruptions for electrical steel and copper. This is NOT a hydrogen-specific risk — it affects all large industrial electrical connections. However, hydrogen projects compete with these other sectors for the same manufacturing slots. The lead time for a large transformer now exceeds the construction duration of some hydrogen plants.",
+    "root_cause": "Global transformer manufacturing capacity shortage. Competing demand from renewable energy, data centers, electrification, and grid infrastructure. Concentrated supply chain (few manufacturers for large HV transformers).",
+    "trigger_events": ["Transformer OEM quotes lead time >24 months at time of order", "Electrical steel (GOES) price increases >20% within 6 months", "Transformer factory acceptance test fails, requiring rework and delaying delivery by 3-6 months"]
+  },
+  "assessment": {
+    "probability": 4, "probability_rationale": "Transformer lead times of 18-36 months are the industry norm as of 2024-2026. This is not a risk — it's a known constraint that must be managed through early procurement. >40% of European renewable projects report electrical equipment procurement delays.",
+    "impact": 3, "impact_rationale": "A 6-month transformer delay at 100 MW: €10-15M lost revenue. However, this risk is manageable through early ordering (before FID if necessary). The impact is a function of procurement timing, not an uncontrollable external event.",
+    "detectability": 2, "detectability_rationale": "Transformer lead times are quoted at order and tracked through manufacturing milestones. Factory acceptance testing provides a clear milestone. 6-12 month detection window if procurement is timely.",
+    "risk_priority_number": 24, "risk_class": "medium",
+    "assessment_method": "Industry benchmark (transformer lead time surveys) + Gold Dataset evidence",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Electrical & Grid Interface Manager)",
+    "preventive_actions": [
+      { "action_id": "MIT-SCP-004-P-01", "description": "Order long-lead electrical equipment (transformer, HV switchgear) at FID, not at construction start. For projects with 18-24 month construction schedule, this means ordering 24-30 months before target COD.", "responsible_party": "Developer (Procurement)", "timing": "pre_fid" },
+      { "action_id": "MIT-SCP-004-P-02", "description": "Include transformer delivery buffer of minimum 6 months in project master schedule", "responsible_party": "Project Director", "timing": "pre_fid" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["feasibility", "feed", "construction"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-004"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Required new Amaliahaven 380 kV substation from TenneT. Mammoet transported 165-tonne transformers. Shell's early engagement with TenneT and direct transformer procurement strategy mitigated this risk.", "Hamburg Green Hydrogen Hub (GA-PR-004): BENEFITED from existing 380 kV connection at Moorburg coal plant — no new transformer required. This is a major brownfield advantage explicitly cited in project documentation."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-064", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "IEA Electricity Grids and Secure Energy Transitions 2025 — Transformer supply chain", "author": "IEA", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "_schema_version": "1.0.0",
+  "_description": "Agent Memory Schema v1 — Structured immutable decision log for multi-agent pre-feasibility assessment. One memory record per agent execution.",
+  "_rules": [
+    "Memory is written ONCE per agent per session and NEVER modified",
+    "Downstream agents READ upstream memories but CANNOT write to them",
+    "PM Agent (Agent 4) MAY annotate but NOT edit Agent 1-3 memories",
+    "All memories become IMMUTABLE upon session closure",
+    "Every decision MUST cite at least one evidence source"
+  ],
+
+  "memory_id": "<<MEM-YYYYMMDD-NNNN>>",
+  "session_id": "<<SES-YYYYMMDD-NNNN>>",
+  "timestamp": "<<2026-06-05T14:30:00Z>>",
+  "agent_name": "<<Agent 1 — Knowledge Retrieval | Agent 2 — Technical Assessment | Agent 3 — Risk & Economic Assessment | Agent 4 — PM Review>>",
+  "agent_version": "1.0.0",
+  "assessment_type": "<<project_matching | technology_assessment | risk_economic_assessment | pm_review>>",
+  "query_id": "<<QRY-YYYYMMDD-NNNN>>",
+
+  "input_reference": {
+    "user_query": { "country": "<<France>>", "industry": "<<Steel>>", "technology": "<<PEM>>", "capacity_mw": "<<100>>", "target_cod": "<<2029>>" },
+    "upstream_agent_outputs": ["<<MEM-A1>>", "<<MEM-A2>>"],
+    "knowledge_base_version": "<<2026-06-05-v1>>"
+  },
+
+  "knowledge_sources_used": {
+    "gold_dataset_projects": ["<<GA-PR-001>>", "<<GA-PR-004>>"],
+    "technology_cards": ["<<TC-PEM-001>>"],
+    "risk_library": ["<<RK-TEC-001>>"],
+    "cost_library": ["<<CS-ELC-001>>"],
+    "external_sources": ["<<SRC-2025-001>>"],
+    "total_sources": "<<12>>"
+  },
+
+  "evidence_ids": [
+    "<<TC-PEM-001 §maturity>>",
+    "<<GA-PR-001 narrative_summary>>",
+    "<<RK-TEC-001 assessment>>"
+  ],
+
+  "assumptions": [
+    {
+      "assumption_id": "<<ASM-001>>",
+      "description": "<<Steel offtake mapped to industrial process group for project matching>>",
+      "basis": "<<Industry-to-offtake mapping (agent_interface_specification.md §4.2)>>",
+      "impact_if_wrong": "<<HIGH — steel-specific projects may be ranked lower than justified if mapping is incorrect>>",
+      "validated_by": "<<Agent 4 cross-check against offtake enum>>"
+    }
+  ],
+
+  "reasoning_summary": {
+    "method": "<<5-dimension weighted similarity scoring>>",
+    "key_steps": [
+      "<<1. Filtered 7 PEM projects from 10>>",
+      "<<2. Scored all 7 on technology/industry/capacity/country/maturity>>",
+      "<<3. Ranked by composite score descending>>",
+      "<<4. Selected top 6 above threshold 0.30>>"
+    ],
+    "degradations_applied": [],
+    "fallback_used": false
+  },
+
+  "decisions": [
+    {
+      "decision_id": "<<DEC-001>>",
+      "type": "<<ranking | classification | estimation | gate_outcome>>",
+      "statement": "<<Top similar project: Normand'Hy (GA-PR-001) with similarity score 0.81>>",
+      "rationale": "<<Same country (France), same technology (PEM), closest scale above query (200 MW). Refinery offtake in industrial process group with steel.>>",
+      "evidence_cited": ["<<GA-PR-001>>", "<<5-dimension scoring methodology>>"],
+      "confidence": "<<0.81>>"
+    }
+  ],
+
+  "confidence": {
+    "self_assessed": "<<0.64>>",
+    "self_assessed_label": "<<GOOD>>",
+    "basis": "<<Weighted average of source quality (0.60) adjusted for consistency (×1.0). 6 of 7 sources are Level A or B.>>",
+    "limiting_factor": "<<No steel-offtake project in Gold Dataset — industry match is via cross-reference, not direct>>"
+  },
+
+  "warnings": [
+    {
+      "warning_id": "<<WRN-001>>",
+      "severity": "<<HIGH | MEDIUM | LOW>>",
+      "description": "<<No steel-offtake project in Gold Dataset. All industry matches are cross-referenced from refinery/ammonia.>>",
+      "affected_decisions": ["<<DEC-001 through DEC-006>>"],
+      "mitigation": "<<Flag for Gold Dataset Sprint 2: add steel-offtake project>>"
+    }
+  ],
+
+  "contradictions_detected": [
+    {
+      "contradiction_id": "<<CTR-001>>",
+      "type": "<<contradiction | trade_off | information_gap | escalation_required>>",
+      "description": "<<Agent 2 says 'not FOAK for scale' (100 MW within 200 MW proven). Agent 3 applies FOAK cost premium.>>",
+      "classification_rationale": "<<TRADE-OFF — not a contradiction. Agent 2 assessed SCALE (within range). Agent 3 assessed APPLICATION (steel offtake is novel). Different dimensions.>>",
+      "resolution": "<<Agent 4 notes trade-off in final review. No escalation needed.>>",
+      "resolved": true
+    }
+  ],
+
+  "next_agent": "<<Agent 2 — Technical Assessment | Agent 3 — Risk & Economic Assessment | Agent 4 — PM Review | none>>",
+  "output_artifact": "<<mem_a1_retrieval.json | mem_a2_technical.json | mem_a3_risk_economic.json | mem_a4_pm_review.json>>"
+}

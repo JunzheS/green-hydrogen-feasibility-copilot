@@ -1,0 +1,116 @@
+{
+  "_schema_version": "1.0.0",
+  "_template_name": "Cost Data Point Template",
+  "_description": "Template for recording a CAPEX cost data point for green hydrogen projects. Copy this file, replace placeholder values, and save to the appropriate cost category folder under /knowledge_base/cost_library/.",
+  "_instructions": [
+    "1. Copy this template",
+    "2. Replace all <<PLACEHOLDER>> values with cost data from authoritative sources",
+    "3. Always specify cost_year, cost_basis, and confidence level",
+    "4. If extrapolating from a different scale, document the method",
+    "5. Link to a specific project_reference_id when the cost is from a real project",
+    "6. For industry benchmarks (IEA, IRENA), cite the specific report and page",
+    "7. Explicitly list exclusions to prevent misuse in CAPEX aggregation"
+  ],
+
+  "cost_id": "<<CS-STK-001>>",
+  "cost_name": "<<PEM Electrolyzer Stack — Installed Cost — 100 MW Plant — Europe 2024>>",
+  "cost_category": "electrolyzer_stack",
+  "cost_subcategory": "PEM Stack (membrane, electrodes, bipolar plates, assembly)",
+  "cost_version": "1.0.0",
+  "cost_status": "draft",
+
+  "cost_data": {
+    "eur_per_kw": 650,
+    "eur_per_kw_low": 500,
+    "eur_per_kw_high": 850,
+    "eur_per_kg_per_day": 3100,
+    "cost_basis": "installed_cost",
+    "currency_original": "EUR",
+    "exchange_rate_used": null,
+    "exchange_rate_date": null,
+    "is_inflation_adjusted": false,
+    "cost_year": 2024,
+    "inflation_base_year": null,
+    "escalation_rate_applied_percent": null
+  },
+
+  "context": {
+    "technology_type": "PEM",
+    "project_scale_mw": 100,
+    "project_scale_category": "medium_10_to_100mw",
+    "scale_is_extrapolated": false,
+    "extrapolation_method": null,
+    "project_reference_id": "<<PR-OP-001>>",
+    "project_location_region": "europe",
+    "greenfield_or_brownfield": "greenfield",
+    "epc_contract_type": "lump_sum_turnkey",
+    "local_content_percent": 65
+  },
+
+  "confidence": {
+    "level": "a_actual_cost",
+    "rationale": "<<Based on audited actual installed cost from EPC close-out report. Cost breakdown verified by owner's engineer. Covers stack, auxiliaries, and installation labor.>>",
+    "range_confidence_percent": 90,
+    "data_points_contributing": 1,
+    "verified_by_second_source": true
+  },
+
+  "cost_drivers": {
+    "primary_drivers": [
+      "Iridium price and loading per kW",
+      "PFSA membrane cost and thickness",
+      "Titanium bipolar plate manufacturing cost",
+      "Stack manufacturing scale (units/year)",
+      "OEM competition intensity"
+    ],
+    "sensitivity_to_scale": "high",
+    "learning_rate_assumption_percent": 15,
+    "regional_multiplier_notes": "<<Based on European supply chain. China: estimated −20–30%. North America: +5–15%. MENA: similar to Europe if imported, lower if localized.>>",
+    "exclusions": [
+      "Freight and import duties (included in BOP indirect costs)",
+      "Stack spare parts inventory",
+      "Extended warranty beyond standard 2-year",
+      "Installation supervision by OEM (included in EPC indirect)"
+    ]
+  },
+
+  "sources": [
+    {
+      "source_id": "SRC-CST-2025-001",
+      "source_type": "project_data",
+      "title": "<<Project Alpha — EPC Close-Out Report, Appendix C: Equipment Cost Breakdown, Confidential>>",
+      "url": null,
+      "local_file_ref": "source_documents/project_data/PR-OP-001_epc_closeout_appendix_c.pdf",
+      "publication_date": "2025-02-15",
+      "retrieval_date": "2025-03-01",
+      "confidence": "high"
+    },
+    {
+      "source_id": "SRC-CST-2024-002",
+      "source_type": "industry_report",
+      "title": "<<IRENA Green Hydrogen Cost Reduction: Scaling up Electrolysers, 2024 Update — Figure 3.2: PEM Stack Cost Breakdown>>",
+      "url": "https://www.irena.org/publications/2024/green-hydrogen-cost-reduction",
+      "local_file_ref": "source_documents/industry_reports/irena_h2_cost_2024.pdf",
+      "publication_date": "2024-06-01",
+      "retrieval_date": "2024-07-01",
+      "confidence": "high"
+    }
+  ],
+
+  "rag_metadata": {
+    "text_for_embedding": "PEM Electrolyzer Stack — Installed Cost — 100 MW Plant — Europe 2024. Category: electrolyzer_stack > PEM Stack (membrane, electrodes, bipolar plates, assembly). EUR/kW: 650 (range 500–850). Basis: installed_cost. Year: 2024. Technology: PEM. Scale: 100 MW. Confidence: a_actual_cost — based on audited EPC close-out report. Cost drivers: Iridium price, PFSA membrane cost, titanium manufacturing, stack manufacturing scale, OEM competition. Exclusions: freight, spare parts, extended warranty, OEM installation supervision. Keywords: PEM, electrolyzer stack, installed cost, 100MW, Europe, 2024, actual cost.",
+    "keywords": [
+      "PEM",
+      "electrolyzer_stack",
+      "installed_cost",
+      "100MW",
+      "Europe",
+      "2024",
+      "actual_cost",
+      "iridium",
+      "PFSA_membrane",
+      "CAPEX"
+    ],
+    "last_indexed": "2025-03-10T09:00:00Z"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-OPS-001",
+  "risk_name": "Specialized Workforce Shortage — Hydrogen Electrolyzer Operators and Technicians",
+  "risk_category": "operational",
+  "risk_subcategory": "07.1_workforce_availability_and_skills",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Qualified electrolyzer operators and hydrogen technicians cannot be recruited, trained, or retained in sufficient numbers, leading to operational reliability issues, safety risks, or inability to staff the plant at planned levels. PEM electrolysis faces a smaller available talent pool than Alkaline (which draws from the chlor-alkali industry).",
+    "detailed": "A 100 MW hydrogen plant requires 4-6 shift operators, maintenance technicians (electrical, mechanical, I&C), a plant manager, and HSE staff — typically 20-30 total operations personnel. Key workforce challenges: (1) PEM electrolyzer technology is new — the global pool of experienced >20 MW PEM operators is <200 people (from ~15 reference plants), (2) Alkaline draws from the chlor-alkali industry (thousands of experienced operators globally), (3) Hydrogen safety training (ISO/TR 15916, ATEX, high-pressure gas handling) requires 3-6 months, (4) Competitive hiring pressure from oil & gas, chemicals, and other hydrogen projects in same region, (5) Remote locations may struggle to attract talent. Technology differentiation: PEM workforce is scarcer (newer technology, fewer plants). Alkaline workforce is available (chlor-alkali transferable skills). Both require hydrogen-specific safety training.",
+    "root_cause": "Rapid hydrogen industry growth outpacing workforce development. PEM technology is new with limited experienced operator pool. Green hydrogen plant locations (industrial ports, renewable energy zones) compete for same talent pool.",
+    "trigger_events": ["Key position (Plant Manager, Chief Operator) vacant >3 months despite active recruitment", "Operator training completion delayed beyond plant commissioning readiness", "Annual operator turnover exceeds 15%", ">30% of maintenance tasks outsourced due to in-house skill gaps"]
+  },
+  "assessment": {
+    "probability": 3, "impact": 3, "detectability": 2,
+    "risk_priority_number": 18, "risk_class": "low",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Operations Manager + HR",
+    "preventive_actions": [
+      { "action_id": "MIT-OPS-001-P-01", "description": "Begin recruitment 12 months before planned COD. Send operators for training at OEM facility and reference plants (6-12 months before COD).", "responsible_party": "HR Manager", "timing": "pre_commissioning" },
+      { "action_id": "MIT-OPS-001-P-02", "description": "For PEM projects: partner with an experienced industrial gas operator (Air Liquide, Linde) for operations support during first 2-3 years.", "responsible_party": "Developer (Operations Strategy)", "timing": "pre_fid" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw"], "project_phases": ["pre_feasibility", "operations"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-001", "GA-PR-006", "GA-PR-007"],
+    "incident_descriptions": ["Normand'Hy (GA-PR-001): Air Liquide is the world's largest industrial gas company with 64,000 employees. Workforce risk is mitigated by Air Liquide's in-house hydrogen operations expertise — operators can be transferred from existing Air Liquide H₂ plants.", "Puertollano (GA-PR-006): Iberdrola (utility) partnered with Fertiberia (chemical company) for operations. The utility brought electrical expertise; Fertiberia brought chemical process operations expertise. This partnership model addresses the multi-disciplinary workforce requirement.", "HySynergy (GA-PR-007): Everfuel is a startup hydrogen company. The small plant scale (20 MW, 8 electrolyzer units) allowed a smaller, more specialized team. Scale-up to 300 MW would require fundamentally different workforce strategy."],
+    "lessons_learned": "Large industrial gas companies (Air Liquide, Linde, Air Products) have inherent workforce advantage for hydrogen projects. New-entrant developers should partner with experienced operators or plan for 12-18 month workforce development timeline."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-120", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Hydrogen Council — Hydrogen Workforce Development and Skills Gap Analysis 2024", "author": "Hydrogen Council", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}

@@ -1,0 +1,767 @@
+[
+  {
+    "assessment_id": "ASSESS-20260605-212815",
+    "date": "2026-06-05 21:28",
+    "query": {
+      "country": "France",
+      "industry": "Ammonia",
+      "technology": "PEM",
+      "capacity_mw": 200,
+      "target_cod": 2030
+    },
+    "gate_outcome": "PROCEED",
+    "confidence": 0.65,
+    "capex_central_eur_m": 261.0,
+    "lcoh_central_eur_per_kg": 4.73,
+    "report": {
+      "query": {
+        "country": "France",
+        "industry": "ammonia",
+        "technology": "PEM",
+        "capacity_mw": 200,
+        "target_cod": 2030,
+        "offtake": "ammonia"
+      },
+      "similar_projects": {
+        "ranked_projects": [
+          {
+            "rank": 1,
+            "project_id": "GA-PR-001",
+            "project_name": "Normand'Hy",
+            "country": "France",
+            "technology": "PEM",
+            "capacity_mw": 200,
+            "status": "under_construction",
+            "primary_offtake": "refinery",
+            "composite_score": 0.85,
+            "tier": "Highly Relevant",
+            "rationale": "Rank #1 (Normand'Hy, France, 200 MW PEM): same technology (PEM); same country (France); related offtake (refinery); near-identical scale; under construction (current benchmark)."
+          },
+          {
+            "rank": 2,
+            "project_id": "GA-PR-006",
+            "project_name": "Puertollano Green Hydrogen Plant",
+            "country": "Spain",
+            "technology": "PEM",
+            "capacity_mw": 20,
+            "status": "operational",
+            "primary_offtake": "ammonia",
+            "composite_score": 0.82,
+            "tier": "Highly Relevant",
+            "rationale": "Rank #2 (Puertollano Green Hydrogen Plant, Spain, 20 MW PEM): same technology (PEM); neighbouring country (Spain); exact offtake match (ammonia); operational reference."
+          },
+          {
+            "rank": 3,
+            "project_id": "GA-PR-008",
+            "project_name": "REFHYNE II",
+            "country": "Germany",
+            "technology": "PEM",
+            "capacity_mw": 100,
+            "status": "under_construction",
+            "primary_offtake": "refinery",
+            "composite_score": 0.7674,
+            "tier": "Highly Relevant",
+            "rationale": "Rank #3 (REFHYNE II, Germany, 100 MW PEM): same technology (PEM); neighbouring country (Germany); related offtake (refinery); comparable scale (100 MW); under construction (current benchmark)."
+          },
+          {
+            "rank": 4,
+            "project_id": "GA-PR-010",
+            "project_name": "Galp Sines Green Hydrogen",
+            "country": "Portugal",
+            "technology": "PEM",
+            "capacity_mw": 100,
+            "status": "under_construction",
+            "primary_offtake": "refinery",
+            "composite_score": 0.7224,
+            "tier": "Highly Relevant",
+            "rationale": "Rank #4 (Galp Sines Green Hydrogen, Portugal, 100 MW PEM): same technology (PEM); related offtake (refinery); comparable scale (100 MW); under construction (current benchmark)."
+          },
+          {
+            "rank": 5,
+            "project_id": "GA-PR-002",
+            "project_name": "Masshylia",
+            "country": "France",
+            "technology": "PEM",
+            "capacity_mw": 20,
+            "status": "planned",
+            "primary_offtake": "refinery",
+            "composite_score": 0.705,
+            "tier": "Highly Relevant",
+            "rationale": "Rank #5 (Masshylia, France, 20 MW PEM): same technology (PEM); same country (France); related offtake (refinery)."
+          },
+          {
+            "rank": 6,
+            "project_id": "GA-PR-004",
+            "project_name": "Hamburg Green Hydrogen Hub",
+            "country": "Germany",
+            "technology": "PEM",
+            "capacity_mw": 100,
+            "status": "under_construction",
+            "primary_offtake": "industrial_heat",
+            "composite_score": 0.6674,
+            "tier": "Relevant",
+            "rationale": "Rank #6 (Hamburg Green Hydrogen Hub, Germany, 100 MW PEM): same technology (PEM); neighbouring country (Germany); comparable scale (100 MW); under construction (current benchmark)."
+          }
+        ],
+        "total_scored": 6,
+        "query_offtake": "ammonia"
+      },
+      "technology_assessment": {
+        "technology_name": "PEM Electrolysis — Industrial Green Hydrogen Production",
+        "technology_id": "TC-PEM-001",
+        "trl": 8,
+        "trl_rationale": "TRL 8 — early_commercial. Proven at >100 MW single-plant scale.",
+        "commercial_maturity": "early_commercial",
+        "scale_status": "within_proven_range",
+        "scale_detail": "Query scale (200 MW) is within proven deployment range (max 200 MW).",
+        "max_proven_mw": 200,
+        "is_foak_for_scale": false,
+        "is_foak_for_application": false,
+        "foak_rationale": "Not first-of-a-kind.",
+        "application_suitability": "high",
+        "application_rationale": "PEM high purity H₂ simplifies ammonia synthesis loop feed. Rapid ramp capability pairs well with solar PV (primary renewable for ammonia in sunbelt regions). Reference: Iberdrola Puertollano (20 MW PEM → Fertiberia ammonia). At giga-scale, Alkaline may have CAPEX advantage but PEM dynamic capability is valued for renewable integration.",
+        "application_reference_projects": [
+          "GA-PR-006"
+        ],
+        "performance_notes": [
+          "System efficiency: 55 kWh/kg H₂",
+          "Stack lifetime: 65,000 hours (~8 years at 8,000 hr/yr)",
+          "Output pressure: 30 bar — matches typical industrial offtake pressure",
+          "H₂ purity: 99.99%",
+          "Dynamic response: 10%/s ramp, 5% min load, 15 min cold start"
+        ],
+        "key_advantages": [
+          "Highest hydrogen purity (>99.99%) without additional purification — reduces or eliminates downstream PSA/deoxo for most applications",
+          "Excellent dynamic response capability (10%/second ramp rate, 5-100% turndown) — best technology for direct renewable coupling (solar, wind)",
+          "Pressurized hydrogen output (30-50 bar) — reduces compression energy for downstream processes by 30-50% vs atmospheric Alkaline",
+          "Compact footprint (~50 m²/MW stack area) — approximately 30% less land per MW than equivalent Alkaline plant",
+          "Fast cold start (<15 minutes to full load) — enables morning start from overnight idle for solar-coupled plants"
+        ],
+        "key_limitations": [
+          "Iridium dependence — one of the rarest elements on Earth (~0.001 ppm crustal abundance); price volatility and supply concentration risk (South Africa >80% of production)",
+          "Higher stack CAPEX than Alkaline (~€800/kW vs ~€400-500/kW for Alkaline at stack level, 2025) — due to precious metal catalysts and PFSA membrane cost",
+          "Stack lifetime (60,000-80,000 hours) approximately 20-30% shorter than modern Alkaline (80,000-100,000 hours) — more frequent replacement, higher lifecycle cost",
+          "PFSA membrane degradation accelerated by metal ion contamination from water treatment excursions, pipe corrosion, or commissioning residues",
+          "Titanium bipolar plates and porous transport layers are expensive and energy-intensive to manufacture — 3-5× the cost of nickel/stainless steel Alkaline plates"
+        ],
+        "confidence": "GOOD"
+      },
+      "risk_assessment": {
+        "risks_by_category": {
+          "technical": [
+            {
+              "risk_id": "RK-TEC-003",
+              "risk_name": "Hydrogen Processing Equipment Failure (Compression, Purification, Drying)",
+              "rpn": 27,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-TEC-005",
+              "risk_name": "Multi-Vendor Control System Integration Failure During Commissioning",
+              "rpn": 27,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-TEC-001",
+              "risk_name": "PEM Stack Degradation Exceeding Warranty Rate Under Dynamic Operation",
+              "rpn": 24,
+              "risk_class": "medium"
+            }
+          ],
+          "supply_chain": [
+            {
+              "risk_id": "RK-SCP-001",
+              "risk_name": "Electrolyzer Manufacturing Capacity Shortfall Causing Delivery Delay (>12 months)",
+              "rpn": 36,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-SCP-005",
+              "risk_name": "EPC/EPCM Contractor Performance Failure — Schedule, Quality, or Safety",
+              "rpn": 36,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-SCP-004",
+              "risk_name": "Long-Lead Electrical Equipment Procurement Delay (Transformers, Switchgear)",
+              "rpn": 24,
+              "risk_class": "medium"
+            }
+          ],
+          "grid_energy": [
+            {
+              "risk_id": "RK-GRD-001",
+              "risk_name": "Grid Connection Delay Exceeding Project Schedule Contingency",
+              "rpn": 32,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-GRD-002",
+              "risk_name": "Grid Capacity Congestion Preventing New Industrial Connection",
+              "rpn": 24,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-GRD-003",
+              "risk_name": "Renewable Energy Intermittency Reducing Effective Plant Capacity Factor",
+              "rpn": 24,
+              "risk_class": "medium"
+            }
+          ],
+          "regulatory": [
+            {
+              "risk_id": "RK-REG-003",
+              "risk_name": "Subsidy Dependency and Public Funding Withdrawal or Delay",
+              "rpn": 30,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-REG-001",
+              "risk_name": "Environmental Permitting Delays Extending Project Development Timeline by 12-24 Months",
+              "rpn": 24,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-REG-002",
+              "risk_name": "Green Hydrogen Certification (RFNBO) Compliance Failure or Delay",
+              "rpn": 20,
+              "risk_class": "low"
+            }
+          ],
+          "financial": [
+            {
+              "risk_id": "RK-FIN-002",
+              "risk_name": "Hydrogen Offtake Agreement Default or Revenue Shortfall",
+              "rpn": 30,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-FIN-003",
+              "risk_name": "Project Financing Failure — Inability to Reach Financial Close",
+              "rpn": 30,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-FIN-001",
+              "risk_name": "CAPEX Overrun — Total Project Cost Exceeding Budget by >20%",
+              "rpn": 24,
+              "risk_class": "medium"
+            }
+          ],
+          "construction": [
+            {
+              "risk_id": "RK-CST-001",
+              "risk_name": "Construction Schedule Overrun — Cumulative Delays Pushing COD Beyond Target",
+              "rpn": 32,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-CST-002",
+              "risk_name": "Electrolyzer Module Integration and Commissioning Sequence Failure",
+              "rpn": 27,
+              "risk_class": "medium"
+            },
+            {
+              "risk_id": "RK-CST-003",
+              "risk_name": "Site Conditions — Ground Contamination, Archaeology, or Geotechnical Surprises",
+              "rpn": 18,
+              "risk_class": "low"
+            }
+          ],
+          "operational": [
+            {
+              "risk_id": "RK-OPS-001",
+              "risk_name": "Specialized Workforce Shortage — Hydrogen Electrolyzer Operators and Technicians",
+              "rpn": 18,
+              "risk_class": "low"
+            },
+            {
+              "risk_id": "RK-OPS-002",
+              "risk_name": "Water Supply Interruption or Quality Excursion During Operations",
+              "rpn": 6,
+              "risk_class": "low"
+            }
+          ],
+          "environmental": [
+            {
+              "risk_id": "RK-ENV-001",
+              "risk_name": "Water Scarcity and Community Opposition Threatening Social License",
+              "rpn": 16,
+              "risk_class": "low"
+            }
+          ]
+        },
+        "top_risks": [
+          {
+            "risk_id": "RK-SCP-001",
+            "risk_name": "Electrolyzer Manufacturing Capacity Shortfall Causing Delivery Delay (>12 months)",
+            "category": "supply_chain",
+            "subcategory": "02.1_electrolyzer_manufacturing_capacity_and_lead_times",
+            "probability": 3,
+            "impact": 4,
+            "detectability": 3,
+            "rpn": 36,
+            "risk_class": "medium",
+            "description": "Global electrolyzer manufacturing capacity cannot meet aggregate demand during the project's procurement window, causing delivery delays of 6-18 months. PEM projects face higher risk due to OEM concentration (effectively duopoly at >100 MW).",
+            "consequences": "6-12_months delay, ~€25M cost",
+            "mitigation": "Reserve manufacturing capacity via slot reservation agreement with OEM at pre-FID stage (5-10% deposit)",
+            "reference_projects": [
+              "GA-PR-001",
+              "GA-PR-008",
+              "GA-PR-010"
+            ]
+          },
+          {
+            "risk_id": "RK-SCP-005",
+            "risk_name": "EPC/EPCM Contractor Performance Failure — Schedule, Quality, or Safety",
+            "category": "supply_chain",
+            "subcategory": "02.5_contractor_and_subcontractor_performance",
+            "probability": 3,
+            "impact": 4,
+            "detectability": 3,
+            "rpn": 36,
+            "risk_class": "medium",
+            "description": "The EPC or EPCM contractor fails to meet contractual schedule, quality, or safety standards. Hydrogen projects face a specific challenge: limited number of EPC contractors with demonstrated large-scale electrolysis experience. The Gold Dataset shows projects using diverse EPC models (EPCM, split contracts, owner's engineer) — reflecting the immaturity of the hydrogen EPC market.",
+            "consequences": "",
+            "mitigation": "Use competitive FEED + EPC procurement with minimum 3 qualified bidders. Require demonstration of electrolysis or chlor-",
+            "reference_projects": [
+              "GA-PR-003",
+              "GA-PR-004",
+              "GA-PR-005"
+            ]
+          },
+          {
+            "risk_id": "RK-GRD-001",
+            "risk_name": "Grid Connection Delay Exceeding Project Schedule Contingency",
+            "category": "grid_energy",
+            "subcategory": "03.1_grid_connection_delays",
+            "probability": 4,
+            "impact": 4,
+            "detectability": 2,
+            "rpn": 32,
+            "risk_class": "medium",
+            "description": "The high-voltage grid connection required for electrolyzer operation is not completed by the scheduled commissioning date, delaying first hydrogen production and revenue. Grid connection delays are among the most frequently reported risks in European renewable energy and hydrogen projects.",
+            "consequences": "3-6_months delay, ~€15M cost",
+            "mitigation": "Initiate TSO connection application at pre-feasibility stage. Secure agreement ≥24 months before target COD.",
+            "reference_projects": [
+              "GA-PR-003",
+              "GA-PR-004"
+            ]
+          },
+          {
+            "risk_id": "RK-CST-001",
+            "risk_name": "Construction Schedule Overrun — Cumulative Delays Pushing COD Beyond Target",
+            "category": "construction",
+            "subcategory": "06.3_schedule_overrun",
+            "probability": 4,
+            "impact": 4,
+            "detectability": 2,
+            "rpn": 32,
+            "risk_class": "medium",
+            "description": "The cumulative effect of permitting, procurement, construction, and commissioning delays pushes the project's commercial operation date 6-18 months beyond the target, delaying revenue and potentially breaching offtake agreement commencement dates.",
+            "consequences": "",
+            "mitigation": "Include minimum 12-month total schedule contingency (across all phases) in project master schedule. Hold contingency at ",
+            "reference_projects": [
+              "GA-PR-003",
+              "GA-PR-001",
+              "GA-PR-004"
+            ]
+          },
+          {
+            "risk_id": "RK-REG-003",
+            "risk_name": "Subsidy Dependency and Public Funding Withdrawal or Delay",
+            "category": "regulatory",
+            "subcategory": "04.3_subsidy_and_policy_instability",
+            "probability": 3,
+            "impact": 5,
+            "detectability": 2,
+            "rpn": 30,
+            "risk_class": "medium",
+            "description": "The project depends on public subsidies (IPCEI, EU Innovation Fund, national programs) for financial viability. If subsidies are delayed, reduced, or withdrawn — due to policy change, budget constraints, or election cycles — the project may become uneconomic before FID or face financial distress after FID. The Gold Dataset provides direct evidence: Masshylia was scaled down 83% primarily due to subsidy dependency.",
+            "consequences": "",
+            "mitigation": "Design financial model with conservative subsidy assumptions. Stress-test: project must demonstrate pathway to viability",
+            "reference_projects": [
+              "GA-PR-002",
+              "GA-PR-001",
+              "GA-PR-004",
+              "GA-PR-005"
+            ]
+          },
+          {
+            "risk_id": "RK-FIN-002",
+            "risk_name": "Hydrogen Offtake Agreement Default or Revenue Shortfall",
+            "category": "financial",
+            "subcategory": "05.4_hydrogen_offtake_and_revenue_risk",
+            "probability": 3,
+            "impact": 5,
+            "detectability": 2,
+            "rpn": 30,
+            "risk_class": "medium",
+            "description": "The hydrogen offtaker defaults on the purchase agreement, renegotiates at lower price/volume, or the H₂ market develops slower than projected, leaving the project with unsold production or below-model pricing. This risk is the financial counterpart to technology risk — even a perfectly functioning plant is unviable without a creditworthy offtaker.",
+            "consequences": "",
+            "mitigation": "Secure long-term (10-15 year) take-or-pay offtake agreement with investment-grade counterparty. Minimum 80% of nameplate",
+            "reference_projects": [
+              "GA-PR-002",
+              "GA-PR-005",
+              "GA-PR-007"
+            ]
+          },
+          {
+            "risk_id": "RK-FIN-003",
+            "risk_name": "Project Financing Failure — Inability to Reach Financial Close",
+            "category": "financial",
+            "subcategory": "05.3_financing_and_interest_rate_risk",
+            "probability": 3,
+            "impact": 5,
+            "detectability": 2,
+            "rpn": 30,
+            "risk_class": "medium",
+            "description": "The project cannot secure debt financing on acceptable terms, delaying or preventing financial close. Lenders perceive green hydrogen as a novel technology risk, particularly for PEM (TRL 8 vs Alkaline TRL 9) and first-of-a-kind projects. Rising interest rates compound this risk.",
+            "consequences": "",
+            "mitigation": "Secure public funding commitments (IPCEI, EU Innovation Fund, EIB) before approaching commercial lenders. Public funding",
+            "reference_projects": [
+              "GA-PR-002",
+              "GA-PR-005",
+              "GA-PR-010"
+            ]
+          },
+          {
+            "risk_id": "RK-TEC-003",
+            "risk_name": "Hydrogen Processing Equipment Failure (Compression, Purification, Drying)",
+            "category": "technical",
+            "subcategory": "01.2_hydrogen_processing",
+            "probability": 3,
+            "impact": 3,
+            "detectability": 3,
+            "rpn": 27,
+            "risk_class": "medium",
+            "description": "Downstream hydrogen compression, purification (PSA/deoxo), drying, or metering equipment fails or underperforms, causing production curtailment, offtake quality non-compliance, or safety incidents. This risk affects both PEM and Alkaline plants but is more severe for Alkaline given atmospheric output requiring full compression train.",
+            "consequences": "1-3_months delay, ~€3M cost",
+            "mitigation": "Specify N+1 compressor configuration to allow maintenance without production stoppage. Size each compressor for 60% of p",
+            "reference_projects": [
+              "GA-PR-003",
+              "GA-PR-004",
+              "GA-PR-009"
+            ]
+          },
+          {
+            "risk_id": "RK-TEC-005",
+            "risk_name": "Multi-Vendor Control System Integration Failure During Commissioning",
+            "category": "technical",
+            "subcategory": "01.5_control_and_safety_systems",
+            "probability": 3,
+            "impact": 3,
+            "detectability": 3,
+            "rpn": 27,
+            "risk_class": "medium",
+            "description": "Integration of electrolyzer OEM control system with balance-of-plant DCS, safety instrumented system, and grid interface fails during commissioning, delaying first hydrogen production by 1-3 months. This risk is particularly acute for projects using multiple vendors for different subsystems.",
+            "consequences": "1-3_months delay, ~€5M cost",
+            "mitigation": "Require integrated FAT with all major subsystem controllers connected and tested before shipment to site. Include dynami",
+            "reference_projects": [
+              "GA-PR-003",
+              "GA-PR-004"
+            ]
+          },
+          {
+            "risk_id": "RK-CST-002",
+            "risk_name": "Electrolyzer Module Integration and Commissioning Sequence Failure",
+            "category": "construction",
+            "subcategory": "06.2_module_integration_and_commissioning",
+            "probability": 3,
+            "impact": 3,
+            "detectability": 3,
+            "rpn": 27,
+            "risk_class": "medium",
+            "description": "Integration of electrolyzer modules with BOP systems during commissioning fails to meet performance specifications, delaying first hydrogen production by 1-3 months. First-of-a-kind plants using multiple OEMs for different subsystems face elevated integration risk.",
+            "consequences": "",
+            "mitigation": "Conduct integrated factory acceptance testing (FAT) with all major subsystem controllers before shipment. Include dynami",
+            "reference_projects": [
+              "GA-PR-001",
+              "GA-PR-003"
+            ]
+          },
+          {
+            "risk_id": "RK-GRD-002",
+            "risk_name": "Grid Capacity Congestion Preventing New Industrial Connection",
+            "category": "grid_energy",
+            "subcategory": "03.2_grid_capacity_and_congestion",
+            "probability": 3,
+            "impact": 4,
+            "detectability": 2,
+            "rpn": 24,
+            "risk_class": "medium",
+            "description": "The local electricity grid is congested and cannot accept the project's full load connection request, requiring costly network reinforcement, alternative siting, or reduced capacity. This risk is acute in European industrial clusters (Rotterdam, Antwerp, Ruhr) where hydrogen projects concentrate but grid capacity is already allocated to existing industrial users.",
+            "consequences": "",
+            "mitigation": "Conduct grid capacity pre-feasibility study as first site screening criterion. Eliminate sites with known congestion bef",
+            "reference_projects": [
+              "GA-PR-003",
+              "GA-PR-004"
+            ]
+          },
+          {
+            "risk_id": "RK-REG-001",
+            "risk_name": "Environmental Permitting Delays Extending Project Development Timeline by 12-24 Months",
+            "category": "regulatory",
+            "subcategory": "04.1_environmental_permitting_delays",
+            "probability": 4,
+            "impact": 3,
+            "detectability": 2,
+            "rpn": 24,
+            "risk_class": "medium",
+            "description": "Required environmental permits (EIA, water abstraction, construction, operating) are delayed, challenged, or denied, extending project development by 12-24 months. Permitting is the most common cause of project schedule slippage in the pre-FID phase.",
+            "consequences": "",
+            "mitigation": "Initiate EIA and permit applications at project announcement, not after feasibility study completion. Run permitting in ",
+            "reference_projects": [
+              "GA-PR-002",
+              "GA-PR-004"
+            ]
+          },
+          {
+            "risk_id": "RK-OPS-001",
+            "risk_name": "Specialized Workforce Shortage — Hydrogen Electrolyzer Operators and Technicians",
+            "category": "operational",
+            "subcategory": "07.1_workforce_availability_and_skills",
+            "probability": 3,
+            "impact": 3,
+            "detectability": 2,
+            "rpn": 18,
+            "risk_class": "low",
+            "description": "Qualified electrolyzer operators and hydrogen technicians cannot be recruited, trained, or retained in sufficient numbers, leading to operational reliability issues, safety risks, or inability to staff the plant at planned levels. PEM electrolysis faces a smaller available talent pool than Alkaline (which draws from the chlor-alkali industry).",
+            "consequences": "",
+            "mitigation": "Begin recruitment 12 months before planned COD. Send operators for training at OEM facility and reference plants (6-12 m",
+            "reference_projects": [
+              "GA-PR-001",
+              "GA-PR-006",
+              "GA-PR-007"
+            ]
+          },
+          {
+            "risk_id": "RK-ENV-001",
+            "risk_name": "Water Scarcity and Community Opposition Threatening Social License",
+            "category": "environmental",
+            "subcategory": "08.1_water_scarcity_and_competing_uses",
+            "probability": 2,
+            "impact": 4,
+            "detectability": 2,
+            "rpn": 16,
+            "risk_class": "low",
+            "description": "The project's water consumption creates or exacerbates local water stress, triggering community opposition, regulatory intervention, or water permit revocation. Risk is location-dependent: critical in water-stressed regions (Spain, Portugal, MENA); lower in water-abundant regions (Netherlands, Denmark, Germany).",
+            "consequences": "",
+            "mitigation": "Use alternative water sources where possible: seawater desalination (coastal sites), recycled industrial water (refinery",
+            "reference_projects": [
+              "GA-PR-002",
+              "GA-PR-006",
+              "GA-PR-010"
+            ]
+          },
+          {
+            "risk_id": "RK-OPS-002",
+            "risk_name": "Water Supply Interruption or Quality Excursion During Operations",
+            "category": "operational",
+            "subcategory": "07.2_water_supply_and_quality",
+            "probability": 2,
+            "impact": 3,
+            "detectability": 1,
+            "rpn": 6,
+            "risk_class": "low",
+            "description": "The water supply for electrolysis is interrupted (drought, infrastructure failure, contract dispute) or fails to meet quality specifications, causing production curtailment or equipment damage. PEM is more sensitive to water quality excursions (ASTM Type II, <1 µS/cm) than Alkaline (<5 µS/cm).",
+            "consequences": "",
+            "mitigation": "Secure dedicated long-term water supply contract before FID (HH1/Evides 15-year contract model). Include guaranteed mini",
+            "reference_projects": [
+              "GA-PR-003",
+              "GA-PR-010"
+            ]
+          }
+        ],
+        "risk_count_by_class": {
+          "critical": 0,
+          "high": 0,
+          "medium": 16,
+          "low": 14
+        },
+        "total_filtered": 30
+      },
+      "capex_assessment": {
+        "breakdown": [
+          {
+            "category": "01 Electrolyzer System",
+            "eur_per_kw": 418.0,
+            "eur_m": 83.6,
+            "pct_of_total": 32,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          },
+          {
+            "category": "02 Electrical Infrastructure",
+            "eur_per_kw": 183.0,
+            "eur_m": 36.6,
+            "pct_of_total": 14,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          },
+          {
+            "category": "03 Water Systems",
+            "eur_per_kw": 52.0,
+            "eur_m": 10.4,
+            "pct_of_total": 4,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          },
+          {
+            "category": "04 Hydrogen Processing",
+            "eur_per_kw": 118.0,
+            "eur_m": 23.5,
+            "pct_of_total": 9,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          },
+          {
+            "category": "05 Civil & Construction",
+            "eur_per_kw": 131.0,
+            "eur_m": 26.1,
+            "pct_of_total": 10,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          },
+          {
+            "category": "06 Thermal Management",
+            "eur_per_kw": 39.0,
+            "eur_m": 7.8,
+            "pct_of_total": 3,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          },
+          {
+            "category": "07 I&C",
+            "eur_per_kw": 52.0,
+            "eur_m": 10.4,
+            "pct_of_total": 4,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          },
+          {
+            "category": "08 Indirect & Owner's",
+            "eur_per_kw": 313.0,
+            "eur_m": 62.7,
+            "pct_of_total": 24,
+            "confidence": "C",
+            "cost_id": "CS-IND-006"
+          }
+        ],
+        "total": {
+          "central_eur_per_kw": 1306.0,
+          "central_eur_m": 261.0,
+          "p10_eur_m": 220.0,
+          "p90_eur_m": 420.0
+        },
+        "aace_class": "Class 4 (feasibility, +/-20-30%)",
+        "weighted_confidence": 0.6,
+        "weighted_confidence_label": "GOOD",
+        "benchmark_record": "CS-IND-006",
+        "foak_multiplier": 1.0
+      },
+      "lcoh_assessment": {
+        "central_eur_per_kg": 4.73,
+        "p10_eur_per_kg": 3.54,
+        "p90_eur_per_kg": 6.41,
+        "decomposition": [
+          {
+            "component": "CAPEX contribution",
+            "eur_per_kg": 1.51,
+            "pct": 32.0
+          },
+          {
+            "component": "Electricity",
+            "eur_per_kg": 2.2,
+            "pct": 46.0
+          },
+          {
+            "component": "Stack Replacement",
+            "eur_per_kg": 0.3,
+            "pct": 6.0
+          },
+          {
+            "component": "Maintenance",
+            "eur_per_kg": 0.3,
+            "pct": 6.0
+          },
+          {
+            "component": "Labor",
+            "eur_per_kg": 0.18,
+            "pct": 4.0
+          },
+          {
+            "component": "Other OPEX",
+            "eur_per_kg": 0.25,
+            "pct": 5.0
+          }
+        ],
+        "tornado": [
+          {
+            "driver": "Electricity ±€15/MWh",
+            "impact": "±€0.82/kg"
+          },
+          {
+            "driver": "Capacity factor ±1,000 hrs",
+            "impact": "±€0.33/kg"
+          },
+          {
+            "driver": "CAPEX ±€261.0/kW",
+            "impact": "±€0.3/kg"
+          },
+          {
+            "driver": "System efficiency ±5 kWh/kg",
+            "impact": "±€0.2/kg"
+          },
+          {
+            "driver": "WACC ±2%",
+            "impact": "±€0.23/kg"
+          }
+        ],
+        "dominant_driver": "electricity_price",
+        "assumptions": {
+          "electricity_price_eur_per_mwh": 40,
+          "full_load_hours": 4500,
+          "wacc_pct": 7.000000000000001,
+          "project_life_years": 20
+        },
+        "data_quality_note": "OPEX uses Technology Card proxy data (Class C). OPEX Library not populated. LCOH is CLASS D (PRELIMINARY). Do not use for investment decisions."
+      },
+      "pm_review": {
+        "gate_outcome": "PROCEED",
+        "overall_confidence": {
+          "score": 0.65,
+          "label": "GOOD",
+          "rationale": "Weakest dimension limits overall confidence at 0.65."
+        },
+        "dimension_scores": {
+          "project_references": {
+            "quality": "GOOD",
+            "confidence": 0.7
+          },
+          "technology": {
+            "quality": "GOOD",
+            "confidence": 0.7
+          },
+          "risk": {
+            "quality": "GOOD",
+            "confidence": 0.65
+          },
+          "economics": {
+            "quality": "GOOD",
+            "confidence": 0.65
+          }
+        },
+        "conditions": [
+          "OPEX/LCOH uses Technology Card proxy data (Class D). OPEX Library not populated."
+        ],
+        "critical_gaps": [],
+        "important_gaps": [
+          "OPEX/LCOH uses Technology Card proxy data (Class D). OPEX Library not populated."
+        ],
+        "consistency_issues": [],
+        "calibration_rationale": "Weakest dimension limits overall confidence at 0.65."
+      }
+    }
+  }
+]

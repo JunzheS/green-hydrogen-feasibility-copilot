@@ -1,0 +1,47 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-SCP-001",
+  "risk_name": "Electrolyzer Manufacturing Capacity Shortfall Causing Delivery Delay (>12 months)",
+  "risk_category": "supply_chain",
+  "risk_subcategory": "02.1_electrolyzer_manufacturing_capacity_and_lead_times",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Global electrolyzer manufacturing capacity cannot meet aggregate demand during the project's procurement window, causing delivery delays of 6-18 months. PEM projects face higher risk due to OEM concentration (effectively duopoly at >100 MW).",
+    "detailed": "Electrolyzer manufacturing is scaling from ~10 GW/year (2023) toward 50+ GW/year (2030), but demand is scaling even faster. During industry boom periods, OEM order books fill 2-3 years in advance. For a PEM project ordering 100+ MW, only Siemens Energy and ITM Power can currently supply >20 MW modules (Plug Power emerging at 10 MW). If their manufacturing slots are fully booked, the project faces delivery delays or must switch OEM, requiring BOP redesign. ITM Power has pioneered a capacity reservation system (refundable deposit for manufacturing slot) that provides demand visibility — this is an emerging best practice.",
+    "root_cause": "Mismatch between rapid hydrogen demand growth and electrolyzer manufacturing capacity ramp-up. PEM manufacturing is concentrated (2-3 OEMs); Alkaline is diversified (10+ OEMs).",
+    "trigger_events": ["OEM announces order book full for target delivery year", "OEM gigafactory ramp-up misses publicly stated milestones", ">3 competing projects >100 MW announce FID within same 6-month window"]
+  },
+  "assessment": {
+    "probability": 3, "probability_rationale": "IEA and BNEF track manufacturing capacity vs. announced project pipeline. Current projections show sufficient capacity through 2028, tightening 2029-2030. PEM OEM concentration increases probability vs Alkaline.",
+    "impact": 4, "impact_rationale": "12-24 month delivery delay at 100 MW: €20-40M lost revenue, offtake default risk, workforce demobilization. BOP redesign if switching OEM: €5-10M.",
+    "detectability": 3, "detectability_rationale": "OEM quarterly reports and public order book announcements provide partial visibility. Capacity reservation agreements improve detectability significantly.",
+    "risk_priority_number": 36, "risk_class": "medium",
+    "assessment_method": "IEA/BNEF manufacturing capacity analysis + Gold Dataset OEM tracking",
+    "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "schedule": { "impact": "6-12_months", "description": "Critical path delay. BOP and civil works idled while awaiting electrolyzer delivery." },
+    "cost": { "impact_eur": 25000000, "description": "€20-40M: lost revenue + demobilization + offtake penalties for 12-month delay at 100 MW." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Procurement Director)",
+    "preventive_actions": [
+      { "action_id": "MIT-SCP-001-P-01", "description": "Reserve manufacturing capacity via slot reservation agreement with OEM at pre-FID stage (5-10% deposit)", "responsible_party": "Developer (Procurement)", "timing": "pre_fid" },
+      { "action_id": "MIT-SCP-001-P-02", "description": "Qualify backup OEM during FEED. Design BOP for stack-agnostic interface.", "responsible_party": "FEED Contractor", "timing": "feed" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "OEM order book status for target delivery year", "threshold_green": "Slot confirmed in writing", "threshold_amber": "OEM reports >80% capacity booked", "threshold_red": "OEM reports no availability" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["medium_10-100mw", "large_100-500mw", "very_large_>500mw"], "project_phases": ["pre_feasibility", "feasibility", "feed"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-001", "GA-PR-008", "GA-PR-010"],
+    "incident_descriptions": ["Normand'Hy (GA-PR-001): 12 PEM modules from Siemens Energy Berlin gigafactory (3 GW/year). 9 of 12 delivered on schedule as of late 2025. Demonstrates that gigafactory-scale manufacturing can meet delivery commitments.", "REFHYNE II (GA-PR-008): ITM Power capacity reservation signed December 2023, formal contract August 2024. Manufacturing 2025-2026 for 2027 delivery. The 18-month gap between reservation and delivery illustrates the typical PEM procurement timeline.", "Galp Sines (GA-PR-010): Plug Power GenEco 10 MW modules (10 units). First module delivered October 2025. Plug Power is a newer entrant to large-scale PEM — delivery track record is being established."],
+    "lessons_learned": "Capacity reservation is the single most effective mitigation. PEM OEM capacity is the binding constraint for the industry through 2030. Alkaline offers supply chain security through OEM diversity + Chinese supply option."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-060", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 5, "title": "IEA GHR 2025 — Electrolyser Manufacturing Capacity", "author": "IEA", "retrieval_date": "2026-05-15", "confidence": "high" }
+  ]
+}

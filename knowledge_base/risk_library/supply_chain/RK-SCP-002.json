@@ -1,0 +1,49 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-SCP-002",
+  "risk_name": "Iridium Supply Constraint and Price Volatility for PEM Manufacturing",
+  "risk_category": "supply_chain",
+  "risk_subcategory": "02.2_critical_materials_availability",
+  "risk_version": "1.0.0",
+  "risk_status": "published",
+  "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "Iridium is a critical material for PEM electrolysis (~0.3-0.5 g/kW loading). Current global production (~8 tonnes/year, >80% from South Africa) supports ~16-25 GW/year PEM manufacturing. At current loading, a 50 GW/year PEM market would require 15-25 tonnes/year of iridium — exceeding current production. Price volatility and supply concentration create CAPEX uncertainty for PEM projects.",
+    "detailed": "Iridium is one of the rarest elements on Earth (~0.001 ppm crustal abundance). It is produced as a byproduct of platinum mining, primarily in South Africa (>80% of global production). Iridium price has been highly volatile: ~€30,000/kg (2016) → €150,000/kg (2021) → €120,000/kg (2025). At 0.3-0.5 g/kW loading, iridium contributes €45-75/kW to PEM stack cost at current prices. Technology roadmap: loading reduction to <0.1 g/kW through advanced supported catalysts and core-shell nanoparticles is expected by 2030 but not yet commercialized. Iridium recycling from end-of-life stacks is currently 0% — first commercial recycling expected 2028-2030 when first large-scale PEM plants reach stack replacement.",
+    "root_cause": "Iridium is a byproduct of platinum mining with inelastic supply. South Africa (>80% of production) creates geopolitical concentration risk. PEM electrolysis competes with electronics and chemical industries for iridium supply.",
+    "trigger_events": ["Iridium spot price exceeds €200,000/kg for >30 consecutive days", "Major South African PGM mine announces production cut >10%", "Iridium loading reduction technology fails to meet commercial readiness milestones", "Competing demand (electronics, chemical catalysts) increases significantly"]
+  },
+  "assessment": {
+    "probability": 2, "impact": 4, "detectability": 1,
+    "risk_priority_number": 8, "risk_class": "low",
+    "probability_rationale": "Current supply is adequate for announced PEM project pipeline through 2028-2030. Iridium loading reduction technology is progressing well. Supply constraint is a medium-term (2030+) risk, not an immediate threat.",
+    "impact_rationale": "If iridium supply constrains PEM manufacturing, stack costs would increase 30-50% (€240-400/kW additional at current loading). Projects without fixed-price OEM contracts would face significant CAPEX overrun.",
+    "detectability_rationale": "Iridium prices are publicly quoted daily. PGM mine production is reported quarterly. Technology roadmaps are public. Perfect market visibility.",
+    "assessment_method": "Technology Card evidence + PGM market analysis + academic literature on iridium loading reduction",
+    "assessment_date": "2026-06-05"
+  },
+  "consequences": {
+    "cost": { "impact_eur": 30000000, "description": "At 200 MW PEM plant: €30M additional stack cost if iridium price doubles and loading is not yet reduced. Mitigated by fixed-price OEM contracts." }
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Developer (Procurement) + OEM",
+    "preventive_actions": [
+      { "action_id": "MIT-SCP-002-P-01", "description": "Negotiate fixed-price stack supply agreement with iridium price escalation capped at agreed index. Transfer iridium price risk to OEM where possible.", "responsible_party": "Developer (Procurement)", "timing": "pre_fid" },
+      { "action_id": "MIT-SCP-002-P-02", "description": "Specify iridium loading <0.3 g/kW in stack technical specification to future-proof against supply constraints", "responsible_party": "FEED Engineer", "timing": "feed" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Iridium spot price (EUR/kg, quarterly average)", "threshold_green": "<€150,000/kg", "threshold_amber": "€150,000-200,000/kg", "threshold_red": ">€200,000/kg" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM"], "project_scale": ["large_100-500mw", "very_large_>500mw"], "project_phases": ["pre_feasibility", "feasibility"], "first_of_a_kind_only": false },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-001"],
+    "incident_descriptions": ["Normand'Hy (GA-PR-001): 200 MW PEM, 12 modules. Estimated iridium requirement: ~80-120 kg at current loading. Siemens Energy has direct iridium sourcing agreements with South African PGM miners — vertical integration mitigates this risk at the OEM level."],
+    "technology_card_references": ["TC-PEM-001"],
+    "lessons_learned": "Fixed-price OEM contracts with agreed iridium price indices transfer supply risk. Iridium loading reduction is the single most important PEM technology development for GW-scale viability."
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-061", "source_type": "academic_paper", "source_quality_level": "B", "source_reliability_score": 5, "title": "Iridium supply and demand for PEM electrolysis: 2025-2050 projections — J. Cleaner Production, 2025", "author": "Journal of Cleaner Production", "retrieval_date": "2026-05-01", "confidence": "high" },
+    { "source_id": "SRC-RSK-2026-062", "source_type": "technology_card", "source_quality_level": "B", "source_reliability_score": 5, "title": "TC-PEM-001 §technical_risks[TCR-PEM-002] — Iridium Supply Constraint", "author": "Technology Knowledge Base", "retrieval_date": "2026-06-01", "confidence": "high" }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "_schema": "risk_schema_v1.md",
+  "risk_id": "RK-CST-001",
+  "risk_name": "Construction Schedule Overrun — Cumulative Delays Pushing COD Beyond Target",
+  "risk_category": "construction",
+  "risk_subcategory": "06.3_schedule_overrun",
+  "risk_version": "1.0.0", "risk_status": "published", "last_review_date": "2026-06-05",
+  "description": {
+    "summary": "The cumulative effect of permitting, procurement, construction, and commissioning delays pushes the project's commercial operation date 6-18 months beyond the target, delaying revenue and potentially breaching offtake agreement commencement dates.",
+    "detailed": "Construction schedule overrun is typically the RESULT of other risks materializing (grid delay, supplier delay, permitting delay, commissioning issues) rather than an independent risk. However, it deserves its own risk record because: (a) the CUMULATIVE effect of multiple 1-3 month delays is not captured by individual risk assessments, (b) schedule float and buffer management is a distinct project control discipline, and (c) offtake agreements and loan agreements have specific COD deadlines with financial consequences. Gold Dataset evidence: HH1 started construction August 2022 with original 2025 COD — a 3+ year construction period that demonstrates the realistic timeline for a first-of-a-kind 200 MW plant.",
+    "root_cause": "Cumulative effect of multiple individual risks. Inadequate schedule contingency. First-of-a-kind integration complexity extending commissioning. Optimistic construction duration assumptions during feasibility.",
+    "trigger_events": ["Schedule performance index (SPI) < 0.85 at 50% construction completion", "Critical path float reduced to <30 days", ">3 critical path activities reporting delays simultaneously", "Commissioning start date slips by >3 months"]
+  },
+  "assessment": {
+    "probability": 4, "impact": 4, "detectability": 2,
+    "risk_priority_number": 32, "risk_class": "medium",
+    "probability_rationale": ">40% of large industrial projects experience significant schedule overrun (Bent Flyvbjerg data). HH1's construction duration (3+ years for 200 MW) and Normand'Hy's timeline (2021 announcement → 2026 COD = 5 years) demonstrate realistic timelines.",
+    "assessment_date": "2026-06-05"
+  },
+  "mitigation": {
+    "strategy": "reduce", "risk_owner": "Project Director",
+    "preventive_actions": [
+      { "action_id": "MIT-CST-001-P-01", "description": "Include minimum 12-month total schedule contingency (across all phases) in project master schedule. Hold contingency at project management level, not allocated to individual work packages.", "responsible_party": "Project Director", "timing": "pre_fid" },
+      { "action_id": "MIT-CST-001-P-02", "description": "Use modular construction where possible — electrolyzer modules pre-assembled off-site. HH1's modular approach (Thyssenkrupp Scalum modules) reduces site construction duration.", "responsible_party": "EPC Contractor", "timing": "feed" }
+    ],
+    "monitoring_indicators": [
+      { "indicator": "Schedule performance index (SPI)", "threshold_green": "SPI ≥ 0.95", "threshold_amber": "SPI 0.85-0.95", "threshold_red": "SPI < 0.85" }
+    ]
+  },
+  "applicability": { "technology_types": ["PEM", "Alkaline"], "project_scale": ["any"], "project_phases": ["construction", "commissioning"] },
+  "evidence": {
+    "reference_project_ids": ["GA-PR-003", "GA-PR-001", "GA-PR-004"],
+    "incident_descriptions": ["Holland Hydrogen I (GA-PR-003): Construction started Aug 2022. Original COD 2025, tracking toward 2025-2026. ~3-4 year construction period for 200 MW. Demonstrates realistic timeline for first-of-a-kind large Alkaline plant.", "Normand'Hy (GA-PR-001): Announced 2021, FID 2024, COD 2026. 5-year total development-to-COD timeline. Construction phase (2023-2026) ~3 years for 200 MW PEM.", "Hamburg Green Hydrogen Hub (GA-PR-004): Foundation laid Dec 2025, building mid-2026, COD 2H 2027. ~22-month construction for 100 MW — faster than HH1/Normand'Hy due to brownfield advantage (reused infrastructure)."]
+  },
+  "sources": [
+    { "source_id": "SRC-RSK-2026-110", "source_type": "academic_paper", "source_quality_level": "B", "source_reliability_score": 5, "title": "Flyvbjerg, B. — 'What You Should Know About Megaprojects and Why' — Oxford Major Programme Management", "author": "Bent Flyvbjerg / Oxford University", "retrieval_date": "2026-05-01", "confidence": "high" }
+  ]
+}
