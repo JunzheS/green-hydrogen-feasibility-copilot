@@ -8,17 +8,25 @@ with st.sidebar:
     st.markdown("### H2 Feasibility Copilot")
     st.markdown("Multi-Agent Decision Platform")
     st.divider()
-    pages = [
-        ("", "Home"), ("Project_Input", "Project Input"), ("Assessment_Report", "Dashboard"),
-        ("Reference_Projects", "References"), ("Technology_Assessment", "Technology"),
-        ("Risk_Assessment", "Risks"), ("CAPEX_LCOH", "CAPEX & LCOH"),
-        ("Technology_Comparison", "Tech Comparison"), ("Agent_Trace", "Agent Trace"),
-        ("OEM_Intelligence", "OEM Intelligence"), ("Developer_Intelligence", "Developer Intelligence"),
-        ("Contradiction_Detection", "Agent Collaboration"), ("Source_Transparency", "Source Quality"),
-        ("Why_This_Matters", "Why This Matters"), ("Assessment_History", "History"),
-    ]
-    for href, label in pages:
-        st.markdown(f"<a href='/{href}' target='_self'>- {label}</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/' target='_self'>- Home</a>", unsafe_allow_html=True)
+    st.markdown("**Core Assessment**")
+    st.markdown("<a href='/Project_Input' target='_self'>- Project Input</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Assessment_Report' target='_self'>- Assessment Report</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Risk_Assessment' target='_self'>- Risk Dashboard</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/CAPEX_LCOH' target='_self'>- CAPEX & LCOH</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Assessment_History' target='_self'>- History</a>", unsafe_allow_html=True)
+    st.markdown("**Advanced Analysis**")
+    st.markdown("<a href='/Reference_Projects' target='_self'>- Reference Projects</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Technology_Assessment' target='_self'>- Technology Assessment</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Technology_Comparison' target='_self'>- Technology Comparison</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Agent_Trace' target='_self'>- Agent Trace</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Contradiction_Detection' target='_self'>- Agent Collaboration</a>", unsafe_allow_html=True)
+    st.markdown("**Market Intelligence**")
+    st.markdown("<a href='/OEM_Intelligence' target='_self'>- OEM Intelligence</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Developer_Intelligence' target='_self'>- Developer Intelligence</a>", unsafe_allow_html=True)
+    st.markdown("**About**")
+    st.markdown("<a href='/Source_Transparency' target='_self'>- Source Quality</a>", unsafe_allow_html=True)
+    st.markdown("<a href='/Why_This_Matters' target='_self'>- Why This Matters</a>", unsafe_allow_html=True)
     st.divider()
     if st.session_state.get("report"):
         r, pm = st.session_state["report"], st.session_state["report"].get("pm_review", {})
