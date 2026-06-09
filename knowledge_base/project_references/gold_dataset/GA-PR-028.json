@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-028",
+  "project_name": "TotalEnergies Grandpuits Biorefinery H2 (France)",
+  "alias_names": ["Grandpuits H2", "TotalEnergies Grandpuits Biofuel"],
+  "status": "under_construction",
+  "status_detail": "Green hydrogen production for TotalEnergies' Grandpuits biorefinery (Seine-et-Marne, France). Part of the zero-crude conversion of the Grandpuits refinery into a biofuel and bioplastics platform. Electrolyzer capacity not separately disclosed but integrated with the larger biofuel conversion project.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "construction", "last_data_update": "2026-06-09",
+    "narrative_summary": "TotalEnergies is converting its Grandpuits refinery in Seine-et-Marne, France, into a zero-crude biofuel and bioplastics platform. As part of this conversion, green hydrogen production via electrolysis will replace fossil-derived hydrogen for hydrotreating vegetable oils and producing sustainable aviation fuel (SAF). The electrolyzer is integrated with the broader EUR 500 million conversion project. Grandpuits represents a model for refinery conversion to biofuels combined with on-site green hydrogen production, leveraging TotalEnergies' broader hydrogen procurement strategy including Normand'Hy (GA-PR-001) and ELYgator (GA-PR-017).",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-001", "GA-PR-017"]
+  },
+  "location": { "country": "France", "region": "Ile-de-France", "city": "Grandpuits-Bailly-Carrois", "coordinates": { "lat": 48.58, "lon": 2.97 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 20, "electrolyzer_capacity_mw_source": "estimated", "hydrogen_output_kg_per_day": 8000, "hydrogen_output_tons_per_year": 2920, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Grandpuits industrial site", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": [], "offtaker_name": "TotalEnergies Grandpuits biorefinery (captive use)", "offtake_agreement_type": "Internal supply (refinery conversion project)" },
+  "stakeholders": { "developer": "TotalEnergies SE", "developer_type": "oil_and_gas", "co_developers": [], "epc_contractor": null, "operations_operator": "TotalEnergies", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2024, "funding_sources": ["equity"], "total_investment_decision_date": "2022", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2020-09", "fid_date": "2022", "construction_start_date": "2023", "commissioning_date": "2027", "construction_duration_months": 48, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-018", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "TotalEnergies Grandpuits zero-crude conversion project — green hydrogen integration", "author": "TotalEnergies SE", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-036",
+  "project_name": "H2 Green Hydrogen (Verso Energy — France)",
+  "alias_names": ["Verso Energy H2", "Verso Energy France"],
+  "status": "planned",
+  "status_detail": "Verso Energy developing multiple green hydrogen projects in France totaling 1 GW+ pipeline. Includes projects in the Dunkirk zone and other industrial areas. Targeting 2030 COD. Focus on large-scale PEM and Alkaline technologies for refinery and chemical offtake.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "Verso Energy is a French developer building a multi-GW green hydrogen project pipeline across France. The company is developing several large-scale electrolysis projects targeting industrial decarbonization in the Dunkirk zone, Seine Valley, and other French industrial regions. Verso Energy combines PEM and Alkaline technology options depending on project profile, with total planned capacity exceeding 1 GW across the portfolio. The projects target 2030 commercial operation dates and are supported by France's National Hydrogen Strategy (SNH II). Verso Energy represents a new generation of French independent hydrogen project developers.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-015", "GA-PR-031"]
+  },
+  "location": { "country": "France", "region": "Multiple (Hauts-de-France, Normandy)", "city": "Various", "coordinates": { "lat": 49.0, "lon": 2.0 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM+Alkaline", "technology_selection_status": "not_selected", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": null },
+  "capacity": { "electrolyzer_capacity_mw": 200, "electrolyzer_capacity_mw_source": "estimated", "hydrogen_output_kg_per_day": 80000, "hydrogen_output_tons_per_year": 29000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv_wind_hybrid", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Multiple grid connections at French industrial sites", "ppa_structure": "Portfolio of renewable PPAs" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": ["chemicals", "mobility"], "offtaker_name": "French industrial users (refining, chemicals, mobility)", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Verso Energy", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "Verso Energy", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2030", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-026", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "Verso Energy develops 1 GW+ green hydrogen pipeline in France", "author": "Hydrogen Insight", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

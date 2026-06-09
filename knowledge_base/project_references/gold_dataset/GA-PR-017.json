@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-017",
+  "project_name": "Air Liquide ELYgator (Rotterdam)",
+  "alias_names": ["ELYgator", "Air Liquide Maasvlakte H2"],
+  "status": "planned",
+  "status_detail": "200 MW hybrid PEM+Alkaline electrolysis plant at Maasvlakte, Port of Rotterdam. FID taken July 2025. EUR 99M EU Innovation Fund grant + EUR 150M Dutch IPCEI. 130 MW of capacity dedicated to TotalEnergies Antwerp refinery. Operations target end of 2027. JV with Siemens Energy for PEM stacks.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "post_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "ELYgator is a 200 MW hybrid (PEM+Alkaline) electrolysis plant being built by Air Liquide at Maasvlakte in the Port of Rotterdam, Netherlands. The project reached FID in July 2025 with investment exceeding EUR 500 million. It is supported by a EUR 99 million EU Innovation Fund grant and EUR 150 million Dutch IPCEI funding. Under a long-term tolling agreement with TotalEnergies signed in February 2025, 130 MW of capacity (approx. 15,000 t/yr H2) is dedicated to TotalEnergies' Antwerp refinery, with renewable electricity supplied by TotalEnergies' OranjeWind offshore wind farm. The hydrogen will be delivered via Air Liquide's existing pipeline network. Operations are targeted for end of 2027. This is one of Europe's first multi-technology hybrid electrolysis projects at industrial scale.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-003", "GA-PR-001", "GA-PR-008"]
+  },
+  "location": { "country": "Netherlands", "region": "South Holland", "city": "Rotterdam (Maasvlakte)", "coordinates": { "lat": 51.96, "lon": 4.02 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM+Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Siemens Energy (PEM) / Joint development (Alkaline)", "electrolyzer_model": null, "technology_card_ref": null },
+  "capacity": { "electrolyzer_capacity_mw": 200, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 63000, "hydrogen_output_tons_per_year": 23000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Connected to Dutch grid at Maasvlakte. Powered by TotalEnergies OranjeWind offshore wind farm.", "ppa_structure": "Tolling agreement: TotalEnergies supplies renewable electricity, Air Liquide operates electrolyzer" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": ["chemicals"], "offtaker_name": "TotalEnergies Antwerp refinery (130 MW capacity), other industrial customers", "offtake_agreement_type": "Long-term tolling agreement (TotalEnergies)" },
+  "stakeholders": { "developer": "Air Liquide", "developer_type": "industrial_gas", "co_developers": ["TotalEnergies", "Siemens Energy"], "epc_contractor": null, "operations_operator": "Air Liquide", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 500000000, "capex_per_kw_eur": 2500, "capex_per_kw_method": "calculated_total_div_mw", "capex_confidence": "media_report", "capex_year_reference": 2025, "funding_sources": ["equity", "eu_innovation_fund", "eu_ipcei"], "total_investment_decision_date": "2025-07", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": "2025-07", "construction_start_date": "2025", "commissioning_date": "2027", "construction_duration_months": 30, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-007", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Air Liquide takes FID on 200 MW ELYgator plant at Maasvlakte — July 2025", "author": "Air Liquide", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

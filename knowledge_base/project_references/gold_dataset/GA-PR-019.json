@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-019",
+  "project_name": "REFHYNE I — Shell Wesseling 10 MW PEM",
+  "alias_names": ["REFHYNE I", "Shell REFHYNE I", "Rhineland Electrolyzer Phase 1"],
+  "status": "operational",
+  "status_detail": "10 MW PEM electrolyzer at Shell's Wesseling site (Rhineland Refinery). Commissioned July 2021. One of Europe's first multi-MW PEM electrolyzers in a refinery setting. EU FCH JU funded. ITM Power PEM stack. Served as the technology precursor and validation plant for the 100 MW REFHYNE II project.",
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "REFHYNE I is a 10 MW PEM electrolysis plant at Shell's Rheinland Refinery in Wesseling, Germany, commissioned in July 2021. It was one of Europe's first multi-MW PEM electrolyzers operating in an industrial refinery environment. Using an ITM Power PEM stack, the plant produces green hydrogen for refinery operations, partially replacing fossil-derived hydrogen. The project was co-funded by the EU Fuel Cells and Hydrogen Joint Undertaking (FCH JU). REFHYNE I provided critical operational data and degradation insights that directly informed the design and specifications of the 100 MW REFHYNE II project (GA-PR-008), including warranty negotiations and stack performance expectations.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-008"]
+  },
+  "location": { "country": "Germany", "region": "North Rhine-Westphalia", "city": "Wesseling (near Cologne)", "coordinates": { "lat": 50.82, "lon": 6.98 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "ITM Power", "electrolyzer_model": "ITM Power PEM stack", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 10, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 1300, "hydrogen_output_tons_per_year": 475, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Shell Rheinland Energy & Chemicals Park", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": ["mobility"], "offtaker_name": "Shell Rheinland Refinery", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Shell Deutschland Oil GmbH", "developer_type": "oil_and_gas", "co_developers": ["ITM Power"], "epc_contractor": "ITM Power", "operations_operator": "Shell", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 20000000, "capex_per_kw_eur": 2000, "capex_per_kw_method": "media_report", "capex_confidence": "media_report", "capex_year_reference": 2021, "funding_sources": ["equity", "eu_fch_ju"], "total_investment_decision_date": "2018", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2018", "fid_date": "2018", "construction_start_date": "2019", "commissioning_date": "2021-07", "construction_duration_months": 24, "current_operational_year": 4 },
+  "sources": [ { "source_id": "SRC-SP2-009", "source_type": "press_release", "source_quality_level": "B", "source_reliability_score": 4, "title": "Shell commissions REFHYNE I 10 MW PEM electrolyzer at Rheinland — July 2021", "author": "Shell Deutschland / ITM Power", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

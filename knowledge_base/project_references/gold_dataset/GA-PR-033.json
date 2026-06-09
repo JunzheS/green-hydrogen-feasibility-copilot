@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-033",
+  "project_name": "e-NG / TES Green Hydrogen (Belgium)",
+  "alias_names": ["Tree Energy Solutions", "TES Belgium H2", "TES Zeebrugge"],
+  "status": "planned",
+  "status_detail": "Multi-hundred MW green hydrogen project at the Port of Zeebrugge, Belgium, developed by Tree Energy Solutions (TES). Part of a broader green hydrogen import and distribution hub. Electrolyzer capacity planning in progress. Leverages Zeebrugge's existing gas import infrastructure for hydrogen backbones.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "Tree Energy Solutions (TES) is developing a large-scale green hydrogen hub at the Port of Zeebrugge, Belgium, leveraging the port's existing LNG import infrastructure and strategic position for the European Hydrogen Backbone. The project includes plans for electrolysis capacity to produce green hydrogen from offshore wind, combined with hydrogen import terminal capacity for hydrogen derivatives (green ammonia, e-methane). The Zeebrugge location benefits from existing gas pipeline connections (Fluxys network), deep-water port access, and proximity to the Belgian and German industrial hinterland. TES is backed by major investors including TotalEnergies, E.ON, HSBC, and others.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-009", "GA-PR-047"]
+  },
+  "location": { "country": "Belgium", "region": "Flanders", "city": "Zeebrugge", "coordinates": { "lat": 51.33, "lon": 3.20 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "not_selected", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 200, "electrolyzer_capacity_mw_source": "estimated", "hydrogen_output_kg_per_day": 80000, "hydrogen_output_tons_per_year": 29000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Port of Zeebrugge. Access to Belgian offshore wind from North Sea.", "ppa_structure": null },
+  "water": { "source_type": "seawater_desalination", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "export", "secondary_applications": ["industrial_heat", "chemicals"], "offtaker_name": "Industrial customers via Fluxys hydrogen pipeline network, import/export markets", "offtake_agreement_type": null, "h2_storage_type": "pipeline", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Tree Energy Solutions (TES)", "developer_type": "startup", "co_developers": ["TotalEnergies", "E.ON"], "epc_contractor": null, "operations_operator": "TES", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2031", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-023", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "TES Zeebrugge green hydrogen hub — development plans and E.ON/TotalEnergies backing", "author": "Tree Energy Solutions / industry media", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

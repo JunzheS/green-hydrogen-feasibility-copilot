@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-026",
+  "project_name": "Heidelberg Green Hydrogen / HH2E (Germany)",
+  "alias_names": ["HH2E Lubmin", "Heidelberg HH2E", "HH2E Werft"],
+  "status": "planned",
+  "status_detail": "HH2E developing a 100 MW green hydrogen project at Lubmin, Mecklenburg-Vorpommern, Germany. Alkaline electrolysis. Planned expansion to 1 GW. Targeting 2028. Part of the broader HH2E platform backed by HydrogenOne Capital.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "HH2E is developing a 100 MW (expandable to 1 GW) green hydrogen production facility at Lubmin, Mecklenburg-Vorpommern, Germany, near the site of the former Greifswald nuclear power plant. The project uses the existing grid and pipeline infrastructure of the Lubmin industrial zone, which includes connection to the Nord Stream gas pipeline corridor, making it a strategic hub for the future European Hydrogen Backbone. The project is part of HH2E's broader platform backed by HydrogenOne Capital targeting multi-GW of green hydrogen production capacity across Germany. Alkaline electrolysis has been selected for its cost-effectiveness at scale, leveraging the site's access to offshore wind power from the Baltic Sea.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-020", "GA-PR-022"]
+  },
+  "location": { "country": "Germany", "region": "Mecklenburg-Vorpommern", "city": "Lubmin", "coordinates": { "lat": 54.14, "lon": 13.62 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 100, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 40000, "hydrogen_output_tons_per_year": 14600, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Existing grid infrastructure at Lubmin industrial zone (former nuclear plant site). Baltic Sea offshore wind access.", "ppa_structure": null },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility", "export"], "offtaker_name": "Industrial customers connected via planned hydrogen pipeline infrastructure", "offtake_agreement_type": null, "h2_storage_type": "pipeline", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "HH2E GmbH", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "HH2E GmbH", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2022", "fid_date": null, "construction_start_date": null, "commissioning_date": "2028", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-016", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "HH2E Lubmin 100 MW green hydrogen project — HydrogenOne Capital backing", "author": "HH2E / HydrogenOne Capital", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

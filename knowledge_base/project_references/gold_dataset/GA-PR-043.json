@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-043",
+  "project_name": "SSAB HYBRIT — Fossil-Free Steel (Sweden)",
+  "alias_names": ["HYBRIT", "SSAB LKAB Vattenfall HYBRIT", "Gallic Iron Ore Project"],
+  "status": "operational",
+  "status_detail": "Pilot scale hydrogen-based steelmaking in Lulea, Sweden. SSAB-LKAB-Vattenfall HYBRIT consortium. First fossil-free steel produced 2021. Includes 4.5 MW PEM electrolysis (Nel Hydrogen) for H2-DRI demonstration. Demonstrating complete fossil-free steel value chain from mine to steel. Full-scale industrial plant planned for 2026-2030.",
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "HYBRIT (Hydrogen Breakthrough Ironmaking Technology) is a pioneering fossil-free steel project in Sweden, led by SSAB, LKAB, and Vattenfall. The pilot plant in Lulea includes a 4.5 MW PEM electrolyzer from Nel Hydrogen that produces hydrogen for direct reduction of iron ore in a DRI shaft furnace. The project demonstrated the world's first fossil-free steel in 2021. The pilot has validated the complete value chain from iron ore to fossil-free steel using green hydrogen. A demonstration plant is under construction and a full-scale industrial plant is planned. This is the most advanced hydrogen-based steelmaking project globally and has been validated by independent lifecycle assessments showing near-zero CO2 emissions.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-022", "GA-PR-029"]
+  },
+  "location": { "country": "Sweden", "region": "Norrbotten", "city": "Lulea", "coordinates": { "lat": 65.58, "lon": 22.15 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Nel Hydrogen", "electrolyzer_model": "Nel PEM stacks", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 4.5, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 1000, "hydrogen_output_tons_per_year": 365, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "hydro", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected with Swedish hydroelectric power", "ppa_structure": "Vattenfall hydroelectric PPAs" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "steel", "secondary_applications": [], "offtaker_name": "SSAB Lulea (captive H2-DRI steel production)", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "SSAB / LKAB / Vattenfall (HYBRIT consortium)", "developer_type": "consortium", "co_developers": ["SSAB", "LKAB", "Vattenfall"], "epc_contractor": "Nel Hydrogen (electrolyzer)", "operations_operator": "SSAB", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2021, "funding_sources": ["equity", "swedish_government"], "total_investment_decision_date": "2018", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2016", "fid_date": "2018", "construction_start_date": "2018", "commissioning_date": "2021-08", "construction_duration_months": 36, "current_operational_year": 4 },
+  "sources": [ { "source_id": "SRC-SP2-033", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "SSAB HYBRIT — world-first fossil-free steel produced with hydrogen, August 2021", "author": "SSAB / LKAB / Vattenfall", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

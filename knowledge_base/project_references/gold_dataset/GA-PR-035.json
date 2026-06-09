@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-035",
+  "project_name": "EDP Green Hydrogen Plant at Sines (Portugal)",
+  "alias_names": ["EDP Sines H2", "Green Hydrogen Sines EDP"],
+  "status": "planned",
+  "status_detail": "EDP's 100 MW green hydrogen project at Sines, Portugal. PEM electrolysis. Co-located with EDP's solar PV and wind assets. Targeting industrial offtake for refining and chemicals. Part of Portugal's PNEC 2030 hydrogen strategy.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "EDP (Energias de Portugal) is developing a 100 MW PEM electrolysis plant at Sines, Portugal, as part of its broader green hydrogen strategy. The facility will be co-located with EDP's renewable generation assets (solar PV and wind) in the Sines area, leveraging Portugal's excellent renewable resources. The project targets industrial offtake for refining and chemical applications, supporting the decarbonization of Portugal's largest industrial port zone. The project is aligned with Portugal's National Hydrogen Strategy (PNEC 2030), which targets 2.5 GW of electrolysis capacity by 2030. EDP has been actively developing hydrogen projects across Europe, including the Puertollano 20 MW PEM plant (GA-PR-006) through its subsidiary Iberdrola.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-006", "GA-PR-010", "GA-PR-023"]
+  },
+  "location": { "country": "Portugal", "region": "Alentejo", "city": "Sines", "coordinates": { "lat": 37.96, "lon": -8.87 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 100, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 40000, "hydrogen_output_tons_per_year": 14600, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv_wind_hybrid", "renewable_capacity_mw": 250, "grid_connection": true, "grid_connection_detail": "Grid-connected. Co-located with EDP solar PV and wind assets at Sines.", "ppa_structure": "Behind-the-meter renewable supply from EDP portfolio" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": ["chemicals"], "offtaker_name": "Industrial users at Sines port zone (refining, chemicals)", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "EDP (Energias de Portugal)", "developer_type": "utility", "co_developers": [], "epc_contractor": null, "operations_operator": "EDP", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2028", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-025", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "EDP Green Hydrogen roadmap and Sines project development", "author": "EDP / Hydrogen Europe", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

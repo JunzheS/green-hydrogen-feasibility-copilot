@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-041",
+  "project_name": "LHC Group — Methanol Synthesis (France)",
+  "alias_names": ["LHC Carbon H2", "LHC Methanol France"],
+  "status": "planned",
+  "status_detail": "Green hydrogen for e-methanol production in France. LHC Group developing CO2-to-methanol projects using green hydrogen from electrolysis. Targeting chemical industry decarbonization. 2028-2030 COD.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "LHC Group is developing green hydrogen projects in France for e-methanol synthesis, combining hydrogen from PEM electrolysis with captured CO2 to produce renewable methanol for the chemical industry. The project targets the decarbonization of methanol production, which is traditionally produced from natural gas and is a major source of industrial CO2 emissions in the chemicals sector. France's abundant low-carbon electricity (nuclear + renewables) provides a competitive advantage for green hydrogen-based e-methanol production. The project targets commercial operation in 2028-2030.",
+    "is_first_of_a_kind": false, "related_project_ids": []
+  },
+  "location": { "country": "France", "region": "Nouvelle-Aquitaine", "city": "Lacq area", "coordinates": { "lat": 43.41, "lon": -0.62 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 20, "electrolyzer_capacity_mw_source": "estimated", "hydrogen_output_kg_per_day": 8000, "hydrogen_output_tons_per_year": 2920, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at industrial site", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "methanol", "secondary_applications": ["chemicals"], "offtaker_name": "Chemical industry (e-methanol production)", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "LHC Group", "developer_type": "chemical_company", "co_developers": [], "epc_contractor": null, "operations_operator": "LHC Group", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2029", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-031", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "LHC Group green hydrogen for e-methanol production in France", "author": "Hydrogen Europe / industry media", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

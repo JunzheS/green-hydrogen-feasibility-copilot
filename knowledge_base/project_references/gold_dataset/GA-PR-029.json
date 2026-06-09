@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-029",
+  "project_name": "H2Future — Voestalpine Linz (Austria)",
+  "alias_names": ["H2Future Linz", "Voestalpine H2", "Linz Electrolyzer"],
+  "status": "operational",
+  "status_detail": "6 MW PEM electrolyzer at voestalpine's Linz steel plant, Austria. Operational since 2019. One of the world's first PEM electrolyzers integrated into a steel mill. Siemens Energy Silyzer 200. Produces hydrogen for direct injection into the steel production process. EU FCH JU funded. Key demonstrator for green steel H2-DRI integration.",
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed", "project_phase_at_collection": "operational", "last_update_at": "2026-06-09",
+    "narrative_summary": "H2Future is a 6 MW PEM electrolysis plant at voestalpine's steel site in Linz, Austria, commissioned in 2019. It was one of the world's first PEM electrolyzers directly integrated into a steel production facility, using three Siemens Energy Silyzer 200 modules (2 MW each). The hydrogen is injected into the steel production process to test and demonstrate decarbonization pathways for the steel industry. The project was co-funded by the EU Fuel Cells and Hydrogen Joint Undertaking (FCH JU) and brought together voestalpine, Siemens Energy, K1-MET, and Austrian Power Grid. The project provided critical operational data on PEM electrolysis in a steel mill environment and informed the scale-up plans for industrial green steelmaking.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-022", "GA-PR-019"]
+  },
+  "location": { "country": "Austria", "region": "Upper Austria", "city": "Linz", "coordinates": { "lat": 48.29, "lon": 14.37 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Siemens Energy", "electrolyzer_model": "Silyzer 200 (3 x 2 MW)", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 6, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 1200, "hydrogen_output_tons_per_year": 438, "number_of_stacks": 3, "stack_capacity_mw": 2 },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Connected to Austrian grid at voestalpine Linz steelworks site", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "steel", "secondary_applications": [], "offtaker_name": "voestalpine Stahl Linz (captive steel production use)", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "voestalpine AG (consortium)", "developer_type": "chemical_company", "co_developers": ["Siemens Energy", "K1-MET", "Austrian Power Grid"], "epc_contractor": "Siemens Energy", "operations_operator": "voestalpine", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 18000000, "capex_per_kw_eur": 3000, "capex_per_kw_method": "media_report", "capex_confidence": "media_report", "capex_year_reference": 2019, "funding_sources": ["equity", "eu_fch_ju"], "total_investment_decision_date": "2017", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2017", "fid_date": "2017", "construction_start_date": "2018", "commissioning_date": "2019-11", "construction_duration_months": 18, "current_operational_year": 6 },
+  "sources": [ { "source_id": "SRC-SP2-019", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "H2Future — world's first PEM electrolyzer integrated into steel plant, commissioned Nov 2019", "author": "voestalpine / Siemens Energy / FCH JU", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-038",
+  "project_name": "Enel Green Power Hydrogen (Italy)",
+  "alias_names": ["Enel H2 Italy", "Enel Green Power Brindisi H2", "Enel Fusina H2"],
+  "status": "operational",
+  "status_detail": "Small-scale PEM electrolysis projects in Italy operated by Enel Green Power. Pilot hydrogen production at Brindisi and Fusina combined-cycle sites. Demonstrating hydrogen blending in gas turbines for power generation. Part of Enel's broader H2 strategy.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "Enel Green Power is developing green hydrogen pilot projects in Italy, including PEM electrolysis installations at the Brindisi and Fusina combined-cycle gas turbine sites. These projects demonstrate the integration of green hydrogen production with existing power generation infrastructure, including hydrogen blending in gas turbines for low-carbon power generation. Enel has been testing hydrogen-natural gas blends up to 30% in its gas turbines, supporting the pathway to decarbonized power generation. These pilot projects provide operational experience with PEM electrolysis in the Italian electricity market context and inform Enel's larger hydrogen project pipeline.",
+    "is_first_of_a_kind": true, "related_project_ids": []
+  },
+  "location": { "country": "Italy", "region": "Apulia / Veneto", "city": "Brindisi / Fusina", "coordinates": { "lat": 45.42, "lon": 12.25 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 2, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 800, "hydrogen_output_tons_per_year": 290, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Enel power plant sites", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "grid_injection", "secondary_applications": ["mobility"], "offtaker_name": "Enel power plants (hydrogen blending in gas turbines for power generation)", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Enel Green Power", "developer_type": "utility", "co_developers": [], "epc_contractor": null, "operations_operator": "Enel Green Power", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2023, "funding_sources": ["equity"], "total_investment_decision_date": "2020", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2020", "fid_date": "2020", "construction_start_date": "2021", "commissioning_date": "2022", "current_operational_year": 4 },
+  "sources": [ { "source_id": "SRC-SP2-028", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Enel Green Power — hydrogen blending in gas turbines pilot projects", "author": "Enel / industry reports", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

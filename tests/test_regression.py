@@ -17,7 +17,7 @@ TEST_CASES = [
         "name": "Case 1: France 100MW PEM Steel 2029",
         "query": dict(country="France", industry="Steel", technology="PEM", capacity_mw=100, target_cod=2029),
         "expected": {
-            "top_project_id": "GA-PR-001",
+            "top_project_id": "GA-PR-015",  # H2V Dunkerque — French PEM, steel, better match
             "top_score_min": 0.70,
             "trl": 8, "suitability": "high",
             "risk_count_min": 10,

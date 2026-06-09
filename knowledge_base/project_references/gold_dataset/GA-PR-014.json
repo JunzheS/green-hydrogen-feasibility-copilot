@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-014",
+  "project_name": "Green Horizon (Lhyfe Le Havre)",
+  "alias_names": ["Lhyfe Green Horizon", "Lhyfe Gonfreville-l'Orcher"],
+  "status": "planned",
+  "status_detail": "100 MW PEM electrolysis project at Gonfreville-l'Orcher near Le Havre, Normandy. Received EUR 149M French government grant confirmed April 2025. Environmental permit submitted. Grid connection secured. Pre-FID stage. Construction expected 2025-2026 post-authorization. Operations target 2029.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "Green Horizon is a 100 MW PEM electrolysis project developed by Lhyfe at Gonfreville-l'Orcher near Le Havre, Normandy, France. The project received a record EUR 149 million grant from the French government (IPCEI Hydrogen) in April 2025, the largest of three grants announced under France's National Hydrogen Strategy (SNH II). The plant will produce up to 34 tonnes of green hydrogen per day for industrial customers including Yara (ammonia/fertilizers) and TotalEnergies, delivered primarily via pipeline to nearby industrial partners. Construction is expected to begin in 2025-2026 subject to environmental authorization, with commercial operations targeted for 2029.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-001", "GA-PR-011"]
+  },
+  "location": { "country": "France", "region": "Normandy", "city": "Gonfreville-l'Orcher (Le Havre)", "coordinates": { "lat": 49.51, "lon": 0.22 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 100, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 34000, "hydrogen_output_tons_per_year": 12400, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid connection secured for 100 MW industrial site near Le Havre", "ppa_structure": "Renewable PPAs to be secured" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "ammonia", "secondary_applications": ["refinery"], "offtaker_name": "Yara (fertilizers/ammonia), TotalEnergies (refinery)", "offtake_agreement_type": null, "h2_storage_type": "pipeline", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Lhyfe SAS", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "Lhyfe SAS", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "french_state_subsidy", "eu_ipcei"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2024", "fid_date": null, "construction_start_date": null, "commissioning_date": "2029", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-004", "source_type": "government_announcement", "source_quality_level": "A", "source_reliability_score": 5, "title": "Lhyfe confirms record EUR 149M French government subsidy for Green Horizon — April 2025", "author": "Lhyfe SAS / French Ministry of Industry", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

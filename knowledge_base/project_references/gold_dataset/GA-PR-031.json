@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-031",
+  "project_name": "DH2 Dunkirk — Green Hydrogen for Steel (France)",
+  "alias_names": ["DH2 Dunkirk", "Dunkirk Green Hydrogen", "DH2 DPI"],
+  "status": "planned",
+  "status_detail": "400 MW to 1 GW green hydrogen project in Dunkirk, France, by DH2 Energy and partners. Targeting steel decarbonization supply to ArcelorMittal Dunkirk. Pre-FEED stage. Part of the Dunkirk ZIBAC low-carbon industrial zone.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "DH2 Dunkirk is a large-scale green hydrogen project in the Dunkirk industrial zone, France, developed by DH2 Energy (the same company behind HyDeal Espana). The project targets up to 1 GW of electrolysis capacity to supply green hydrogen primarily for steel decarbonization (ArcelorMittal Dunkirk) and other industrial users in the ZIBAC low-carbon industrial zone. The project benefits from Dunkirk's existing industrial hydrogen demand (the zone consumes approximately 185,000 tonnes of hydrogen per year, mostly fossil-derived) and its deep-water port infrastructure for potential hydrogen and ammonia export. Pre-FEED studies are underway with a target of supplying competitively priced green hydrogen to industrial users.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-005", "GA-PR-015", "GA-PR-029"]
+  },
+  "location": { "country": "France", "region": "Hauts-de-France", "city": "Dunkerque", "coordinates": { "lat": 51.04, "lon": 2.38 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 400, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 150000, "hydrogen_output_tons_per_year": 55000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv_wind_hybrid", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Dunkirk port industrial zone", "ppa_structure": "Dedicated renewable PPAs to be secured" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "steel", "secondary_applications": ["refinery", "chemicals"], "offtaker_name": "ArcelorMittal Dunkirk, other ZIBAC industrial cluster members", "offtake_agreement_type": "Memorandum of Understanding with ArcelorMittal" },
+  "stakeholders": { "developer": "DH2 Energy", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": null, "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "project_finance_debt"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2030", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-021", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "DH2 Energy plans multi-GW green hydrogen project in Dunkirk industrial zone", "author": "Hydrogen Insight / FuelCellChina", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

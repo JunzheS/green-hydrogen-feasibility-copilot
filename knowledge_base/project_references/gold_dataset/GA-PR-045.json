@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-045",
+  "project_name": "Engie Hydrogen — Hyport Project (France/Europe)",
+  "alias_names": ["Hyport Engie", "Engie Green H2 France"],
+  "status": "planned",
+  "status_detail": "Engie developing multi-site hydrogen projects in France. Includes projects in the Grandpuits area, Occitanie, and Dunkirk zones. Engie is one of the leading hydrogen project developers in France with a multi-GW pipeline. Targeting 2028-2030 COD. PEM and Alkaline technologies.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "Engie is one of France's leading green hydrogen project developers with a multi-GW project pipeline across French industrial zones. The company is developing electrolysis projects in the Occitanie, Grandpuits, and Dunkirk regions to supply green hydrogen for refinery, chemical, and industrial applications. Engie brings utility-scale renewable energy expertise and is developing integrated projects that combine solar/wind generation with electrolysis. Engie's hydrogen strategy targets 4 GW of installed capacity by 2030 globally. The company was also involved in the Masshylia project (GA-PR-002) with TotalEnergies and continues to develop projects across Europe.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-002", "GA-PR-028", "GA-PR-036"]
+  },
+  "location": { "country": "France", "region": "Multiple (Occitanie, Hauts-de-France)", "city": "Various", "coordinates": { "lat": 47.0, "lon": 2.0 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 100, "electrolyzer_capacity_mw_source": "estimated", "hydrogen_output_kg_per_day": 40000, "hydrogen_output_tons_per_year": 14600, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected with dedicated Engie solar PV assets", "ppa_structure": "Behind-the-meter solar PPAs from Engie renewable portfolio" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": ["industrial_heat"], "offtaker_name": "French industrial customers (refining, chemicals)", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Engie SA", "developer_type": "utility", "co_developers": [], "epc_contractor": null, "operations_operator": "Engie", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2022", "fid_date": null, "construction_start_date": null, "commissioning_date": "2029", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-035", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Engie hydrogen strategy and project pipeline — multi-GW target by 2030", "author": "Engie SA / Hydrogen Europe", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

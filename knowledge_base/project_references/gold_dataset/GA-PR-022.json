@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-022",
+  "project_name": "H2 Green Steel — Boden Project (Sweden)",
+  "alias_names": ["Boden Green Steel", "Stegra", "H2 Green Steel Boden"],
+  "status": "under_construction",
+  "status_detail": "Giga-scale green steel project in Boden, Sweden. 700 MW+ electrolysis (primarily Alkaline) for H2-DRI steelmaking. Groundbreaking 2023. Raised EUR 6.5B+ in debt and equity including EUR 3.5B project finance debt. Initial steel production target 2026, full capacity 2030. One of the world's first fossil-free steel plants at industrial scale.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "construction", "last_data_update": "2026-06-09",
+    "narrative_summary": "H2 Green Steel (rebranded as Stegra in 2024) is building a giga-scale green steel plant in Boden, Norrbotten, Sweden. The project integrates a 700+ MW alkaline electrolysis plant for hydrogen production with a direct reduced iron (DRI) shaft furnace and electric arc furnace for fossil-free steel production. The electrolyzer will use renewable hydro and wind power from northern Sweden. The company raised over EUR 6.5 billion in total financing, including EUR 3.5 billion in project finance debt — one of the largest green hydrogen/steel financings globally. Initial steel production is targeted for 2026 with full capacity of 2.5 million tonnes of fossil-free steel per year by 2030. This is the most advanced and largest green steel project globally.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-005", "GA-PR-015"]
+  },
+  "location": { "country": "Sweden", "region": "Norrbotten", "city": "Boden", "coordinates": { "lat": 65.82, "lon": 21.69 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Thyssenkrupp Nucera (pressured)", "electrolyzer_model": "Thyssenkrupp Nucera alkaline modules", "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 700, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 300000, "hydrogen_output_tons_per_year": 110000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "hydro", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Connected to Swedish grid with high share of hydro and wind power in northern Sweden", "ppa_structure": "Long-term renewable PPAs (hydro/wind)" },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "steel", "secondary_applications": [], "offtaker_name": "Automotive and construction industry offtakers (BMW, Mercedes-Benz, Scania, etc.)", "offtake_agreement_type": "Long-term offtake agreements with multiple automotive OEMs" },
+  "stakeholders": { "developer": "Stegra (formerly H2 Green Steel)", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "Stegra", "financial_advisors": ["Lazard", "ABG Sundal Collier"], "lenders": ["EIB", "multilateral_banks", "commercial_banks"] },
+  "financial": { "total_capex_eur": 6500000000, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": "official", "capex_year_reference": 2024, "funding_sources": ["equity", "project_finance_debt", "eib"], "total_investment_decision_date": "2023", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2021-03", "fid_date": "2023", "construction_start_date": "2023", "commissioning_date": "2026", "construction_duration_months": 36, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-012", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "H2 Green Steel raises EUR 6.5B+ and starts construction in Boden, Sweden — 2023/2024", "author": "Stegra (H2 Green Steel)", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

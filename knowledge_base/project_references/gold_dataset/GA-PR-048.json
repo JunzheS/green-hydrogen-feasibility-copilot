@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-048",
+  "project_name": "H2 Green Hydrogen (Belfort / McPhy — France)",
+  "alias_names": ["McPhy Belfort", "McPhy Gigafactory", "Belfort Electrolyzer Hub"],
+  "status": "operational",
+  "status_detail": "McPhy Energy's alkaline electrolyzer gigafactory in Belfort, France. Commissioned 2022. One of Europe's first large-scale electrolyzer manufacturing facilities. Annual capacity of 300 MW modular alkaline electrolyzers. Producing McLyzer alkaline stacks for industrial projects across Europe. Demonstrating French industrial capability in electrolyzer manufacturing.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "McPhy Energy's Belfort gigafactory in eastern France, commissioned in 2022, is one of Europe's first large-scale electrolyzer manufacturing facilities. The 300 MW annual capacity factory produces McPhy's McLyzer modular alkaline electrolysis stacks, which are deployed in industrial projects across Europe. The factory was supported by the French government's France 2030 plan and the EU IPCEI framework. McPhy's alkaline technology is based on pressurized alkaline electrolysis (up to 30 bar), combining the cost advantages of alkaline with pressurized output closer to PEM. The Belfort site demonstrates France's industrial capability in manufacturing electrolysis equipment at scale.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-009", "GA-PR-003"]
+  },
+  "location": { "country": "France", "region": "Bourgogne-Franche-Comte", "city": "Belfort", "coordinates": { "lat": 47.64, "lon": 6.85 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "McPhy Energy", "electrolyzer_model": "McLyzer (pressurized alkaline)", "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 300, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": null, "hydrogen_output_tons_per_year": null, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected manufacturing site in Belfort industrial zone", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": [], "offtaker_name": "European industrial hydrogen project developers (manufacturing capacity for external projects)", "offtake_agreement_type": null, "h2_storage_type": null, "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "McPhy Energy SA", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "McPhy Energy", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 80000000, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": "official", "capex_year_reference": 2022, "funding_sources": ["equity", "french_state_subsidy", "eu_ipcei"], "total_investment_decision_date": "2020", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2019", "fid_date": "2020", "construction_start_date": "2020", "commissioning_date": "2022", "construction_duration_months": 24, "current_operational_year": 4 },
+  "sources": [ { "source_id": "SRC-SP2-038", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "McPhy Belfort alkaline electrolyzer gigafactory commissioned 2022", "author": "McPhy Energy SA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

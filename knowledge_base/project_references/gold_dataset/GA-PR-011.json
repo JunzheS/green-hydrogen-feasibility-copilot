@@ -1,0 +1,22 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-011",
+  "project_name": "Lhyfe Bouin (Green Hydrogen Production Platform)",
+  "alias_names": ["Lhyfe Bouin H2", "Lhyfe Pays-de-la-Loire"],
+  "status": "operational", "status_detail": "World's first green hydrogen production site directly connected to a wind farm. Operational since September 2021. RFNBO certified in May 2025. Direct connection to adjacent wind turbines.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "Lhyfe Bouin is the world's first green hydrogen production site directly connected to a wind farm, located in Bouin, Pays-de-la-Loire, France. The 1 MW PEM electrolyzer produces up to 300 kg of green hydrogen per day from renewable wind energy. It entered service in September 2021 and received RFNBO certification in May 2025. An upgrade to 2.5 MW is planned. This pioneering project demonstrated the viability of direct wind-to-hydrogen coupling and served as the foundation for Lhyfe's subsequent expansion to 4 operational sites across France and Germany.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-012", "GA-PR-013"]
+  },
+  "location": { "country": "France", "region": "Pays-de-la-Loire", "city": "Bouin", "coordinates": { "lat": 46.97, "lon": -2.00 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "PEM (supplier details confidential)", "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 1, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 300, "hydrogen_output_tons_per_year": 110, "number_of_stacks": 1, "stack_capacity_mw": 1 },
+  "power": { "renewable_type": "onshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Direct connection to adjacent wind turbines", "ppa_structure": null },
+  "water": { "source_type": "freshwater", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "mobility", "secondary_applications": ["industrial_heat"], "offtaker_name": "Local industrial and mobility customers in Pays-de-la-Loire", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Lhyfe SAS", "developer_type": "startup", "co_developers": [], "epc_contractor": null, "operations_operator": "Lhyfe SAS", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2021, "funding_sources": ["equity", "french_state_subsidy"], "total_investment_decision_date": "2020", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2020", "fid_date": "2020", "construction_start_date": "2020", "commissioning_date": "2021-09", "construction_duration_months": 12, "current_operational_year": 4 },
+  "sources": [ { "source_id": "SRC-SP2-001", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "Lhyfe — OECD/CEFIM Green Hydrogen Case Study 2024", "author": "OECD", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

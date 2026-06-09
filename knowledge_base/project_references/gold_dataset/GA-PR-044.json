@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-044",
+  "project_name": "RWE Green Hydrogen / Lingen Pilot (Germany)",
+  "alias_names": ["RWE Lingen Pilot", "RWE 14 MW Pilot", "Emsland H2"],
+  "status": "operational",
+  "status_detail": "14 MW pilot electrolysis at RWE Lingen: 10 MW Sunfire alkaline + 4 MW ITM Power PEM. Commissioned August 2024. First operational multi-MW multi-technology electrolysis pilot in Germany. Producing green hydrogen for gas turbine blending and industrial use. Technology precursor to the 300 MW GET H2 Nukleus project.",
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "RWE's 14 MW pilot electrolysis plant at the Emsland power plant site in Lingen, Germany, commissioned in August 2024, is a critical technology demonstration combining 10 MW Sunfire alkaline and 4 MW ITM Power PEM electrolysis in a single facility. This is Germany's first operational multi-MW multi-technology electrolysis plant. The pilot produces green hydrogen used for blending in RWE's Emsland gas turbine (Unit D) and for industrial customers. The plant serves as the technology precursor to the full 300 MW GET H2 Nukleus project (GA-PR-020) and provides operational data that directly informs the design of the three larger 100 MW units planned for 2025-2027.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-020"]
+  },
+  "location": { "country": "Germany", "region": "Lower Saxony", "city": "Lingen (Ems)", "coordinates": { "lat": 52.52, "lon": 7.33 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM+Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Sunfire GmbH (Alkaline) / ITM Power (PEM)", "electrolyzer_model": "Sunfire alkaline module / ITM Power TRIDENT", "technology_card_ref": null },
+  "capacity": { "electrolyzer_capacity_mw": 14, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 6500, "hydrogen_output_tons_per_year": 2370, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Connected to German grid at Emsland power plant site", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility"], "offtaker_name": "RWE Emsland gas turbine (blending), local industrial customers", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "RWE Generation SE", "developer_type": "utility", "co_developers": ["Sunfire GmbH", "ITM Power"], "epc_contractor": "Linde Engineering", "operations_operator": "RWE", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2024, "funding_sources": ["equity", "german_federal"], "total_investment_decision_date": "2022", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2022", "fid_date": "2022", "construction_start_date": "2023", "commissioning_date": "2024-08", "construction_duration_months": 18, "current_operational_year": 1 },
+  "sources": [ { "source_id": "SRC-SP2-034", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "RWE commissions 14 MW multi-technology electrolysis pilot in Lingen — Aug 2024", "author": "RWE Generation SE", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

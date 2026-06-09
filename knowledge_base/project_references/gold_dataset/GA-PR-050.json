@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-050",
+  "project_name": "Territoires d'Industrie / French Decentralized H2 (France)",
+  "alias_names": ["Territoires d'Industrie H2", "French Regional H2", "Decentralized French H2"],
+  "status": "operational",
+  "status_detail": "Coordination of multiple small-scale (0.5-5 MW) decentralized green hydrogen production facilities across French industrial territories. Supported by the 'Territoires d'Industrie' French government program. Includes sites in Auvergne-Rhone-Alpes, Grand Est, and Hauts-de-France. PEM electrolysis serving local industrial and mobility needs.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "The French 'Territoires d'Industrie' program has supported the deployment of small-to-medium-scale (0.5-5 MW) decentralized green hydrogen production facilities across multiple French industrial regions, including Auvergne-Rhone-Alpes, Grand Est, and Hauts-de-France. These facilities use PEM electrolysis to produce green hydrogen for local industrial and mobility applications, demonstrating the viability of distributed hydrogen production models. The program, backed by the French government's 'France 2030' investment plan, has created a network of operational hydrogen production sites that serve as a model for decentralized industrial decarbonization. These facilities complement France's larger centralized projects like Normand'Hy (GA-PR-001) and H2V Dunkerque (GA-PR-015).",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-001", "GA-PR-015", "GA-PR-011"]
+  },
+  "location": { "country": "France", "region": "Multiple regions", "city": "Various", "coordinates": { "lat": 46.5, "lon": 3.0 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Multiple French OEMs", "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 15, "electrolyzer_capacity_mw_source": "estimated", "hydrogen_output_kg_per_day": 6000, "hydrogen_output_tons_per_year": 2190, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "grid_mix", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Multiple grid connections at diverse French industrial territories", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility"], "offtaker_name": "Local industrial customers and hydrogen mobility networks across multiple French regions", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Multiple (coordinated by French government)", "developer_type": "consortium", "co_developers": [], "epc_contractor": null, "operations_operator": "Various local operators", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2024, "funding_sources": ["equity", "french_state_subsidy"], "total_investment_decision_date": "2022", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2021", "fid_date": "2022", "construction_start_date": "2022", "commissioning_date": "2024", "current_operational_year": 2 },
+  "sources": [ { "source_id": "SRC-SP2-040", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "France's decentralized hydrogen strategy — Territoires d'Industrie program", "author": "French Ministry of Industry / Hydrogen Europe", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

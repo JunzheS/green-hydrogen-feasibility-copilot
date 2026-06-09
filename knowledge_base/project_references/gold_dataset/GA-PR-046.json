@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-046",
+  "project_name": "H2 Magallanes — Green Methanol (Spain/Chile partnership)",
+  "alias_names": ["H2 Magallanes", "Magallanes Green Methanol"],
+  "status": "planned",
+  "status_detail": "Large-scale green hydrogen project in Magallanes, southern Chile, producing e-methanol for European markets using Spanish technology partners. Leverages world-class wind resources. 1 GW+ electrolysis planned. Export-focused.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "H2 Magallanes is a large-scale green hydrogen project in the Magallanes region of southern Chile, one of the world's best wind resource areas. The project is a partnership between Spanish and Chilean developers, targeting over 1 GW of electrolysis capacity producing green hydrogen that will be converted to e-methanol for export to European and Asian markets. The project benefits from Chile's National Green Hydrogen Strategy, which targets the country becoming one of the world's lowest-cost green hydrogen producers by 2030. With wind capacity factors exceeding 50% in the Magallanes region, the project could achieve some of the lowest green hydrogen production costs globally.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-005", "GA-PR-016"]
+  },
+  "location": { "country": "Chile", "region": "Magallanes", "city": "Punta Arenas area", "coordinates": { "lat": -53.0, "lon": -71.0 }, "coordinates_verified": false, "region_classification": "latin_america" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 1000, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 400000, "hydrogen_output_tons_per_year": 146000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "onshore_wind", "renewable_capacity_mw": 2500, "grid_connection": false, "grid_connection_detail": "Off-grid dedicated wind farm in Magallanes region", "ppa_structure": "Dedicated wind farm (behind-the-meter)" },
+  "water": { "source_type": "seawater_desalination", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "methanol", "secondary_applications": ["export"], "offtaker_name": "European and Asian shipping fuel markets (e-methanol)", "offtake_agreement_type": null, "h2_storage_type": "ammonia", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "International consortium", "developer_type": "consortium", "co_developers": [], "epc_contractor": null, "operations_operator": null, "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "project_finance_debt"], "total_investment_decision_date": null, "lcoh_eur_per_kg": 1.5 },
+  "timeline": { "announcement_date": "2022", "fid_date": null, "construction_start_date": null, "commissioning_date": "2030", "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-036", "source_type": "industry_report", "source_quality_level": "B", "source_reliability_score": 4, "title": "H2 Magallanes — Chile green hydrogen project for e-methanol export", "author": "Chilean Hydrogen Association / IEA", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

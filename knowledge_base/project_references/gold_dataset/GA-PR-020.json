@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-020",
+  "project_name": "GET H2 Nukleus — RWE Lingen 300 MW",
+  "alias_names": ["RWE GET H2 Nukleus", "Lingen Electrolyzer", "RWE Lingen H2"],
+  "status": "under_construction",
+  "status_detail": "300 MW electrolysis hub at RWE's Emsland gas-fired power plant site in Lingen, Germany. IPCEI-approved. EUR 492M funding from German federal government and State of Lower Saxony (July 2024). 14 MW pilot (10 MW Sunfire alkaline + 4 MW Linde/ITM PEM) commissioned August 2024. 100 MW Linde/ITM PEM unit targeting 2025. Second 100 MW PEM 2026. Third 100 MW Sunfire alkaline 2027. Connecting to the first regulated open-access hydrogen grid in Germany (130 km Lingen-Gelsenkirchen pipeline).",
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed", "project_phase_at_collection": "construction", "last_data_update": "2026-06-09",
+    "narrative_summary": "GET H2 Nukleus is RWE's 300 MW green hydrogen flagship at the Emsland power plant site in Lingen, Germany. The project was approved as an IPCEI in February 2024 with EUR 492 million in German federal and state funding. A 14 MW pilot plant (10 MW Sunfire alkaline + 4 MW Linde/ITM PEM) has been operational since August 2024. Three large-scale units follow: 100 MW PEM (Linde, 2025), 100 MW PEM (Linde, 2026), and 100 MW alkaline (Sunfire, 2027). The hydrogen will feed into a 130 km dedicated hydrogen pipeline network operated by Nowega and OGE, connecting Lingen to Gelsenkirchen. By 2027, the plant will produce 5.6 tonnes of green hydrogen per hour, powered primarily by offshore wind. This is Germany's largest electrolysis project and a key component of the European Hydrogen Backbone.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-004", "GA-PR-008"]
+  },
+  "location": { "country": "Germany", "region": "Lower Saxony", "city": "Lingen (Ems)", "coordinates": { "lat": 52.52, "lon": 7.33 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM+Alkaline", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Linde Engineering/ITM Power (PEM), Sunfire GmbH (Alkaline)", "electrolyzer_model": "ITM Power TRIDENT (PEM), Sunfire alkaline modules", "technology_card_ref": null },
+  "capacity": { "electrolyzer_capacity_mw": 300, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 134400, "hydrogen_output_tons_per_year": 49000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "offshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Connected to German grid at Emsland power plant site. Primarily powered by North Sea offshore wind.", "ppa_structure": "Offshore wind PPAs via RWE renewables portfolio" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "industrial_heat", "secondary_applications": ["mobility", "export"], "offtaker_name": "Industrial customers in Lower Saxony and North Rhine-Westphalia via Nowega/OGE hydrogen pipeline", "offtake_agreement_type": null, "h2_storage_type": "pipeline", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "RWE Generation SE", "developer_type": "utility", "co_developers": ["Linde Engineering", "Sunfire GmbH", "ITM Power", "Nowega", "OGE"], "epc_contractor": "Linde Engineering (PEM units), Bilfinger (Alkaline unit)", "operations_operator": "RWE", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 490000000, "capex_per_kw_eur": 1633, "capex_per_kw_method": "calculated_total_div_mw", "capex_confidence": "official", "capex_year_reference": 2024, "funding_sources": ["equity", "german_federal", "lower_saxony_state", "eu_ipcei"], "total_investment_decision_date": "2024-07", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023-01", "fid_date": "2024-07", "construction_start_date": "2023", "commissioning_date": "2027", "construction_duration_months": 48, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-010", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "RWE orders two 100 MW electrolysis plants for GET H2 in Lingen — Jan 2023", "author": "RWE Generation SE", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

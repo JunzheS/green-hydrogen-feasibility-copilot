@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-023",
+  "project_name": "MadoquaPower2X (Portugal)",
+  "alias_names": ["Madoqua Power2X", "Madoqua Sines H2"],
+  "status": "planned",
+  "status_detail": "500 MW alkaline electrolysis project at Sines, Portugal. Producing green hydrogen and ammonia for European markets. Developed by Madoqua (Ireland) with partners. Pre-FEED stage. Targeting FID 2026-2027 and COD 2030. Planned as one of Europe's largest dedicated green hydrogen projects.",
+  "data_management": {
+    "data_completeness_tier": "tier_1_basic", "project_phase_at_collection": "pre_fid", "last_data_update": "2026-06-09",
+    "narrative_summary": "MadoquaPower2X is a 500 MW alkaline electrolysis project proposed for the Sines industrial zone in Portugal. The project aims to produce green hydrogen and convert it to green ammonia for export to European markets. It is being developed by Madoqua (Irish developer) in partnership with local entities and was awarded a strategic project status by the Portuguese government. The project benefits from Sines' deep-water port infrastructure, existing industrial gas pipeline networks, and Portugal's abundant solar and wind resources. Target commercial operation date is 2030, subject to FID in 2026-2027. The project is part of Portugal's National Hydrogen Strategy targeting 2.5 GW of electrolysis capacity by 2030.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-010", "GA-PR-026"]
+  },
+  "location": { "country": "Portugal", "region": "Alentejo", "city": "Sines", "coordinates": { "lat": 37.95, "lon": -8.87 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "Alkaline", "technology_selection_status": "announced", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-ALK-001" },
+  "capacity": { "electrolyzer_capacity_mw": 500, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 200000, "hydrogen_output_tons_per_year": 73000, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv_wind_hybrid", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected at Sines industrial port zone with dedicated renewable PPAs", "ppa_structure": "Dedicated renewable PPA portfolio" },
+  "water": { "source_type": "seawater_desalination", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "ammonia", "secondary_applications": ["export"], "offtaker_name": "European ammonia and industrial customers (export via Port of Sines)", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Madoqua Power2X Ltd", "developer_type": "consortium", "co_developers": ["Madoqua", "local partners"], "epc_contractor": null, "operations_operator": "Madoqua Power2X", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2025, "funding_sources": ["equity", "project_finance_debt"], "total_investment_decision_date": null, "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2023", "fid_date": null, "construction_start_date": null, "commissioning_date": "2030", "construction_duration_months": null, "current_operational_year": null },
+  "sources": [ { "source_id": "SRC-SP2-013", "source_type": "news_article", "source_quality_level": "C", "source_reliability_score": 3, "title": "MadoquaPower2X 500 MW green hydrogen and ammonia project in Sines, Portugal", "author": "Industry media", "retrieval_date": "2026-06-01", "confidence": "medium" } ]
+}

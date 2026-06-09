@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-049",
+  "project_name": "Greenhys — Green Hydrogen for Industry (Spain)",
+  "alias_names": ["Greenhys", "Greenhys Spain", "Reficart H2"],
+  "status": "operational",
+  "status_detail": "Greenhys is a green hydrogen production and supply project in the Cartagena industrial area, Spain. PEM electrolysis. 10 MW capacity. Operational since 2023. Supplying green hydrogen to the Refinería de Cartagena (Repsol) and local chemical industry. Part of the Spanish MOVES Singular Project program.",
+  "data_management": {
+    "data_completeness_tier": "tier_2_intermediate", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "Greenhys is a 10 MW PEM green hydrogen project in the Cartagena industrial area, Spain, supplying green hydrogen to the Repsol Cartagena refinery and local chemical industries. Operational since 2023, the project was developed through a partnership between Repsol, Enagas, and other industrial partners. It is one of the first operational green hydrogen projects supplying a Spanish refinery at meaningful scale. The project was supported by the Spanish MOVES Singular Project program and provides a reference for refinery decarbonization in the Spanish context, complementing the Puertollano project (GA-PR-006) focused on ammonia.",
+    "is_first_of_a_kind": false, "related_project_ids": ["GA-PR-006", "GA-PR-005"]
+  },
+  "location": { "country": "Spain", "region": "Region of Murcia", "city": "Cartagena", "coordinates": { "lat": 37.60, "lon": -0.98 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": null, "electrolyzer_model": null, "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 10, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 4000, "hydrogen_output_tons_per_year": 1460, "number_of_stacks": null, "stack_capacity_mw": null },
+  "power": { "renewable_type": "solar_pv", "renewable_capacity_mw": 30, "grid_connection": true, "grid_connection_detail": "Grid-connected with dedicated solar PV PPA at Cartagena industrial zone", "ppa_structure": "Solar PV PPA" },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "refinery", "secondary_applications": ["chemicals"], "offtaker_name": "Repsol Cartagena Refinery, local chemical industry", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": null },
+  "stakeholders": { "developer": "Repsol / Enagas / Industrial consortium", "developer_type": "consortium", "co_developers": ["Repsol", "Enagas"], "epc_contractor": null, "operations_operator": null, "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": null, "capex_per_kw_eur": null, "capex_per_kw_method": null, "capex_confidence": null, "capex_year_reference": 2023, "funding_sources": ["equity", "spanish_government"], "total_investment_decision_date": "2021", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2020", "fid_date": "2021", "construction_start_date": "2021", "commissioning_date": "2023", "construction_duration_months": 24, "current_operational_year": 3 },
+  "sources": [ { "source_id": "SRC-SP2-039", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 4, "title": "Repsol/Enagas Greenhys 10 MW green hydrogen project operational in Cartagena", "author": "Repsol / Enagas", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}

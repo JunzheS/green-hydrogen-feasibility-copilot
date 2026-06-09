@@ -1,0 +1,23 @@
+{
+  "_schema_version": "1.1.0", "_gold_dataset_version": "1.0.0", "_entry_date": "2026-06-09", "_review_status": "reviewed",
+  "project_id": "GA-PR-024",
+  "project_name": "Energiepark Mainz (Germany)",
+  "alias_names": ["Mainz Energy Park", "Mainz Hydrogen Park", "Linde/Energiepark Mainz"],
+  "status": "operational",
+  "status_detail": "6 MW PEM electrolyzer at Mainz-Hechtsheim. Operational since 2016. One of the world's first multi-MW PEM electrolysis plants. Built by Linde, Siemens, and Mainz municipal utilities. Direct wind-to-hydrogen coupling. Includes hydrogen storage and refueling station. Research focus on grid balancing and renewable integration.",
+  "data_management": {
+    "data_completeness_tier": "tier_3_detailed", "project_phase_at_collection": "operational", "last_data_update": "2026-06-09",
+    "narrative_summary": "Energiepark Mainz is a pioneering 6 MW PEM electrolysis facility in Mainz-Hechtsheim, Germany, commissioned in 2016. Built through a collaboration between Linde, Siemens Energy, and Mainzer Stadtwerke (municipal utilities), it was one of the world's first multi-MW PEM electrolysis plants and demonstrated direct wind-to-hydrogen coupling using three Siemens Silyzer 200 PEM stacks. The plant includes compressed hydrogen storage and a refueling station for mobility applications. It was used extensively for research into grid balancing services, demonstrating that PEM electrolysis can provide primary and secondary frequency regulation to the German electricity grid. The project significantly advanced the technology readiness of multi-MW PEM electrolysis.",
+    "is_first_of_a_kind": true, "related_project_ids": ["GA-PR-019", "GA-PR-004"]
+  },
+  "location": { "country": "Germany", "region": "Rhineland-Palatinate", "city": "Mainz", "coordinates": { "lat": 49.99, "lon": 8.27 }, "coordinates_verified": false, "region_classification": "europe" },
+  "technology": { "type": "PEM", "technology_selection_status": "confirmed", "electrolyzer_manufacturer": "Siemens Energy", "electrolyzer_model": "Silyzer 200 (3 units of 2 MW)", "technology_card_ref": "TC-PEM-001" },
+  "capacity": { "electrolyzer_capacity_mw": 6, "electrolyzer_capacity_mw_source": "stated", "hydrogen_output_kg_per_day": 1800, "hydrogen_output_tons_per_year": 650, "number_of_stacks": 36, "stack_capacity_mw": null },
+  "power": { "renewable_type": "onshore_wind", "renewable_capacity_mw": null, "grid_connection": true, "grid_connection_detail": "Grid-connected with dedicated onshore wind turbines. Demonstrated primary and secondary frequency regulation services.", "ppa_structure": null },
+  "water": { "source_type": "municipal", "consumption_cubic_m_per_hour": null, "water_treatment_provider": null },
+  "offtake": { "primary_application": "mobility", "secondary_applications": ["industrial_heat", "grid_injection"], "offtaker_name": "Local mobility and industrial customers in Mainz region", "offtake_agreement_type": null, "h2_storage_type": "compressed_gas", "h2_storage_capacity_kg": 200 },
+  "stakeholders": { "developer": "Mainzer Stadtwerke / Linde / Siemens (consortium)", "developer_type": "consortium", "co_developers": ["Linde", "Siemens Energy", "Mainzer Stadtwerke"], "epc_contractor": "Linde Engineering", "operations_operator": "Mainzer Stadtwerke", "financial_advisors": [], "lenders": [] },
+  "financial": { "total_capex_eur": 17000000, "capex_per_kw_eur": 2833, "capex_per_kw_method": "media_report", "capex_confidence": "media_report", "capex_year_reference": 2016, "funding_sources": ["equity", "german_federal"], "total_investment_decision_date": "2014", "lcoh_eur_per_kg": null },
+  "timeline": { "announcement_date": "2013", "fid_date": "2014", "construction_start_date": "2014", "commissioning_date": "2016-12", "construction_duration_months": 24, "current_operational_year": 9 },
+  "sources": [ { "source_id": "SRC-SP2-014", "source_type": "press_release", "source_quality_level": "A", "source_reliability_score": 5, "title": "Energiepark Mainz — world's first multi-MW PEM wind-hydrogen plant commissioned 2016", "author": "Linde / Siemens Energy", "retrieval_date": "2026-06-01", "confidence": "high" } ]
+}
