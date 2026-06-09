@@ -13,7 +13,9 @@ with st.sidebar:
         ("Reference_Projects", "References"), ("Technology_Assessment", "Technology"),
         ("Risk_Assessment", "Risks"), ("CAPEX_LCOH", "CAPEX & LCOH"),
         ("Technology_Comparison", "Tech Comparison"), ("Agent_Trace", "Agent Trace"),
-        ("Assessment_History", "History"),
+        ("OEM_Intelligence", "OEM Intelligence"), ("Developer_Intelligence", "Developer Intelligence"),
+        ("Contradiction_Detection", "Agent Collaboration"), ("Source_Transparency", "Source Quality"),
+        ("Why_This_Matters", "Why This Matters"), ("Assessment_History", "History"),
     ]
     for href, label in pages:
         st.markdown(f"<a href='/{href}' target='_self'>- {label}</a>", unsafe_allow_html=True)

@@ -25,6 +25,7 @@ def load_project(filepath: Path) -> ProjectReference:
     cap = raw.get("capacity", {})
     offtake = raw.get("offtake", {})
     fin = raw.get("financial", {})
+    stakeholder = raw.get("stakeholders", {})
     dm = raw.get("data_management", {})
 
     return ProjectReference(
@@ -42,6 +43,8 @@ def load_project(filepath: Path) -> ProjectReference:
         narrative_summary=dm.get("narrative_summary", ""),
         is_first_of_a_kind=dm.get("is_first_of_a_kind", False),
         data_completeness_tier=dm.get("data_completeness_tier", ""),
+        developer=stakeholder.get("developer", ""),
+        oem=tech.get("electrolyzer_manufacturer", ""),
     )
 
 

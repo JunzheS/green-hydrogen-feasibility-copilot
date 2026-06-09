@@ -71,6 +71,8 @@ class ProjectReference:
     narrative_summary: str = ""
     is_first_of_a_kind: bool = False
     data_completeness_tier: str = ""
+    developer: str = ""
+    oem: str = ""
 
 
 @dataclass
