@@ -42,7 +42,7 @@ for label, conf_a, conf_b, key_a, key_b in pairs:
     pct = f"{alignment*100:.0f}%" if alignment > 0 else "N/A"
     color = "#2E7D32" if alignment >= 0.6 else "#F9A825" if alignment >= 0.4 else "#C62828"
     st.markdown(f"""
-    <div style="border:1px solid {color};border-radius:8px;padding:10px 16px;margin:6px 0;background:#FAFAFA;">
+    <div style="border:1px solid {color};border-radius:8px;padding:10px 16px;margin:6px 0;background:#FFFFFF;">
     <div style="display:flex;justify-content:space-between;">
     <strong>{label}</strong>
     <span style="color:{color};font-weight:700;">{pct} alignment</span>

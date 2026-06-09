@@ -52,8 +52,8 @@ st.markdown(f"""
 
 def step_card(step_num: str, title: str, color: str, decision: str, evidence: str, why: str):
     st.markdown(f"""
-<div style="border-left:4px solid {color};padding:8px 16px;margin:8px 0;background:#FAFAFA;border-radius:0 8px 8px 0;">
-<small style="color:#999;">Step {step_num}</small>
+<div style="border-left:4px solid {color};padding:8px 16px;margin:8px 0;background:#FFFFFF;border-radius:0 8px 8px 0;">
+<small style="color:#558B2F;">Step {step_num}</small>
 <h4 style="margin:2px 0;color:{color};">{title}</h4>
 <p style="margin:4px 0;"><strong>Decision:</strong> {decision}</p>
 <p style="margin:2px 0;"><strong>Why:</strong> {why}</p>

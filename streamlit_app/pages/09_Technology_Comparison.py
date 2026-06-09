@@ -37,9 +37,9 @@ cheaper_lcoh = f"EUR {abs(d_lcoh):.2f}/kg less" if d_lcoh != 0 else "comparable"
 
 # Recommendation banner
 st.markdown(f"""
-<div style="background:#E8F5E9;border:2px solid #2E7D32;border-radius:10px;padding:16px;margin-bottom:16px;">
+<div style="background:#E8F5E9;border:2px solid #2E7D32;border-radius:8px;padding:16px;margin-bottom:16px;">
 <p style="margin:0;color:#1B5E20;font-weight:600;font-size:1.1rem;">Comparison Summary</p>
-<p style="margin:4px 0 0;color:#37474F;"><strong>{cheaper_tech}</strong> has {cheaper_capex} in CAPEX and {cheaper_lcoh} in LCOH for this profile. Selection depends on project-specific dynamic response, purity, and footprint requirements.</p>
+<p style="margin:4px 0 0;color:#1B5E20;"><strong>{cheaper_tech}</strong> has {cheaper_capex} in CAPEX and {cheaper_lcoh} in LCOH for this profile. Selection depends on project-specific dynamic response, purity, and footprint requirements.</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -47,7 +47,7 @@ st.markdown(f"""
 def tech_card(name, data, color):
     suit = {"high":"✓ High","medium":"⚠ Medium","low":"✗ Low"}.get(data.get("suitability",""),"-")
     st.markdown(f"""
-<div style="border:1px solid #C8E6C9;border-radius:10px;padding:16px;margin:8px 0;background:#F9FBE7;">
+<div style="border:1px solid #C8E6C9;border-radius:8px;padding:16px;margin:8px 0;background:#FFFFFF;">
 <div style="background:{color};padding:8px 12px;border-radius:6px;color:white;margin:-16px -16px 12px -16px;">
 <strong style="font-size:1.1rem;">{name}</strong></div>
 <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">

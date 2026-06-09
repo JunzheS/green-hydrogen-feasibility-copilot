@@ -62,4 +62,4 @@ with col_run:
             st.session_state["query"] = query
             st.session_state["current_assessment_id"] = assessment_id
         st.success(f"Assessment complete -- {assessment_id}")
-        st.rerun()
+        st.switch_page("pages/02_Assessment_Report.py")

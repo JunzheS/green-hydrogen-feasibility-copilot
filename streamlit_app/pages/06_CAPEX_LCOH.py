@@ -92,6 +92,9 @@ st.caption("LCOH is CLASS D (preliminary); OPEX Library not yet populated.")
 
 st.divider()
 st.markdown("""<div style="display:flex;gap:16px;font-size:0.9rem;">
-<a href='/Assessment_Report' target='_self' style="color:#2E7D32;">← Assessment Report</a>
-<a href='/Reference_Projects' target='_self' style="color:#2E7D32;">Reference Projects →</a>
-</div>""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+st.page_link("pages/02_Assessment_Report.py", label="← Assessment Report")
+st.markdown("""<span style="color:#558B2F;">|</span>
+""", unsafe_allow_html=True)
+st.page_link("pages/03_Reference_Projects.py", label="Reference Projects →")
+st.markdown("""</div>""", unsafe_allow_html=True)

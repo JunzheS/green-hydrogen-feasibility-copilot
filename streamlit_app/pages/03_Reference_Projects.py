@@ -39,7 +39,7 @@ if ranked:
 
 st.divider()
 
-st.subheader("Why Each Project Was Selected")
+st.markdown("#### Why Each Project Was Selected")
 for p in ranked:
     with st.container(border=True):
         score = p.get("composite_score", 0)

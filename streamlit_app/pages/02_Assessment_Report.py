@@ -144,20 +144,19 @@ with col_e:
     html = generate_html_report(q, report)
     st.download_button("Export PDF Report", html, file_name=f"h2_assessment_{st.session_state.get('current_assessment_id','report')}.html", mime="text/html", type="primary")
     st.caption("Open in browser, Ctrl+P / Cmd+P to print to PDF.")
-# ─── EXPERT DRILL-DOWN (progressive disclosure) ───
+# ─── EXPERT DRILL-DOWN ───
 with st.expander("Expert Analysis Tools"):
-    st.markdown("""
-    <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <a href='/Reference_Projects' target='_self' style="background:#E8F5E9;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">Reference Projects</a>
-    <a href='/Technology_Assessment' target='_self' style="background:#E8F5E9;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">Technology Assessment</a>
-    <a href='/Technology_Comparison' target='_self' style="background:#E8F5E9;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">Tech Comparison</a>
-    <a href='/Agent_Trace' target='_self' style="background:#E8F5E9;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">Agent Trace</a>
-    <a href='/OEM_Intelligence' target='_self' style="background:#FFFDE7;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">OEM Intelligence</a>
-    <a href='/Developer_Intelligence' target='_self' style="background:#FFFDE7;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">Developer Intelligence</a>
-    <a href='/Source_Transparency' target='_self' style="background:#FFFDE7;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">Source Transparency</a>
-    <a href='/Contradiction_Detection' target='_self' style="background:#FFFDE7;padding:8px 16px;border-radius:6px;color:#1B5E20;text-decoration:none;font-weight:500;">Agent Collaboration</a>
-    </div>
-    """, unsafe_allow_html=True)
-    st.caption("These tools are hidden from the sidebar to reduce complexity. Access them here when needed.")
+    c1, c2 = st.columns(2)
+    with c1:
+        st.page_link("pages/03_Reference_Projects.py", label="Reference Projects")
+        st.page_link("pages/04_Technology_Assessment.py", label="Technology Assessment")
+        st.page_link("pages/09_Technology_Comparison.py", label="Technology Comparison")
+        st.page_link("pages/07_Agent_Trace.py", label="Agent Trace")
+    with c2:
+        st.page_link("pages/30_OEM_Intelligence.py", label="OEM Intelligence")
+        st.page_link("pages/31_Developer_Intelligence.py", label="Developer Intelligence")
+        st.page_link("pages/33_Source_Transparency.py", label="Source Transparency")
+        st.page_link("pages/32_Contradiction_Detection.py", label="Agent Collaboration")
+    st.caption("Expert analysis tools for deeper investigation. Also available in the sidebar under Expert Results.")
 
 st.caption(f"Assessment {st.session_state.get('current_assessment_id','-')} | Copilot v1.0")

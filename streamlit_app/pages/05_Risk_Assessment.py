@@ -114,6 +114,9 @@ for r in (consequences if consequences else top[:10]):
 
 st.divider()
 st.markdown("""<div style="display:flex;gap:16px;font-size:0.9rem;">
-<a href='/Assessment_Report' target='_self' style="color:#2E7D32;">← Assessment Report</a>
-<a href='/Contradiction_Detection' target='_self' style="color:#2E7D32;">Agent Collaboration Analysis →</a>
-</div>""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+st.page_link("pages/02_Assessment_Report.py", label="← Assessment Report")
+st.markdown("""<span style="color:#558B2F;">|</span>
+""", unsafe_allow_html=True)
+st.page_link("pages/32_Contradiction_Detection.py", label="Agent Collaboration Analysis →")
+st.markdown("""</div>""", unsafe_allow_html=True)
