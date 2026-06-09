@@ -3,6 +3,19 @@ import streamlit as st
 
 def apply_sidebar():
     """Shared sidebar navigation for all pages (replaces Streamlit auto-nav)."""
+    # ── Session recovery: restore assessment if lost on page navigation ──
+    if not st.session_state.get("report"):
+        history = st.session_state.get("history") or []
+        if not history:
+            from utils.session import load_history  # type: ignore
+            history = load_history()
+        if history:
+            latest = history[0]
+            st.session_state["report"] = latest.get("report")
+            st.session_state["query"] = latest.get("query")
+            st.session_state["assessment_complete"] = True
+            st.session_state["current_assessment_id"] = latest.get("assessment_id")
+
     st.sidebar.markdown("### H2 Feasibility Copilot")
     st.sidebar.markdown("Multi-Agent Decision Platform")
     st.sidebar.divider()
