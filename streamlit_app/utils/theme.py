@@ -4,7 +4,10 @@ import streamlit as st
 
 def apply_sidebar():
     """Shared sidebar navigation for all pages — SPA navigation via st.page_link."""
-    # ── Session recovery: restore assessment if lost on page navigation ──
+    # ── Session init + recovery: app.py is NOT executed on st.page_link nav, so
+    #    init_session() must run here to ensure session state is always populated.
+    from utils.session import init_session  # type: ignore
+    init_session()
     if not st.session_state.get("report"):
         history = st.session_state.get("history") or []
         if not history:
