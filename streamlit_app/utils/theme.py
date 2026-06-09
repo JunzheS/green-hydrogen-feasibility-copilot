@@ -45,17 +45,22 @@ def _page_is_locked(path_key: str) -> bool:
     return not bool(st.session_state.get("report"))
 
 
-def _sidebar_link(label: str, path: str, locked: bool = False):
-    """Render a single sidebar navigation item — active, locked, or normal."""
+def _sidebar_link(label: str, path: str, locked: bool = False, *, _in_expander: bool = False):
+    """Render a single sidebar navigation item — active, locked, or normal.
+
+    _in_expander=True means this is called inside st.sidebar.expander() context
+    and should use plain st.page_link / st.markdown (not st.sidebar.*) so the
+    elements render inside the expander rather than escaping to sidebar root.
+    """
     if locked:
-        st.sidebar.markdown(
+        (st.markdown if _in_expander else st.sidebar.markdown)(
             f"<span style='color:{DISABLED_GREY};padding:4px 0 4px 12px;"
             f"display:block;font-size:0.95rem;border-left:3px solid transparent;"
             f"cursor:not-allowed;opacity:0.55;'>{label} 🗝</span>",
             unsafe_allow_html=True,
         )
     else:
-        st.sidebar.page_link(path, label=label)
+        (st.page_link if _in_expander else st.sidebar.page_link)(path, label=label)
 
 
 def apply_sidebar():
@@ -114,13 +119,13 @@ def apply_sidebar():
 
     # ── TIER 3: EXPERT RESULTS (collapsible) ──
     with st.sidebar.expander("Expert Results", expanded=False):
-        _sidebar_link("Technology Assessment", "pages/04_Technology_Assessment.py", locked=not has_report)
-        _sidebar_link("Technology Comparison", "pages/09_Technology_Comparison.py", locked=not has_report)
-        _sidebar_link("Agent Trace", "pages/07_Agent_Trace.py", locked=not has_report)
-        _sidebar_link("Agent Collaboration", "pages/32_Contradiction_Detection.py", locked=not has_report)
-        _sidebar_link("OEM Intelligence", "pages/30_OEM_Intelligence.py")
-        _sidebar_link("Developer Intelligence", "pages/31_Developer_Intelligence.py")
-        _sidebar_link("Source Transparency", "pages/33_Source_Transparency.py", locked=not has_report)
+        _sidebar_link("Technology Assessment", "pages/04_Technology_Assessment.py", locked=not has_report, _in_expander=True)
+        _sidebar_link("Technology Comparison", "pages/09_Technology_Comparison.py", locked=not has_report, _in_expander=True)
+        _sidebar_link("Agent Trace", "pages/07_Agent_Trace.py", locked=not has_report, _in_expander=True)
+        _sidebar_link("Agent Collaboration", "pages/32_Contradiction_Detection.py", locked=not has_report, _in_expander=True)
+        _sidebar_link("OEM Intelligence", "pages/30_OEM_Intelligence.py", _in_expander=True)
+        _sidebar_link("Developer Intelligence", "pages/31_Developer_Intelligence.py", _in_expander=True)
+        _sidebar_link("Source Transparency", "pages/33_Source_Transparency.py", locked=not has_report, _in_expander=True)
 
     st.sidebar.divider()
 
