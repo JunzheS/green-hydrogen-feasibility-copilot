@@ -1,7 +1,7 @@
 """H2 Feasibility Copilot — Progressive disclosure navigation."""
 import streamlit as st
 st.set_page_config(page_title="H2 Feasibility Copilot", page_icon=" ", layout="wide", initial_sidebar_state="expanded")
-from utils.session import init_session; from utils.theme import apply_theme
+from utils.session import init_session; from utils.theme import apply_theme, apply_sidebar
 init_session(); apply_theme()
 
 apply_sidebar()
