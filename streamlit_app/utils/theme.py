@@ -1,36 +1,36 @@
-"""Enterprise-grade theme for H2 Feasibility Copilot."""
+"""Enterprise theme — professional green, large fonts, consulting aesthetic."""
 import streamlit as st
-
 
 def apply_theme():
     st.markdown("""
 <style>
-    .stApp { background: #FFFFFF; }
-    h1, h2, h3 { color: #1B5E20; font-weight: 500; letter-spacing: -0.01em; }
+    .stApp { background: #F8FAF8; }
+    /* ─── GLOBAL FONTS — 15-20% larger ─── */
+    html, body, .stMarkdown, p, li { font-size: 1.05rem !important; line-height: 1.6; }
+    h1 { font-size: 1.8rem !important; color: #1B5E20; font-weight: 600; }
+    h2 { font-size: 1.4rem !important; color: #1B5E20; font-weight: 600; }
+    h3 { font-size: 1.2rem !important; color: #2E7D32; font-weight: 600; }
+    h4 { font-size: 1.1rem !important; color: #2E7D32; font-weight: 600; }
+    .stCaption, .stCaption p { font-size: 0.9rem !important; color: #558B2F; }
 
-    /* ─── Sidebar — wider, larger text ─── */
+    /* ─── TABLES ─── */
+    .stDataFrame { font-size: 0.95rem !important; border: 1px solid #E0E0E0; border-radius: 8px; }
+    .stDataFrame td, .stDataFrame th { padding: 8px 12px !important; }
+    .stDataFrame th { background: #F1F8E9; color: #1B5E20; font-weight: 600; }
+
+    /* ─── METRICS ─── */
+    [data-testid="stMetricValue"] { font-size: 1.5rem !important; font-weight: 700; color: #2E7D32 !important; }
+    [data-testid="stMetricLabel"] { font-size: 0.9rem !important; font-weight: 500; color: #558B2F !important; }
+    [data-testid="stMetricDelta"] { font-size: 0.85rem !important; color: #1565C0 !important; }
+
+    /* ─── SIDEBAR ─── */
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #1B5E20 0%, #2E7D32 100%);
-        min-width: 280px !important;
-        width: 280px !important;
-    }
-    section[data-testid="stSidebar"] [data-testid="stMarkdown"] {
-        font-size: 1.05rem !important;
-        line-height: 1.6 !important;
+        min-width: 280px !important; width: 280px !important;
     }
     section[data-testid="stSidebar"] * { color: #FFFFFF !important; }
-    section[data-testid="stSidebar"] hr { border-color: rgba(255,255,255,0.15); margin: 16px 0; }
-    section[data-testid="stSidebar"] .stCaption { color: #A5D6A7 !important; font-size: 0.9rem !important; }
-    section[data-testid="stSidebar"] label { font-size: 0.95rem !important; }
-    section[data-testid="stSidebar"] div[data-testid="stMarkdownContainer"] p {
-        font-size: 1.0rem !important;
-        margin-bottom: 4px;
-    }
-    section[data-testid="stSidebar"] div[data-testid="stMarkdownContainer"] strong {
-        font-size: 1.05rem !important;
-    }
-
-    /* ─── Sidebar nav links ─── */
+    section[data-testid="stSidebar"] .stCaption { color: #C8E6C9 !important; }
+    section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p { font-size: 1.0rem !important; line-height: 1.5; }
     section[data-testid="stSidebar"] a {
         color: #C8E6C9 !important; text-decoration: none; font-size: 0.95rem !important;
         padding: 6px 0; display: block; border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -38,64 +38,47 @@ def apply_theme():
     }
     section[data-testid="stSidebar"] a:hover { color: #FFFFFF !important; }
 
-    /* ─── Metrics ─── */
-    [data-testid="stMetricValue"] { color: #2E7D32 !important; font-weight: 700; font-size: 1.6rem !important; }
-    [data-testid="stMetricLabel"] { color: #558B2F !important; font-weight: 500; }
-    [data-testid="stMetricDelta"] { color: #1565C0 !important; }
-
-    /* ─── Buttons — strong contrast, white text, hover ─── */
+    /* ─── BUTTONS ─── */
     .stButton button {
         background: linear-gradient(135deg, #1B5E20, #2E7D32) !important;
         color: #FFFFFF !important; border: none !important; border-radius: 6px;
-        font-weight: 600; padding: 10px 24px; letter-spacing: 0.3px;
+        font-weight: 600; padding: 10px 24px; font-size: 1rem !important;
         transition: all 0.2s ease;
     }
     .stButton button:hover {
         background: linear-gradient(135deg, #0D3B0E, #1B5E20) !important;
-        box-shadow: 0 4px 14px rgba(27,94,32,0.4);
-        transform: translateY(-1px);
-    }
-    .stButton button:active {
-        transform: translateY(0);
+        box-shadow: 0 4px 14px rgba(27,94,32,0.4); transform: translateY(-1px);
     }
 
-    /* secondary buttons */
-    .stButton button[kind="secondary"] {
-        background: #FFFFFF !important; color: #1B5E20 !important; border: 1px solid #2E7D32 !important;
-    }
-    .stButton button[kind="secondary"]:hover {
-        background: #F1F8E9 !important; box-shadow: 0 2px 8px rgba(46,125,50,0.2);
-    }
-
-    /* ─── Alerts ─── */
-    .stAlert { border-radius: 8px; border-left: 4px solid #2E7D32; }
+    /* ─── ALERTS ─── */
+    .stAlert { border-radius: 8px; border-left: 4px solid #2E7D32; font-size: 1rem !important; }
     [data-testid="stInfo"] { background: #F1F8E9; color: #1B5E20; }
 
-    /* ─── Dividers ─── */
-    hr { border-color: #E0E0E0; margin: 20px 0; }
+    /* ─── DIVIDERS ─── */
+    hr { border-color: #E0E0E0; margin: 28px 0; }
 
-    /* ─── DataFrames ─── */
-    .stDataFrame { border: 1px solid #E8F5E9; border-radius: 8px; font-size: 0.9rem; }
+    /* ─── TABS ─── */
+    .stTabs [data-baseweb="tab"] { font-size: 0.95rem !important; color: #558B2F; }
+    .stTabs [aria-selected="true"] { background: #F1F8E9 !important; color: #1B5E20 !important; font-weight: 600; }
 
-    /* ─── Tabs ─── */
-    .stTabs [data-baseweb="tab"] { border-radius: 6px 6px 0 0; color: #558B2F; font-weight: 500; }
-    .stTabs [aria-selected="true"] {
-        background: #F1F8E9 !important; color: #1B5E20 !important; font-weight: 600;
+    /* ─── EXPANDERS ─── */
+    .streamlit-expanderHeader { font-size: 1rem !important; font-weight: 600; color: #1B5E20; }
+
+    /* ─── METRIC CARDS ─── */
+    div[data-testid="metric-container"] {
+        background: #FFFFFF; border: 1px solid #E0E0E0; border-radius: 8px;
+        padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
 
-    /* ─── Expanders ─── */
-    .streamlit-expanderHeader { font-weight: 600; color: #1B5E20; }
+    /* ─── CONTAINERS / CARDS ─── */
+    .stContainer, section[data-testid="stVerticalBlock"] > div[data-testid="element-container"] {
+        font-size: 1rem;
+    }
 
-    /* ─── Headers within sections ─── */
-    h4 { color: #1B5E20; font-weight: 600; margin-top: 16px; }
-
-    /* ─── Responsive: laptop-friendly ─── */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 1200px) {
         section[data-testid="stSidebar"] { min-width: 240px !important; width: 240px !important; }
         [data-testid="stMetricValue"] { font-size: 1.3rem !important; }
-    }
-    @media (max-width: 992px) {
-        section[data-testid="stSidebar"] { min-width: 200px !important; width: 200px !important; }
     }
 </style>
 """, unsafe_allow_html=True)
