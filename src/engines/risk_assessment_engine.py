@@ -16,14 +16,14 @@ def assess_risks(query: Query, all_risks: list[RiskRecord],
     filtered: list[RiskRecord] = []
 
     for r in all_risks:
-        # Technology filter
-        if query.technology.upper() not in [t.upper() for t in r.technology_types] and \
-           "PEM" not in [t.upper() for t in r.technology_types] and \
-           "ALKALINE" not in [t.upper() for t in r.technology_types]:
-            # Check if technology-agnostic
-            tech_types_upper = [t.upper() for t in r.technology_types]
-            if "PEM" not in tech_types_upper and "ALKALINE" not in tech_types_upper:
-                continue
+        # Technology filter — strict exact-match (V1.1 fix: no cross-technology leakage)
+        # A risk tagged ["Alkaline"] must NOT appear for a PEM query.
+        # A risk tagged ["PEM", "Alkaline"] applies to both.
+        # A risk with empty technology_types is treated as technology-agnostic.
+        risk_techs_upper = [t.upper() for t in r.technology_types]
+        tech_query = query.technology.upper()
+        if risk_techs_upper and tech_query not in risk_techs_upper:
+            continue
         # Scale filter (loose — include if any scale matches or "any")
         scale_match = any(
             s == "any" or scale_cat in s or s in scale_cat

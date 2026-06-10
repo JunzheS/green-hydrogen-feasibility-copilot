@@ -18,29 +18,42 @@ insights = report.get("executive_insights", [])
 gate_just = report.get("gate_justification", {})
 gate = gate_just.get("decision", pm.get("gate_outcome", "-"))
 
+# V1.1: Display labels for study-phase communication
+from src.models.data_models import GATE_DISPLAY_LABELS, GATE_DISPLAY_DESCRIPTIONS
+gate_display = GATE_DISPLAY_LABELS.get(gate, gate)
+gate_desc = GATE_DISPLAY_DESCRIPTIONS.get(gate, "")
+
 # Decision brief
 gc = {"PROCEED":"#2E7D32","PROCEED WITH CAUTION":"#F9A825","DO NOT PROCEED":"#C62828","INSUFFICIENT DATA":"#78909C"}
 gt = {"PROCEED":"white","PROCEED WITH CAUTION":"#1B5E20","DO NOT PROCEED":"white","INSUFFICIENT DATA":"white"}
 st.markdown(f"""
 <div style="background:{gc.get(gate,'#78909C')};border-radius:12px;padding:24px;color:{gt.get(gate,'white')};margin-bottom:16px;">
 <div style="display:flex;justify-content:space-between;">
-<div><p style="margin:0;opacity:0.7;font-size:0.85rem;">EXECUTIVE DECISION</p>
-<h1 style="margin:4px 0;color:inherit;font-size:2rem;">{gate}</h1>
-<p style="margin:4px 0;opacity:0.9;">{gate_just.get('rationale','')[:180]}</p></div>
+<div><p style="margin:0;opacity:0.7;font-size:0.85rem;">PRE-FEASIBILITY SCREENING — NEXT STUDY PHASE</p>
+<h1 style="margin:4px 0;color:inherit;font-size:2rem;">{gate_display}</h1>
+<p style="margin:4px 0;opacity:0.9;font-size:0.85rem;">{gate_desc}</p></div>
 <div style="text-align:right;"><p style="margin:0;font-size:1.1rem;">{q.get('capacity_mw','')} MW {q.get('technology','')}</p>
 <p style="margin:2px 0;opacity:0.8;">{q.get('country','')} | {q.get('industry','')} | COD {q.get('target_cod','')}</p>
-<p style="margin:2px 0 0;opacity:0.7;">Confidence: {pm.get('overall_confidence',{}).get('label','-')} ({pm.get('overall_confidence',{}).get('score',0):.2f})</p></div></div></div>
+<p style="margin:2px 0 0;opacity:0.7;">Pre-Feasibility Confidence: {pm.get('overall_confidence',{}).get('label','-')} ({pm.get('overall_confidence',{}).get('score',0):.2f})</p></div></div></div>
 """, unsafe_allow_html=True)
 
 # ─── ASSESSMENT SNAPSHOT ───
 st.markdown("#### Assessment Snapshot")
 col_sp1, col_sp2, col_sp3, col_sp4, col_sp5, col_sp6 = st.columns(6)
 with col_sp1: st.metric("Technology", f"{q.get('technology','')} TRL {tech.get('trl','')}")
-with col_sp2: st.metric("CAPEX", f"EUR {capex.get('total',{}).get('central_eur_m',0):.0f}M")
-with col_sp3: st.metric("LCOH", f"EUR {lcoh.get('central_eur_per_kg',0):.2f}/kg")
+with col_sp2:
+    capex_low = capex.get('total',{}).get('p10_eur_m',0)
+    capex_high = capex.get('total',{}).get('p90_eur_m',0)
+    st.metric("CAPEX Range", f"EUR {capex_low:.0f}–{capex_high:.0f}M",
+              f"Central: EUR {capex.get('total',{}).get('central_eur_m',0):.0f}M")
+with col_sp3:
+    lcoh_low = lcoh.get('p10_eur_per_kg',0)
+    lcoh_high = lcoh.get('p90_eur_per_kg',0)
+    st.metric("LCOH Range", f"EUR {lcoh_low:.1f}–{lcoh_high:.1f}/kg",
+              f"Central: EUR {lcoh.get('central_eur_per_kg',0):.2f}/kg")
 with col_sp4: st.metric("Top Risk", risk.get('top_risks',[{}])[0].get('rpn',0) if risk.get('top_risks') else '-', risk.get('top_risks',[{}])[0].get('risk_name','')[:25] if risk.get('top_risks') else '')
 with col_sp5: st.metric("Confidence", pm.get('overall_confidence',{}).get('label','-'))
-with col_sp6: st.metric("Gate", gate)
+with col_sp6: st.metric("Next Phase", gate_display)
 st.caption("Scroll down for executive summary, assessment dimensions, and insights.")
 
 st.divider()

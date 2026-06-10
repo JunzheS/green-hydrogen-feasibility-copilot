@@ -40,6 +40,42 @@ class GateOutcome(str, Enum):
     INSUFFICIENT_DATA = "INSUFFICIENT DATA"
 
 
+# V1.1: Display labels for pre-feasibility stage-gate communication.
+# Internal enum values are unchanged (engine logic depends on them).
+# These labels are used in the Streamlit UI to communicate study-phase
+# progression rather than investment approval.
+GATE_DISPLAY_LABELS: dict[str, str] = {
+    "PROCEED": "ADVANCE TO FEED",
+    "PROCEED WITH CAUTION": "ADVANCE WITH CONDITIONS",
+    "DO NOT PROCEED": "DO NOT ADVANCE",
+    "INSUFFICIENT DATA": "INSUFFICIENT DATA",
+}
+
+GATE_DISPLAY_DESCRIPTIONS: dict[str, str] = {
+    "PROCEED": (
+        "The pre-feasibility screening supports advancing to the next study phase "
+        "(FEED). This is NOT a Final Investment Decision recommendation. "
+        "AACE Class 4 accuracy (±20–30%) — obtain OEM budget quotations and "
+        "secure electricity pricing before FID."
+    ),
+    "PROCEED WITH CAUTION": (
+        "The pre-feasibility screening supports advancing to FEED with specific "
+        "conditions. Address the identified knowledge gaps and risk mitigations "
+        "before committing significant engineering resources."
+    ),
+    "DO NOT PROCEED": (
+        "The pre-feasibility screening does not support advancing to FEED at this "
+        "time. Revisit project parameters (scale, technology, offtake, location) "
+        "or obtain additional data to resolve critical knowledge gaps."
+    ),
+    "INSUFFICIENT DATA": (
+        "The available data is insufficient to make a screening recommendation. "
+        "Populate additional project reference data, technology benchmarks, or "
+        "risk evidence before re-running the assessment."
+    ),
+}
+
+
 @dataclass
 class Query:
     country: str

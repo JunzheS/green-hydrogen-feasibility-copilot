@@ -163,14 +163,31 @@ def estimate_capex(query: Query, all_costs: list[CostRecord],
             "cost_id": total_record.cost_id,
         })
 
-    # Range (P10-P90 based on total_record low/high)
-    low_eur_per_kw = total_record.eur_per_kw_low if total_record.eur_per_kw_low > 0 else total_record.eur_per_kw * 0.75
-    high_eur_per_kw = total_record.eur_per_kw_high if total_record.eur_per_kw_high > 0 else total_record.eur_per_kw * 1.35
+    # Range (P10-P90) — V1.1 fix: apply same scale + learn + FOAK as central
+    # Previously P10/P90 used raw record bounds, causing Central > P90
+    # when target scale differed from reference scale (e.g., 5 MW query
+    # against 100 MW benchmark: Central scaled to €14M but P90 stuck at €10M).
+    if total_record.eur_per_kw_low > 0:
+        low_eur_per_kw = _scale_to_target(total_record.eur_per_kw_low, total_record, query.capacity_mw)
+        low_eur_per_kw = _apply_learning(low_eur_per_kw, total_record, query.target_cod)
+    else:
+        low_eur_per_kw = central_total_eur_per_kw * 0.75
+    if total_record.eur_per_kw_high > 0:
+        high_eur_per_kw = _scale_to_target(total_record.eur_per_kw_high, total_record, query.capacity_mw)
+        high_eur_per_kw = _apply_learning(high_eur_per_kw, total_record, query.target_cod)
+    else:
+        high_eur_per_kw = central_total_eur_per_kw * 1.35
     low_total_m = round(low_eur_per_kw * query.capacity_mw / 1000 * foak_mult, 0)
     high_total_m = round(high_eur_per_kw * query.capacity_mw / 1000 * foak_mult, 0)
 
     # Weighted confidence
     cw = CONFIDENCE_WEIGHTS.get(total_record.confidence_level, 0.50)
+
+    # ── V1.1: Industrial Development Budget (validation layer) ──
+    industrial_budget = _estimate_industrial_budget(
+        central_total_eur_per_kw, query.capacity_mw, query.target_cod,
+        total_record.cost_year, tech_key,
+        is_foak_app=is_foak_app, is_foak_scale=is_foak_scale)
 
     return {
         "breakdown": breakdown,
@@ -187,4 +204,121 @@ def estimate_capex(query: Query, all_costs: list[CostRecord],
         ),
         "benchmark_record": total_record.cost_id,
         "foak_multiplier": foak_mult,
+        "industrial_budget": industrial_budget,
+    }
+
+
+def _estimate_industrial_budget(
+    reference_eur_per_kw: float,
+    capacity_mw: float,
+    target_cod: int,
+    cost_year: int,
+    tech_key: str,
+    is_foak_app: bool = False,
+    is_foak_scale: bool = False,
+) -> dict:
+    """V1.1: Estimate Industrial Development Budget.
+
+    Expands the Reference Benchmark CAPEX (nth-of-a-kind, overnight, 2025 EUR)
+    to a Total Investment Requirement reflecting first-project reality:
+
+      Industrial Budget = Reference CAPEX
+                         × FOAK_factor
+                         × IDC_factor
+                         × Scope_factor
+                         × Escalation_factor
+
+    All factors are documented and traceable to methodology documents.
+    Calibrated for PEM; extended to Alkaline with reduced FOAK factors.
+    NOT validated for SOEC or AEM.
+
+    Reference: industrial_budget_methodology.md (Sprint 5D)
+    """
+    # ── FOAK Factor ──
+    # Source: cost_assessment_engine.py FOAK multipliers + cost_scaling_methodology.md §5.2
+    # PEP: +10% scale FOAK, +5% application FOAK, +5% developer first-project
+    if tech_key == "PEM":
+        foak_scale_factor = 0.10 if is_foak_scale else 0.0
+        foak_app_factor = 0.05 if is_foak_app else 0.0
+        developer_factor = 0.05  # conservative: assume first project by developer
+        foak_mult = 1.0 + foak_scale_factor + foak_app_factor + developer_factor
+    elif tech_key == "Alkaline":
+        # Alkaline is more mature (TRL 9): reduced FOAK premiums
+        # Source: cost_scaling_methodology.md §5.2 — Alkaline FOAK is 5-15% vs PEM 15-25%
+        foak_scale_factor = 0.05 if is_foak_scale else 0.0
+        foak_app_factor = 0.03 if is_foak_app else 0.0
+        developer_factor = 0.03
+        foak_mult = 1.0 + foak_scale_factor + foak_app_factor + developer_factor
+    else:
+        # SOEC, AEM: not validated — return null
+        return {
+            "available": False,
+            "reason": (
+                f"Industrial Development Budget is calibrated for PEM and Alkaline only. "
+                f"{tech_key} lacks sufficient reference data for FOAK, IDC, and scope factors."
+            ),
+        }
+
+    # ── IDC Factor (Interest During Construction) ──
+    # Source: standard project finance — 3-year construction, 7% WACC on 50% drawdown
+    # IDC ≈ (1 + WACC/2)^years − 1 ≈ (1.035)^3 − 1 ≈ 0.109 → factor 1.10
+    idc_factor = 1.10
+
+    # ── Scope Expansion Factor ──
+    # Source: industry_feedback_validation_report.md §3.2 Explanation 3
+    # Bulk H₂ buffer storage: +3-5%, extended commissioning: +3-5%, owner's internal: +2-3%
+    # Blended: ~10% for pre-FEED stage scope uncertainty
+    scope_factor = 1.10
+
+    # ── Escalation Factor (2025 EUR → Year-of-Expenditure EUR) ──
+    # Source: standard construction cost escalation at 3%/year
+    # European chemical plant construction inflation: 2.5–3.5%/year (IHS Markit, 2024)
+    years_to_cod = max(0, target_cod - cost_year)
+    escalation_rate = 0.03
+    escalation_factor = (1.0 + escalation_rate) ** years_to_cod
+
+    # ── Compute ──
+    total_multiplier = foak_mult * idc_factor * scope_factor * escalation_factor
+    industrial_eur_per_kw = round(reference_eur_per_kw * total_multiplier, 0)
+    industrial_eur_m = round(industrial_eur_per_kw * capacity_mw / 1000, 0)
+
+    reference_eur_m = round(reference_eur_per_kw * capacity_mw / 1000, 0)
+
+    return {
+        "available": True,
+        "technology_calibration": f"{tech_key}-calibrated",
+        "industrial_eur_per_kw": industrial_eur_per_kw,
+        "industrial_eur_m": industrial_eur_m,
+        "reference_eur_m": reference_eur_m,
+        "delta_pct": round((industrial_eur_m / reference_eur_m - 1.0) * 100, 0) if reference_eur_m > 0 else 0,
+        "factors": {
+            "foak_multiplier": round(foak_mult, 2),
+            "foak_scale": is_foak_scale,
+            "foak_application": is_foak_app,
+            "developer_first_project": True,  # conservative assumption
+            "idc_factor": idc_factor,
+            "idc_assumption": "3-year construction, 7% WACC, 50% drawdown",
+            "scope_factor": scope_factor,
+            "scope_items": [
+                "Bulk H₂ buffer storage (8-24 hour)",
+                "Extended commissioning and performance testing",
+                "Owner's internal development and project management",
+                "Initial spares and first-fill consumables",
+                "Pre-FEED scope contingency (~10% on BOP)",
+            ],
+            "escalation_factor": round(escalation_factor, 3),
+            "escalation_rate_pct": 3.0,
+            "escalation_years": years_to_cod,
+            "cost_year": cost_year,
+            "target_cod": target_cod,
+            "total_multiplier": round(total_multiplier, 3),
+        },
+        "note": (
+            "The Industrial Development Budget is a planning estimate for TOTAL investment "
+            "requirement including FOAK premium, interest during construction, broader "
+            "scope items, and cost escalation to year of expenditure. It is NOT a "
+            "like-for-like comparison with the Reference Benchmark CAPEX (which is "
+            "nth-of-a-kind, overnight, constant 2025 EUR). Use for budget planning, "
+            "not for technology cost comparison."
+        ),
     }
